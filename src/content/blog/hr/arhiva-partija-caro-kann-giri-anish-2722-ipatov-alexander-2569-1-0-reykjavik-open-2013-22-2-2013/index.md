@@ -1,0 +1,39 @@
+---
+title: "Giri Anish (2722) – Ipatov Alexander (2569) | 1-0 | Reykjavik Open 2013 | 22.2.2013"
+slug: "arhiva-partija-caro-kann-giri-anish-2722-ipatov-alexander-2569-1-0-reykjavik-open-2013-22-2-2013"
+description: "Nadolazeća zvijezda, osamnaestogodišnji nizozemac Giri, rutinski je odradio peto kolo. U završnici je demonstrirao superiornu tehniku, a njegov protivnik je u drugom dijelu partije djelovao prilično…"
+pubDate: 2013-02-24T03:18:17Z
+updatedDate: 2018-07-26T16:44:36Z
+categories: ["Caro - Kann", "Intervju", "Vijesti svijet"]
+tags: []
+translationKey: "wp-942"
+wordpress:
+  id: 942
+  url: "http://sahovski-klub.com/arhiva-partija-caro-kann-giri-anish-2722-ipatov-alexander-2569-1-0-reykjavik-open-2013-22-2-2013/"
+  slug: "arhiva-partija-caro-kann-giri-anish-2722-ipatov-alexander-2569-1-0-reykjavik-open-2013-22-2-2013"
+---
+Nadolazeća zvijezda, osamnaestogodišnji nizozemac Giri, rutinski je odradio peto kolo. U završnici je demonstrirao superiornu tehniku, a njegov protivnik je u drugom dijelu partije djelovao prilično nemoćno. Partija je dobar primjer kako materijalizirati bolju poziciju.
+
+```pgn
+[Date "22.02.2013."]
+[Round "?"]
+[White "Giri, Anish"]
+[Black "Ipatov , Alexander"]
+[Result "1-0"]
+[ECO "B12"]
+[WhiteElo "2722"]
+[BlackElo "2569"]
+[PlyCount "87"]
+
+1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nf3 e6 5. Be2 c5 6. Be3 cxd4 7. Nxd4 Ne7 8. O-O
+Nbc6 9. Bb5 a6 10. Bxc6+ bxc6 11. c4 c5 12. Nxf5 Nxf5 13. cxd5 Qxd5 14. Qa4+
+Qd7 15. Qe4 Rc8 16. Na3 Be7 17. Rfd1 Qc6 18. Qxc6+ Rxc6 19. Nc4 Nxe3 20. fxe3
+Rc7 21. Rd3 O-O 22. Rad1 Rfc8 23. b3 h5 24. Kf2 g5 25. h3 Kg7 26. Kf3 Kg6 27.
+Rd7 Bf8 28. Rxc7 Rxc7 29. Rd8 Be7 30. Rg8+ Kh6 31. Ra8 Rd7 32. Rxa6 Rd1 33. Ra7
+Bf8 34. Ke2 Ra1 35. Rxf7 Rxa2+ 36. Kf3 Bg7 37. Re7 g4+ 38. hxg4 hxg4+ 39. Kg3
+Ra6 40. Kxg4 Bf8 41. Rf7 Bg7 42. Rb7 Kg6 43. Kf4 Ra2 44. Re7 1-0
+```
+
+Intervju nakon partije:
+
+[https://www.youtube.com/watch?v=PRmHokxFslQ](https://www.youtube.com/watch?v=PRmHokxFslQ)

@@ -1,0 +1,39 @@
+---
+/**
+ * Training-schedule notices (src/data/training.json → announcements), edited in the CMS.
+ * Rendered at build time for the build date; a tiny script re-checks the dates in the visitor's browser,
+ * so a notice appears and disappears on the right day even between site rebuilds.
+ */
+import Icon from './Icon.astro';
+import { training } from '../lib/data';
+import type { Lang } from '../i18n/ui';
+interface Props { lang: Lang; class?: string; dark?: boolean }
+const { lang, class: cls, dark = false } = Astro.props;
+const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Zagreb' }).format(new Date());
+// keep notices that have not ended yet; ones that start later are hidden until their day
+const items = training.announcements.filter((a) => !a.until || a.until >= today);
+const active = (a: (typeof items)[number]) => (!a.from || a.from <= today) && (!a.until || a.until >= today);
+---
+{items.length > 0 && (
+  <div class:list={['space-y-3', cls]} data-announcements>
+    {items.map((a) => (
+      <p
+        class:list={['announcement reveal flex items-start gap-3 rounded-lg px-4 py-3 text-[0.95rem] ring-1', a.important ? (dark ? 'bg-red-500/15 text-white ring-red-400/50' : 'bg-red-50 text-red-900 ring-red-200') : dark ? 'bg-white/5 text-white ring-gold/30' : 'bg-gold/10 text-ink ring-gold/30']}
+        role={a.important ? 'alert' : undefined}
+        data-from={a.from ?? ''}
+        data-until={a.until ?? ''}
+        hidden={!active(a)}
+      >
+        <span class:list={['mt-0.5 flex-none', a.important ? (dark ? 'text-red-300' : 'text-red-700') : dark ? 'text-gold' : 'text-gold-deep']}><Icon name="info" size={18} /></span>
+        <span>{lang === 'en' ? (a.textEn ?? a.text) : a.text}</span>
+      </p>
+    ))}
+  </div>
+)}
+<script>
+  const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Zagreb' }).format(new Date());
+  document.querySelectorAll<HTMLElement>('[data-announcements] [data-from]').forEach((el) => {
+    const { from, until } = el.dataset;
+    el.hidden = !((!from || from <= today) && (!until || until >= today));
+  });
+</script>

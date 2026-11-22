@@ -1,0 +1,50 @@
+{
+  "sessions": [
+    {
+      "id": "mladja-utorak",
+      "day": "tuesday",
+      "startTime": "19:00",
+      "group": "Šahovska škola – mlađa skupina",
+      "groupEn": "Chess school – younger group",
+      "coach": "",
+      "location": "Društveni dom Mala Mlaka",
+      "status": "scheduled",
+      "validFrom": "2026-09-08"
+    },
+    {
+      "id": "starija-utorak",
+      "day": "tuesday",
+      "startTime": "20:00",
+      "group": "Šahovska škola – starija skupina",
+      "groupEn": "Chess school – older group",
+      "coach": "",
+      "location": "Društveni dom Mala Mlaka",
+      "status": "scheduled",
+      "validFrom": "2026-09-08"
+    },
+    {
+      "id": "mladja-petak",
+      "day": "friday",
+      "startTime": "19:00",
+      "group": "Šahovska škola – mlađa skupina",
+      "groupEn": "Chess school – younger group",
+      "coach": "",
+      "location": "Društveni dom Mala Mlaka",
+      "status": "scheduled",
+      "validFrom": "2026-09-08"
+    },
+    {
+      "id": "starija-petak",
+      "day": "friday",
+      "startTime": "20:00",
+      "group": "Šahovska škola – starija skupina",
+      "groupEn": "Chess school – older group",
+      "coach": "",
+      "location": "Društveni dom Mala Mlaka",
+      "status": "scheduled",
+      "validFrom": "2026-09-08"
+    }
+  ],
+  "exceptions": [],
+  "extra": []
+}

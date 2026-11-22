@@ -1,0 +1,8 @@
+---
+import AlbumView from '../../views/AlbumView.astro';
+import { getAlbums } from '../../lib/gallery';
+export async function getStaticPaths() {
+  return (await getAlbums('hr')).map((album) => ({ params: { album: album.id }, props: { album } }));
+}
+---
+<AlbumView lang="hr" album={Astro.props.album} />

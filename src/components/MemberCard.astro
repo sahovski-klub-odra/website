@@ -1,0 +1,68 @@
+---
+import KnightMark from './KnightMark.astro';
+import Icon from './Icon.astro';
+import type { Member } from '../lib/schemas';
+import { useTranslations, type Lang } from '../i18n/ui';
+import { withBase } from '../i18n/routes';
+interface Props { member: Member; lang: Lang; featured?: boolean; index?: number }
+const { member: m, lang, featured = false, index = 0 } = Astro.props;
+const t = useTranslations(lang);
+const role = lang === 'en' ? (m.roleEn ?? m.role) : m.role;
+const bio = lang === 'en' ? (m.bioEn ?? m.bio) : m.bio;
+const img = m.image ? withBase(m.image) : null;
+const initials = m.name.split(/\s+/).filter(Boolean).map((p) => p[0]).slice(0, 1).concat(m.name.split(/\s+/).filter(Boolean).slice(-1).map((p) => p[0])).join('').toUpperCase();
+// 'vk' (bez kategorije) is shown only in the details, not as a badge
+const badge = m.title || (m.category && m.category.toLowerCase() !== 'vk' ? m.category : '');
+const best = Math.max(m.rating ?? 0, m.ratingRapid ?? 0, m.ratingBlitz ?? 0);
+const ratings = [
+  { key: 'standard', label: t('members.standard'), value: m.rating },
+  { key: 'rapid', label: t('members.rapid'), value: m.ratingRapid },
+  { key: 'blitz', label: t('members.blitz'), value: m.ratingBlitz },
+];
+const fideUrl = m.fideId ? `https://ratings.fide.com/profile/${m.fideId}` : null;
+---
+<article
+  class:list={['member-card group reveal', featured ? 'member-card--featured' : '']}
+  style={`--reveal-delay:${Math.min(index, 12) * 45}ms`}
+  data-member
+  data-name={m.name.toLocaleLowerCase('hr')}
+  data-order={index}
+  data-rating={best}
+>
+  <div class="member-card__top">
+    <div class="member-avatar" aria-hidden={img ? undefined : 'true'}>
+      {img ? (
+        <img src={img} alt={m.name} loading="lazy" decoding="async" width="160" height="160" />
+      ) : (
+        <span class="member-avatar__initials">{initials || <KnightMark class="h-8 w-8" />}</span>
+      )}
+    </div>
+    <div class="min-w-0 flex-1">
+      <h3 class="member-card__name">{m.name}</h3>
+      {role && <p class="member-card__role">{role}</p>}
+      <p class="member-card__meta">
+        {m.category && <span title={t('members.category')}>{m.category === 'vk' ? 'vk' : `${t('members.category')} ${m.category}`}</span>}
+        {m.birthYear && <span>{lang === 'en' ? `${t('members.born')} ${m.birthYear}` : `${m.birthYear}. ${t('members.born')}`}</span>}
+      </p>
+    </div>
+    {badge && <span class="member-card__badge" title={m.title ? undefined : t('members.category')}>{badge}</span>}
+  </div>
+
+  {bio && <p class="member-card__bio">{bio}</p>}
+
+  <dl class="member-ratings">
+    {ratings.map((r) => (
+      <div class:list={['member-rating', r.value ? '' : 'is-empty']}>
+        <dt>{r.label}</dt>
+        <dd>{r.value ?? '–'}</dd>
+        {r.value && <span class="member-rating__bar" style={`--w:${Math.max(8, Math.min(100, ((r.value - 1000) / 1500) * 100)).toFixed(0)}%`} aria-hidden="true"></span>}
+      </div>
+    ))}
+  </dl>
+
+  {fideUrl && (
+    <a href={fideUrl} target="_blank" rel="noopener noreferrer" class="member-card__link">
+      {t('members.fideProfile')} <span class="sr-only">– {m.name}</span><Icon name="external" size={14} />
+    </a>
+  )}
+</article>

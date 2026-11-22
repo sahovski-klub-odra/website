@@ -1,0 +1,218 @@
+---
+import { Image, Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogCard from '../components/BlogCard.astro';
+import Ambient from '../components/Ambient.astro';
+import Icon from '../components/Icon.astro';
+import KnightMark from '../components/KnightMark.astro';
+import ScheduleLive from '../components/ScheduleLive.astro';
+import Announcements from '../components/Announcements.astro';
+import hero from '../assets/hero.jpg';
+import { postsForListing } from '../lib/blog';
+import { getAlbums } from '../lib/gallery';
+import { site, hasMap, formatAddress, osmLink, wpRedirects } from '../lib/data';
+import { useTranslations, type Lang } from '../i18n/ui';
+import { routes, withBase, albumPath, alternatesFor } from '../i18n/routes';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const posts = (await postsForListing(lang)).slice(0, 6);
+const albums = await getAlbums(lang);
+const latestAlbum = albums[0];
+const previewPhotos = albums.flatMap((a) => a.photos.slice(0, 6).map((p) => ({ ...p, album: a }))).slice(0, 6);
+const address = formatAddress();
+
+const quick = [
+  { icon: 'pencil', title: t('quick.news.title'), text: t('quick.news.text'), href: routes.news[lang] },
+  { icon: 'users', title: t('quick.members.title'), text: t('quick.members.text'), href: routes.members[lang] },
+  { icon: 'image', title: t('quick.gallery.title'), text: t('quick.gallery.text'), href: routes.gallery[lang] },
+  { icon: 'calendar', title: t('quick.schedule.title'), text: t('quick.schedule.text'), href: routes.schedule[lang] },
+] as const;
+
+const hasWpIds = Object.keys(wpRedirects.ids ?? {}).length > 0;
+---
+<BaseLayout lang={lang} alternates={alternatesFor('home')}>
+  {hasWpIds && (
+    <script slot="head" is:inline define:vars={{ ids: wpRedirects.ids, base: import.meta.env.BASE_URL.replace(/\/$/, '') }}>
+      // Old WordPress short links such as /?p=123 land on the homepage – forward them to the migrated article.
+      (function () {
+        var q = new URLSearchParams(location.search);
+        var id = q.get('p') || q.get('page_id');
+        if (id && ids[id]) location.replace(base + ids[id]);
+      })();
+    </script>
+  )}
+
+  <!-- ============ HERO ============ -->
+  <!--
+    Hero photo: src/assets/hero.jpg is 1462×627 px (and was cut from the design mockup, so it holds
+    even less real detail). It is never shown wider than that on a 1× screen:
+     - phones/tablets: a full-width band above the text (not a 3× blow-up behind it);
+     - desktop: the right part of the hero, at most 1462 px wide, edges faded into the dark.
+    The slow drift moves the photo together with its fade mask, so no hard edge can appear.
+    Replace hero.jpg with a larger photo (≥ 2400 px wide) and everything here keeps working.
+  -->
+  <section class="hero relative isolate overflow-hidden bg-ink text-white" data-hero>
+    <div class="hero-media relative -z-10 h-[min(62vw,26rem)] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[72%] lg:max-w-[1462px]">
+      <div class="hero-photo absolute inset-0 overflow-hidden">
+        <Picture
+          src={hero}
+          formats={['webp']}
+          widths={[640, 960, 1280, 1462]}
+          sizes="(min-width: 1024px) 1462px, (min-width: 640px) 100vw, 150vw"
+          quality={90}
+          alt=""
+          class="hero-img h-full w-full object-cover object-[66%_46%] lg:object-[70%_50%]"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="hero-shade absolute inset-0"></div>
+    </div>
+    <Ambient
+      class="hero-ambient"
+      pointer
+      grid
+      light
+      lines
+      particles={22}
+      seed={11}
+      pieces={[
+        { piece: 'rook', x: '3%', y: '58%', size: 'clamp(54px, 7vw, 96px)', motion: 'bob', depth: 10, opacity: 0.06, desktopOnly: true },
+        { piece: 'bishop', x: '41%', y: '9%', size: 'clamp(40px, 5vw, 70px)', motion: 'sway', depth: 18, opacity: 0.07, desktopOnly: true },
+      ]}
+    />
+
+    <div class="hero-content container-site relative -mt-16 pb-16 sm:pb-20 lg:mt-0 lg:py-32">
+      <div class="max-w-xl">
+        <p class="hero-in hero-eyebrow eyebrow text-white/85" style="--d:80ms">{t('hero.eyebrow')}</p>
+        <h1 class="hero-in hero-title mt-4 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+          {lang === 'hr' ? <>Šahovski klub <span class="text-gold">Odra</span></> : <>Chess Club <span class="text-gold">Odra</span></>}
+        </h1>
+        <p class="hero-in mt-6 text-lg leading-relaxed text-white/85 sm:text-xl" style="--d:420ms">{site.tagline?.[lang] || t('site.tagline')}</p>
+        <div class="hero-in mt-9 flex flex-wrap gap-4" style="--d:560ms">
+          <a href="#novosti" class="btn-gold">{t('hero.cta.news')} <Icon name="arrowRight" size={18} /></a>
+          <a href="#o-klubu" class="btn-outline"><Icon name="users" size={18} /> {t('hero.cta.club')}</a>
+        </div>
+      </div>
+    </div>
+    <span class="hero-seam" aria-hidden="true"></span>
+  </section>
+
+  <!-- ============ QUICK LINKS ============ -->
+  <nav class="border-t border-white/10 bg-ink text-white" aria-label={t('nav.menu')}>
+    <ul class="container-site grid grid-cols-2 lg:grid-cols-4">
+      {quick.map((q, i) => (
+        <li style={`--reveal-delay:${i * 70}ms`} class:list={['reveal relative', i > 0 && 'lg:before:absolute lg:before:inset-y-6 lg:before:left-0 lg:before:w-px lg:before:bg-white/10']}>
+          <a href={withBase(q.href)} class="group flex items-center gap-4 px-2 py-6 sm:px-6">
+            <span class="quick-icon text-white/90 transition-colors group-hover:text-gold"><Icon name={q.icon} size={34} /></span>
+            <span>
+              <span class="block text-base font-semibold sm:text-lg group-hover:text-gold">{q.title}</span>
+              <span class="hidden text-sm text-white/65 sm:block">{q.text}</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <!-- ============ NEWS + SIDEBAR ============ -->
+  <section id="novosti" class="scroll-mt-24 py-14 sm:py-16">
+    <div class="container-site grid gap-10 xl:grid-cols-[minmax(0,1fr)_340px]">
+      <div>
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <h2 class="section-title reveal">{t('home.news.title')}</h2>
+          <a href={withBase(routes.news[lang])} class="inline-flex items-center gap-2 font-semibold text-ink hover:text-gold-deep">
+            {t('home.news.all')} <Icon name="arrowRight" size={18} />
+          </a>
+        </div>
+        {posts.length > 0 ? (
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post, i) => <BlogCard post={post} lang={lang} priority={i < 3} index={i} />)}
+          </div>
+        ) : (
+          <div class="card grid place-items-center gap-3 p-12 text-center text-ink/70">
+            <KnightMark class="h-14 w-14 text-gold [--knight-cut:#fff]" />
+            <p>{t('home.news.empty')}</p>
+          </div>
+        )}
+        {posts.length > 0 && (
+          <div class="mt-10 text-center">
+            <a href={withBase(routes.news[lang])} class="btn-dark">{t('home.news.all')} <Icon name="arrowRight" size={18} /></a>
+          </div>
+        )}
+      </div>
+
+      <aside class="grid content-start gap-6 sm:grid-cols-2 xl:grid-cols-1">
+        <section id="o-klubu" class="about-card card relative scroll-mt-28 overflow-hidden p-6">
+          <Ambient tone="light" grid particles={0} class="about-ambient" />
+          <KnightMark class="about-knight pointer-events-none absolute -bottom-3 -right-3 h-36 w-36 text-ink/[0.07] [--knight-cut:transparent]" />
+          <h2 class="flex items-center gap-2.5 font-display text-2xl font-bold">
+            <span class="grid h-6 w-6 grid-cols-2 overflow-hidden rounded-sm" aria-hidden="true"><span class="bg-ink"></span><span class="bg-gold"></span><span class="bg-gold"></span><span class="bg-ink"></span></span>
+            {t('home.about.title')}
+          </h2>
+          <p class="relative mt-3 leading-relaxed text-ink/75">{site.about[lang]}</p>
+          <a href={withBase(routes.members[lang])} class="link-gold relative mt-4 inline-flex items-center gap-1.5">{t('home.about.more')} <Icon name="arrowRight" size={16} /></a>
+        </section>
+
+        <section class="training-card relative overflow-hidden rounded-xl bg-ink p-6 text-white shadow-card" aria-labelledby="next-training">
+          <Ambient grid particles={7} seed={3} pieces={[{ piece: 'pawn', x: '78%', y: '52%', size: '64px', motion: 'bob', opacity: 0.06 }]} />
+          <h2 id="next-training" class="eyebrow flex items-center gap-2 text-gold"><Icon name="clock" size={16} /> {t('schedule.next')}</h2>
+          <Announcements lang={lang} dark class="mt-4" />
+          <ScheduleLive kind="next" lang={lang} class="mt-4" />
+          <a href={withBase(routes.schedule[lang])} class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light">{t('schedule.full')} <Icon name="arrowRight" size={16} /></a>
+        </section>
+
+        <section class="card p-6 sm:col-span-2 xl:col-span-1">
+          <h2 class="flex items-center gap-2.5 font-display text-2xl font-bold"><Icon name="pin" size={22} class="text-gold" /> {t('home.location.title')}</h2>
+          <address class="mt-3 not-italic leading-relaxed text-ink/80">
+            <strong class="font-semibold text-ink">{site.shortName}</strong><br />
+            {address.map((l) => <>{l}<br /></>)}
+          </address>
+          <a href={hasMap ? osmLink(site.map.lat!, site.map.lon!) : withBase(routes.contact[lang])} class="link-gold mt-4 inline-flex items-center gap-1.5" {...(hasMap ? { target: '_blank', rel: 'noopener' } : {})}>
+            {hasMap ? t('home.location.map') : t('nav.contact')} <Icon name="arrowRight" size={16} />
+          </a>
+        </section>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY PREVIEW ============ -->
+  {previewPhotos.length > 0 && (
+    <section class="bg-cream-2/60 py-14 sm:py-16">
+      <div class="container-site">
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <h2 class="section-title reveal">{t('home.gallery.title')}</h2>
+          <a href={withBase(routes.gallery[lang])} class="inline-flex items-center gap-2 font-semibold hover:text-gold-deep">{t('home.gallery.all')} <Icon name="arrowRight" size={18} /></a>
+        </div>
+        <ul class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          {previewPhotos.map((p, i) => (
+            <li class:list={['gallery-tile reveal group relative overflow-hidden rounded-lg', i === 0 && 'col-span-2 row-span-2']} style={`--reveal-delay:${Math.min(i, 6) * 80}ms`}>
+              <a href={withBase(albumPath(lang, p.album.id))} class="block h-full">
+                <Image src={p.image} alt={p.caption ?? p.album.title} widths={[300, 600]} sizes={i === 0 ? '(min-width:1024px) 33vw, 100vw' : '(min-width:1024px) 16vw, 50vw'} class="img-fade aspect-square h-full w-full object-cover" />
+              </a>
+            </li>
+          ))}
+        </ul>
+        {latestAlbum && <p class="mt-4 text-sm text-ink/60">{latestAlbum.title}</p>}
+      </div>
+    </section>
+  )}
+
+  <!-- ============ CONTACT CTA ============ -->
+  <section class="relative isolate overflow-hidden bg-ink-2 text-white">
+    <Ambient grid light particles={12} seed={5} pieces={[
+      { piece: 'knight', x: '84%', y: '8%', size: 'clamp(70px, 9vw, 120px)', motion: 'float', opacity: 0.08, flip: true },
+      { piece: 'bishop', x: '66%', y: '40%', size: 'clamp(44px, 5vw, 72px)', motion: 'sway', opacity: 0.05, desktopOnly: true },
+    ]} pointer />
+    <div class="container-site relative flex flex-col items-start gap-6 py-14 md:flex-row md:items-center md:justify-between">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-3xl font-bold sm:text-4xl">{t('home.contact.title')}</h2>
+        <p class="mt-3 text-lg text-white/75">{t('home.contact.text')}</p>
+      </div>
+      <a href={withBase(routes.contact[lang])} class="btn-gold shrink-0"><Icon name="mail" size={18} /> {t('home.contact.cta')}</a>
+    </div>
+  </section>
+</BaseLayout>

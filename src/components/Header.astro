@@ -1,0 +1,144 @@
+---
+import Icon from './Icon.astro';
+import KnightMark from './KnightMark.astro';
+import { site } from '../lib/data';
+import { useTranslations, type Lang } from '../i18n/ui';
+import { routes, withBase, stripBase, type Alternates, type RouteKey } from '../i18n/routes';
+
+interface Props { lang: Lang; alternates: Alternates; section?: string }
+const { lang, alternates, section } = Astro.props;
+const t = useTranslations(lang);
+const path = stripBase(Astro.url.pathname);
+
+const nav: { key: RouteKey; label: string }[] = [
+  { key: 'home', label: t('nav.home') },
+  { key: 'news', label: t('nav.news') },
+  { key: 'members', label: t('nav.members') },
+  { key: 'gallery', label: t('nav.gallery') },
+  { key: 'schedule', label: t('nav.schedule') },
+  { key: 'contact', label: t('nav.contact') },
+];
+const isActive = (key: RouteKey) => {
+  if (section) return section === key;
+  const target = routes[key][lang];
+  if (key === 'home') return path === target || path === target.replace(/\/$/, '');
+  return path.startsWith(target);
+};
+const other: Lang = lang === 'hr' ? 'en' : 'hr';
+const switchHref = withBase(alternates[other] ?? routes.home[other]);
+---
+<header class="site-header sticky top-0 z-50 border-b border-white/5 bg-ink/95 text-white backdrop-blur supports-[backdrop-filter]:bg-ink/85" data-header>
+  <div class="container-site flex h-[72px] items-center gap-2 sm:gap-4 lg:h-20">
+    <a href={withBase(routes.home[lang])} class="site-logo group flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label={site.name}>
+      <KnightMark class="h-9 w-9 min-[360px]:h-11 min-[360px]:w-11 text-cream transition-colors group-hover:text-gold lg:h-12 lg:w-12" />
+      <span class="leading-none">
+        <span class="block text-[0.8rem] min-[360px]:text-[0.95rem] font-medium tracking-wide text-white/90">{site.logoLine1}</span>
+        <span class="block font-display text-[1.4rem] min-[360px]:text-[1.7rem] font-bold leading-[1.05] text-white lg:text-[1.9rem]">{site.logoLine2}</span>
+      </span>
+    </a>
+
+    <nav class="ml-auto hidden xl:block" aria-label={t('nav.menu')}>
+      <ul class="flex items-center gap-1">
+        {nav.map(({ key, label }) => (
+          <li>
+            <a
+              href={withBase(routes[key][lang])}
+              aria-current={isActive(key) ? 'page' : undefined}
+              class:list={[
+                'nav-link block px-3.5 py-2 text-[0.95rem] font-medium',
+                isActive(key) ? 'text-gold' : 'text-white/85 hover:text-white',
+              ]}
+            >{label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1 xl:ml-4">
+      <a href={withBase(routes.search[lang])} class="rounded-md p-2 min-[360px]:p-2.5 text-white/85 transition-colors hover:bg-white/5 hover:text-gold" aria-label={t('nav.search')} title={t('nav.search')}>
+        <Icon name="search" size={22} />
+      </a>
+      <div class="flex items-center rounded-md border border-white/15 p-0.5 text-xs font-semibold" role="group" aria-label={t('nav.language')}>
+        <a
+          href={lang === 'hr' ? undefined : switchHref}
+          hreflang="hr"
+          lang="hr"
+          aria-current={lang === 'hr' ? 'true' : undefined}
+          class:list={['rounded px-2 py-1', lang === 'hr' ? 'bg-white/10 text-gold' : 'text-white/70 hover:text-white']}
+        >HR</a>
+        <a
+          href={lang === 'en' ? undefined : switchHref}
+          hreflang="en"
+          lang="en"
+          aria-current={lang === 'en' ? 'true' : undefined}
+          class:list={['rounded px-2 py-1', lang === 'en' ? 'bg-white/10 text-gold' : 'text-white/70 hover:text-white']}
+        >EN</a>
+      </div>
+      <button
+        type="button"
+        class="ml-0.5 min-[360px]:ml-1 rounded-md p-2 min-[360px]:p-2.5 text-white transition-colors hover:bg-white/5 xl:hidden"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        data-menu-toggle
+      >
+        <span class="sr-only" data-label-open>{t('nav.menu')}</span>
+        <span class="sr-only hidden" data-label-close>{t('nav.close')}</span>
+        <Icon name="menu" size={24} class="menu-open-icon" />
+        <Icon name="x" size={24} class="menu-close-icon hidden" />
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav border-t border-white/10 bg-ink xl:hidden" aria-label={t('nav.menu')} data-mobile-nav inert>
+    <div class="mobile-nav__inner"><ul class="container-site space-y-1 py-4">
+      {nav.map(({ key, label }, i) => (
+        <li style={`--i:${i}`}>
+          <a
+            href={withBase(routes[key][lang])}
+            aria-current={isActive(key) ? 'page' : undefined}
+            class:list={[
+              'block rounded-md px-4 py-3 text-base font-medium',
+              isActive(key) ? 'bg-gold text-ink' : 'text-white/90 hover:bg-white/5 hover:text-gold',
+            ]}
+          >{label}</a>
+        </li>
+      ))}
+    </ul></div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const panel = document.querySelector<HTMLElement>('[data-mobile-nav]');
+  if (btn && panel) {
+    const set = (open: boolean) => {
+      btn.setAttribute('aria-expanded', String(open));
+      panel.toggleAttribute('data-open', open);
+      panel.inert = !open;
+      btn.querySelector('.menu-open-icon')?.classList.toggle('hidden', open);
+      btn.querySelector('.menu-close-icon')?.classList.toggle('hidden', !open);
+      btn.querySelector('[data-label-open]')?.classList.toggle('hidden', open);
+      btn.querySelector('[data-label-close]')?.classList.toggle('hidden', !open);
+    };
+    btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+        set(false);
+        btn.focus();
+      }
+    });
+    matchMedia('(min-width: 80rem)').addEventListener('change', (e) => e.matches && set(false));
+  }
+
+  // header gets a denser background and a shadow once the page is scrolled
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  if (header) {
+    let ticking = false;
+    const update = () => {
+      header.toggleAttribute('data-scrolled', window.scrollY > 8);
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  }
+</script>

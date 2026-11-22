@@ -1,0 +1,41 @@
+---
+import { Image, getImage } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Icon from '../components/Icon.astro';
+import Lightbox from '../components/Lightbox.astro';
+import type { Album } from '../lib/gallery';
+import { useTranslations, locales, type Lang } from '../i18n/ui';
+import { withBase, routes, albumPath } from '../i18n/routes';
+interface Props { lang: Lang; album: Album }
+const { lang, album } = Astro.props;
+const t = useTranslations(lang);
+const fmt = new Intl.DateTimeFormat(locales[lang], { day: 'numeric', month: 'long', year: 'numeric' });
+// Large version for the lightbox (max 2000 px, WebP)
+const photos = await Promise.all(
+  album.photos.map(async (p) => ({ ...p, full: (await getImage({ src: p.image, width: Math.min(2000, p.image.width), format: 'webp' })).src })),
+);
+---
+<BaseLayout lang={lang} title={album.title} description={album.description ?? `${t('gallery.title')}: ${album.title}`} image={album.cover}
+  alternates={{ hr: albumPath('hr', album.id), en: albumPath('en', album.id) }} section="gallery">
+  <PageHeader title={album.title} intro={album.description}>
+    <p class="mt-4 flex flex-wrap items-center gap-4 text-sm text-white/70">
+      <span class="inline-flex items-center gap-1.5"><Icon name="calendar" size={16} /> {fmt.format(album.date)}</span>
+      <span class="inline-flex items-center gap-1.5"><Icon name="image" size={16} /> {album.photos.length} {t('gallery.photosCount')}</span>
+    </p>
+  </PageHeader>
+  <div class="container-site py-10">
+    <a href={withBase(routes.gallery[lang])} class="mb-8 inline-flex items-center gap-2 font-semibold hover:text-gold-deep"><Icon name="arrowLeft" size={18} /> {t('gallery.back')}</a>
+    <ul class="columns-2 gap-3 sm:columns-3 lg:columns-4">
+      {photos.map((p, i) => (
+        <li class="mb-3 break-inside-avoid">
+          <a href={p.full} data-lightbox={album.id} data-caption={p.caption ?? ''} class="group block overflow-hidden rounded-lg">
+            <Image src={p.image} alt={p.caption ?? `${album.title} – ${i + 1}`} widths={[300, 500, 800]} sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw" loading={i < 8 ? 'eager' : 'lazy'} class="img-fade w-full transition-transform duration-500 group-hover:scale-[1.03]" />
+          </a>
+          {p.caption && <p class="mt-1.5 text-sm text-ink/70">{p.caption}</p>}
+        </li>
+      ))}
+    </ul>
+  </div>
+  <Lightbox lang={lang} />
+</BaseLayout>

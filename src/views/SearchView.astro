@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Icon from '../components/Icon.astro';
+import { categoriesFor } from '../lib/blog';
+import { useTranslations, locales, type Lang } from '../i18n/ui';
+import { withBase, searchIndexPath, categoryPath, alternatesFor } from '../i18n/routes';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const cats = await categoriesFor(lang);
+---
+<BaseLayout lang={lang} title={t('search.title')} alternates={alternatesFor('search')} section="news" noindex>
+  <PageHeader title={t('search.title')} intro={t('search.hint')}>
+    <form class="mt-8 flex max-w-2xl gap-2" role="search" data-search-form>
+      <label for="q" class="sr-only">{t('search.label')}</label>
+      <input id="q" name="q" type="search" autocomplete="off" placeholder={t('search.placeholder')} class="min-w-0 flex-1 rounded-md border border-white/15 bg-white/5 px-4 py-3 text-lg text-white placeholder:text-white/45 focus:border-gold focus:outline-none" />
+      <button class="btn-gold"><Icon name="search" size={18} /><span class="sr-only sm:not-sr-only">{t('search.button')}</span></button>
+    </form>
+  </PageHeader>
+
+  <div class="container-site max-w-4xl py-12">
+    <noscript><p class="card p-6">{t('search.noscript')}</p></noscript>
+    <p class="mb-6 text-sm font-medium text-ink/60" aria-live="polite" data-search-status></p>
+    <ol class="space-y-4" data-search-results></ol>
+
+    {cats.length > 0 && (
+      <nav class="mt-12" aria-label={t('news.categories')}>
+        <h2 class="mb-3 font-display text-xl font-bold">{t('news.categories')}</h2>
+        <ul class="flex flex-wrap gap-2">
+          {cats.map((c) => <li><a href={withBase(categoryPath(lang, c.slug))} class="inline-block rounded-full bg-white px-4 py-1.5 text-sm ring-1 ring-ink/10 hover:ring-gold">{c.name} <span class="opacity-60">{c.count}</span></a></li>)}
+        </ul>
+      </nav>
+    )}
+  </div>
+  <div hidden data-search-config data-index={withBase(searchIndexPath(lang))} data-locale={locales[lang]}
+       data-none={t('search.none')} data-results={t('search.results')} data-loading={t('search.loading')}
+       data-hr-label={lang === 'en' ? t('news.originalHr') : ''}></div>
+</BaseLayout>
+
+<script>
+  type Doc = { t: string; d: string; u: string; c: string[]; g: string[]; p: string; l: string; x: string };
+  const cfg = document.querySelector<HTMLElement>('[data-search-config]')!.dataset;
+  const form = document.querySelector<HTMLFormElement>('[data-search-form]')!;
+  const input = form.querySelector<HTMLInputElement>('input')!;
+  const status = document.querySelector<HTMLElement>('[data-search-status]')!;
+  const list = document.querySelector<HTMLElement>('[data-search-results]')!;
+
+  // Diacritic-insensitive: "sah" finds "šah", "zupanija" finds "Županija"
+  const norm = (s: string) => s.toLowerCase().replace(/đ/g, 'd').normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  let docs: (Doc & { n: { t: string; meta: string; x: string } })[] | null = null;
+
+  async function load() {
+    if (docs) return docs;
+    status.textContent = cfg.loading!;
+    const raw: Doc[] = await (await fetch(cfg.index!)).json();
+    docs = raw.map((d) => ({ ...d, n: { t: norm(d.t), meta: norm([d.d, ...d.c, ...d.g].join(' ')), x: norm(d.x) } }));
+    return docs;
+  }
+
+  async function run(q: string) {
+    const terms = norm(q).split(/\s+/).filter((w) => w.length > 1);
+    if (!terms.length) { list.innerHTML = ''; status.textContent = ''; return; }
+    const all = await load();
+    const hits = all
+      .map((d) => {
+        let score = 0;
+        for (const w of terms) {
+          const s = (d.n.t.includes(w) ? 10 : 0) + (d.n.meta.includes(w) ? 4 : 0) + (d.n.x.includes(w) ? 1 : 0);
+          if (!s) return null; // every term must match somewhere
+          score += s;
+        }
+        return { d, score };
+      })
+      .filter((h): h is NonNullable<typeof h> => !!h)
+      .sort((a, b) => b.score - a.score || b.d.p.localeCompare(a.d.p))
+      .slice(0, 50);
+
+    status.textContent = hits.length ? `${cfg.results}: ${hits.length}` : cfg.none!;
+    const fmt = new Intl.DateTimeFormat(cfg.locale, { day: 'numeric', month: 'long', year: 'numeric' });
+    list.innerHTML = hits
+      .map(({ d }) => `<li class="card p-5 transition-shadow hover:shadow-card-hover">
+        <p class="text-sm text-ink/60">${fmt.format(new Date(d.p))}${d.c[0] ? ` · ${esc(d.c[0])}` : ''}${cfg.hrLabel && d.l === 'hr' ? ` · <span class="font-semibold text-gold-deep">${esc(cfg.hrLabel)}</span>` : ''}</p>
+        <h2 class="mt-1 text-lg font-semibold"><a class="hover:text-gold-deep" href="${d.u}"${d.l !== document.documentElement.lang ? ` hreflang="${d.l}"` : ''}>${esc(d.t)}</a></h2>
+        <p class="mt-1 text-[0.95rem] text-ink/70">${esc(d.d)}</p></li>`)
+      .join('');
+  }
+
+  const initial = new URLSearchParams(location.search).get('q') ?? '';
+  input.value = initial;
+  if (initial) run(initial); else input.focus();
+
+  let timer: number;
+  input.addEventListener('input', () => { clearTimeout(timer); timer = window.setTimeout(() => run(input.value), 180); });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    history.replaceState(null, '', `?q=${encodeURIComponent(input.value)}`);
+    run(input.value);
+  });
+</script>

@@ -1,0 +1,66 @@
+{
+  "sessions": [
+    {
+      "id": "pocetnici-utorak",
+      "day": "tuesday",
+      "startTime": "17:00",
+      "endTime": "18:30",
+      "group": "Početnici",
+      "groupEn": "Beginners",
+      "coach": "Ime Prezime",
+      "location": "Klupske prostorije",
+      "status": "scheduled"
+    },
+    {
+      "id": "napredni-cetvrtak",
+      "day": "thursday",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "group": "Napredni",
+      "groupEn": "Advanced",
+      "coach": "Ime Prezime",
+      "status": "scheduled",
+      "validFrom": "2026-09-01",
+      "validUntil": "2027-06-30"
+    },
+    {
+      "id": "mladi-subota",
+      "day": "saturday",
+      "startTime": "10:00",
+      "endTime": "11:30",
+      "group": "Mlađi uzrasti",
+      "groupEn": "Juniors",
+      "coach": "",
+      "status": "pending",
+      "note": "Termin će biti potvrđen uskoro."
+    }
+  ],
+  "exceptions": [
+    {
+      "date": "2026-11-24",
+      "sessionId": "pocetnici-utorak",
+      "status": "cancelled",
+      "note": "Trener je na turniru.",
+      "noteEn": "The coach is away at a tournament."
+    },
+    {
+      "date": "2026-11-26",
+      "sessionId": "napredni-cetvrtak",
+      "status": "rescheduled",
+      "newDate": "2026-11-27",
+      "newStartTime": "18:30",
+      "newEndTime": "20:30"
+    }
+  ],
+  "extra": [
+    {
+      "date": "2026-12-20",
+      "startTime": "16:00",
+      "endTime": "19:00",
+      "group": "Božićni blitz (svi)",
+      "groupEn": "Christmas blitz (everyone)",
+      "coach": "",
+      "status": "scheduled"
+    }
+  ]
+}

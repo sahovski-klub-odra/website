@@ -1,0 +1,76 @@
+---
+/** Blog archive – used for /novosti/, /novosti/stranica/N/ and category pages (both languages). */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import BlogCard from '../components/BlogCard.astro';
+import Pagination from '../components/Pagination.astro';
+import Icon from '../components/Icon.astro';
+import type { Post } from '../lib/blog';
+import { useTranslations, type Lang } from '../i18n/ui';
+import { routes, withBase, categoryPath, newsPagePath, type Alternates } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+  posts: Post[];
+  page: number;
+  pages: number;
+  categories: { name: string; slug: string; count: number }[];
+  category?: { name: string; slug: string };
+  alternates: Alternates;
+}
+const { lang, posts, page, pages, categories, category, alternates } = Astro.props;
+const t = useTranslations(lang);
+const hrefFor = (n: number) => (category ? categoryPath(lang, category.slug, n) : newsPagePath(lang, n));
+const title = category ? category.name : t('news.title');
+const pageSuffix = page > 1 ? ` – ${t('news.page')} ${page}` : '';
+---
+<BaseLayout
+  lang={lang}
+  title={`${title}${pageSuffix}`}
+  description={category ? `${t('news.category')}: ${category.name}. ${t('news.intro')}` : t('news.intro')}
+  alternates={alternates}
+  section="news"
+>
+  <PageHeader title={title} intro={category ? undefined : t('news.intro')} eyebrow={category ? t('news.category') : undefined}>
+    <form action={withBase(routes.search[lang])} method="get" role="search" class="mt-8 flex max-w-xl gap-2">
+      <label for="news-q" class="sr-only">{t('search.label')}</label>
+      <input id="news-q" name="q" type="search" placeholder={t('search.placeholder')} class="min-w-0 flex-1 rounded-md border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/45 focus:border-gold focus:outline-none" />
+      <button class="btn-gold"><Icon name="search" size={18} /><span class="sr-only sm:not-sr-only">{t('search.button')}</span></button>
+    </form>
+  </PageHeader>
+
+  <div class="container-site py-12">
+    {lang === 'en' && <p class="mb-8 rounded-lg border border-gold/40 bg-gold/10 p-4 text-[0.95rem] text-ink/80">{t('news.croatianOnly')}</p>}
+
+    {categories.length > 0 && (
+      <nav aria-label={t('news.categories')} class="mb-10">
+        <ul class="flex flex-wrap gap-2">
+          <li>
+            <a href={withBase(routes.news[lang])} aria-current={!category ? 'page' : undefined}
+               class:list={['inline-block rounded-full px-4 py-1.5 text-sm font-medium ring-1', !category ? 'bg-ink text-gold ring-ink' : 'bg-white text-ink ring-ink/10 hover:ring-gold']}>
+              {t('news.allCategories')}
+            </a>
+          </li>
+          {categories.map((c) => (
+            <li>
+              <a href={withBase(categoryPath(lang, c.slug))} aria-current={category?.slug === c.slug ? 'page' : undefined}
+                 class:list={['inline-block rounded-full px-4 py-1.5 text-sm font-medium ring-1', category?.slug === c.slug ? 'bg-ink text-gold ring-ink' : 'bg-white text-ink ring-ink/10 hover:ring-gold']}>
+                {c.name} <span class="opacity-60">{c.count}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    {posts.length > 0 ? (
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((p, i) => <BlogCard post={p} lang={lang} priority={i < 3} headingLevel="h2" />)}
+      </div>
+    ) : (
+      <p class="card p-10 text-center text-ink/70">{t('news.empty')}</p>
+    )}
+
+    <Pagination lang={lang} page={page} pages={pages} hrefFor={hrefFor} />
+  </div>
+</BaseLayout>

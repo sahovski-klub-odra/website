@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+.DS_Store
+*.log
+# WordPress export files can contain e-mail addresses of authors/commenters – keep them out of the repo
+*.xml
+!public/**/*.xml
+
+# generated from node_modules by scripts/copy-vendor-assets.mjs
+public/vendor/
+public/admin/sveltia/
+public/admin/cms-chess.js
+
+# CMS test harness output
+tests/cms/site/
+tests/cms/output/
+__pycache__/

@@ -1,0 +1,63 @@
+{
+  "name": "Šahovski klub Odra",
+  "shortName": "ŠK Odra",
+  "nameEn": "Chess Club Odra",
+  "logoLine1": "Šahovski klub",
+  "logoLine2": "Odra",
+  "about": {
+    "hr": "Šahovski klub Odra okuplja zaljubljenike u šah svih dobnih skupina – kroz natjecanja, treninge i druženja.",
+    "en": "Chess Club Odra brings together chess lovers of all ages – through competitions, training sessions and social events."
+  },
+  "address": {
+    "street": "Malomlačka ul. 91",
+    "postalCode": "10020",
+    "locality": "Mala Mlaka",
+    "city": "Novi Zagreb",
+    "country": "Hrvatska"
+  },
+  "venue": "Društveni dom Mala Mlaka",
+  "email": "ivanmaravic@gmail.com",
+  "phone": "",
+  "contacts": [
+    {
+      "name": "Ivan Maravić",
+      "role": "Voditelj",
+      "roleEn": "Club contact",
+      "phone": "091 112 6261",
+      "email": "ivanmaravic@gmail.com"
+    },
+    {
+      "name": "Božo Cvetković",
+      "role": "Voditelj",
+      "roleEn": "Club contact",
+      "phone": "095 855 9105",
+      "email": "bozo.malamlaka@gmail.com"
+    },
+    {
+      "name": "Ivan Vraneša",
+      "role": "Voditelj",
+      "roleEn": "Club contact",
+      "phone": "098 958 2676",
+      "email": "ivan.vranesa@gmail.com"
+    }
+  ],
+  "oib": "08180366497",
+  "map": {
+    "lat": 45.72883521574229,
+    "lon": 15.974611276641072,
+    "zoom": 16
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": "",
+    "lichess": "",
+    "chesscom": ""
+  },
+  "contactForm": {
+    "provider": "none",
+    "endpoint": ""
+  },
+  "repository": "sahovski-klub-odra/website",
+  "wordpressUrl": "http://sahovski-klub.com"
+}

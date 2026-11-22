@@ -1,0 +1,71 @@
+---
+import Icon from './Icon.astro';
+import KnightMark from './KnightMark.astro';
+import { site, formatAddress } from '../lib/data';
+import { useTranslations, type Lang } from '../i18n/ui';
+import { routes, withBase, rssPath, type RouteKey } from '../i18n/routes';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const links: RouteKey[] = ['news', 'members', 'gallery', 'schedule', 'contact'];
+const labels: Record<string, string> = {
+  news: t('nav.news'), members: t('nav.members'), gallery: t('nav.gallery'), schedule: t('nav.schedule'), contact: t('nav.contact'),
+};
+const socialIcons = { facebook: 'facebook', instagram: 'instagram', youtube: 'youtube', lichess: 'crown', chesscom: 'globe' } as const;
+const socialNames: Record<string, string> = { facebook: 'Facebook', instagram: 'Instagram', youtube: 'YouTube', lichess: 'Lichess', chesscom: 'Chess.com' };
+const socials = Object.entries(site.social).filter(([, url]) => url);
+const address = formatAddress();
+const year = new Date().getFullYear();
+---
+<footer class="chess-texture bg-ink text-white/75">
+  <div class="container-site grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+    <div class="lg:col-span-2">
+      <a href={withBase(routes.home[lang])} class="inline-flex items-center gap-3 text-white">
+        <KnightMark class="h-12 w-12 text-gold" />
+        <span class="leading-none">
+          <span class="block text-sm text-white/80">{site.logoLine1}</span>
+          <span class="block font-display text-3xl font-bold">{site.logoLine2}</span>
+        </span>
+      </a>
+      <p class="mt-5 max-w-md text-[0.95rem] leading-relaxed">{site.about[lang]}</p>
+      {socials.length > 0 && (
+        <ul class="mt-6 flex gap-2" aria-label={t('footer.follow')}>
+          {socials.map(([key, url]) => (
+            <li>
+              <a href={url} target="_blank" rel="noopener noreferrer" class="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-gold hover:text-gold" aria-label={socialNames[key] ?? key}>
+                <Icon name={socialIcons[key as keyof typeof socialIcons] ?? 'globe'} size={18} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+
+    <nav aria-label={t('footer.nav')}>
+      <h2 class="eyebrow text-gold">{t('footer.nav')}</h2>
+      <ul class="mt-4 space-y-2.5 text-[0.95rem]">
+        {links.map((k) => <li><a href={withBase(routes[k][lang])} class="hover:text-gold">{labels[k]}</a></li>)}
+        <li><a href={withBase(rssPath(lang))} class="inline-flex items-center gap-1.5 hover:text-gold"><Icon name="rss" size={15} /> RSS</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="eyebrow text-gold">{t('footer.contact')}</h2>
+      <address class="mt-4 space-y-2.5 text-[0.95rem] not-italic">
+        <p class="font-semibold text-white">{site.shortName}</p>
+        {address.map((l) => <p>{l}</p>)}
+        {site.email && <p><a class="hover:text-gold" href={`mailto:${site.email}`}>{site.email}</a></p>}
+        {site.phone && <p><a class="hover:text-gold" href={`tel:${site.phone.replace(/\s+/g, '')}`}>{site.phone}</a></p>}
+      </address>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="container-site flex flex-col gap-2 py-5 text-sm text-white/55 sm:flex-row sm:justify-between">
+      <p>© {year} {site.name}. {t('footer.rights')}</p>
+      <p lang={lang === 'hr' ? 'en' : 'hr'}>
+        <a href={withBase(routes.home[lang === 'hr' ? 'en' : 'hr'])} class="hover:text-gold">{lang === 'hr' ? 'English version' : 'Hrvatska verzija'}</a>
+      </p>
+    </div>
+  </div>
+</footer>

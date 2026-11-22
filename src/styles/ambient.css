@@ -1,0 +1,186 @@
+/*
+ * Ambient layer – continuous, decorative background motion (see components/Ambient.astro).
+ *
+ * Performance rules:
+ *  - only `transform` and `opacity` are animated, so the browser can run it on the GPU;
+ *  - the layer is `contain: strict` and never affects layout (no layout shift);
+ *  - nothing moves unless <html class="motion"> (JS on and no prefers-reduced-motion);
+ *  - scripts/ambient.ts sets [data-paused] when the section is off-screen and
+ *    html.is-hidden when the tab is in the background: all animations stop then;
+ *  - phones get fewer particles, no pieces marked desktop-only and no cursor effects.
+ * The parent must be `isolation: isolate` (Tailwind `isolate`) so the layer sits behind its content.
+ */
+.ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+  container-type: size;
+  --gold-rgb: 217 181 109;
+  --mx: 0px;
+  --my: 0px;
+  --px: 0;
+  --py: 0;
+}
+.ambient[data-paused] *,
+html.is-hidden .ambient * { animation-play-state: paused !important; }
+
+/* ---------- soft light pools ---------- */
+.ambient__light {
+  position: absolute;
+  width: 70cqw;
+  height: 70cqw;
+  max-width: 900px;
+  max-height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(var(--gold-rgb) / 0.13), rgb(var(--gold-rgb) / 0.04) 55%, transparent);
+  will-change: transform;
+}
+.ambient__light--a { left: -18cqw; top: -30cqh; }
+.ambient__light--b { right: -22cqw; bottom: -45cqh; width: 60cqw; height: 60cqw; background: radial-gradient(closest-side, rgb(var(--gold-rgb) / 0.09), transparent); }
+.ambient--light .ambient__light { background: radial-gradient(closest-side, rgb(var(--gold-rgb) / 0.18), transparent); }
+.motion .ambient__light--a { animation: amb-light-a 26s var(--ease-in-out) infinite alternate; }
+.motion .ambient__light--b { animation: amb-light-b 32s var(--ease-in-out) infinite alternate; }
+@keyframes amb-light-a { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(22cqw, 18cqh, 0) scale(1.15); } }
+@keyframes amb-light-b { from { transform: translate3d(0, 0, 0) scale(1.1); } to { transform: translate3d(-18cqw, -14cqh, 0) scale(0.95); } }
+
+/* ---------- chessboard that slides, and a gold glint on some of its squares ---------- */
+.ambient__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, rgb(255 255 255 / 0.04) 25%, transparent 25%, transparent 75%, rgb(255 255 255 / 0.04) 75%),
+    linear-gradient(45deg, rgb(255 255 255 / 0.04) 25%, transparent 25%, transparent 75%, rgb(255 255 255 / 0.04) 75%);
+  background-size: 64px 64px;
+  background-position: 0 0, 32px 32px;
+  -webkit-mask-image: linear-gradient(100deg, #000 0%, rgb(0 0 0 / 0.55) 45%, transparent 85%);
+  mask-image: linear-gradient(100deg, #000 0%, rgb(0 0 0 / 0.55) 45%, transparent 85%);
+}
+.ambient--light .ambient__grid {
+  background-image:
+    linear-gradient(45deg, rgb(23 25 28 / 0.035) 25%, transparent 25%, transparent 75%, rgb(23 25 28 / 0.035) 75%),
+    linear-gradient(45deg, rgb(23 25 28 / 0.035) 25%, transparent 25%, transparent 75%, rgb(23 25 28 / 0.035) 75%);
+}
+.ambient__grid--gold {
+  background-image:
+    linear-gradient(45deg, rgb(var(--gold-rgb) / 0.22) 25%, transparent 25%, transparent 75%, rgb(var(--gold-rgb) / 0.22) 75%),
+    linear-gradient(45deg, rgb(var(--gold-rgb) / 0.22) 25%, transparent 25%, transparent 75%, rgb(var(--gold-rgb) / 0.22) 75%);
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+/* the glint window stays put while the board slides underneath it */
+.ambient__glint {
+  position: absolute;
+  inset: 0;
+  /* round window around the cursor, faded out towards the photo side like the board itself */
+  -webkit-mask-image: radial-gradient(240px 240px at var(--gx, 30%) var(--gy, 40%), #000, transparent 70%), linear-gradient(100deg, #000 0%, rgb(0 0 0 / 0.5) 40%, transparent 62%);
+  -webkit-mask-composite: source-in;
+  mask-image: radial-gradient(240px 240px at var(--gx, 30%) var(--gy, 40%), #000, transparent 70%), linear-gradient(100deg, #000 0%, rgb(0 0 0 / 0.5) 40%, transparent 62%);
+  mask-composite: intersect;
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
+}
+/* one tile per loop = a seamless endless slide */
+/* The board slides 1 px at a time (≈2 steps per second): it looks continuous, but it is painted
+   together with the section and redrawn twice a second, instead of being a large masked GPU layer
+   that would have to be composited on every frame. */
+.motion .ambient__grid { animation: amb-grid 34s steps(64) infinite; }
+@keyframes amb-grid { to { background-position: 64px 64px, 96px 96px; } }
+/* without a cursor the glint appears and fades on its own */
+.motion .ambient__glint { animation: amb-glint 11s var(--ease-in-out) infinite; }
+@keyframes amb-glint { 0%, 100% { opacity: 0; } 45%, 60% { opacity: 0.75; } }
+/* with a cursor (desktop) it follows the pointer instead */
+.motion .ambient.is-tracking .ambient__glint { animation: none; opacity: 0.9; }
+
+/* soft gold light under the cursor (desktop only) */
+.ambient__spot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 560px;
+  height: 560px;
+  margin: -280px 0 0 -280px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(var(--gold-rgb) / 0.16), rgb(var(--gold-rgb) / 0.05) 50%, transparent);
+  opacity: 0;
+  transform: translate3d(var(--mx), var(--my), 0);
+  transition: opacity 500ms var(--ease-out);
+  will-change: transform;
+}
+.ambient.is-tracking .ambient__spot { opacity: 1; }
+
+/* ---------- thin gold lines sweeping across ---------- */
+.ambient__line {
+  position: absolute;
+  left: 0;
+  width: 38cqw;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(var(--gold-rgb) / 0.5), transparent);
+  opacity: 0;
+  transform: translate3d(-110%, 0, 0) rotate(-8deg);
+}
+.ambient__line--a { top: 28%; }
+.ambient__line--b { top: 72%; width: 26cqw; }
+.motion .ambient__line--a { animation: amb-line 13s var(--ease-in-out) 1.5s infinite; }
+.motion .ambient__line--b { animation: amb-line 17s var(--ease-in-out) 7s infinite; }
+@keyframes amb-line {
+  0% { transform: translate3d(-110%, 0, 0) rotate(-8deg); opacity: 0; }
+  10% { opacity: 1; }
+  55% { transform: translate3d(320%, -30px, 0) rotate(-8deg); opacity: 0; }
+  100% { transform: translate3d(320%, -30px, 0) rotate(-8deg); opacity: 0; }
+}
+
+/* ---------- rising gold particles ---------- */
+.ambient__particles { position: absolute; inset: 0; }
+.ambient__p {
+  position: absolute;
+  left: var(--x);
+  top: 100%;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(var(--gold-rgb)) 0 35%, rgb(var(--gold-rgb) / 0.35) 60%, transparent 72%);
+  opacity: 0;
+}
+.motion .ambient__p { animation: amb-rise var(--t) linear var(--d) infinite; will-change: transform, opacity; }
+@keyframes amb-rise {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  12% { opacity: var(--o); }
+  50% { opacity: calc(var(--o) * 0.45); }
+  70% { opacity: var(--o); }
+  100% { transform: translate3d(var(--dx), -118cqh, 0); opacity: 0; }
+}
+
+/* ---------- chess pieces ---------- */
+.ambient__piece {
+  position: absolute;
+  color: #fff;
+  opacity: var(--po);
+  transform: translate3d(calc(var(--px) * var(--depth)), calc(var(--py) * var(--depth)), 0);
+  transition: transform 900ms var(--ease-out);
+}
+.ambient--light .ambient__piece { color: var(--color-ink); }
+.ambient__svg { display: block; width: 100%; height: auto; transform-origin: 50% 90%; }
+.ambient__svg--flip { scale: -1 1; }
+.motion .ambient__svg--float { animation: amb-float 9s var(--ease-in-out) calc(var(--i) * -2.3s) infinite alternate; }
+.motion .ambient__svg--sway { animation: amb-sway 14s var(--ease-in-out) calc(var(--i) * -3.1s) infinite alternate; }
+.motion .ambient__svg--bob { animation: amb-bob 11s var(--ease-in-out) calc(var(--i) * -1.7s) infinite alternate; }
+@keyframes amb-float { from { transform: translate3d(0, 8px, 0) rotate(-1.5deg); } to { transform: translate3d(0, -14px, 0) rotate(1.5deg); } }
+@keyframes amb-sway { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+@keyframes amb-bob { 0% { transform: translate3d(0, 0, 0); opacity: 0.55; } 100% { transform: translate3d(-6px, -10px, 0); opacity: 1; } }
+
+/* ---------- smaller screens: calmer and cheaper ---------- */
+@media (max-width: 767px) {
+  .ambient__p:nth-child(n + 9) { display: none; }
+  .ambient__piece--desktop, .ambient__line--b, .ambient__light--b { display: none; }
+  .ambient__glint { display: none; }
+}
+@media (hover: none), (pointer: coarse) {
+  .ambient__spot { display: none; }
+  .ambient__piece { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient__p, .ambient__line, .ambient__spot, .ambient__glint { display: none; }
+}

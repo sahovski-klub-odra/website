@@ -1,0 +1,62 @@
+---
+/**
+ * Renders a schedule widget at build time and refreshes it in the browser
+ * so it is always correct for the visitor's "today".
+ *  kind = "next"     – next training (homepage widget)
+ *  kind = "upcoming" – list of upcoming sessions
+ *  kind = "month"    – monthly calendar with month navigation
+ */
+import { training } from '../lib/data';
+import { renderMonth, renderNext, renderUpcoming } from '../lib/schedule-render';
+import { scheduleStrings } from '../lib/schedule-strings';
+import { zagrebNow } from '../lib/schedule';
+import type { Lang } from '../i18n/ui';
+
+interface Props { kind: 'next' | 'upcoming' | 'month'; lang: Lang; limit?: number; class?: string }
+const { kind, lang, limit = 8, class: cls } = Astro.props;
+const s = scheduleStrings(lang);
+const now = zagrebNow();
+const [y, m] = now.date.split('-').map(Number);
+const html =
+  kind === 'next' ? renderNext(training, s, now)
+  : kind === 'upcoming' ? renderUpcoming(training, s, limit, now)
+  : renderMonth(training, s, y, m, now);
+---
+<div class={cls} data-schedule={kind} data-limit={limit} data-strings={JSON.stringify(s)} set:html={html} />
+
+<script>
+  import trainingData from '../data/training.json';
+  import { renderMonth, renderNext, renderUpcoming, type ScheduleStrings } from '../lib/schedule-render';
+  import { zagrebNow } from '../lib/schedule';
+  import type { TrainingData } from '../lib/schemas';
+
+  // training.json was validated at build time; fill defaults the schema would add.
+  const data = {
+    sessions: (trainingData.sessions ?? []).map((s: any) => ({ status: 'scheduled', coach: '', ...s })),
+    exceptions: trainingData.exceptions ?? [],
+    extra: (trainingData.extra ?? []).map((s: any) => ({ status: 'scheduled', coach: '', ...s })),
+  } as unknown as TrainingData;
+
+  document.querySelectorAll<HTMLElement>('[data-schedule]').forEach((el) => {
+    const s = JSON.parse(el.dataset.strings!) as ScheduleStrings;
+    const now = zagrebNow();
+    const kind = el.dataset.schedule;
+    if (kind === 'next') el.innerHTML = renderNext(data, s, now);
+    else if (kind === 'upcoming') el.innerHTML = renderUpcoming(data, s, Number(el.dataset.limit) || 8, now);
+    else if (kind === 'month') {
+      let [y, m] = now.date.split('-').map(Number);
+      const draw = () => (el.innerHTML = renderMonth(data, s, y, m, now));
+      draw();
+      el.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-cal-nav]');
+        if (!btn) return;
+        m += Number(btn.dataset.calNav);
+        el.dataset.dir = Number(btn.dataset.calNav) > 0 ? 'next' : 'prev';
+        if (m < 1) { m = 12; y--; }
+        if (m > 12) { m = 1; y++; }
+        draw();
+        el.querySelector<HTMLButtonElement>(`[data-cal-nav="${btn.dataset.calNav}"]`)?.focus();
+      });
+    }
+  });
+</script>

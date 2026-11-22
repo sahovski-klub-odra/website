@@ -1,0 +1,17 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist",
+    "migration-output",
+    "tests/cms",
+    "node_modules",
+    "public"
+  ],
+  "compilerOptions": {
+    "resolveJsonModule": true
+  }
+}

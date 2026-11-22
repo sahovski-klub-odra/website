@@ -1,0 +1,27 @@
+name: Check changes
+
+# Runs on every pull request (e.g. a coach editing the training schedule on a branch)
+# and shows a red ❌ if the change would break the site – before anything goes live.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run verify:migration
+      - run: npm run build
+        env:
+          SITE_URL: https://example.github.io
+          BASE_PATH: /preview/

@@ -1,0 +1,107 @@
+name: Import from WordPress
+
+# Runs the WordPress → Astro migration on GitHub's servers (which can reach the old site) and opens a
+# pull request with the result. Nothing is published until that pull request is reviewed and merged.
+# The old WordPress site is only read (public REST API + public files) – nothing there is changed.
+#
+# Start it from GitHub: Actions → "Import from WordPress" → Run workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: 'Address of the old WordPress site'
+        default: 'http://sahovski-klub.com'
+        required: true
+      ids:
+        description: 'Only these post IDs (comma separated, e.g. 8741,8629,8503 for a test). Empty = all posts'
+        default: ''
+        required: false
+      update:
+        description: 'Re-import posts that were already migrated (replaces their folders, e.g. to get full-size photos)'
+        type: boolean
+        default: false
+      pages:
+        description: 'Also export WordPress pages to migration/pages/ for review'
+        type: boolean
+        default: true
+      members:
+        description: 'Update the member list (ratings, categories, roles) from the "Članovi" page'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: wordpress-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Migrate
+        env:
+          SITE: ${{ inputs.site }}
+          IDS: ${{ inputs.ids }}
+          UPDATE: ${{ inputs.update }}
+          PAGES: ${{ inputs.pages }}
+          MEMBERS: ${{ inputs.members }}
+        run: |
+          mkdir -p migration
+          args=(--api "$SITE")
+          [ -n "$IDS" ] && args+=(--ids "$IDS")
+          [ "$UPDATE" = "true" ] && args+=(--update)
+          [ "$PAGES" = "true" ] && args+=(--include-pages)
+          [ "$MEMBERS" = "true" ] && args+=(--members clanovi)
+          args+=(--galleries foto-galerija,fotogalerija-2)
+          npm run migrate -- "${args[@]}" | tee migration/run.log
+
+      - name: Verify (articles, images, links, chess games)
+        id: verify
+        continue-on-error: true
+        run: npm run verify:migration | tee migration/verify.log
+
+      - name: Build check
+        id: build
+        continue-on-error: true
+        run: npm run build
+
+      - name: Open pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERIFY: ${{ steps.verify.outcome }}
+          BUILD: ${{ steps.build.outcome }}
+        run: |
+          branch="wordpress-import-${{ github.run_number }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add -A src/content src/data/redirects.json src/data/members.json public/files migration
+          if git diff --cached --quiet; then echo "Nothing new to import."; exit 0; fi
+          git commit -m "Uvoz s WordPressa (${{ inputs.ids || 'svi članci' }})"
+          git push origin "$branch"
+          {
+            echo "Automatski uvoz sa ${{ inputs.site }}."
+            echo
+            echo "- Provjera (verify:migration): **$VERIFY**"
+            echo "- Izgradnja stranice: **$BUILD**"
+            echo
+            echo "Pregledajte \`migration/report.md\` u ovom zahtjevu (broj članaka, fotografije, partije, upozorenja)."
+            echo "Spajanjem (Merge) se članci objavljuju na stranici."
+            echo
+            sed -n '1,40p' migration/report.md
+          } > /tmp/body.md
+          gh pr create --base main --head "$branch" --title "Uvoz s WordPressa #${{ github.run_number }}" --body-file /tmp/body.md

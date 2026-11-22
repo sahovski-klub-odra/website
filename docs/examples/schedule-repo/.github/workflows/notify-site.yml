@@ -1,0 +1,31 @@
+name: Obavijesti web-stranicu
+
+# Kad trener spremi raspored (commit u training.json), pokreni objavu web-stranice kluba.
+# Treba jedan tajni ključ: Settings → Secrets and variables → Actions → New repository secret
+#   SITE_DISPATCH_TOKEN = fine-grained token s pristupom SAMO repozitoriju web-stranice,
+#                         dopuštenje "Contents: Read and write" (potrebno za repository_dispatch).
+# I jednu varijablu: Settings → Secrets and variables → Actions → Variables
+#   SITE_REPO = npr. sk-odra/web   (vlasnik/repozitorij web-stranice)
+
+on:
+  push:
+    branches: [main]
+    paths: [training.json]
+  workflow_dispatch:
+
+jobs:
+  check-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Provjeri da je training.json ispravan JSON
+        run: python3 -c "import json; json.load(open('training.json', encoding='utf-8'))"
+      - name: Pokreni objavu web-stranice
+        env:
+          TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
+          SITE_REPO: ${{ vars.SITE_REPO }}
+        run: |
+          curl -fsS -X POST "https://api.github.com/repos/${SITE_REPO}/dispatches" \
+            -H "Authorization: Bearer ${TOKEN}" -H "Accept: application/vnd.github+json" \
+            -d '{"event_type":"schedule-updated"}'
+          echo "Objava pokrenuta – raspored će biti na stranici za ~2 minute."

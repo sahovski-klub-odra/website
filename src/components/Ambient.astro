@@ -1,0 +1,75 @@
+---
+/**
+ * Living background for decorative sections (homepage hero, club cards, page headers).
+ * Everything here is decoration: aria-hidden, pointer-events: none, absolutely positioned,
+ * so it can never cover text or buttons, shift the layout or be read by screen readers.
+ *
+ * Layers (each optional):
+ *  - light:  two very soft gold light pools drifting slowly
+ *  - grid:   faint chessboard that slides diagonally, plus a gold "glint" that reveals a few
+ *            squares (follows the cursor on desktop, fades in and out by itself elsewhere)
+ *  - lines:  thin gold lines sweeping across now and then
+ *  - particles: small gold specks rising and fading (fewer on phones)
+ *  - pieces: chess silhouettes floating, swaying or bobbing, with slight cursor parallax
+ *
+ * Motion is CSS only (transform/opacity), defined in styles/ambient.css, and only runs when
+ * <html class="motion"> is set (JS on, no reduced-motion preference). scripts/ambient.ts pauses it
+ * when the section is off-screen or the tab is hidden, and feeds cursor coordinates on desktop.
+ */
+import ChessPiece from './ChessPiece.astro';
+
+type Piece = {
+  piece: 'knight' | 'bishop' | 'rook' | 'pawn';
+  x: string; y: string; size: string;
+  motion?: 'float' | 'sway' | 'bob';
+  depth?: number;       // parallax strength (px at the edge of the section)
+  opacity?: number;
+  desktopOnly?: boolean;
+  flip?: boolean;
+};
+interface Props {
+  particles?: number;
+  grid?: boolean;
+  light?: boolean;
+  lines?: boolean;
+  pieces?: Piece[];
+  tone?: 'dark' | 'light';
+  pointer?: boolean;   // react to the cursor (desktop)
+  class?: string;
+  seed?: number;
+}
+const { particles = 0, grid = false, light = false, lines = false, pieces = [], tone = 'dark', pointer = false, class: cls = '', seed = 7 } = Astro.props;
+
+// deterministic pseudo-random values so every build produces the same markup
+let s = seed;
+const rnd = () => ((s = (s * 16807) % 2147483647) / 2147483647);
+const specks = Array.from({ length: particles }, () => ({
+  x: (rnd() * 100).toFixed(1),
+  size: (2 + rnd() * 4).toFixed(1),
+  dur: (14 + rnd() * 16).toFixed(1),
+  delay: (-rnd() * 30).toFixed(1),
+  drift: ((rnd() - 0.5) * 80).toFixed(0),
+  op: (0.25 + rnd() * 0.45).toFixed(2),
+}));
+---
+<div class:list={['ambient', `ambient--${tone}`, cls]} data-ambient {...(pointer ? { 'data-pointer': '' } : {})} aria-hidden="true">
+  {light && <><span class="ambient__light ambient__light--a"></span><span class="ambient__light ambient__light--b"></span></>}
+  {grid && <><span class="ambient__grid"></span><span class="ambient__glint"><span class="ambient__grid ambient__grid--gold"></span></span></>}
+  {lines && <><span class="ambient__line ambient__line--a"></span><span class="ambient__line ambient__line--b"></span></>}
+  {pointer && <span class="ambient__spot"></span>}
+  {specks.length > 0 && (
+    <div class="ambient__particles">
+      {specks.map((p) => (
+        <span class="ambient__p" style={`--x:${p.x}%;--s:${p.size}px;--t:${p.dur}s;--d:${p.delay}s;--dx:${p.drift}px;--o:${p.op}`}></span>
+      ))}
+    </div>
+  )}
+  {pieces.map((p, i) => (
+    <div
+      class:list={['ambient__piece', p.desktopOnly && 'ambient__piece--desktop']}
+      style={`left:${p.x};top:${p.y};width:${p.size};--depth:${p.depth ?? 12}px;--po:${p.opacity ?? (tone === 'dark' ? 0.07 : 0.06)}`}
+    >
+      <ChessPiece piece={p.piece} class:list={['ambient__svg', `ambient__svg--${p.motion ?? 'float'}`, p.flip && 'ambient__svg--flip']} style={`--i:${i}`} />
+    </div>
+  ))}
+</div>

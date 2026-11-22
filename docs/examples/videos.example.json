@@ -1,0 +1,11 @@
+{
+  "videos": [
+    {
+      "title": "Naziv videozapisa",
+      "titleEn": "Video title",
+      "description": "Kratki opis.",
+      "youtube": "https://www.youtube.com/watch?v=VIDEO_ID_11",
+      "date": "2026-10-01"
+    }
+  ]
+}

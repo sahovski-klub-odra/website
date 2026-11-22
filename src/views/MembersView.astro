@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import MemberCard from '../components/MemberCard.astro';
+import KnightMark from '../components/KnightMark.astro';
+import Icon from '../components/Icon.astro';
+import { members, membersUpdated } from '../lib/data';
+import { useTranslations, type Lang } from '../i18n/ui';
+import { alternatesFor } from '../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const board = members.filter((m) => m.role);
+const players = members.filter((m) => !m.role);
+const updated = membersUpdated
+  ? new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'hr-HR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${membersUpdated}T12:00:00`))
+  : null;
+---
+<BaseLayout lang={lang} title={t('members.title')} description={t('members.intro')} alternates={alternatesFor('members')}>
+  <PageHeader title={t('members.title')} intro={t('members.intro')} />
+  <div class="container-site py-12">
+    {members.length > 0 ? (
+      <>
+        <p class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink/60">
+          <span class="font-semibold text-ink">{members.length} {t('members.count')}</span>
+          {updated && <span>{t('members.updated')}: {updated}</span>}
+        </p>
+
+        {board.length > 0 && (
+          <section aria-labelledby="board-h" class="mb-14">
+            <h2 id="board-h" class="section-title reveal mb-6">{t('members.board')}</h2>
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {board.map((m, i) => <MemberCard member={m} lang={lang} featured index={i} />)}
+            </div>
+          </section>
+        )}
+
+        {players.length > 0 && (
+          <section aria-labelledby="players-h" data-member-list>
+            <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+              <h2 id="players-h" class="section-title reveal">{t('members.players')}</h2>
+              <div class="flex flex-wrap items-center gap-2" data-member-tools hidden>
+                <label class="member-search">
+                  <span class="sr-only">{t('members.search')}</span>
+                  <Icon name="search" size={16} />
+                  <input type="search" placeholder={t('members.search')} data-member-search autocomplete="off" />
+                </label>
+                <div class="seg" role="group" aria-label={t('members.sortOrder')}>
+                  <button type="button" aria-pressed="true" data-sort="order">{t('members.sortOrder')}</button>
+                  <button type="button" aria-pressed="false" data-sort="rating">{t('members.sortRating')}</button>
+                </div>
+              </div>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" data-member-grid>
+              {players.map((m, i) => <MemberCard member={m} lang={lang} index={i} />)}
+            </div>
+            <p class="mt-6 hidden text-center text-ink/60" data-member-empty>{t('members.noMatch')}</p>
+          </section>
+        )}
+        <p class="mt-10 text-sm text-ink/50">{t('members.ratingsNote')}</p>
+      </>
+    ) : (
+      <div class="card grid place-items-center gap-3 p-12 text-center text-ink/70">
+        <KnightMark class="h-14 w-14 text-gold [--knight-cut:#fff]" />
+        <p>{t('members.empty')}</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>
+
+<script>
+  // Progressive enhancement: search + sort. Without JS the full list (club order) is shown.
+  const list = document.querySelector<HTMLElement>('[data-member-list]');
+  if (list) {
+    const grid = list.querySelector<HTMLElement>('[data-member-grid]')!;
+    const tools = list.querySelector<HTMLElement>('[data-member-tools]')!;
+    const empty = list.querySelector<HTMLElement>('[data-member-empty]')!;
+    const input = list.querySelector<HTMLInputElement>('[data-member-search]')!;
+    const cards = [...grid.querySelectorAll<HTMLElement>('[data-member]')];
+    tools.hidden = false;
+    const norm = (s: string) => s.toLocaleLowerCase('hr').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd');
+    input.addEventListener('input', () => {
+      const q = norm(input.value.trim());
+      let shown = 0;
+      for (const c of cards) {
+        const hit = !q || norm(c.dataset.name ?? '').includes(q);
+        c.hidden = !hit;
+        if (hit) shown++;
+      }
+      empty.classList.toggle('hidden', shown > 0);
+    });
+    for (const b of tools.querySelectorAll<HTMLButtonElement>('[data-sort]')) {
+      b.addEventListener('click', () => {
+        tools.querySelectorAll('[data-sort]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+        const key = b.dataset.sort;
+        const sorted = [...cards].sort((a, z) =>
+          key === 'rating' ? Number(z.dataset.rating) - Number(a.dataset.rating) : Number(a.dataset.order) - Number(z.dataset.order),
+        );
+        const apply = () => sorted.forEach((c) => grid.append(c));
+        // View Transitions give the cards a smooth reorder where supported (and are skipped for reduced motion)
+        const doc = document as Document & { startViewTransition?: (cb: () => void) => unknown };
+        if (doc.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          cards.forEach((c, i) => (c.style.viewTransitionName = `m${i}`));
+          doc.startViewTransition(apply);
+        } else apply();
+      });
+    }
+  }
+</script>

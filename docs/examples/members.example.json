@@ -1,0 +1,26 @@
+{
+  "members": [
+    {
+      "name": "Ime Prezime",
+      "role": "Trener",
+      "roleEn": "Coach",
+      "title": "FM",
+      "rating": 2250,
+      "fideId": "",
+      "image": "/images/members/ime-prezime.jpg",
+      "bio": "Kratki opis člana.",
+      "bioEn": "Short member bio.",
+      "order": 1,
+      "active": true
+    },
+    {
+      "name": "Drugo Ime",
+      "role": "Igrač",
+      "roleEn": "Player",
+      "title": "",
+      "rating": null,
+      "order": 10,
+      "active": true
+    }
+  ]
+}

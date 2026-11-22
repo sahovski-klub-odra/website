@@ -1,0 +1,103 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # sent by the optional schedule repository after a coach saves (see docs/CMS.md)
+  repository_dispatch:
+    types: [schedule-updated]
+  # Daily rebuild at ~04:17 Zagreb time, so build-time dates (e.g. scheduled posts, the
+  # no-JavaScript version of the training schedule) never go stale.
+  schedule:
+    - cron: '17 3 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Optional: training schedule kept in a separate repository so coaches can only edit that
+      # (repository variable SCHEDULE_REPO, e.g. "club/sk-odra-raspored"; see docs/CMS.md)
+      - name: Fetch training schedule from the coaches' repository
+        if: ${{ vars.SCHEDULE_REPO != '' }}
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.SCHEDULE_REPO }}
+          path: .schedule
+          token: ${{ secrets.SCHEDULE_REPO_TOKEN || github.token }}
+      - name: Use the coaches' schedule
+        if: ${{ vars.SCHEDULE_REPO != '' }}
+        run: cp .schedule/training.json src/data/training.json && rm -rf .schedule
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Unit tests (PGN parser, CMS validation)
+        run: npm test
+
+      - name: TypeScript and Astro checks
+        run: npm run check
+
+      # Optimised images are cached between runs, so a CMS edit doesn't re-process all 1,200+ photos
+      - name: Restore image cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.astro
+          key: astro-assets-${{ hashFiles('src/content/**/*.jpg', 'src/content/**/*.jpeg', 'src/content/**/*.png', 'src/content/**/*.webp', 'src/content/**/*.gif', 'src/assets/**', 'package-lock.json') }}
+          restore-keys: astro-assets-
+
+      - name: Build static website
+        run: node scripts/copy-vendor-assets.mjs && npx astro build && node scripts/check-admin-config.mjs
+        env:
+          # https://user.github.io (project site) or https://www.your-domain.hr (custom domain)
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          # "/repo-name" for a project site, "" for a custom domain or user site
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          # optional – OAuth helper URL for the CMS GitHub button (Settings → Secrets and variables → Variables)
+          CMS_AUTH_URL: ${{ vars.CMS_AUTH_URL }}
+          # optional – separate schedule repository for coaches
+          SCHEDULE_REPO: ${{ vars.SCHEDULE_REPO }}
+
+      - name: Verify migrated content (all articles and images stored locally)
+        run: npm run verify:migration
+
+      - name: Verify no AVIF images in the output
+        run: node scripts/check-build-output.mjs
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

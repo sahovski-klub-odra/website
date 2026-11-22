@@ -1,0 +1,6 @@
+---
+import ArticleView from '../../views/ArticleView.astro';
+import { postPages } from '../../lib/static-paths';
+export const getStaticPaths = () => postPages('hr');
+---
+<ArticleView post={Astro.props.post} />

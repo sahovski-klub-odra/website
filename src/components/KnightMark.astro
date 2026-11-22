@@ -1,0 +1,20 @@
+---
+/** Club mark: a knight standing on a small perspective chessboard. Pure SVG, scales crisply. */
+interface Props { class?: string; title?: string }
+const { class: cls = '', title } = Astro.props;
+---
+<svg viewBox="0 0 64 64" class={cls} xmlns="http://www.w3.org/2000/svg" role={title ? 'img' : undefined} aria-hidden={title ? undefined : 'true'}>
+  {title && <title>{title}</title>}
+  <!-- board -->
+  <path d="M6 60 L12 50 H52 L58 60 Z" fill="currentColor" opacity=".9" />
+  <path d="M12.9 52 H20 L18.6 54.6 H11.3 Z M27 52 H34 L33.6 54.6 H26 Z M41 52 H48 L48.6 54.6 H41 Z M18.6 54.6 H26 L25.2 57.8 H16.7 Z M33.6 54.6 H41 L41.6 57.8 H33.3 Z M48.6 54.6 H55.4 L57.2 57.8 H49.6 Z"
+        fill="var(--knight-cut, #17191c)" />
+  <!-- knight -->
+  <path
+    fill="currentColor"
+    d="M20.5 48.5c-.4-5.6 2.1-10.1 6.3-13.6 2.1-1.8 2.9-3.4 2.2-5.4-2.2 2.3-5 3.5-8.2 3.3-1.7-.1-2.7-1.2-2.6-2.7.1-1.9 1.2-3.3 2.7-4.4 2.9-2.1 4.8-4.9 5.9-8.4l-1.6-4.9 4.3 2.6 1.5-4.1 2.7 4.2c7.9 1.1 13 7.6 13.4 16.5.3 6.2-1.4 11.8-3.4 16.9z"
+  />
+  <circle cx="30.4" cy="19.4" r="1.35" fill="var(--knight-cut, #17191c)" />
+  <path d="M22.3 29.1c.9.2 1.7.1 2.4-.4" stroke="var(--knight-cut, #17191c)" stroke-width="1" fill="none" stroke-linecap="round" />
+  <path d="M40.2 18.6c2.4 3 3.6 6.8 3.6 11.4M37.4 15.8c.6.5 1.2 1.1 1.7 1.7" stroke="var(--knight-cut, #17191c)" stroke-width="1.1" fill="none" stroke-linecap="round" opacity=".55" />
+</svg>

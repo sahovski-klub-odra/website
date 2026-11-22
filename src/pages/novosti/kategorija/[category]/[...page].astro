@@ -1,0 +1,6 @@
+---
+import NewsListView from '../../../../views/NewsListView.astro';
+import { categoryPages } from '../../../../lib/static-paths';
+export const getStaticPaths = () => categoryPages('hr');
+---
+<NewsListView {...(Astro.props as any)} />

@@ -1,0 +1,144 @@
+---
+import { Image, getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogCard from '../components/BlogCard.astro';
+import Icon from '../components/Icon.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { site } from '../lib/data';
+import {
+  type Post, postLang, postUrl, describe, formatDate, readingTime, relatedPosts, translationOf, slugify,
+} from '../lib/blog';
+import { useTranslations } from '../i18n/ui';
+import { routes, withBase, categoryPath, type Alternates } from '../i18n/routes';
+
+interface Props { post: Post }
+const { post } = Astro.props;
+const lang = postLang(post);
+const t = useTranslations(lang);
+const { Content } = await render(post);
+const d = post.data;
+
+const translation = await translationOf(post);
+const alternates: Alternates = { [lang]: postUrl(post) };
+if (translation) alternates[postLang(translation)] = postUrl(translation);
+
+const related = await relatedPosts(post, 3);
+const description = d.seo?.description ?? describe(post, 160);
+const canonical = new URL(withBase(postUrl(post)), Astro.site).href;
+// structured data: the same 1200 px JPEG as the social-media preview (BaseLayout), not the original upload –
+// otherwise every original photo would be copied into the build just for this link
+const ldImage = d.image ? new URL((await getImage({ src: d.image, width: 1200, format: 'jpg', quality: 80 })).src, Astro.site).href : undefined;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: d.title,
+  description,
+  datePublished: d.pubDate.toISOString(),
+  dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
+  inLanguage: lang === 'hr' ? 'hr-HR' : 'en-GB',
+  mainEntityOfPage: canonical,
+  ...(ldImage && { image: ldImage }),
+  articleSection: d.categories[0],
+  keywords: d.tags.join(', ') || undefined,
+  author: { '@type': 'Organization', name: site.name },
+  publisher: { '@id': `${new URL(withBase('/'), Astro.site).href}#organization` },
+};
+
+const share = encodeURIComponent(canonical);
+const shareTitle = encodeURIComponent(d.title);
+---
+<BaseLayout
+  lang={lang}
+  title={d.seo?.title ?? d.seoTitle ?? d.title}
+  description={description}
+  alternates={alternates}
+  image={d.image}
+  imageAlt={d.imageAlt}
+  type="article"
+  noindex={d.seo?.noindex}
+  jsonLd={jsonLd}
+  published={d.pubDate}
+  modified={d.updatedDate}
+  section="news"
+>
+  <article>
+    <header class="chess-texture bg-ink text-white">
+      <div class="container-site max-w-4xl py-10 sm:py-14">
+        <nav aria-label="Breadcrumb" class="text-sm text-white/60">
+          <ol class="flex flex-wrap items-center gap-1.5">
+            <li><a href={withBase(routes.home[lang])} class="hover:text-gold">{t('nav.home')}</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href={withBase(routes.news[lang])} class="hover:text-gold">{t('nav.news')}</a></li>
+            {d.categories[0] && <><li aria-hidden="true">/</li><li><a href={withBase(categoryPath(lang, slugify(d.categories[0])))} class="hover:text-gold">{d.categories[0]}</a></li></>}
+          </ol>
+        </nav>
+        <h1 class="mt-5 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">{d.title}</h1>
+        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/70">
+          <span class="inline-flex items-center gap-2"><Icon name="calendar" size={16} /><time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate, lang)}</time></span>
+          {d.updatedDate && <span>{t('news.updated')}: <time datetime={d.updatedDate.toISOString()}>{formatDate(d.updatedDate, lang)}</time></span>}
+          <span class="inline-flex items-center gap-2"><Icon name="clock" size={16} />{readingTime(post.body)} {t('news.minRead')}</span>
+          {d.categories.map((c) => (
+            <a href={withBase(categoryPath(lang, slugify(c)))} class="rounded-full border border-white/25 px-3 py-0.5 hover:border-gold hover:text-gold">{c}</a>
+          ))}
+        </div>
+        {translation && (
+          <a href={withBase(postUrl(translation))} hreflang={postLang(translation)} class="mt-6 inline-flex items-center gap-2 rounded-md bg-white/10 px-4 py-2 text-sm font-medium text-gold hover:bg-white/15">
+            <Icon name="globe" size={16} /> {t('news.otherLang')}
+          </a>
+        )}
+      </div>
+    </header>
+
+    {d.image && (
+      <div class="container-site max-w-5xl">
+        <figure class="-mt-0 overflow-hidden rounded-b-xl shadow-card sm:mt-8 sm:rounded-xl">
+          <Image src={d.image} alt={d.imageAlt ?? ''} widths={[640, 960, 1280, 1600]} sizes="(min-width: 1024px) 1024px, 100vw" loading="eager" fetchpriority="high" class="max-h-[560px] w-full object-cover" />
+        </figure>
+      </div>
+    )}
+
+    <div class="container-site max-w-3xl py-10 sm:py-14">
+      <div class="prose prose-lg prose-odra max-w-none" data-lightbox-scope>
+        <Content />
+      </div>
+
+      {d.tags.length > 0 && (
+        <div class="mt-10 flex flex-wrap items-center gap-2 border-t border-ink/10 pt-6">
+          <span class="mr-1 inline-flex items-center gap-1.5 text-sm font-semibold"><Icon name="tag" size={16} /> {t('news.tags')}:</span>
+          {d.tags.map((tag) => (
+            <a href={`${withBase(routes.search[lang])}?q=${encodeURIComponent(tag)}`} class="rounded-full bg-white px-3 py-1 text-sm ring-1 ring-ink/10 hover:ring-gold">#{tag}</a>
+          ))}
+        </div>
+      )}
+
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-ink/10 pt-6">
+        <a href={withBase(routes.news[lang])} class="inline-flex items-center gap-2 font-semibold hover:text-gold-deep"><Icon name="arrowLeft" size={18} /> {t('news.back')}</a>
+        <div class="flex items-center gap-2 text-sm">
+          <span class="font-semibold">{t('news.share')}:</span>
+          <a class="grid h-9 w-9 place-items-center rounded-full bg-white ring-1 ring-ink/10 hover:ring-gold" href={`https://www.facebook.com/sharer/sharer.php?u=${share}`} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Icon name="facebook" size={16} /></a>
+          <a class="grid h-9 w-9 place-items-center rounded-full bg-white ring-1 ring-ink/10 hover:ring-gold" href={`https://wa.me/?text=${shareTitle}%20${share}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><Icon name="phone" size={16} /></a>
+          <a class="grid h-9 w-9 place-items-center rounded-full bg-white ring-1 ring-ink/10 hover:ring-gold" href={`mailto:?subject=${shareTitle}&body=${share}`} aria-label="E-mail"><Icon name="mail" size={16} /></a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  {related.length > 0 && (
+    <section class="bg-cream-2/60 py-14" aria-labelledby="related-h">
+      <div class="container-site">
+        <h2 id="related-h" class="section-title mb-8">{t('news.related')}</h2>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((p) => <BlogCard post={p} lang={lang} />)}
+        </div>
+      </div>
+    </section>
+  )}
+  <Lightbox lang={lang} />
+</BaseLayout>
+
+<script>
+  // Chess games: load the viewer (chess.js + board) only on articles that contain a game.
+  if (document.querySelector('[data-pgn-viewer]')) import('../scripts/pgn-viewer').then((m) => m.mountAll());
+</script>
