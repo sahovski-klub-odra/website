@@ -173,3 +173,35 @@ dialog.lightbox::backdrop { background: rgb(10 11 13 / 0.9); }
 .featured-photo__link:hover .featured-photo__zoom { opacity: 1; transform: scale(1.06); }
 .featured-photo__caption { padding: .6rem .5rem .15rem; font-size: .88rem; color: rgb(255 255 255 / .75); }
 @media (prefers-reduced-motion: reduce) { .featured-photo__img, .featured-photo__zoom { transition: none; } .featured-photo__link:hover .featured-photo__img { transform: none; } }
+
+/* ---------- match and result tables in articles (classes from src/lib/rehype-match-tables.mjs) ---------- */
+.prose-odra .table-wrap { margin: 1.75rem 0; border-radius: .75rem; box-shadow: var(--shadow-card); outline: 1px solid rgb(23 25 28 / .08); outline-offset: -1px; background: #fff; }
+.prose-odra table.chess-table {
+  width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; font-size: .9rem; line-height: 1.35;
+  font-variant-numeric: tabular-nums; background: #fff;
+}
+.prose-odra table.chess-table :where(th, td) { padding: .5rem .7rem; vertical-align: middle; border: 0; border-bottom: 1px solid rgb(23 25 28 / .07); text-align: left; }
+.prose-odra table.chess-table :where(th, td) + :where(th, td) { border-left: 1px solid rgb(23 25 28 / .05); }
+.prose-odra table.chess-table thead :where(th, td) {
+  background: var(--color-ink); color: #fff; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 2px solid var(--color-gold); white-space: nowrap;
+}
+.prose-odra table.chess-table thead :where(th, td) :where(strong, b, a) { color: inherit; }
+.prose-odra table.chess-table thead .is-odra { color: var(--color-gold); }
+.prose-odra table.chess-table tbody tr:nth-child(even) > :where(td, th) { background: rgb(245 240 230 / .55); }
+.prose-odra table.chess-table tbody tr:hover > :where(td, th) { background: rgb(217 181 109 / .12); }
+.prose-odra table.chess-table tbody tr:last-child > :where(td, th) { border-bottom: 0; }
+.prose-odra table.chess-table .cell-score { text-align: center; font-weight: 700; color: var(--color-ink); white-space: nowrap; background-image: linear-gradient(rgb(217 181 109 / .14), rgb(217 181 109 / .14)); }
+.prose-odra table.chess-table .cell-rank { width: 1%; text-align: right; color: rgb(23 25 28 / .55); white-space: nowrap; }
+.prose-odra table.chess-table .cell-num { text-align: right; color: rgb(23 25 28 / .7); white-space: nowrap; }
+.prose-odra table.chess-table .cell-title { width: 1%; text-align: center; font-size: .75rem; font-weight: 700; color: var(--color-gold-deep); white-space: nowrap; }
+.prose-odra table.chess-table .cell-dash { width: 1%; text-align: center; color: rgb(23 25 28 / .4); }
+.prose-odra table.chess-table tbody .is-odra { font-weight: 600; color: var(--color-ink); box-shadow: inset 3px 0 0 var(--color-gold); }
+.prose-odra table.chess-table :where(td, th) p { margin: 0; }
+.prose-odra table.chess-table img { display: inline; margin: 0; }
+@media (max-width: 639px) {
+  .prose-odra table.chess-table { font-size: .82rem; }
+  .prose-odra table.chess-table :where(th, td) { padding: .4rem .5rem; }
+}
+/* cross tables and standings with many columns: keep names on one line and let the table scroll sideways */
+.prose-odra table.chess-table.is-wide :where(th, td) { white-space: nowrap; padding-inline: .5rem; }

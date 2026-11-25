@@ -7,6 +7,7 @@ import { unified } from '@astrojs/markdown-remark';
 import redirectData from './src/data/redirects.json' with { type: 'json' };
 import redirectsEn from './src/data/redirects-en.json' with { type: 'json' };
 import { rehypeOdra } from './src/lib/rehype-odra.mjs';
+import { rehypeMatchTables } from './src/lib/rehype-match-tables.mjs';
 import { remarkPgn } from './src/lib/pgn/remark-pgn.mjs';
 import { remarkFeaturedDedupe } from './src/lib/remark-featured-dedupe.mjs';
 import { remarkArticleBadges } from './src/lib/remark-article-badges.mjs';
@@ -50,7 +51,7 @@ export default defineConfig({
       // chess games: ```pgn blocks and links to .pgn files become interactive viewers
       // the featured photo is not repeated inside the article text
       remarkPlugins: [remarkFeaturedDedupe, remarkArticleBadges, [remarkPgn, { base }]],
-      rehypePlugins: [[rehypeOdra, { base }]],
+      rehypePlugins: [rehypeMatchTables, [rehypeOdra, { base }]],
     }),
   },
 

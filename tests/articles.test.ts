@@ -139,3 +139,24 @@ test('unpaired WordPress bold markers around the label are removed too', () => {
   assert.deepEqual((file.data as any).astro.frontmatter.badges, ['Seniori', '11. kolo']);
   assert.ok(!html.includes('**') && html.includes('Posljednje kolo.') && html.includes('a.jpg'));
 });
+
+import { rehypeMatchTables } from '../src/lib/rehype-match-tables.mjs';
+const tableHtml = (md: string) => String(unified().use(remarkParse).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeMatchTables).use(rehypeStringify, { allowDangerousHtml: true }).processSync(md));
+
+test('a WordPress match table gets a header row and marked result cells, data unchanged', () => {
+  const html = tableHtml('<table><tbody><tr><td>Pl.</td><td><strong>ŠK Oroslavje</strong></td><td>–</td><td><strong>ŠK Odra</strong></td><td><strong>3,5-2,5</strong></td></tr><tr><td>1.</td><td>Jaković, Roko 2181</td><td>–</td><td>Karlić, Zvjezdan 2034</td><td>1-0</td></tr></tbody></table>');
+  assert.ok(html.includes('class="chess-table"') && html.includes('<thead>') && html.includes('<th scope="col">Pl.</th>'));
+  assert.ok(html.includes('<td class="cell-score">1-0</td>') && html.includes('<td class="cell-rank">1.</td>'));
+  assert.ok(html.includes('class="is-odra"') && html.includes('Jaković, Roko 2181'));
+});
+
+test('board pairings written as text lines become a table with the same text', () => {
+  const html = tableHtml('1\\. Ganić Martin – Ljubić Ivan 0:1  \n2\\. Filipović Tomislav – Maravić Stjepan 1/2  \n3\\. Korov Zvonko – Brajdić Danko 0:1');
+  assert.ok(html.includes('pairings-table'));
+  for (const s of ['Ganić Martin', 'Ljubić Ivan', '0:1', 'Maravić Stjepan', '1/2', 'Brajdić Danko', '3.']) assert.ok(html.includes(s), s);
+});
+
+test('ordinary paragraphs and lists are not turned into tables', () => {
+  const html = tableHtml('1. prvi korak\n2. drugi korak\n3. treći korak\n\nŠK Odra – ŠK Ina 2:4 bio je dobar meč.');
+  assert.ok(!html.includes('<table') && html.includes('<ol>'));
+});

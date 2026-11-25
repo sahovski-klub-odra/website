@@ -23,15 +23,16 @@
     "@astrojs/sitemap": "^3.7.6",
     "@fontsource-variable/inter": "^5.3.0",
     "@fontsource-variable/playfair-display": "^5.3.0",
+    "@sveltia/cms": "0.270.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.13",
     "chess.js": "^1.4.0",
     "cm-chessboard": "^8.15.8",
+    "hast-util-raw": "^9.2.1",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.5",
-    "typescript": "^6.0.3",
-    "@sveltia/cms": "0.270.0"
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@mixmark-io/domino": "^2.2.0",
