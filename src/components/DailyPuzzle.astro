@@ -5,9 +5,11 @@
  * Without JavaScript, or when Lichess cannot be reached, the link card is shown instead.
  */
 import Icon from './Icon.astro';
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
 const assets = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/vendor/cm-chessboard/`;
 ---
-<div class="daily-puzzle" data-daily-puzzle data-assets={assets}>
+<div class:list={['daily-puzzle', compact && 'daily-puzzle--compact']} data-daily-puzzle data-assets={assets}>
   <div class="dp-play">
     <div class="dp-board-wrap">
       <div class="dp-board" data-dp="board" aria-label="Šahovska ploča – zadatak dana"></div>
@@ -18,8 +20,8 @@ const assets = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/vendor/cm-chessbo
       <p class="dp-meta" data-dp="meta"></p>
       <p class="dp-status" data-dp="status" role="status" aria-live="polite">Učitavanje današnjeg zadatka…</p>
       <div class="dp-actions">
-        <button type="button" class="btn-gold" data-dp="retry"><Icon name="arrowLeft" size={16} /> Pokušaj ponovno</button>
-        <button type="button" class="btn-outline" data-dp="solution">Prikaži rješenje</button>
+        <button type="button" class="btn-gold" data-dp="retry"><Icon name="arrowLeft" size={16} /> Ponovno</button>
+        <button type="button" class="btn-outline" data-dp="solution">Rješenje</button>
       </div>
       <a class="dp-open link-gold" data-dp="open" href="https://lichess.org/training/daily" target="_blank" rel="noopener noreferrer">
         Otvori zadatak na Lichessu <Icon name="external" size={14} />
@@ -30,7 +32,7 @@ const assets = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/vendor/cm-chessbo
   <div class="dp-fallback" data-dp="fallback">
     <Icon name="crown" size={34} class="text-gold" />
     <div>
-      <p class="font-display text-xl font-bold">Zadatak dana čeka vas na Lichessu</p>
+      <p class="dp-fallback__title font-display text-xl font-bold">Zadatak dana čeka vas na Lichessu</p>
       <p class="mt-1 text-white/70">Ovdje ga trenutačno ne možemo učitati. Riješite ga izravno na lichess.org.</p>
       <a href="https://lichess.org/training/daily" target="_blank" rel="noopener noreferrer" class="btn-gold mt-4">Otvori zadatak dana <Icon name="external" size={16} /></a>
     </div>

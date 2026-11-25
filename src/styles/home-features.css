@@ -1,6 +1,6 @@
 /*
  * Homepage chess features and shared widgets:
- * daily puzzle (Lichess), world Top 10 cards (2700chess), photo slideshow, Google map.
+ * sidebar cards, daily puzzle (Lichess), world Top 10 (2700chess), photo slideshow, Google map.
  */
 
 /* ---------- Zadatak dana ---------- */
@@ -48,30 +48,58 @@
   background: rgb(255 255 255 / .04); border: 1px solid rgb(217 181 109 / .3);
 }
 
-/* ---------- Top 10 (2700chess) ---------- */
-.rank-card {
-  display: flex; flex-direction: column; overflow: hidden; border-radius: .9rem;
-  background: var(--color-ink); color: #fff;
-  box-shadow: var(--shadow-card); outline: 1px solid rgb(217 181 109 / .22); outline-offset: -1px;
-  background-image: linear-gradient(135deg, rgb(217 181 109 / .07), transparent 40%);
+/* ---------- homepage sidebar ---------- */
+.side-card {
+  border-radius: .9rem; padding: 1.25rem 1.35rem; background: #fff;
+  box-shadow: var(--shadow-card); outline: 1px solid rgb(23 25 28 / .06); outline-offset: -1px;
 }
-.rank-card__head { padding: 1.5rem 1.5rem .5rem; }
-.rank-card__title { margin-top: .35rem; font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
-.rank-card__body { flex: 1; padding: 1rem 1.5rem 1.25rem; display: grid; align-content: center; }
-.rank-card__banner { display: block; width: fit-content; max-width: 100%; margin-inline: auto; border-radius: .5rem; background: #fff; padding: .35rem; }
-.rank-card__banner img { display: block; max-width: 100%; height: auto; }
-.rank-card__fallback { display: flex; gap: 1rem; align-items: flex-start; color: rgb(255 255 255 / .75); line-height: 1.6; }
-.rank-card__fallback[hidden], .rank-card__banner[hidden] { display: none; }
-.rank-card__foot {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem;
-  border-top: 1px solid rgb(255 255 255 / .1); padding: 1rem 1.5rem; font-size: .88rem;
+.side-card--dark {
+  background: var(--color-ink); color: #fff; outline-color: rgb(217 181 109 / .2);
+  background-image: linear-gradient(135deg, rgb(217 181 109 / .07), transparent 45%);
 }
-.rank-card__more {
-  display: inline-flex; align-items: center; gap: .4rem; border-radius: 9999px; padding: .45rem .9rem;
-  border: 1px solid rgb(217 181 109 / .5); color: var(--color-gold); font-weight: 600;
+.side-card__title { display: flex; align-items: center; gap: .55rem; font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; line-height: 1.25; }
+.side-card__sub { margin-top: .3rem; font-size: .85rem; color: rgb(23 25 28 / .6); }
+.side-card--dark .side-card__sub { color: rgb(255 255 255 / .6); }
+
+/* Top 10 (2700chess) in the sidebar */
+.rank-tabs { margin-top: .9rem; display: inline-flex; border-radius: .5rem; padding: .2rem; background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .1); }
+.rank-tabs button { border-radius: .35rem; padding: .35rem .9rem; font-size: .85rem; font-weight: 600; color: rgb(255 255 255 / .65); transition: background-color .2s, color .2s; }
+.rank-tabs button[aria-selected='true'] { background: var(--color-gold); color: var(--color-ink); }
+.rank-tabs button:not([aria-selected='true']):hover { color: #fff; }
+.rank-panel { margin-top: .9rem; display: grid; gap: .8rem; }
+.rank-panel[hidden] { display: none; }
+.rank-banner { display: block; width: fit-content; max-width: 100%; margin-inline: auto; border-radius: .5rem; overflow: hidden; }
+.rank-banner[hidden] { display: none; }
+.rank-banner img { display: block; width: 240px; max-width: 100%; height: auto; }
+.rank-fallback { border-radius: .6rem; padding: .9rem 1rem; background: rgb(255 255 255 / .05); border: 1px solid rgb(217 181 109 / .25); font-size: .9rem; line-height: 1.55; color: rgb(255 255 255 / .75); }
+.rank-fallback[hidden] { display: none; }
+.rank-fallback__title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: .25rem; }
+.rank-more {
+  display: inline-flex; align-items: center; gap: .4rem; width: fit-content; border-radius: 9999px; padding: .4rem .85rem;
+  border: 1px solid rgb(217 181 109 / .5); color: var(--color-gold); font-size: .85rem; font-weight: 600;
   transition: background-color .2s, color .2s;
 }
-.rank-card__more:hover { background: var(--color-gold); color: var(--color-ink); }
+.rank-more:hover { background: var(--color-gold); color: var(--color-ink); }
+.rank-source { margin-top: .8rem; font-size: .78rem; color: rgb(255 255 255 / .45); }
+.rank-source a { text-decoration: underline; text-underline-offset: 2px; }
+.rank-source a:hover { color: var(--color-gold); }
+
+/* compact daily puzzle (sidebar): board on top, everything else small below it */
+.daily-puzzle--compact .dp-play { grid-template-columns: minmax(0, 1fr); gap: .9rem; }
+.daily-puzzle--compact .dp-board-wrap { max-width: none; }
+.daily-puzzle--compact .dp-info { gap: .6rem; }
+.daily-puzzle--compact .dp-turn { font-size: 1.05rem; }
+.daily-puzzle--compact .dp-meta { font-size: .8rem; }
+.daily-puzzle--compact .dp-status { min-height: 2.5rem; padding: .5rem .75rem; font-size: .88rem; }
+.daily-puzzle--compact .dp-actions { gap: .5rem; }
+.daily-puzzle--compact .dp-actions > * { padding: .45rem .85rem; font-size: .85rem; min-height: 0; }
+.daily-puzzle--compact .dp-open { font-size: .88rem; }
+.daily-puzzle--compact .dp-credit { font-size: .74rem; }
+.daily-puzzle--compact .dp-fallback { flex-direction: column; gap: .75rem; padding: 1rem; }
+.daily-puzzle--compact .dp-fallback__title { font-size: 1.05rem; }
+
+/* news column: phones show the newest article and four more (the button below opens all of them) */
+@media (max-width: 639px) { .news-list > :nth-child(n + 5) { display: none; } }
 
 /* ---------- photo slideshow ---------- */
 .carousel { position: relative; border-radius: .9rem; outline: none; }
@@ -119,5 +147,3 @@
 .gmap__open { display: inline-flex; align-items: center; gap: .35rem; color: var(--color-gold); font-weight: 600; font-size: .93rem; }
 .gmap__open:hover { color: var(--color-gold-light); }
 
-/* phones: the homepage shows the three newest articles (the button below opens all of them) */
-@media (max-width: 639px) { .home-news > :nth-child(n + 4) { display: none; } }

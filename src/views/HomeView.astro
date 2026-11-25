@@ -1,14 +1,13 @@
 ---
-import { Picture } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import BlogCard from '../components/BlogCard.astro';
 import Ambient from '../components/Ambient.astro';
 import Icon from '../components/Icon.astro';
 import KnightMark from '../components/KnightMark.astro';
 import ScheduleLive from '../components/ScheduleLive.astro';
 import Announcements from '../components/Announcements.astro';
 import hero from '../assets/hero.jpg';
-import { postsForListing } from '../lib/blog';
+import { postsForListing, postUrl, describe, formatDate } from '../lib/blog';
 import { homepagePhotos } from '../lib/gallery';
 import { site, formatAddress, wpRedirects } from '../lib/data';
 import DailyPuzzle from '../components/DailyPuzzle.astro';
@@ -22,7 +21,8 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const posts = (await postsForListing(lang)).slice(0, 6);
+const posts = (await postsForListing(lang)).slice(0, 11);
+const [lead, ...rest] = posts;
 const slides = await homepagePhotos(10);
 const address = formatAddress();
 
@@ -89,89 +89,105 @@ const hasWpIds = Object.keys(wpRedirects.ids ?? {}).length > 0;
         <p class="hero-in mt-6 text-lg leading-relaxed text-white/85 sm:text-xl" style="--d:420ms">{site.tagline || t('site.tagline')}</p>
         <div class="hero-in mt-9 flex flex-wrap gap-4" style="--d:560ms">
           <a href="#novosti" class="btn-gold">{t('hero.cta.news')} <Icon name="arrowRight" size={18} /></a>
-          <a href="#o-klubu" class="btn-outline"><Icon name="users" size={18} /> {t('hero.cta.club')}</a>
+          <a href={withBase(routes.contact[lang])} class="btn-outline"><Icon name="mail" size={18} /> {t('nav.contact')}</a>
         </div>
       </div>
     </div>
     <span class="hero-seam" aria-hidden="true"></span>
   </section>
 
-  <!-- ============ CLUB: about + next training ============ -->
-  <section id="o-klubu" class="scroll-mt-24 py-14 sm:py-16">
-    <div class="container-site grid gap-6 lg:grid-cols-2">
-      <section class="about-card card relative overflow-hidden p-7 sm:p-8">
-        <Ambient tone="light" grid particles={0} class="about-ambient" />
-        <KnightMark class="about-knight pointer-events-none absolute -bottom-3 -right-3 h-40 w-40 text-ink/[0.07] [--knight-cut:transparent]" />
-        <h2 class="flex items-center gap-2.5 font-display text-3xl font-bold">
-          <span class="grid h-7 w-7 grid-cols-2 overflow-hidden rounded-sm" aria-hidden="true"><span class="bg-ink"></span><span class="bg-gold"></span><span class="bg-gold"></span><span class="bg-ink"></span></span>
-          {t('home.about.title')}
-        </h2>
-        <p class="relative mt-4 max-w-xl text-lg leading-relaxed text-ink/75">{site.about}</p>
-      </section>
+  <!-- ============ NEWS (main column) + SIDEBAR ============ -->
+  <section id="novosti" class="home-main scroll-mt-24 py-12 sm:py-14">
+    <div class="container-site grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_370px] xl:gap-12">
 
-      <section class="training-card relative overflow-hidden rounded-xl bg-ink p-7 text-white shadow-card sm:p-8" aria-labelledby="next-training">
-        <Ambient grid particles={7} seed={3} pieces={[{ piece: 'pawn', x: '82%', y: '50%', size: '70px', motion: 'bob', opacity: 0.06 }]} />
-        <h2 id="next-training" class="eyebrow flex items-center gap-2 text-gold"><Icon name="clock" size={16} /> {t('schedule.next')}</h2>
-        <Announcements lang={lang} dark class="mt-4" />
-        <ScheduleLive kind="next" lang={lang} class="mt-4" />
-        <a href={withBase(routes.schedule[lang])} class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light">{t('schedule.full')} <Icon name="arrowRight" size={16} /></a>
-      </section>
-    </div>
-  </section>
+      <!-- Novosti iz kluba -->
+      <div class="min-w-0">
+        <div class="mb-7 flex flex-wrap items-end justify-between gap-4">
+          <h2 class="section-title reveal">Novosti iz kluba</h2>
+          <a href={withBase(routes.news[lang])} class="hidden items-center gap-2 font-semibold text-ink hover:text-gold-deep sm:inline-flex">Sve novosti <Icon name="arrowRight" size={18} /></a>
+        </div>
+        {lead ? (
+          <>
+            <article class="news-lead card card-lift card-light reveal group relative grid overflow-hidden md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+              <div class="card-media relative aspect-[16/10] overflow-hidden bg-ink-2 md:aspect-auto md:min-h-[300px]">
+                {lead.data.image ? (
+                  <Image src={lead.data.image} alt={lead.data.imageAlt ?? ''} widths={[480, 720, 960]} sizes="(min-width: 1280px) 460px, (min-width: 768px) 50vw, 100vw" loading="eager" fetchpriority="high" class="card-zoom absolute inset-0 h-full w-full object-cover" />
+                ) : (
+                  <div class="chess-texture absolute inset-0 grid place-items-center"><KnightMark class="h-24 w-24 text-gold/70" /></div>
+                )}
+                {lead.data.categories[0] && <span class="cat-badge absolute left-3 top-3 rounded-full border border-white/40 bg-ink/75 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">{lead.data.categories[0]}</span>}
+              </div>
+              <div class="flex flex-col p-6 sm:p-7">
+                <p class="eyebrow text-gold-deep">Najnovije</p>
+                <h3 class="mt-2 font-display text-2xl font-bold leading-snug text-ink sm:text-[1.7rem]">
+                  <a href={withBase(postUrl(lead))} class="after:absolute after:inset-0 focus-visible:outline-none group-focus-within:underline">{lead.data.title}</a>
+                </h3>
+                <p class="mt-3 line-clamp-4 leading-relaxed text-ink/70">{describe(lead, 220)}</p>
+                <p class="mt-auto flex items-center gap-2 pt-5 text-sm text-ink/60"><Icon name="calendar" size={16} /><time datetime={lead.data.pubDate.toISOString()}>{formatDate(lead.data.pubDate, lang)}</time></p>
+              </div>
+            </article>
 
-  <!-- ============ DAILY PUZZLE (Lichess) ============ -->
-  <section class="home-band relative isolate overflow-hidden bg-ink py-14 text-white sm:py-16" aria-labelledby="puzzle-h">
-    <Ambient grid light particles={10} seed={21} pieces={[{ piece: 'rook', x: '90%', y: '10%', size: 'clamp(60px, 7vw, 100px)', motion: 'float', opacity: 0.06, desktopOnly: true }]} />
-    <div class="container-site">
-      <div class="mb-8">
-        <p class="eyebrow text-gold">Lichess</p>
-        <h2 id="puzzle-h" class="mt-2 font-display text-3xl font-bold sm:text-4xl">Zadatak dana</h2>
-        <p class="mt-2 text-lg text-white/70">Riješi današnji šahovski problem.</p>
+            <ul class="news-list mt-6 grid gap-4 md:grid-cols-2">
+              {rest.map((post, i) => (
+                <li class="reveal" style={`--reveal-delay:${Math.min(i, 6) * 60}ms`}>
+                  <article class="news-item card card-lift card-light group relative flex h-full gap-4 overflow-hidden p-3">
+                    <div class="card-media relative aspect-[4/3] w-28 shrink-0 overflow-hidden rounded-lg bg-ink-2 sm:w-32">
+                      {post.data.image ? (
+                        <Image src={post.data.image} alt={post.data.imageAlt ?? ''} widths={[160, 260]} sizes="130px" class="card-zoom img-fade h-full w-full object-cover" />
+                      ) : (
+                        <div class="chess-texture grid h-full place-items-center"><KnightMark class="h-10 w-10 text-gold/70" /></div>
+                      )}
+                    </div>
+                    <div class="flex min-w-0 flex-1 flex-col py-0.5 pr-1">
+                      <h3 class="line-clamp-2 font-semibold leading-snug text-ink">
+                        <a href={withBase(postUrl(post))} class="after:absolute after:inset-0 focus-visible:outline-none group-focus-within:underline">{post.data.title}</a>
+                      </h3>
+                      <p class="mt-1 line-clamp-2 text-sm leading-relaxed text-ink/65">{describe(post, 120)}</p>
+                      <p class="mt-auto flex items-center gap-1.5 pt-2 text-xs text-ink/55"><Icon name="calendar" size={13} /><time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, lang)}</time></p>
+                    </div>
+                  </article>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-8 text-center">
+              <a href={withBase(routes.news[lang])} class="btn-dark">Sve novosti <Icon name="arrowRight" size={18} /></a>
+            </div>
+          </>
+        ) : (
+          <div class="card grid place-items-center gap-3 p-12 text-center text-ink/70">
+            <KnightMark class="h-14 w-14 text-gold [--knight-cut:#fff]" />
+            <p>{t('home.news.empty')}</p>
+          </div>
+        )}
       </div>
-      <DailyPuzzle />
-    </div>
-  </section>
 
-  <!-- ============ WORLD TOP 10 (2700chess.com) ============ -->
-  <section class="py-14 sm:py-16" aria-labelledby="ranks-h">
-    <div class="container-site">
-      <div class="mb-8 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <p class="eyebrow text-gold-deep">Šah u svijetu</p>
-          <h2 id="ranks-h" class="section-title reveal mt-2">Najbolji na svijetu</h2>
-        </div>
-      </div>
-      <div class="grid gap-6 lg:grid-cols-2">
-        <WorldTopTen kind="men" />
-        <WorldTopTen kind="women" />
-      </div>
-    </div>
-  </section>
+      <!-- Sidebar -->
+      <aside class="home-sidebar grid content-start gap-5" aria-label="Klub i šah">
+        <section id="o-klubu" class="side-card about-card relative scroll-mt-28 overflow-hidden">
+          <KnightMark class="about-knight pointer-events-none absolute -bottom-3 -right-3 h-28 w-28 text-ink/[0.07] [--knight-cut:transparent]" />
+          <h2 class="side-card__title">
+            <span class="grid h-5 w-5 grid-cols-2 overflow-hidden rounded-sm" aria-hidden="true"><span class="bg-ink"></span><span class="bg-gold"></span><span class="bg-gold"></span><span class="bg-ink"></span></span>
+            {t('home.about.title')}
+          </h2>
+          <p class="relative mt-2.5 leading-relaxed text-ink/75">{site.about}</p>
+          <a href={withBase(routes.members[lang])} class="link-gold relative mt-3 inline-flex items-center gap-1.5 text-sm">Upoznajte klub i članove <Icon name="arrowRight" size={15} /></a>
+        </section>
 
-  <!-- ============ NEWS ============ -->
-  <section id="novosti" class="scroll-mt-24 bg-cream-2/60 py-14 sm:py-16">
-    <div class="container-site">
-      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
-        <h2 class="section-title reveal">{t('home.news.title')}</h2>
-        <a href={withBase(routes.news[lang])} class="inline-flex items-center gap-2 font-semibold text-ink hover:text-gold-deep">
-          {t('home.news.all')} <Icon name="arrowRight" size={18} />
-        </a>
-      </div>
-      {posts.length > 0 ? (
-        <div class="home-news grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, i) => <BlogCard post={post} lang={lang} priority={i < 3} index={i} />)}
-        </div>
-      ) : (
-        <div class="card grid place-items-center gap-3 p-12 text-center text-ink/70">
-          <KnightMark class="h-14 w-14 text-gold [--knight-cut:#fff]" />
-          <p>{t('home.news.empty')}</p>
-        </div>
-      )}
-      {posts.length > 0 && (
-        <div class="mt-10 text-center">
-          <a href={withBase(routes.news[lang])} class="btn-dark">{t('home.news.all')} <Icon name="arrowRight" size={18} /></a>
-        </div>
-      )}
+        <section class="side-card side-card--dark training-card relative overflow-hidden" aria-labelledby="next-training">
+          <h2 id="next-training" class="side-card__title"><Icon name="clock" size={18} class="text-gold" /> {t('schedule.next')}</h2>
+          <Announcements lang={lang} dark class="mt-3" />
+          <ScheduleLive kind="next" lang={lang} class="mt-3" />
+          <a href={withBase(routes.schedule[lang])} class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light">{t('schedule.full')} <Icon name="arrowRight" size={15} /></a>
+        </section>
+
+        <section class="side-card side-card--dark" aria-labelledby="puzzle-h">
+          <h2 id="puzzle-h" class="side-card__title"><Icon name="crown" size={18} class="text-gold" /> Problem dana</h2>
+          <p class="side-card__sub">Riješi današnji šahovski problem s Lichessa.</p>
+          <div class="mt-3"><DailyPuzzle compact /></div>
+        </section>
+
+        <WorldTopTen />
+      </aside>
     </div>
   </section>
 

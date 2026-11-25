@@ -190,7 +190,7 @@ class PuzzleBoard {
       this.mark(uci);
     }
     this.root.dataset.result = 'shown';
-    this.say('Ovo je rješenje. Kliknite „Pokušaj ponovno” i odigrajte ga sami.', 'info');
+    this.say('Ovo je rješenje. Kliknite „Ponovno” i odigrajte ga sami.', 'info');
   }
 }
 

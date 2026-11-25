@@ -1,50 +1,72 @@
 ---
 /**
- * Top 10 of the world (classical chess) from 2700chess.com.
+ * "Najbolji na svijetu" – Top 10 in classical chess (men and women) from 2700chess.com, for the homepage sidebar.
  *
- * 2700chess.com has no public API; it offers official, automatically updated Top 10 banners
- * (images) for other websites – the same ones the old WordPress site used. We show that banner
- * inside our card. The banner is drawn by 2700chess, so it always shows their current list
- * (names, flags, live ratings, ranking) without anything being copied or stored here.
- * If the banner cannot be loaded (e.g. their bot protection blocks it), the card falls back to
- * a link to the live ranking – no old or invented numbers are ever shown.
+ * 2700chess.com has no public API or iframe widget, and its pages may not be scraped. It does offer
+ * official, automatically updated Top 10 banners (images) for other websites – the "olive" ones are
+ * the banners the old WordPress site used. The banner is drawn by 2700chess, so it always shows their
+ * current list (names, flags, live ratings, ranking); nothing is copied or stored here.
+ *
+ * Each banner is shown only once it has really loaded. If 2700chess blocks it (its bot protection
+ * currently refuses images requested from other websites), the tab shows a link card to the live
+ * ranking instead – never old or invented numbers.
  */
 import Icon from './Icon.astro';
-interface Props { kind: 'men' | 'women' }
-const { kind } = Astro.props;
-const cfg = {
-  men: { title: 'Top 10 šahista svijeta', banner: 'https://2700chess.com/files/topten.png', href: 'https://2700chess.com/' },
-  women: { title: 'Top 10 šahistica svijeta', banner: 'https://2700chess.com/files/topten_women.png', href: 'https://2700chess.com/women' },
-}[kind];
+const lists = [
+  { id: 'men', tab: 'Šahisti', title: 'Top 10 šahista svijeta', banner: 'https://2700chess.com/files/topten_olive.png', href: 'https://2700chess.com' },
+  { id: 'women', tab: 'Šahistice', title: 'Top 10 šahistica svijeta', banner: 'https://2700chess.com/files/topten_women_olive.png', href: 'https://2700chess.com/women' },
+] as const;
 ---
-<article class="rank-card" data-rank-card>
-  <header class="rank-card__head">
-    <p class="eyebrow text-gold">Klasični šah · rejting uživo</p>
-    <h3 class="rank-card__title">{cfg.title}</h3>
-  </header>
-  <div class="rank-card__body">
-    <a href={cfg.href} target="_blank" rel="noopener noreferrer" class="rank-card__banner" data-rank-banner hidden>
-      <img src={cfg.banner} alt={`${cfg.title} – trenutačna rang-lista s 2700chess.com`} loading="eager" decoding="async" referrerpolicy="no-referrer-when-downgrade" data-rank-img />
-    </a>
-    <div class="rank-card__fallback" data-rank-fallback>
-      <Icon name="trophy" size={30} class="text-gold" />
-      <p>Poredak s imenima, zastavama i rejtinzima osvježava se uživo nakon svake odigrane partije. Trenutačnu rang-listu pogledajte na 2700chess.com.</p>
-    </div>
+<section class="side-card side-card--dark rank-box" aria-labelledby="ranks-h" data-rank-box>
+  <h2 id="ranks-h" class="side-card__title"><Icon name="trophy" size={18} class="text-gold" /> Najbolji na svijetu</h2>
+  <p class="side-card__sub">Klasični šah · rejting uživo s 2700chess.com</p>
+
+  <div class="rank-tabs" role="tablist" aria-label="Top 10 svijeta">
+    {lists.map((l, i) => (
+      <button type="button" role="tab" id={`rank-tab-${l.id}`} aria-controls={`rank-panel-${l.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? undefined : -1} data-rank-tab={l.id}>{l.tab}</button>
+    ))}
   </div>
-  <footer class="rank-card__foot">
-    <span class="text-white/55">Izvor: <a href={cfg.href} target="_blank" rel="noopener noreferrer" class="underline decoration-white/30 underline-offset-2 hover:text-gold">2700chess.com</a></span>
-    <a href={cfg.href} target="_blank" rel="noopener noreferrer" class="rank-card__more">Pogledaj cijelu rang-listu <Icon name="external" size={14} /></a>
-  </footer>
-</article>
+
+  {lists.map((l, i) => (
+    <div class="rank-panel" role="tabpanel" id={`rank-panel-${l.id}`} aria-labelledby={`rank-tab-${l.id}`} hidden={i !== 0} data-rank-panel={l.id}>
+      <a href={l.href} target="_blank" rel="noopener noreferrer" class="rank-banner" data-rank-banner hidden>
+        <img src={l.banner} alt={`${l.title} – trenutačna rang-lista s 2700chess.com`} width="240" height="290" decoding="async" data-rank-img />
+      </a>
+      <div class="rank-fallback" data-rank-fallback>
+        <p class="rank-fallback__title">{l.title}</p>
+        <p>Poredak s imenima, zastavama i rejtinzima osvježava se uživo nakon svake odigrane partije.</p>
+      </div>
+      <a href={l.href} target="_blank" rel="noopener noreferrer" class="rank-more">Pogledaj cijelu rang-listu <Icon name="external" size={14} /></a>
+    </div>
+  ))}
+  <p class="rank-source">Izvor: <a href="https://2700chess.com" target="_blank" rel="noopener noreferrer">2700chess.com</a></p>
+</section>
 
 <script>
-  // Show the official banner only once it has really loaded; otherwise keep the link card.
-  document.querySelectorAll<HTMLElement>('[data-rank-card]').forEach((card) => {
-    const img = card.querySelector<HTMLImageElement>('[data-rank-img]');
-    const wrap = card.querySelector<HTMLElement>('[data-rank-banner]');
-    const fallback = card.querySelector<HTMLElement>('[data-rank-fallback]');
-    if (!img || !wrap || !fallback) return;
-    const ok = () => { if (img.naturalWidth > 1) { wrap.hidden = false; fallback.hidden = true; } };
-    if (img.complete) ok(); else img.addEventListener('load', ok, { once: true });
+  document.querySelectorAll<HTMLElement>('[data-rank-box]').forEach((box) => {
+    // official banner only once it has really loaded; otherwise keep the link card
+    box.querySelectorAll<HTMLElement>('[data-rank-panel]').forEach((panel) => {
+      const img = panel.querySelector<HTMLImageElement>('[data-rank-img]');
+      const wrap = panel.querySelector<HTMLElement>('[data-rank-banner]');
+      const fallback = panel.querySelector<HTMLElement>('[data-rank-fallback]');
+      if (!img || !wrap || !fallback) return;
+      const ok = () => { if (img.naturalWidth > 1) { wrap.hidden = false; fallback.hidden = true; } };
+      if (img.complete) ok(); else img.addEventListener('load', ok, { once: true });
+    });
+    // accessible tabs: men / women
+    const tabs = [...box.querySelectorAll<HTMLButtonElement>('[data-rank-tab]')];
+    const select = (i: number, focus = false) => tabs.forEach((t, j) => {
+      const on = i === j;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      box.querySelector<HTMLElement>(`[data-rank-panel="${t.dataset.rankTab}"]`)!.hidden = !on;
+      if (on && focus) t.focus();
+    });
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(i));
+      t.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); select((i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length, true); }
+      });
+    });
   });
 </script>
