@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import type { Lang } from '../i18n/ui';
 
 export type AlbumEntry = CollectionEntry<'albums'>;
-export interface Photo { image: ImageMetadata; caption?: string }
+export interface Photo { image: ImageMetadata; caption?: string; featured?: boolean }
 export interface Album {
   id: string;
   title: string;
@@ -76,6 +76,7 @@ export async function getAlbums(_lang?: Lang): Promise<Album[]> {
         ...e.data.photos.map((p) => ({
           image: p.image,
           caption: p.caption,
+          featured: p.featured,
         })),
         ...e.data.images.map((image) => ({ image })),
         ...(linked.get(folder) ?? []),
@@ -98,4 +99,34 @@ export async function getAlbums(_lang?: Lang): Promise<Album[]> {
     })
     .filter((a) => a.photos.length > 0)
     .sort((a, b) => b.date.valueOf() - a.date.valueOf());
+}
+
+export interface SlidePhoto extends Photo { album: Album }
+
+/**
+ * Photos for the homepage slideshow, taken from the gallery itself (no copies):
+ *  1. photos marked "Istakni na naslovnici" in the CMS, newest albums first;
+ *  2. filled up automatically from the newest albums – landscape photos at least 1000 px wide
+ *     (sharp on large screens), at most `perAlbum` from one album so several events are shown.
+ * New albums therefore appear on the homepage with the next build (the site rebuilds daily).
+ */
+export async function homepagePhotos(count = 10, perAlbum = 2): Promise<SlidePhoto[]> {
+  const albums = await getAlbums();
+  const good = (p: Photo) => p.image.width >= 1000 && p.image.width >= p.image.height * 1.25;
+  const picked: SlidePhoto[] = [];
+  const seen = new Set<ImageMetadata>();
+  const take = (p: Photo, album: Album) => {
+    if (picked.length >= count || seen.has(p.image)) return;
+    seen.add(p.image);
+    picked.push({ ...p, album });
+  };
+  for (const a of albums) for (const p of a.photos) if (p.featured) take(p, a);
+  for (const a of albums) {
+    let n = picked.filter((x) => x.album.id === a.id).length;
+    for (const p of a.photos) {
+      if (n >= perAlbum || picked.length >= count) break;
+      if (good(p) && !seen.has(p.image)) { take(p, a); n++; }
+    }
+  }
+  return picked;
 }

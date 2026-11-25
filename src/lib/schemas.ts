@@ -39,7 +39,13 @@ export const siteSchema = z.object({
   contacts: z
     .array(z.object({ name: z.string().min(1), role: text(), phone: text(), email: text() }))
     .default([]),
-  map: z.object({ lat: z.number().nullable(), lon: z.number().nullable(), zoom: z.number().nullish().transform((v) => v ?? 16) }),
+  map: z.object({
+    /** iframe address from Google Maps → Share → Embed a map (no API key needed) */
+    googleEmbed: text(),
+    lat: z.number().nullish().transform((v) => v ?? null),
+    lon: z.number().nullish().transform((v) => v ?? null),
+    zoom: z.number().nullish().transform((v) => v ?? 16),
+  }),
   social: z.record(z.string(), z.string().nullish().transform((v) => v ?? '')).default({}),
   contactForm: z.object({
     provider: z.enum(['none', 'formspree', 'web3forms', 'custom']).default('none'),

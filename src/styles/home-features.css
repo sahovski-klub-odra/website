@@ -1,0 +1,123 @@
+/*
+ * Homepage chess features and shared widgets:
+ * daily puzzle (Lichess), world Top 10 cards (2700chess), photo slideshow, Google map.
+ */
+
+/* ---------- Zadatak dana ---------- */
+/* without JavaScript (and if Lichess cannot be reached) only the link card is shown */
+.daily-puzzle .dp-play { display: none; }
+.daily-puzzle[data-state='loading'] .dp-play,
+.daily-puzzle[data-state='ready'] .dp-play { display: grid; }
+.daily-puzzle[data-state='loading'] .dp-fallback,
+.daily-puzzle[data-state='ready'] .dp-fallback { display: none; }
+
+.dp-play { gap: 2rem; align-items: center; }
+@media (min-width: 768px) { .dp-play { grid-template-columns: minmax(0, 460px) minmax(0, 1fr); gap: 2.75rem; } }
+.dp-board-wrap { position: relative; width: 100%; max-width: 460px; aspect-ratio: 1; }
+.dp-board { position: absolute; inset: 0; }
+.dp-board .cm-chessboard { width: 100%; height: 100%; }
+.dp-skeleton {
+  position: absolute; inset: 0; border-radius: .4rem; display: none;
+  background: repeating-conic-gradient(#3a3e44 0 25%, #2b2f34 0 50%) 0 0 / 25% 25%;
+  animation: dp-pulse 1.6s ease-in-out infinite;
+}
+.daily-puzzle[data-state='loading'] .dp-skeleton { display: block; }
+@keyframes dp-pulse { 50% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) { .dp-skeleton { animation: none; } }
+
+.dp-info { display: grid; gap: .85rem; align-content: start; }
+.dp-turn { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
+.dp-turn:empty, .dp-meta:empty { display: none; }
+.dp-meta { color: rgb(255 255 255 / .6); font-size: .93rem; }
+.dp-status {
+  min-height: 3.25rem; display: flex; align-items: center; border-radius: .6rem; padding: .75rem 1rem;
+  background: rgb(255 255 255 / .05); border: 1px solid rgb(255 255 255 / .1); color: rgb(255 255 255 / .85);
+  transition: background-color .3s, border-color .3s;
+}
+.dp-status[data-tone='good'] { border-color: rgb(217 181 109 / .55); background: rgb(217 181 109 / .1); }
+.dp-status[data-tone='bad'] { border-color: rgb(248 113 113 / .5); background: rgb(248 113 113 / .1); }
+.dp-status[data-tone='done'] { border-color: rgb(74 222 128 / .55); background: rgb(74 222 128 / .12); font-weight: 600; }
+.dp-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.daily-puzzle[data-state='loading'] .dp-actions button { opacity: .45; pointer-events: none; }
+.dp-open { display: inline-flex; align-items: center; gap: .35rem; width: fit-content; }
+.dp-credit { font-size: .8rem; color: rgb(255 255 255 / .45); }
+.dp-credit a { text-decoration: underline; text-underline-offset: 2px; }
+.dp-credit a:hover { color: var(--color-gold); }
+.dp-fallback {
+  display: flex; gap: 1.25rem; align-items: flex-start; border-radius: .9rem; padding: 1.5rem;
+  background: rgb(255 255 255 / .04); border: 1px solid rgb(217 181 109 / .3);
+}
+
+/* ---------- Top 10 (2700chess) ---------- */
+.rank-card {
+  display: flex; flex-direction: column; overflow: hidden; border-radius: .9rem;
+  background: var(--color-ink); color: #fff;
+  box-shadow: var(--shadow-card); outline: 1px solid rgb(217 181 109 / .22); outline-offset: -1px;
+  background-image: linear-gradient(135deg, rgb(217 181 109 / .07), transparent 40%);
+}
+.rank-card__head { padding: 1.5rem 1.5rem .5rem; }
+.rank-card__title { margin-top: .35rem; font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
+.rank-card__body { flex: 1; padding: 1rem 1.5rem 1.25rem; display: grid; align-content: center; }
+.rank-card__banner { display: block; width: fit-content; max-width: 100%; margin-inline: auto; border-radius: .5rem; background: #fff; padding: .35rem; }
+.rank-card__banner img { display: block; max-width: 100%; height: auto; }
+.rank-card__fallback { display: flex; gap: 1rem; align-items: flex-start; color: rgb(255 255 255 / .75); line-height: 1.6; }
+.rank-card__fallback[hidden], .rank-card__banner[hidden] { display: none; }
+.rank-card__foot {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem;
+  border-top: 1px solid rgb(255 255 255 / .1); padding: 1rem 1.5rem; font-size: .88rem;
+}
+.rank-card__more {
+  display: inline-flex; align-items: center; gap: .4rem; border-radius: 9999px; padding: .45rem .9rem;
+  border: 1px solid rgb(217 181 109 / .5); color: var(--color-gold); font-weight: 600;
+  transition: background-color .2s, color .2s;
+}
+.rank-card__more:hover { background: var(--color-gold); color: var(--color-ink); }
+
+/* ---------- photo slideshow ---------- */
+.carousel { position: relative; border-radius: .9rem; outline: none; }
+.carousel:focus-visible { box-shadow: 0 0 0 3px rgb(217 181 109 / .6); }
+.carousel__stage { position: relative; overflow: hidden; border-radius: .9rem; aspect-ratio: 4 / 3; background: var(--color-ink-2); box-shadow: var(--shadow-card); }
+@media (min-width: 640px) { .carousel__stage { aspect-ratio: 16 / 9; } }
+@media (min-width: 1024px) { .carousel__stage { aspect-ratio: 2 / 1; } }
+.carousel__slide { position: absolute; inset: 0; margin: 0; opacity: 0; visibility: hidden; transition: opacity 1.8s ease, visibility 0s linear 1.8s; }
+.carousel__slide.is-active { opacity: 1; visibility: visible; transition: opacity 1.8s ease, visibility 0s; z-index: 1; }
+.carousel__img { width: 100%; height: 100%; object-fit: cover; transform-origin: 60% 45%; }
+/* gentle zoom and drift while a photo is shown (transform only) */
+.motion .carousel__slide.is-active .carousel__img { animation: carousel-drift 9s ease-out both; }
+.carousel.is-paused .carousel__img, html.is-hidden .carousel__img { animation-play-state: paused !important; }
+@keyframes carousel-drift { from { transform: scale(1.02) translate3d(0, 0, 0); } to { transform: scale(1.08) translate3d(-1.2%, -.8%, 0); } }
+@media (prefers-reduced-motion: reduce) {
+  .carousel__slide, .carousel__slide.is-active { transition-duration: .01s; }
+}
+.carousel__caption {
+  position: absolute; inset: auto 0 0 0; padding: 3.5rem 1.25rem 1rem;
+  background: linear-gradient(to top, rgb(10 11 13 / .85), rgb(10 11 13 / .45) 55%, transparent);
+  display: grid; gap: .15rem; color: #fff; text-shadow: 0 1px 2px rgb(0 0 0 / .5);
+}
+@media (min-width: 640px) { .carousel__caption { padding: 4rem 1.75rem 1.4rem; } }
+.carousel__album { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; width: fit-content; }
+@media (min-width: 640px) { .carousel__album { font-size: 1.45rem; } }
+.carousel__album:hover { color: var(--color-gold); }
+.carousel__season { font-size: .9rem; color: rgb(255 255 255 / .78); }
+.carousel__controls { margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: .6rem; }
+.carousel__btn {
+  display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 9999px;
+  border: 1px solid rgb(255 255 255 / .2); color: #fff; transition: border-color .2s, color .2s, background-color .2s;
+}
+.carousel__btn:hover, .carousel__btn:focus-visible { border-color: var(--color-gold); color: var(--color-gold); }
+.carousel__toggle .i-play { display: none; }
+.carousel__toggle[aria-pressed='true'] .i-play { display: block; }
+.carousel__toggle[aria-pressed='true'] .i-pause { display: none; }
+.carousel__dots { display: flex; flex-wrap: wrap; justify-content: center; gap: .1rem; max-width: 60vw; }
+.carousel__dot { width: 1.75rem; height: 1.75rem; display: grid; place-items: center; }
+.carousel__dot::before { content: ''; width: .5rem; height: .5rem; border-radius: 9999px; background: rgb(255 255 255 / .35); transition: background-color .3s, width .3s; }
+.carousel__dot[aria-current='true']::before { width: 1.4rem; background: var(--color-gold); }
+
+/* ---------- Google map ---------- */
+.gmap__frame { overflow: hidden; border-radius: .6rem; background: #e5e3df; }
+.gmap__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding: .75rem .5rem .35rem; }
+.gmap__open { display: inline-flex; align-items: center; gap: .35rem; color: var(--color-gold); font-weight: 600; font-size: .93rem; }
+.gmap__open:hover { color: var(--color-gold-light); }
+
+/* phones: the homepage shows the three newest articles (the button below opens all of them) */
+@media (max-width: 639px) { .home-news > :nth-child(n + 4) { display: none; } }

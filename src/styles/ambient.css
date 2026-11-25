@@ -229,3 +229,14 @@ html.is-hidden .ambient * { animation-play-state: paused !important; }
   .article-rail .ambient__line { width: 80cqw; }
 }
 @keyframes amb-grid-sm { to { background-position: 48px 48px, 72px 72px; } }
+
+/* ---------- main pages: the same rails beside the 80rem site container ----------
+ * Dark sections (hero, page headers, dark bands) and cards have their own backgrounds and
+ * simply cover the rails, so the motion only shows in the light side margins. */
+.page-stage { position: relative; isolation: isolate; }
+@media (min-width: 1360px) {
+  .article-rail--page { display: none; }
+}
+@media (min-width: 1440px) {
+  .article-rail--page { display: block; width: calc((100% - 80rem) / 2 + 1rem); }
+}

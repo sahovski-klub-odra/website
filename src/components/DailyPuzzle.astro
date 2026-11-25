@@ -1,0 +1,52 @@
+---
+/**
+ * Homepage "Zadatak dana": the Lichess daily puzzle on our own interactive board
+ * (logic in scripts/daily-puzzle.ts, loaded only when the section comes into view).
+ * Without JavaScript, or when Lichess cannot be reached, the link card is shown instead.
+ */
+import Icon from './Icon.astro';
+const assets = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/vendor/cm-chessboard/`;
+---
+<div class="daily-puzzle" data-daily-puzzle data-assets={assets}>
+  <div class="dp-play">
+    <div class="dp-board-wrap">
+      <div class="dp-board" data-dp="board" aria-label="Šahovska ploča – zadatak dana"></div>
+      <div class="dp-skeleton" aria-hidden="true"></div>
+    </div>
+    <div class="dp-info">
+      <p class="dp-turn" data-dp="turn"></p>
+      <p class="dp-meta" data-dp="meta"></p>
+      <p class="dp-status" data-dp="status" role="status" aria-live="polite">Učitavanje današnjeg zadatka…</p>
+      <div class="dp-actions">
+        <button type="button" class="btn-gold" data-dp="retry"><Icon name="arrowLeft" size={16} /> Pokušaj ponovno</button>
+        <button type="button" class="btn-outline" data-dp="solution">Prikaži rješenje</button>
+      </div>
+      <a class="dp-open link-gold" data-dp="open" href="https://lichess.org/training/daily" target="_blank" rel="noopener noreferrer">
+        Otvori zadatak na Lichessu <Icon name="external" size={14} />
+      </a>
+      <p class="dp-credit">Zadatak dana: <a href="https://lichess.org/training/daily" target="_blank" rel="noopener noreferrer">lichess.org</a> (slobodna licenca CC0). Mijenja se svaki dan.</p>
+    </div>
+  </div>
+  <div class="dp-fallback" data-dp="fallback">
+    <Icon name="crown" size={34} class="text-gold" />
+    <div>
+      <p class="font-display text-xl font-bold">Zadatak dana čeka vas na Lichessu</p>
+      <p class="mt-1 text-white/70">Ovdje ga trenutačno ne možemo učitati. Riješite ga izravno na lichess.org.</p>
+      <a href="https://lichess.org/training/daily" target="_blank" rel="noopener noreferrer" class="btn-gold mt-4">Otvori zadatak dana <Icon name="external" size={16} /></a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-daily-puzzle]');
+  if (root) {
+    root.dataset.state = 'loading';
+    const go = () => import('../scripts/daily-puzzle').then((m) => m.mountDailyPuzzle(root)).catch(() => (root.dataset.state = 'error'));
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { io.disconnect(); go(); }
+      }, { rootMargin: '400px' });
+      io.observe(root);
+    } else go();
+  }
+</script>

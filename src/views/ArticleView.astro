@@ -5,7 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogCard from '../components/BlogCard.astro';
 import Icon from '../components/Icon.astro';
 import Lightbox from '../components/Lightbox.astro';
-import Ambient from '../components/Ambient.astro';
+import SideRails from '../components/SideRails.astro';
 import { site } from '../lib/data';
 import {
   type Post, postLang, postUrl, describe, formatDate, readingTime, relatedPosts, slugify,
@@ -93,22 +93,7 @@ const shareTitle = encodeURIComponent(d.title);
 
     <div class="article-stage">
     {/* desktop only: slow chess-themed motion in the empty space beside the text column (never behind it) */}
-    <div class="article-rail article-rail--l" aria-hidden="true">
-      <div class="article-rail__view">
-        <Ambient tone="light" grid light lines particles={9} seed={17} pieces={[
-          { piece: 'knight', x: '28%', y: '16%', size: '72px', motion: 'float', opacity: 0.07 },
-          { piece: 'pawn', x: '58%', y: '62%', size: '46px', motion: 'bob', opacity: 0.06 },
-        ]} />
-      </div>
-    </div>
-    <div class="article-rail article-rail--r" aria-hidden="true">
-      <div class="article-rail__view">
-        <Ambient tone="light" grid light lines particles={9} seed={29} pieces={[
-          { piece: 'bishop', x: '30%', y: '38%', size: '58px', motion: 'sway', opacity: 0.06 },
-          { piece: 'rook', x: '52%', y: '74%', size: '50px', motion: 'float', opacity: 0.06 },
-        ]} />
-      </div>
-    </div>
+    <SideRails />
     <div class="container-site max-w-3xl py-10 sm:py-14">
       <div class="prose prose-lg prose-odra max-w-none" data-lightbox-scope>
         <Content />

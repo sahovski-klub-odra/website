@@ -1,0 +1,138 @@
+---
+/**
+ * Homepage slideshow of the newest gallery photos (see homepagePhotos() in lib/gallery.ts).
+ * Slow crossfade with a gentle zoom (transform/opacity only, CSS), a new photo every 7 s.
+ * Controls: previous/next, dots, pause/resume, keyboard arrows, swipe on touch screens.
+ * Autoplay pauses on hover/focus, when the slideshow is off-screen or the tab is hidden,
+ * and is off for visitors who prefer reduced motion (they get manual navigation only).
+ * Fixed aspect ratio = no layout shift; only the first photo loads with the page section.
+ */
+import { getImage } from 'astro:assets';
+import Icon from './Icon.astro';
+import type { SlidePhoto } from '../lib/gallery';
+import { withBase, albumPath } from '../i18n/routes';
+interface Props { photos: SlidePhoto[] }
+const { photos } = Astro.props;
+const fmtSeason = (p: SlidePhoto) => p.album.season ?? String(p.album.date.getFullYear()) + '.';
+const SIZES = '(min-width: 1280px) 1216px, 100vw';
+// responsive WebP versions; photos 3+ get their address only when the slideshow comes near the screen
+const slides = await Promise.all(
+  photos.map(async (p) => {
+    const img = await getImage({ src: p.image, widths: [640, 960, 1280, 1600].filter((w) => w <= p.image.width), format: 'webp' });
+    return { ...p, src: img.src, srcset: img.srcSet.attribute, width: img.attributes.width, height: img.attributes.height };
+  }),
+);
+---
+{photos.length > 0 && (
+  <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="Najnovije fotografije iz galerije" tabindex="0">
+    <div class="carousel__stage">
+      {slides.map((p, i) => (
+        <figure class:list={['carousel__slide', i === 0 && 'is-active']} data-slide aria-roledescription="slide" aria-label={`${i + 1} od ${photos.length}`} aria-hidden={i === 0 ? undefined : 'true'}>
+          {i < 2 ? (
+            <img src={p.src} srcset={p.srcset} sizes={SIZES} alt={p.caption ?? p.album.title} width={p.width} height={p.height} loading="lazy" decoding="async" class="carousel__img" />
+          ) : (
+            <img data-src={p.src} data-srcset={p.srcset} sizes={SIZES} alt={p.caption ?? p.album.title} width={p.width} height={p.height} loading="lazy" decoding="async" class="carousel__img" />
+          )}
+          <figcaption class="carousel__caption">
+            <a href={withBase(albumPath('hr', p.album.id))} class="carousel__album">{p.album.title}</a>
+            <span class="carousel__season">{fmtSeason(p)}{p.caption && p.caption !== p.album.title ? <> · {p.caption}</> : null}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    {photos.length > 1 && (
+      <div class="carousel__controls" data-js-only>
+        <button type="button" class="carousel__btn" data-prev aria-label="Prethodna fotografija"><Icon name="chevronLeft" size={20} /></button>
+        <div class="carousel__dots" role="group" aria-label="Odabir fotografije">
+          {photos.map((_, i) => <button type="button" class="carousel__dot" data-dot={i} aria-label={`Fotografija ${i + 1}`} aria-current={i === 0 ? 'true' : undefined}></button>)}
+        </div>
+        <button type="button" class="carousel__btn" data-next aria-label="Sljedeća fotografija"><Icon name="chevronRight" size={20} /></button>
+        <button type="button" class="carousel__btn carousel__toggle" data-toggle aria-label="Zaustavi izmjenu fotografija" aria-pressed="false">
+          <svg class="i-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+          <svg class="i-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+    )}
+  </div>
+)}
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-slide]')];
+    if (slides.length < 2) return;
+    const dots = [...root.querySelectorAll<HTMLButtonElement>('[data-dot]')];
+    const toggle = root.querySelector<HTMLButtonElement>('[data-toggle]')!;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const DELAY = 7000;
+    let index = 0, timer = 0, userPaused = reduced, hover = false, visible = false;
+
+    // photos 3+ get their address one at a time, just before they are shown
+    const preload = (i: number) => {
+      const img = slides[(i + slides.length) % slides.length]?.querySelector<HTMLImageElement>('img');
+      if (!img) return;
+      if (img.dataset.src) {
+        img.srcset = img.dataset.srcset ?? '';
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+      }
+      img.loading = 'eager';
+    };
+
+    const show = (i: number) => {
+      index = (i + slides.length) % slides.length;
+      slides.forEach((s, j) => {
+        const on = j === index;
+        s.classList.toggle('is-active', on);
+        if (on) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true');
+      });
+      dots.forEach((d, j) => (j === index ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
+      preload(index);
+      preload(index + 1);
+    };
+    const running = () => !userPaused && !hover && visible && document.visibilityState === 'visible';
+    const schedule = () => {
+      clearTimeout(timer);
+      root.classList.toggle('is-paused', !running());
+      if (running()) timer = window.setTimeout(() => { show(index + 1); schedule(); }, DELAY);
+    };
+    const go = (i: number) => { show(i); schedule(); };
+
+    root.querySelector('[data-prev]')!.addEventListener('click', () => go(index - 1));
+    root.querySelector('[data-next]')!.addEventListener('click', () => go(index + 1));
+    dots.forEach((d, j) => d.addEventListener('click', () => go(j)));
+    toggle.addEventListener('click', () => {
+      userPaused = !userPaused;
+      toggle.setAttribute('aria-pressed', String(userPaused));
+      toggle.setAttribute('aria-label', userPaused ? 'Pokreni izmjenu fotografija' : 'Zaustavi izmjenu fotografija');
+      schedule();
+    });
+    toggle.setAttribute('aria-pressed', String(userPaused));
+    if (userPaused) toggle.setAttribute('aria-label', 'Pokreni izmjenu fotografija');
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') go(index - 1);
+      if (e.key === 'ArrowRight') go(index + 1);
+    });
+    root.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') { hover = true; schedule(); } });
+    root.addEventListener('pointerleave', () => { hover = false; schedule(); });
+    root.addEventListener('focusin', () => { hover = true; schedule(); });
+    root.addEventListener('focusout', () => { hover = false; schedule(); });
+    document.addEventListener('visibilitychange', schedule);
+
+    // swipe
+    let x0 = 0, y0 = 0, tracking = false;
+    root.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') { x0 = e.clientX; y0 = e.clientY; tracking = true; } });
+    root.addEventListener('pointerup', (e) => {
+      if (!tracking) return;
+      tracking = false;
+      const dx = e.clientX - x0, dy = e.clientY - y0;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.3) go(index + (dx < 0 ? 1 : -1));
+    });
+    root.addEventListener('pointercancel', () => (tracking = false));
+
+    new IntersectionObserver((entries) => {
+      visible = entries.some((e) => e.isIntersecting);
+      if (visible) preload(index + 1);
+      schedule();
+    }, { rootMargin: '200px' }).observe(root);
+  });
+</script>

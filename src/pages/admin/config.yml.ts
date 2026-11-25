@@ -113,6 +113,7 @@ collections:${blog('hr', 'Novosti')}
         fields:
           - { label: "Fotografija", name: image, widget: image, accept: "image/jpeg,image/png,image/webp,image/gif" }
           - { label: "Opis", name: caption, widget: string, required: false }
+          - { label: "Istakni na naslovnici", name: featured, widget: boolean, required: false, default: false, hint: "Istaknute fotografije prikazuju se prve u izmjeni fotografija na naslovnici; ostatak se automatski popunjava najnovijima." }
       - { label: "Skica (ne objavljuj)", name: draft, widget: boolean, default: false, required: false }
 
   - name: data
@@ -202,11 +203,12 @@ ${scheduleRepo() ? '' : trainingCollection}
               - { label: "Telefon", name: phone, widget: string, required: false }
               - { label: "E-pošta", name: email, widget: string, required: false }
           - { label: "OIB", name: oib, widget: string, required: false }
-          - label: "Karta (OpenStreetMap)"
+          - label: "Karta (Google Maps)"
             name: map
             widget: object
-            hint: "Koordinate: na openstreetmap.org desni klik na lokaciju → Show address."
+            hint: "Na google.com/maps potražite adresu → Podijeli → Ugradi kartu → kopirajte samo adresu iz atributa src (počinje s https://www.google.com/maps/embed). Ako je prazno, karta se traži po adresi kluba."
             fields:
+              - { label: "Adresa ugrađene karte (iframe src)", name: googleEmbed, widget: string, required: false }
               - { label: "Geografska širina (npr. 45.7)", name: lat, widget: number, value_type: float, required: false }
               - { label: "Geografska dužina (npr. 15.9)", name: lon, widget: number, value_type: float, required: false }
               - { label: "Uvećanje", name: zoom, widget: number, value_type: int, default: 16 }

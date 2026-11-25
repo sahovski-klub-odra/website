@@ -1,5 +1,5 @@
 ---
-import { Image, Picture } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogCard from '../components/BlogCard.astro';
 import Ambient from '../components/Ambient.astro';
@@ -9,24 +9,26 @@ import ScheduleLive from '../components/ScheduleLive.astro';
 import Announcements from '../components/Announcements.astro';
 import hero from '../assets/hero.jpg';
 import { postsForListing } from '../lib/blog';
-import { getAlbums } from '../lib/gallery';
-import { site, hasMap, formatAddress, osmLink, wpRedirects } from '../lib/data';
+import { homepagePhotos } from '../lib/gallery';
+import { site, formatAddress, wpRedirects } from '../lib/data';
+import DailyPuzzle from '../components/DailyPuzzle.astro';
+import WorldTopTen from '../components/WorldTopTen.astro';
+import PhotoCarousel from '../components/PhotoCarousel.astro';
+import GoogleMap from '../components/GoogleMap.astro';
 import { useTranslations, type Lang } from '../i18n/ui';
-import { routes, withBase, albumPath } from '../i18n/routes';
+import { routes, withBase } from '../i18n/routes';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const posts = (await postsForListing(lang)).slice(0, 6);
-const albums = await getAlbums(lang);
-const latestAlbum = albums[0];
-const previewPhotos = albums.flatMap((a) => a.photos.slice(0, 6).map((p) => ({ ...p, album: a }))).slice(0, 6);
+const slides = await homepagePhotos(10);
 const address = formatAddress();
 
 const hasWpIds = Object.keys(wpRedirects.ids ?? {}).length > 0;
 ---
-<BaseLayout lang={lang}>
+<BaseLayout lang={lang} rails>
   {hasWpIds && (
     <script slot="head" is:inline define:vars={{ ids: wpRedirects.ids, base: import.meta.env.BASE_URL.replace(/\/$/, '') }}>
       // Old WordPress short links such as /?p=123 land on the homepage – forward them to the migrated article.
@@ -94,100 +96,120 @@ const hasWpIds = Object.keys(wpRedirects.ids ?? {}).length > 0;
     <span class="hero-seam" aria-hidden="true"></span>
   </section>
 
-  <!-- ============ NEWS + SIDEBAR ============ -->
-  <section id="novosti" class="scroll-mt-24 py-14 sm:py-16">
-    <div class="container-site grid gap-10 xl:grid-cols-[minmax(0,1fr)_340px]">
-      <div>
-        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <h2 class="section-title reveal">{t('home.news.title')}</h2>
-          <a href={withBase(routes.news[lang])} class="inline-flex items-center gap-2 font-semibold text-ink hover:text-gold-deep">
-            {t('home.news.all')} <Icon name="arrowRight" size={18} />
-          </a>
-        </div>
-        {posts.length > 0 ? (
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post, i) => <BlogCard post={post} lang={lang} priority={i < 3} index={i} />)}
-          </div>
-        ) : (
-          <div class="card grid place-items-center gap-3 p-12 text-center text-ink/70">
-            <KnightMark class="h-14 w-14 text-gold [--knight-cut:#fff]" />
-            <p>{t('home.news.empty')}</p>
-          </div>
-        )}
-        {posts.length > 0 && (
-          <div class="mt-10 text-center">
-            <a href={withBase(routes.news[lang])} class="btn-dark">{t('home.news.all')} <Icon name="arrowRight" size={18} /></a>
-          </div>
-        )}
-      </div>
+  <!-- ============ CLUB: about + next training ============ -->
+  <section id="o-klubu" class="scroll-mt-24 py-14 sm:py-16">
+    <div class="container-site grid gap-6 lg:grid-cols-2">
+      <section class="about-card card relative overflow-hidden p-7 sm:p-8">
+        <Ambient tone="light" grid particles={0} class="about-ambient" />
+        <KnightMark class="about-knight pointer-events-none absolute -bottom-3 -right-3 h-40 w-40 text-ink/[0.07] [--knight-cut:transparent]" />
+        <h2 class="flex items-center gap-2.5 font-display text-3xl font-bold">
+          <span class="grid h-7 w-7 grid-cols-2 overflow-hidden rounded-sm" aria-hidden="true"><span class="bg-ink"></span><span class="bg-gold"></span><span class="bg-gold"></span><span class="bg-ink"></span></span>
+          {t('home.about.title')}
+        </h2>
+        <p class="relative mt-4 max-w-xl text-lg leading-relaxed text-ink/75">{site.about}</p>
+      </section>
 
-      <aside class="grid content-start gap-6 sm:grid-cols-2 xl:grid-cols-1">
-        <section id="o-klubu" class="about-card card relative scroll-mt-28 overflow-hidden p-6">
-          <Ambient tone="light" grid particles={0} class="about-ambient" />
-          <KnightMark class="about-knight pointer-events-none absolute -bottom-3 -right-3 h-36 w-36 text-ink/[0.07] [--knight-cut:transparent]" />
-          <h2 class="flex items-center gap-2.5 font-display text-2xl font-bold">
-            <span class="grid h-6 w-6 grid-cols-2 overflow-hidden rounded-sm" aria-hidden="true"><span class="bg-ink"></span><span class="bg-gold"></span><span class="bg-gold"></span><span class="bg-ink"></span></span>
-            {t('home.about.title')}
-          </h2>
-          <p class="relative mt-3 leading-relaxed text-ink/75">{site.about}</p>
-        </section>
-
-        <section class="training-card relative overflow-hidden rounded-xl bg-ink p-6 text-white shadow-card" aria-labelledby="next-training">
-          <Ambient grid particles={7} seed={3} pieces={[{ piece: 'pawn', x: '78%', y: '52%', size: '64px', motion: 'bob', opacity: 0.06 }]} />
-          <h2 id="next-training" class="eyebrow flex items-center gap-2 text-gold"><Icon name="clock" size={16} /> {t('schedule.next')}</h2>
-          <Announcements lang={lang} dark class="mt-4" />
-          <ScheduleLive kind="next" lang={lang} class="mt-4" />
-          <a href={withBase(routes.schedule[lang])} class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light">{t('schedule.full')} <Icon name="arrowRight" size={16} /></a>
-        </section>
-
-        <section class="card p-6 sm:col-span-2 xl:col-span-1">
-          <h2 class="flex items-center gap-2.5 font-display text-2xl font-bold"><Icon name="pin" size={22} class="text-gold" /> {t('home.location.title')}</h2>
-          <address class="mt-3 not-italic leading-relaxed text-ink/80">
-            <strong class="font-semibold text-ink">{site.shortName}</strong><br />
-            {address.map((l) => <>{l}<br /></>)}
-          </address>
-          <a href={hasMap ? osmLink(site.map.lat!, site.map.lon!) : withBase(routes.contact[lang])} class="link-gold mt-4 inline-flex items-center gap-1.5" {...(hasMap ? { target: '_blank', rel: 'noopener' } : {})}>
-            {hasMap ? t('home.location.map') : t('nav.contact')} <Icon name="arrowRight" size={16} />
-          </a>
-        </section>
-      </aside>
+      <section class="training-card relative overflow-hidden rounded-xl bg-ink p-7 text-white shadow-card sm:p-8" aria-labelledby="next-training">
+        <Ambient grid particles={7} seed={3} pieces={[{ piece: 'pawn', x: '82%', y: '50%', size: '70px', motion: 'bob', opacity: 0.06 }]} />
+        <h2 id="next-training" class="eyebrow flex items-center gap-2 text-gold"><Icon name="clock" size={16} /> {t('schedule.next')}</h2>
+        <Announcements lang={lang} dark class="mt-4" />
+        <ScheduleLive kind="next" lang={lang} class="mt-4" />
+        <a href={withBase(routes.schedule[lang])} class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:text-gold-light">{t('schedule.full')} <Icon name="arrowRight" size={16} /></a>
+      </section>
     </div>
   </section>
 
-  <!-- ============ GALLERY PREVIEW ============ -->
-  {previewPhotos.length > 0 && (
-    <section class="bg-cream-2/60 py-14 sm:py-16">
+  <!-- ============ DAILY PUZZLE (Lichess) ============ -->
+  <section class="home-band relative isolate overflow-hidden bg-ink py-14 text-white sm:py-16" aria-labelledby="puzzle-h">
+    <Ambient grid light particles={10} seed={21} pieces={[{ piece: 'rook', x: '90%', y: '10%', size: 'clamp(60px, 7vw, 100px)', motion: 'float', opacity: 0.06, desktopOnly: true }]} />
+    <div class="container-site">
+      <div class="mb-8">
+        <p class="eyebrow text-gold">Lichess</p>
+        <h2 id="puzzle-h" class="mt-2 font-display text-3xl font-bold sm:text-4xl">Zadatak dana</h2>
+        <p class="mt-2 text-lg text-white/70">Riješi današnji šahovski problem.</p>
+      </div>
+      <DailyPuzzle />
+    </div>
+  </section>
+
+  <!-- ============ WORLD TOP 10 (2700chess.com) ============ -->
+  <section class="py-14 sm:py-16" aria-labelledby="ranks-h">
+    <div class="container-site">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p class="eyebrow text-gold-deep">Šah u svijetu</p>
+          <h2 id="ranks-h" class="section-title reveal mt-2">Najbolji na svijetu</h2>
+        </div>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        <WorldTopTen kind="men" />
+        <WorldTopTen kind="women" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWS ============ -->
+  <section id="novosti" class="scroll-mt-24 bg-cream-2/60 py-14 sm:py-16">
+    <div class="container-site">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <h2 class="section-title reveal">{t('home.news.title')}</h2>
+        <a href={withBase(routes.news[lang])} class="inline-flex items-center gap-2 font-semibold text-ink hover:text-gold-deep">
+          {t('home.news.all')} <Icon name="arrowRight" size={18} />
+        </a>
+      </div>
+      {posts.length > 0 ? (
+        <div class="home-news grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post, i) => <BlogCard post={post} lang={lang} priority={i < 3} index={i} />)}
+        </div>
+      ) : (
+        <div class="card grid place-items-center gap-3 p-12 text-center text-ink/70">
+          <KnightMark class="h-14 w-14 text-gold [--knight-cut:#fff]" />
+          <p>{t('home.news.empty')}</p>
+        </div>
+      )}
+      {posts.length > 0 && (
+        <div class="mt-10 text-center">
+          <a href={withBase(routes.news[lang])} class="btn-dark">{t('home.news.all')} <Icon name="arrowRight" size={18} /></a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- ============ GALLERY SLIDESHOW ============ -->
+  {slides.length > 0 && (
+    <section class="home-band relative isolate overflow-hidden bg-ink py-14 text-white sm:py-16" aria-labelledby="gallery-h">
+      <Ambient grid light particles={8} seed={13} />
       <div class="container-site">
         <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <h2 class="section-title reveal">{t('home.gallery.title')}</h2>
-          <a href={withBase(routes.gallery[lang])} class="inline-flex items-center gap-2 font-semibold hover:text-gold-deep">{t('home.gallery.all')} <Icon name="arrowRight" size={18} /></a>
+          <div>
+            <p class="eyebrow text-gold">Galerija</p>
+            <h2 id="gallery-h" class="mt-2 font-display text-3xl font-bold sm:text-4xl">{t('home.gallery.title')}</h2>
+          </div>
+          <a href={withBase(routes.gallery[lang])} class="btn-outline">Pogledaj cijelu galeriju <Icon name="arrowRight" size={18} /></a>
         </div>
-        <ul class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
-          {previewPhotos.map((p, i) => (
-            <li class:list={['gallery-tile reveal group relative overflow-hidden rounded-lg', i === 0 && 'col-span-2 row-span-2']} style={`--reveal-delay:${Math.min(i, 6) * 80}ms`}>
-              <a href={withBase(albumPath(lang, p.album.id))} class="block h-full">
-                <Image src={p.image} alt={p.caption ?? p.album.title} widths={[300, 600]} sizes={i === 0 ? '(min-width:1024px) 33vw, 100vw' : '(min-width:1024px) 16vw, 50vw'} class="img-fade aspect-square h-full w-full object-cover" />
-              </a>
-            </li>
-          ))}
-        </ul>
-        {latestAlbum && <p class="mt-4 text-sm text-ink/60">{latestAlbum.title}</p>}
+        <PhotoCarousel photos={slides} />
       </div>
     </section>
   )}
 
-  <!-- ============ CONTACT CTA ============ -->
-  <section class="relative isolate overflow-hidden bg-ink-2 text-white">
-    <Ambient grid light particles={12} seed={5} pieces={[
-      { piece: 'knight', x: '84%', y: '8%', size: 'clamp(70px, 9vw, 120px)', motion: 'float', opacity: 0.08, flip: true },
-      { piece: 'bishop', x: '66%', y: '40%', size: 'clamp(44px, 5vw, 72px)', motion: 'sway', opacity: 0.05, desktopOnly: true },
-    ]} pointer />
-    <div class="container-site relative flex flex-col items-start gap-6 py-14 md:flex-row md:items-center md:justify-between">
-      <div class="max-w-2xl">
-        <h2 class="font-display text-3xl font-bold sm:text-4xl">{t('home.contact.title')}</h2>
-        <p class="mt-3 text-lg text-white/75">{t('home.contact.text')}</p>
+  <!-- ============ CONTACT + MAP ============ -->
+  <section class="py-14 sm:py-16" aria-labelledby="contact-h">
+    <div class="container-site grid items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)]">
+      <div class="card relative overflow-hidden p-7 sm:p-8">
+        <h2 id="contact-h" class="font-display text-3xl font-bold">{t('home.contact.title')}</h2>
+        <p class="mt-3 text-lg text-ink/70">{t('home.contact.text')}</p>
+        <div class="mt-6 flex gap-3">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-ink text-gold"><Icon name="pin" size={20} /></span>
+          <address class="not-italic leading-relaxed text-ink/80">
+            <strong class="font-semibold text-ink">{site.venue || site.shortName}</strong><br />
+            {address.map((l) => <>{l}<br /></>)}
+          </address>
+        </div>
+        <a href={withBase(routes.contact[lang])} class="btn-dark mt-7"><Icon name="mail" size={18} /> {t('home.contact.cta')}</a>
       </div>
-      <a href={withBase(routes.contact[lang])} class="btn-gold shrink-0"><Icon name="mail" size={18} /> {t('home.contact.cta')}</a>
+      <div class="overflow-hidden rounded-xl bg-ink p-2 shadow-card ring-1 ring-gold/25">
+        <GoogleMap />
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -94,6 +94,8 @@ const albums = defineCollection({
             z.object({
               image: image(),
               caption: optString(),
+              /** show this photo in the homepage slideshow (otherwise it is chosen automatically) */
+              featured: z.boolean().optional(),
             }),
           )
           .default([]),

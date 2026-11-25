@@ -235,3 +235,11 @@ Primjer s dvije partije, komentarima, varijantama i dijagramom: članak `src/con
 - **Naslovna fotografija albuma:** polje *Naslovna fotografija* (prazno = prva fotografija).
 - Albumi sastavljeni iz arhive članaka pokazuju na fotografije u mapama članaka (`../../blog/hr/…`) –
   te stavke uređujete jednako kao ostale.
+- **Fotografije na naslovnici:** naslovnica sama prikazuje najnovije fotografije iz galerije (vodoravne, barem 1000 px široke,
+  najviše dvije iz istog albuma). Želite li određenu fotografiju, u albumu kod nje uključite **Istakni na naslovnici** –
+  istaknute fotografije prikazuju se prve.
+
+### Karta, zadatak dana i rang-liste na naslovnici
+- **Karta:** *Postavke kluba i kontakt* → *Karta (Google Maps)*. Adresu ugrađene karte dobijete na google.com/maps:
+  potražite adresu → **Podijeli** → **Ugradi kartu** → kopirajte adresu iz atributa `src`. API ključ nije potreban.
+- **Zadatak dana** (Lichess) i **Top 10** (2700chess.com) učitavaju se sami svaki dan – ne treba ih uređivati.

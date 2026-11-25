@@ -1,0 +1,50 @@
+---
+/**
+ * Top 10 of the world (classical chess) from 2700chess.com.
+ *
+ * 2700chess.com has no public API; it offers official, automatically updated Top 10 banners
+ * (images) for other websites – the same ones the old WordPress site used. We show that banner
+ * inside our card. The banner is drawn by 2700chess, so it always shows their current list
+ * (names, flags, live ratings, ranking) without anything being copied or stored here.
+ * If the banner cannot be loaded (e.g. their bot protection blocks it), the card falls back to
+ * a link to the live ranking – no old or invented numbers are ever shown.
+ */
+import Icon from './Icon.astro';
+interface Props { kind: 'men' | 'women' }
+const { kind } = Astro.props;
+const cfg = {
+  men: { title: 'Top 10 šahista svijeta', banner: 'https://2700chess.com/files/topten.png', href: 'https://2700chess.com/' },
+  women: { title: 'Top 10 šahistica svijeta', banner: 'https://2700chess.com/files/topten_women.png', href: 'https://2700chess.com/women' },
+}[kind];
+---
+<article class="rank-card" data-rank-card>
+  <header class="rank-card__head">
+    <p class="eyebrow text-gold">Klasični šah · rejting uživo</p>
+    <h3 class="rank-card__title">{cfg.title}</h3>
+  </header>
+  <div class="rank-card__body">
+    <a href={cfg.href} target="_blank" rel="noopener noreferrer" class="rank-card__banner" data-rank-banner hidden>
+      <img src={cfg.banner} alt={`${cfg.title} – trenutačna rang-lista s 2700chess.com`} loading="eager" decoding="async" referrerpolicy="no-referrer-when-downgrade" data-rank-img />
+    </a>
+    <div class="rank-card__fallback" data-rank-fallback>
+      <Icon name="trophy" size={30} class="text-gold" />
+      <p>Poredak s imenima, zastavama i rejtinzima osvježava se uživo nakon svake odigrane partije. Trenutačnu rang-listu pogledajte na 2700chess.com.</p>
+    </div>
+  </div>
+  <footer class="rank-card__foot">
+    <span class="text-white/55">Izvor: <a href={cfg.href} target="_blank" rel="noopener noreferrer" class="underline decoration-white/30 underline-offset-2 hover:text-gold">2700chess.com</a></span>
+    <a href={cfg.href} target="_blank" rel="noopener noreferrer" class="rank-card__more">Pogledaj cijelu rang-listu <Icon name="external" size={14} /></a>
+  </footer>
+</article>
+
+<script>
+  // Show the official banner only once it has really loaded; otherwise keep the link card.
+  document.querySelectorAll<HTMLElement>('[data-rank-card]').forEach((card) => {
+    const img = card.querySelector<HTMLImageElement>('[data-rank-img]');
+    const wrap = card.querySelector<HTMLElement>('[data-rank-banner]');
+    const fallback = card.querySelector<HTMLElement>('[data-rank-fallback]');
+    if (!img || !wrap || !fallback) return;
+    const ok = () => { if (img.naturalWidth > 1) { wrap.hidden = false; fallback.hidden = true; } };
+    if (img.complete) ok(); else img.addEventListener('load', ok, { once: true });
+  });
+</script>

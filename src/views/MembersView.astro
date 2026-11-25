@@ -26,7 +26,7 @@ const updated = membersUpdated
   ? new Intl.DateTimeFormat(locales[lang], { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${membersUpdated}T12:00:00`))
   : null;
 ---
-<BaseLayout lang={lang} title={t('members.title')} description={t('members.intro')}>
+<BaseLayout rails lang={lang} title={t('members.title')} description={t('members.intro')}>
   <PageHeader title={t('members.title')} intro={t('members.intro')} />
   <div class="container-site py-12">
     {members.length > 0 ? (

@@ -6,6 +6,7 @@
 @import './pgn-viewer.css';
 @import './motion.css';
 @import './ambient.css';
+@import './home-features.css';
 
 @theme {
   --color-ink: #17191c;

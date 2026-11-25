@@ -33,16 +33,18 @@ export const videos = parse(videosFileSchema, videosRaw, 'videos.json').videos.s
 );
 export const wpRedirects = redirectsRaw as { paths: Record<string, string>; ids: Record<string, string> };
 
-export const hasMap = site.map.lat !== null && site.map.lon !== null;
-
-export function osmEmbedUrl(lat: number, lon: number, zoom = 16) {
-  const d = 0.01 * Math.pow(2, 16 - zoom);
-  const bbox = [lon - d, lat - d / 2, lon + d, lat + d / 2].map((n) => n.toFixed(5)).join(',');
-  return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lon}`;
+/** One-line address for Google Maps searches and directions, e.g. "Malomlačka ul. 91, 10020 Mala Mlaka, Hrvatska" */
+export function addressQuery(): string {
+  const a = site.address;
+  return [a.street, [a.postalCode, a.locality || a.city].filter(Boolean).join(' '), a.country].filter(Boolean).join(', ');
 }
-export function osmLink(lat: number, lon: number, zoom = 17) {
-  return `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=${zoom}/${lat}/${lon}`;
-}
+/** Official Google Maps URLs (https://developers.google.com/maps/documentation/urls) – no API key. */
+export const googleMapsLink = () => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressQuery())}`;
+export const googleDirectionsLink = () => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addressQuery())}`;
+/** Embedded map: the iframe from Google Maps "Share → Embed a map"; without it, the address search (also keyless). */
+export const googleEmbedUrl = () =>
+  site.map.googleEmbed || `https://www.google.com/maps?q=${encodeURIComponent(addressQuery())}&output=embed&hl=hr`;
+export const hasMap = !!(site.map.googleEmbed || site.address.street);
 
 export function formatAddress(): string[] {
   const a = site.address;

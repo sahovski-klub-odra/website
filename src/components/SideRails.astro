@@ -1,0 +1,29 @@
+---
+/**
+ * Slow chess-themed motion in the empty side margins of wide desktop screens
+ * (shared by article pages and the main pages). Decorative only: aria-hidden, no pointer events,
+ * always outside the content column, sticky so it stays visible while scrolling, paused off-screen
+ * and in background tabs (scripts/ambient.ts), static for reduced-motion visitors, hidden on smaller screens.
+ * `variant="page"`: beside the 80rem site container (main pages); default: beside the 64rem article column.
+ */
+import Ambient from './Ambient.astro';
+interface Props { variant?: 'article' | 'page' }
+const { variant = 'article' } = Astro.props;
+const cls = variant === 'page' ? 'article-rail article-rail--page' : 'article-rail';
+---
+<div class={`${cls} article-rail--l`} aria-hidden="true">
+  <div class="article-rail__view">
+    <Ambient tone="light" grid light lines particles={9} seed={17} pieces={[
+      { piece: 'knight', x: '28%', y: '16%', size: '72px', motion: 'float', opacity: 0.07 },
+      { piece: 'pawn', x: '58%', y: '62%', size: '46px', motion: 'bob', opacity: 0.06 },
+    ]} />
+  </div>
+</div>
+<div class={`${cls} article-rail--r`} aria-hidden="true">
+  <div class="article-rail__view">
+    <Ambient tone="light" grid light lines particles={9} seed={29} pieces={[
+      { piece: 'bishop', x: '30%', y: '38%', size: '58px', motion: 'sway', opacity: 0.06 },
+      { piece: 'rook', x: '52%', y: '74%', size: '50px', motion: 'float', opacity: 0.06 },
+    ]} />
+  </div>
+</div>

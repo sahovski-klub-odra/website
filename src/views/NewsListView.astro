@@ -23,8 +23,7 @@ const hrefFor = (n: number) => (category ? categoryPath(lang, category.slug, n) 
 const title = category ? category.name : t('news.title');
 const pageSuffix = page > 1 ? ` – ${t('news.page')} ${page}` : '';
 ---
-<BaseLayout
-  lang={lang}
+<BaseLayout rails lang={lang}
   title={`${title}${pageSuffix}`}
   description={category ? `${t('news.category')}: ${category.name}. ${t('news.intro')}` : t('news.intro')}
   section="news"

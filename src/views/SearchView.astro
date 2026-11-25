@@ -11,7 +11,7 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const cats = await categoriesFor(lang);
 ---
-<BaseLayout lang={lang} title={t('search.title')} section="news" noindex>
+<BaseLayout rails lang={lang} title={t('search.title')} section="news" noindex>
   <PageHeader title={t('search.title')} intro={t('search.hint')}>
     <form class="mt-8 flex max-w-2xl gap-2" role="search" data-search-form>
       <label for="q" class="sr-only">{t('search.label')}</label>

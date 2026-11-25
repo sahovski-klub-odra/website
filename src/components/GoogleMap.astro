@@ -1,0 +1,27 @@
+---
+/**
+ * Club location on an embedded Google Map (official "Share → Embed a map" iframe, no API key)
+ * with buttons that open the place or turn-by-turn directions in Google Maps.
+ * The iframe loads lazily, and its frame has a fixed height, so nothing jumps while it loads.
+ */
+import Icon from './Icon.astro';
+import { site, googleEmbedUrl, googleMapsLink, googleDirectionsLink } from '../lib/data';
+interface Props { class?: string; height?: string }
+const { class: cls = '', height = 'h-[340px] sm:h-[400px] lg:h-[460px]' } = Astro.props;
+---
+<div class:list={['gmap', cls]}>
+  <div class:list={['gmap__frame', height]}>
+    <iframe
+      title={`Karta – ${site.name}, ${site.address.street}, ${site.address.locality}`}
+      src={googleEmbedUrl()}
+      class="h-full w-full border-0"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  </div>
+  <div class="gmap__bar">
+    <a href={googleDirectionsLink()} target="_blank" rel="noopener noreferrer" class="btn-gold"><Icon name="pin" size={18} /> Upute za dolazak</a>
+    <a href={googleMapsLink()} target="_blank" rel="noopener noreferrer" class="gmap__open">Otvori u Google kartama <Icon name="external" size={14} /></a>
+  </div>
+</div>

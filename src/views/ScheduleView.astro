@@ -18,7 +18,7 @@ const week = WEEKDAYS.map((day) => ({
   sessions: training.sessions.filter((s) => s.day === day).sort((a, b) => a.startTime.localeCompare(b.startTime)),
 })).filter((d) => d.sessions.length);
 ---
-<BaseLayout lang={lang} title={t('schedule.title')} description={t('schedule.intro')}>
+<BaseLayout rails lang={lang} title={t('schedule.title')} description={t('schedule.intro')}>
   <PageHeader title={t('schedule.title')} intro={t('schedule.intro')} />
   <div class="container-site grid gap-12 py-12 lg:grid-cols-[minmax(0,1fr)_380px]">
     <div class="space-y-14">

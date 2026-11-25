@@ -16,7 +16,7 @@ const photos = await Promise.all(
   album.photos.map(async (p) => ({ ...p, full: (await getImage({ src: p.image, width: Math.min(2000, p.image.width), format: 'webp' })).src })),
 );
 ---
-<BaseLayout lang={lang} title={album.title} description={album.description ?? `${t('gallery.title')}: ${album.title}`} image={album.cover} section="gallery">
+<BaseLayout rails lang={lang} title={album.title} description={album.description ?? `${t('gallery.title')}: ${album.title}`} image={album.cover} section="gallery">
   <PageHeader title={album.title} intro={album.description}>
     <p class="mt-4 flex flex-wrap items-center gap-4 text-sm text-white/70">
       <span class="inline-flex items-center gap-1.5"><Icon name="calendar" size={16} /> {album.season ?? fmt.format(album.date)}</span>
