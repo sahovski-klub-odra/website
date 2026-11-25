@@ -12,6 +12,8 @@ wordpress:
   id: 3011
   url: "http://sahovski-klub.com/sk-odra-sk-jaska-51/"
   slug: "sk-odra-sk-jaska-51"
+author: "V. D."
+imageAlt: "ODRA JASKA 2014 2"
 ---
 ##### Seniori, 6. kolo
 
@@ -53,5 +55,3 @@ Qg8+ Kd7 35. Qxf7+ (35. Nc5+ Kc6 36. Qe8+ Kc7 37. Qxf7+ Kc6 38. Qe8+ Kc7 39.
 Nxe6#) 35... Kc6 36. Qe8+ Kc7 37. Qe7+ Nd7 38. Qd6+ Kc8 39. a3 Qxd3 40. Qxe6
 Qf1+ 41. Ka2 Qc4+ 42. Ka1 (42. Kb1 Qe4+) 42... Qc1+ 43. Ka2 1/2-1/2
 ```
-
-v.d.

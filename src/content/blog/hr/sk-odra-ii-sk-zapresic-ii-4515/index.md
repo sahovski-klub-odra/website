@@ -12,6 +12,7 @@ wordpress:
   id: 8365
   url: "http://sahovski-klub.com/sk-odra-ii-sk-zapresic-ii-4515/"
   slug: "sk-odra-ii-sk-zapresic-ii-4515"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 8.kolo
 
@@ -50,5 +51,3 @@ U idućem kolu druga ekipa **gostuje kod ŠK Dugo Selo II** — idemo po nove bo
 
 1. d4 d5 2. c4 e6 3. Nc3 Bb4 4. cxd5 exd5 5. Qc2 Nf6 6. Bg5 h6 7. Bh4 O-O 8. e3 Nc6 9. Bd3 Ne7 10. Ne2 Be6 11. O-O Qd6 12. Nb5 Qc6 13. Qxc6 bxc6 14. Nxc7 Rac8 15. Nxe6 fxe6 16. a3 Bd6 17. f3 g5 18. Bf2 g4 19. b4 h5 20. e4 e5 21. Bg3 dxe4 22. Bc4+ Nfd5 23. fxe4 Kg7 24. exd5 cxd5 25. Bb3 Bb8 26. Rxf8 Rxf8 27. Bxe5+ Bxe5 28. dxe5 Nc6 29. Rf1 Nxe5 30. Rxf8 Kxf8 31. Bxd5 Ke7 32. g3 Kf6 33. Nf4 Kg5 34. a4 h4 35. b5 Nd7 36. a5 Nf6 37. b6 axb6 38. axb6 Nd7 39. b7 hxg3 40. hxg3 Nb8 41. Kf2 Kf6 42. Nd3 Ke7 43. Ke3 Kf6 44. Kf4 Nd7 45. Nb4 Ke7 46. Na6 Kd6 47. Bg2 1-0
 ```
-
-IvanV

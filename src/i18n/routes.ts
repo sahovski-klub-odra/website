@@ -1,14 +1,14 @@
 import type { Lang } from './ui';
 
-/** Language-specific route segments. Croatian lives at the root, English under /en/. */
+/** Route segments. The website is Croatian only and lives at the root. */
 export const routes = {
-  home: { hr: '/', en: '/en/' },
-  news: { hr: '/novosti/', en: '/en/news/' },
-  search: { hr: '/novosti/pretraga/', en: '/en/news/search/' },
-  members: { hr: '/clanovi/', en: '/en/members/' },
-  gallery: { hr: '/galerija/', en: '/en/gallery/' },
-  schedule: { hr: '/raspored/', en: '/en/schedule/' },
-  contact: { hr: '/kontakt/', en: '/en/contact/' },
+  home: { hr: '/' },
+  news: { hr: '/novosti/' },
+  search: { hr: '/novosti/pretraga/' },
+  members: { hr: '/clanovi/' },
+  gallery: { hr: '/galerija/' },
+  schedule: { hr: '/raspored/' },
+  contact: { hr: '/kontakt/' },
 } as const;
 
 export type RouteKey = keyof typeof routes;
@@ -32,13 +32,9 @@ export const r = (key: RouteKey, lang: Lang) => routes[key][lang];
 
 export const newsPostPath = (lang: Lang, slug: string) => `${routes.news[lang]}${slug}/`;
 export const newsPagePath = (lang: Lang, page: number) =>
-  page <= 1 ? routes.news[lang] : `${routes.news[lang]}${lang === 'hr' ? 'stranica' : 'page'}/${page}/`;
+  page <= 1 ? routes.news[lang] : `${routes.news[lang]}stranica/${page}/`;
 export const categoryPath = (lang: Lang, cat: string, page = 1) =>
-  `${routes.news[lang]}${lang === 'hr' ? 'kategorija' : 'category'}/${cat}/${page > 1 ? `${page}/` : ''}`;
+  `${routes.news[lang]}kategorija/${cat}/${page > 1 ? `${page}/` : ''}`;
 export const albumPath = (lang: Lang, album: string) => `${routes.gallery[lang]}${album}/`;
-export const rssPath = (lang: Lang) => (lang === 'hr' ? '/rss.xml' : '/en/rss.xml');
-export const searchIndexPath = (lang: Lang) => (lang === 'hr' ? '/search-index.json' : '/en/search-index.json');
-
-/** Alternate URLs for every language, used by the language switcher and hreflang tags. */
-export type Alternates = Partial<Record<Lang, string>>;
-export const alternatesFor = (key: RouteKey): Alternates => ({ ...routes[key] });
+export const rssPath = (_lang: Lang) => '/rss.xml';
+export const searchIndexPath = (_lang: Lang) => '/search-index.json';

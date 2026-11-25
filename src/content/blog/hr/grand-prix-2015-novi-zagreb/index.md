@@ -11,6 +11,8 @@ wordpress:
   id: 3918
   url: "http://sahovski-klub.com/grand-prix-2015-novi-zagreb/"
   slug: "grand-prix-2015-novi-zagreb"
+author: "Darko"
+imageAlt: "Sredisce_NZ_09062015"
 ---
 Središće, Novi Zagreb, 5., 7. i 9. lipnja 2015.
 
@@ -20,5 +22,3 @@ Jučer je u prostorijama MS Središće – Ivana Šibla 8, Novi Zagreb, u org
 [Rezultati  
 ](http://chess-results.com/tnr176965.aspx?lan=13&art=4&wi=821 "Rezultati.")![sredisce09062015_2](./sredisce09062015-2.jpg)  ![sredisce09062015_3](./sredisce09062015-3.jpg)  ![sredisce09062015_4](./sredisce09062015-4.jpg)  ![rezultati Sredisce 2015](./rezultati-sredisce-2015.jpg)  ![sredisce09062015_5](./sredisce09062015-5.jpg)  ![sredisce09062015_6](./sredisce09062015-6.jpg) [  
 ](http://chess-results.com/tnr176965.aspx?lan=13&art=4&wi=821 "Rezultati.")
-
-darko

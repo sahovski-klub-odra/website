@@ -14,7 +14,7 @@ import 'cm-chessboard/assets/chessboard.css';
 import 'cm-chessboard/assets/extensions/markers/markers.css';
 import { parsePgn, formatPgnDate, isUnknown, type MoveNode, type ParsedGame } from '../lib/pgn/parse';
 
-type Lang = 'hr' | 'en';
+type Lang = 'hr';
 const T = {
   hr: {
     viewer: 'Prikaz šahovske partije', nav: 'Kretanje kroz partiju', first: 'Početna pozicija', prev: 'Prethodni potez', next: 'Sljedeći potez',
@@ -22,13 +22,6 @@ const T = {
     speed: 'Brzina reprodukcije', game: 'Odaberite partiju', moves: 'Popis poteza', download: 'Preuzmi PGN',
     start: 'Početna pozicija', round: 'kolo', white: 'Bijeli', black: 'Crni', illegal: 'Greška u zapisu partije',
     hint: '← → potezi · razmaknica reprodukcija · F okreni', hintTouch: 'Povucite ploču ulijevo ili udesno za sljedeći ili prethodni potez', noMoves: 'Pozicija', seconds: 's', credit: 'Figure: Cburnett, CC BY-SA 3.0',
-  },
-  en: {
-    viewer: 'Chess game viewer', nav: 'Move navigation', first: 'Starting position', prev: 'Previous move', next: 'Next move',
-    last: 'Last move', play: 'Autoplay', pause: 'Pause autoplay', flip: 'Flip board',
-    speed: 'Playback speed', game: 'Choose a game', moves: 'Move list', download: 'Download PGN',
-    start: 'Starting position', round: 'round', white: 'White', black: 'Black', illegal: 'Error in the game notation',
-    hint: '← → moves · space autoplay · F flip', hintTouch: 'Swipe the board left or right for the next or previous move', noMoves: 'Position', seconds: 's', credit: 'Pieces: Cburnett, CC BY-SA 3.0',
   },
 } as const;
 
@@ -114,7 +107,7 @@ export class GameViewer {
               </div>
               <div class="pgnv-tools">
                 <label class="pgnv-speed" title="${t.speed}"><span class="sr-only">${t.speed}</span>
-                  <select data-el="speed">${SPEEDS.map((s) => `<option value="${s}"${s === this.speed ? ' selected' : ''}>${String(s).replace('.', this.lang === 'hr' ? ',' : '.')} ${t.seconds}</option>`).join('')}</select>
+                  <select data-el="speed">${SPEEDS.map((s) => `<option value="${s}"${s === this.speed ? ' selected' : ''}>${String(s).replace('.', ',')} ${t.seconds}</option>`).join('')}</select>
                 </label>
                 <button type="button" data-act="flip" aria-label="${t.flip}" title="${t.flip}">${svg(icons.flip)}</button>
                 <button type="button" data-act="download" aria-label="${t.download}" title="${t.download}">${svg(icons.download)}</button>
@@ -180,7 +173,7 @@ export class GameViewer {
     this.el.meta.hidden = meta.length === 0;
     this.el.error.hidden = !this.game.error;
     if (this.game.error)
-      this.el.error.textContent = `⚠ ${this.t.illegal}: ${this.lang === 'en' ? this.game.error.replace('Neispravan potez', 'illegal move').replace('nakon', 'after').replace('na početku', 'at the start').replace('u varijanti', 'in a variation') : this.game.error}`;
+      this.el.error.textContent = `⚠ ${this.t.illegal}: ${this.game.error}`;
     this.el.moves.innerHTML = this.renderMoves();
     this.orientation = /^(b|black)$/i.test(this.root.dataset.orientation ?? '') ? 'b' : 'w';
     this.renderPlayers();

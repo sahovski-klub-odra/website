@@ -11,6 +11,7 @@ wordpress:
   id: 6917
   url: "http://sahovski-klub.com/juniorsko-prvenstvo-hrvatske-vinkovci-2020/"
   slug: "juniorsko-prvenstvo-hrvatske-vinkovci-2020"
+author: "Ivan M"
 ---
 **  
 ![](./juniorsko-2020-vinkovci.jpg)  
@@ -81,5 +82,3 @@ Nd6 Re7 29. Rfd1 f5 30. Qa2 Nf6 31. Rf1 Bg5 32. Qg2 Qh6 33. Rf3 Ng4 34. Qe2 Ne5
 (44. Ne4+ Kg8 45. Qe6+ Kg7 46. Qf6+ Kg8 47. Qxd8+ Kf7 48. Qf6+ Kg8 49. Qf8#)
 Re7 45. Bxe7+ Kxe7 46. Qf6+ Kxe8 47. Qe6+ Kf8 48. Qf6+ Ke8 49. Qe6+ Kf8 50. Qf6+ Ke8 51. Qe6+ 1/2-1/2
 ```
-
-*IvanM*

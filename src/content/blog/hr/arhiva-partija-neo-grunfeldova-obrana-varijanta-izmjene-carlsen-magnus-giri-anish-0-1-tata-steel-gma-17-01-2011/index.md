@@ -12,6 +12,7 @@ wordpress:
   id: 684
   url: "http://sahovski-klub.com/arhiva-partija-neo-grunfeldova-obrana-varijanta-izmjene-carlsen-magnus-giri-anish-0-1-tata-steel-gma-17-01-2011/"
   slug: "arhiva-partija-neo-grunfeldova-obrana-varijanta-izmjene-carlsen-magnus-giri-anish-0-1-tata-steel-gma-17-01-2011"
+imageAlt: "Carslen_Giri_Rd3"
 ---
 ![Carslen_Giri_Rd3](./carslen-giri-rd3.jpg)
 

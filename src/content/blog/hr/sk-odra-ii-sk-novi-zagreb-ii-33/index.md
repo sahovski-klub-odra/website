@@ -11,6 +11,7 @@ wordpress:
   id: 8418
   url: "http://sahovski-klub.com/sk-odra-ii-sk-novi-zagreb-ii-33/"
   slug: "sk-odra-ii-sk-novi-zagreb-ii-33"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 10.kolo
 
@@ -48,5 +49,3 @@ Ekipa je nastupila u sastavu: Luka Fiolić, Ivana Fiolić, Lucija Fiolić, Lucij
 
 d4 d5 2. c4 e6 3. Nf3 Nf6 4. g3 Bb4+ 5. Nbd2 dxc4 6. Bg2 c6 7. a4 c3 8. bxc3 Bxc3 9. Ra3 Bb4 10. Rb3 c5 11. O-O Nc6 12. Bb2 Na5 13. Re3 Nd5 14. Re5 c4 15. Nb1 c3 16. Ba3 Qd6 17. Bxb4 Qxb4 18. Ne1 O-O 19. Bxd5 exd5 20. Rxd5 b6 21. Rh5 g6 22. Rh4 Bd7 23. d5 Qc5 24. Qc2 Rac8 25. Nd3 Qxd5 26. Nxc3 Qb3 27. Qxb3 Nxb3 28. Nd5 Kg7 29. Ne5 Be6 30. Nf4 Bf5 31. Nfd3 Rc2 32. Rb4 Nc5 33. g4 Bxd3 34. exd3 f6 35. d4 Na6 36. Rc4 Rc8 37. Rxc8 Rxc8 38. Nf3 Rc3 39. Kg2 Ra3 40. Rd1 Kf7 41. d5 Ke7 42. Nd4 Nb4 43. Rb1 Rxa4 44. Rxb4 Rxb4 45. Nc6+ Kd6 46. Nxb4 a5 47. Nc2 Kxd5 48. Kf3 Kc4 49. Ke2 Kc3 50. Ne3 a4 51. Kd1 a3 52. Nd5+ Kb3 0-1
 ```
-
-IvanV

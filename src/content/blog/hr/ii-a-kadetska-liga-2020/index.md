@@ -12,6 +12,7 @@ wordpress:
   id: 6981
   url: "http://sahovski-klub.com/ii-a-kadetska-liga-2020/"
   slug: "ii-a-kadetska-liga-2020"
+author: "Darko"
 ---
 ![](./prvaci-2020.jpg)  
 Kadetska ekipa ŠK Odra I osvojila je prvo mjesto u II. A kadetskoj ligi 2020!
@@ -34,5 +35,4 @@ Kadetska ekipa ŠK Odra I osvojila je prvo mjesto u II. A kadetskoj ligi 2020!
 
 ---
 
-![](./odra-i.jpg) ![](./odra-ii.jpg) ![](./ekipa-s-peharom-2020.jpg) ![](./turnir.jpg)  
-darko
+![](./odra-i.jpg) ![](./odra-ii.jpg) ![](./ekipa-s-peharom-2020.jpg) ![](./turnir.jpg)

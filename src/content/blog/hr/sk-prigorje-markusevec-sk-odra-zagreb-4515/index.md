@@ -11,6 +11,8 @@ wordpress:
   id: 4874
   url: "http://sahovski-klub.com/sk-prigorje-markusevec-sk-odra-zagreb-4515/"
   slug: "sk-prigorje-markusevec-sk-odra-zagreb-4515"
+author: "Darko"
+imageAlt: "Markusevec 25092016"
 ---
 **Seniori, 8. kolo  
 ![Markusevec 25092016](./markusevec-25092016.jpg)  
@@ -25,5 +27,3 @@ Sljedeće kolo seniori igraju za tjedan dana, a u goste dolazi ŠK Silent iz Zag
 4\. I Klement, Dubravko 1895 – III Maravić, Ivan 1439          1:0  
 5\. II Šelendić, Matija 1760 – VK Furčić, Tin 1646                    1:0  
 6\. II Putak, Karlo 1714 – IV Vraneša, Ivan 1348                      1:0
-
-darko

@@ -12,6 +12,9 @@ wordpress:
   id: 5947
   url: "http://sahovski-klub.com/17-medunarodni-turnir-juniorki-busevec-2018/"
   slug: "17-medunarodni-turnir-juniorki-busevec-2018"
+author: "Darko"
+imageAlt: "Pobjednica, Ena Cvitan"
+imageCaption: "Pobjednica, Ena Cvitan"
 ---
 ![Pobjednica, Ena Cvitan](./ena-cvitan-13052018.jpg "Pobjednica, Ena Cvitan")
 
@@ -21,5 +24,4 @@ B turnir osvojila je prvokategornica **Lara Desnica**, također iz ŠK Draga, do
 **–** Iz ŠK Odra nastupilo je sedam igračica, Ana, Monika, Katarina, Samanta, Franka, Lucija i Botica. Ana i Monika su se ugurale među prvih deset i pokazale znatan napredak. Prošle godine Ana je završila na 18. mjestu s osvojenih 2,5 boda, dok je ove godine bila osma uz osvojena 3,5 boda. Monika je prošle godine bila 23.-a , s 1,5 bodom, a ove godine 10.-a s osvojena 3 boda. I druge igračice pokazuju dobar napredak, a važno je da je i Botica ostvarila svoju prvu službenu pobjedu! Katarina je ostvarila impresivan rezultat kada je prvi dan osvojila 2,5 boda i igrala sporo. Ipak, drugi dan vratila se starim navikama i ubrzala igru. Srećom, i sama je uvidjela da brzopletošću ne može ostvariti ozbiljan rezultat pa vjerujem da će poraditi na tom segmentu igre. Samanta napreduje polako, ali konstantno. Vjerujem da će joj i ove partije pomoći da skupi više ideja koje su joj u nekim pozicijama nedostajale. Franka se “vratila” u igru. Pokazuje zavidno strpljenje i koncentraciju, a obzirom da je ostvarila rezultat kao i starije klupske kolegice, Katarina i Samanta, na dobrom je putu. Samo Lucija nije popravila rezultat, ali je popravila igru. Nju još muči taktika koju srećom može lako izvježbati. Tako je već prvi dan propustila dva dobitka jer nije vidjela jednostavnu dobitničku taktiku. Ali je zato odigrala jednu od najljepših partija. Vraneša joj je počeo pomagati u posljednje vrijeme te se nadam da će nastaviti suradnju, jer su pomaci očigledni.  Većina djevojaka je prešla u jednu višu razinu kada “vide” sve  u poziciji, grubih previda gotovo da više i nema i vrijeme im je da počnu ozbiljnije studirati otvaranja.  
 ![](./pobjednice-a-turnira.jpg)  ![](./pobjednice-b-turnira-270x300a.jpg)  
 ![](./ekipa-iz-sk-odra-busevec-2018.jpg) ![](./prije-pocetka-busevec-2018.jpg) ![](./suci-busevec-2018.jpg) ![](./busevec-2018-2.jpg)  
-![](./a-turnir-rezultati.jpg) ![](./b-turnir-rezultati.jpg)  
-darko
+![](./a-turnir-rezultati.jpg) ![](./b-turnir-rezultati.jpg)

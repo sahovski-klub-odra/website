@@ -12,6 +12,7 @@ wordpress:
   id: 2238
   url: "http://sahovski-klub.com/zgodan-alat-za-analizu-zavrsnica/"
   slug: "zgodan-alat-za-analizu-zavrsnica"
+imageAlt: "Završnice - Nalimov Tablebases Online - ChessOK.com"
 ---
 Isprobano na par primjera (npr. mat lovcem i skakačem ili zanimljiv dobitak: dva lovca protiv skakača). U slučaju da dobitak postoji – algoritam će ga pronaći. Kad je pozicija remi – algoritam je dobro ocijeni, ali ne baš tako kvalitetno objasni. Svakako isprobati.
 

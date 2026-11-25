@@ -12,6 +12,7 @@ wordpress:
   id: 2389
   url: "http://sahovski-klub.com/fide-chess-world-cup-tromso-2013-pred-treci-krug/"
   slug: "fide-chess-world-cup-tromso-2013-pred-treci-krug"
+imageAlt: "2013-08-17 15_04_14-LIVE"
 ---
 Šesnaest vrlo zanimljivih parova trećeg kruga:
 

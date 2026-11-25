@@ -12,6 +12,7 @@ wordpress:
   id: 4526
   url: "http://sahovski-klub.com/pojedinacno-kadetsko-prvenstvo-zagreba-2016-do-13-godina/"
   slug: "pojedinacno-kadetsko-prvenstvo-zagreba-2016-do-13-godina"
+imageAlt: "ekipa 06032016 ZG"
 ---
 ![ekipa 06032016 ZG](./ekipa-06032016-zg.jpg)
 

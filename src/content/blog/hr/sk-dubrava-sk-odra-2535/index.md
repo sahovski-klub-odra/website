@@ -28,5 +28,4 @@ wordpress:
 77.  g5 78. fxg5 Bg6 79. Kd2 Kf3 0-1
 ```
 
-  
 **

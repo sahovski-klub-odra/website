@@ -12,6 +12,7 @@ wordpress:
   id: 2021
   url: "http://sahovski-klub.com/pocelo-xiv-europsko-pojedinacno-prvenstvo-u-poljskoj/"
   slug: "pocelo-xiv-europsko-pojedinacno-prvenstvo-u-poljskoj"
+imageAlt: "XIV Europsko pojedinačno prvenstvo"
 ---
 ![XIV Europsko pojedinačno prvenstvo](./header.jpg)
 

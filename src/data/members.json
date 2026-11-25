@@ -5,7 +5,6 @@
     {
       "name": "Ivan Cvetković",
       "role": "predsjednik",
-      "roleEn": "President",
       "category": "MK",
       "registrationNumber": "262",
       "fideId": "14515024",
@@ -16,7 +15,6 @@
     {
       "name": "Stjepan Maravić",
       "role": "dopredsjednik",
-      "roleEn": "Vice-president",
       "category": "MK",
       "registrationNumber": "372",
       "fideId": "14504316",
@@ -28,7 +26,6 @@
     {
       "name": "Ivan Maravić",
       "role": "član predsjedništva",
-      "roleEn": "Board member",
       "category": "MK",
       "registrationNumber": "9613",
       "fideId": "14539411",
@@ -40,7 +37,6 @@
     {
       "name": "Ivan Vraneša",
       "role": "član predsjedništva",
-      "roleEn": "Board member",
       "category": "II",
       "registrationNumber": "10979",
       "fideId": "14552523",
@@ -52,7 +48,6 @@
     {
       "name": "Božo Cvetković",
       "role": "član predsjedništva",
-      "roleEn": "Board member",
       "category": "III",
       "registrationNumber": "10976",
       "fideId": "14552493",

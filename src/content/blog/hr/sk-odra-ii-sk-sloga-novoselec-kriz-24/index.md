@@ -11,6 +11,7 @@ wordpress:
   id: 8727
   url: "http://sahovski-klub.com/sk-odra-ii-sk-sloga-novoselec-kriz-24/"
   slug: "sk-odra-ii-sk-sloga-novoselec-kriz-24"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 5.kolo
 
@@ -73,6 +74,3 @@ Trenutno se druga ekipa ŠK Odre nalazi na **6\. mjestu ljestvice od ukupno 8 ek
 
 *
 ```
-
-  
-IvanV

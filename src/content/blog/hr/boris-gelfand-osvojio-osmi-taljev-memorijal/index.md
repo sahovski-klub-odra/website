@@ -12,6 +12,7 @@ wordpress:
   id: 2229
   url: "http://sahovski-klub.com/boris-gelfand-osvojio-osmi-taljev-memorijal/"
   slug: "boris-gelfand-osvojio-osmi-taljev-memorijal"
+imageAlt: "Gelfand osvojio osmi Taljev memorijal"
 ---
 ![Gelfand osvojio osmi Taljev memorijal](./gelfand-osvojio-osmi-taljev-memorijal.jpg)
 

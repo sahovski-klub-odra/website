@@ -12,6 +12,7 @@ wordpress:
   id: 8338
   url: "http://sahovski-klub.com/sk-zapresic-sk-odra-3525/"
   slug: "sk-zapresic-sk-odra-3525"
+author: "Ivan V"
 ---
 **Seniori – I. ekipa, 7.kolo  
 ![](./analiza-nakon-meca.jpg)  
@@ -87,5 +88,3 @@ Qb8 93. Kc4 Qc7+ 94. Kb5 Be7 95. Qd5 Qf4??{ Previd! Propušta uzeti besplatnog p
 (95... Qb8+ 96. Ka6 Qc8+ 97. Kb5 Qxg4) 96. Bc4 Qg5 97. Qxg5 Bxg5 98. Kc5 f6
 99. Kd5 Bc1 100. Ke4 Kh6 101. Be2 Kg5 102. Bd1 f5+ 103. gxf5 gxf5+ 104. Kf3 f4 1/2-1/2
 ```
-
-**IvanV**

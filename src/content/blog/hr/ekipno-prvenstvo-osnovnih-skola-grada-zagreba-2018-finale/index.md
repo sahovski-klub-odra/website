@@ -12,6 +12,7 @@ wordpress:
   id: 5760
   url: "http://sahovski-klub.com/ekipno-prvenstvo-osnovnih-skola-grada-zagreba-2018-finale/"
   slug: "ekipno-prvenstvo-osnovnih-skola-grada-zagreba-2018-finale"
+author: "Darko"
 ---
 ![](./pehar-za-prvo-mjesto.jpg)
 
@@ -35,8 +36,6 @@ POREDAK DJEVOJKE:
 4\. OŠ Ive Andrića
 
 ![](./odra-vs-spansko.jpg) ![](./odra-vs-domjanic.jpg)
-
-darko
 
 [Rezultati djevojke](/files/wp/2018/02/Bilten-ah58-.pdf)  
 [Rezultati dečki](/files/wp/2018/02/Bilten-ah58M_zip.pdf)

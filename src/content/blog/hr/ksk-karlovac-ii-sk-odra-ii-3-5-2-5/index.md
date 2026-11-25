@@ -12,6 +12,7 @@ wordpress:
   id: 8188
   url: "http://sahovski-klub.com/ksk-karlovac-ii-sk-odra-ii-3-5-2-5/"
   slug: "ksk-karlovac-ii-sk-odra-ii-3-5-2-5"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 4.kolo
 
@@ -41,5 +42,3 @@ Sve u svemu – teška i naporna nedjelja za drugu ekipu Odre. Ovim porazom pada
 
 1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d6 5. f4 dxe5 6. fxe5 e6 7. Nf3 c5 8. Nc3 cxd4 9. Bg5 Be7 10. Bxe7 Qxe7 11. Qxd4 Nc6 12. Qg4 g6 13. O-O-O Nd7 14. Qf4 f6 15. exf6 Qxf6 16. Qc7 Qd8 17. Nb5 a6 18. Nd6+ Ke7 19. Nxc8+ Rxc8 20. Qd6+ Ke8 21. Qxe6+ Qe7 22. Qg4 Kd8 23. Be2 Kc7 24. Rhe1 Nc5 25. Bf1 Qf6 26. Qg3+ Kb6 27. Qf2 Rhd8 28. Kb1 Qf5+ 29. Ka1 Nb4 30. Rc1 Rd2 31. Nxd2 { Bijeli nije smio uzeti damom na d2 jer bi dobio forsirani mat u tri poteza!  } (31. Qxd2 Nb3+ 32. axb3 Qa5+ 33. Kb1 Qa2) 31... Qxf2 0-1
 ```
-
-IvanV

@@ -12,6 +12,7 @@ wordpress:
   id: 1655
   url: "http://sahovski-klub.com/turnir-kandidata-london-2013-kramnik-i-carlsen-dijele-prvu-poziciju-pred-zadnji-krug/"
   slug: "turnir-kandidata-london-2013-kramnik-i-carlsen-dijele-prvu-poziciju-pred-zadnji-krug"
+imageAlt: "Ivanchuk, London 2013"
 ---
 Jučer je igrana trinaesta partija i situacija na vrhu je opet neizvjesna. **Kramnik** je protiv **Gelfanda** imao izglednu poziciju, međutim propustio je održati bodovnu razliku pred **Carlsenom** koji je pobjedio **Radjabova** u prilično izjednačenoj završnici, gdje je lako mogao, ustvari i trebao biti i remi.
 

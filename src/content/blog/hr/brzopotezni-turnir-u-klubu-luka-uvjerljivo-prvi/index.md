@@ -11,6 +11,7 @@ wordpress:
   id: 5643
   url: "http://sahovski-klub.com/brzopotezni-turnir-u-klubu-luka-uvjerljivo-prvi/"
   slug: "brzopotezni-turnir-u-klubu-luka-uvjerljivo-prvi"
+author: "Darko"
 ---
 ![](./cuger-u-klubu-20171222.jpg)
 
@@ -21,6 +22,4 @@ wordpress:
 
 ![](./tablica-cuger-malci.jpg)
 
-![](./cuger-22122017b.jpg) ![](./cuger-22122017.jpg) ![](./cuger-15122017a.jpg) ![](./cuger-15122017.jpg)  
-
-darko
+![](./cuger-22122017b.jpg) ![](./cuger-22122017.jpg) ![](./cuger-15122017a.jpg) ![](./cuger-15122017.jpg)

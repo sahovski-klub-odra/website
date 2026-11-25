@@ -12,6 +12,7 @@ wordpress:
   id: 8384
   url: "http://sahovski-klub.com/sk-koncar-sk-odra/"
   slug: "sk-koncar-sk-odra"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 9.kolo  
 ![](./odrakoncar700.jpg)  
@@ -34,6 +35,3 @@ Ove nedjelje smo odigrali [meč](https://chess-results.com/tnr1127780.aspx?lan=1
 [PlyCount "68"]
 20. Bg5 {Velika greška, trebalo je samo obraniti lovca nekako.} (20.Ke3) (20.Qh2) Qxf3 21. Bxd8 Qxf2+ 22. Kd3 Qf3+ {Umjesto toga crni ima više direktnih dobitaka kao npr.} (22... Nb4+) 23. Kd2 Qf2+ 24. Kd3 1/2-1/2
 ```
-
-  
-*IvanM*

@@ -12,6 +12,8 @@ wordpress:
   id: 1776
   url: "http://sahovski-klub.com/sk-odra-sk-koncar-25-35/"
   slug: "sk-odra-sk-koncar-25-35"
+author: "V. D."
+imageAlt: "odra koncar 07042013"
 ---
 ## **2\. kolo, seniori**
 
@@ -34,5 +36,3 @@ REZULTATI:
 5\. Vladimir Golub  – Željko Fabris                0:1
 
 6\. Ivan Cvetković  – Vladimir Ostojić           0:1
-
-v.d.

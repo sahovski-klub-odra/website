@@ -12,6 +12,7 @@ wordpress:
   id: 1852
   url: "http://sahovski-klub.com/ekipno-kadetsko-prvenstvo-centar-b/"
   slug: "ekipno-kadetsko-prvenstvo-centar-b"
+imageAlt: "b"
 ---
 U subotu, 13. travnja 2013. u **Topuskom** je odigran prvi krug *Kadetskoga ekipnog prvenstva*. Mlada ekipa *ŠK Odra* prvi put nastupa na ovom prvenstvu i stječe iskustva za budućnost.  U prva tri kola zabilježili su dva poraza i jedan neriješeni meč.  Prema riječima voditelja **S. Maravića**, svi članovi pokazali su veliku ozbiljnost u pristupu igri i nije bilo (očekivane 😉 ) brzopletosti. Vrijedan bod donio je **Božo Cvetković**, čije je taktiziranje urodilo plodom u trećem kolu. Posebno se istaknula **Bruna Novak**, koja je u posljednji čas uvrštena u ekipu za ovaj krug, a ostvarila je dvije pobjede iz tri partije. Šteta je samo što nije bilo vremena za kupanje.
 

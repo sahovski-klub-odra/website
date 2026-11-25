@@ -12,5 +12,6 @@ wordpress:
   id: 2750
   url: "http://sahovski-klub.com/cestit-bozic-i-sretna-nova-godina/"
   slug: "cestit-bozic-i-sretna-nova-godina"
+imageAlt: "btbl"
 ---
 ![btbl](./btbl.jpg)

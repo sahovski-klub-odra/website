@@ -12,6 +12,8 @@ wordpress:
   id: 2864
   url: "http://sahovski-klub.com/ekipno-prvenstvo-osnovnih-skola-grada-zagreba-za-2014/"
   slug: "ekipno-prvenstvo-osnovnih-skola-grada-zagreba-za-2014"
+author: "V. D."
+imageAlt: "13022014 prv os zagreba 1 krug"
 ---
 Večeras je završen prvi krug Ekipnog prvenstva Zagreba za osnovne škole.  
 Ekipa OŠ Odra osvojila je treće mjesto!  
@@ -22,5 +24,3 @@ Ekipi želimo još više uspjeha i dobar nastup u sljedećem krugu (27. veljače
 ![13022014 prv os zagreba 1 krug](./13022014-prv-os-zagreba-1-krug.jpg)
 
 [Rezultati](http://chess-results.com/tnr124505.aspx?lan=13&art=0&turdet=YES&flag=30&wi=984 "Ekipno prv OŠ ZG 2014, I krug")
-
-v.d.

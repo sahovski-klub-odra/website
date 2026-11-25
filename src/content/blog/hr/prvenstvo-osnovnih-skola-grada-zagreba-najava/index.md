@@ -11,6 +11,8 @@ wordpress:
   id: 4404
   url: "http://sahovski-klub.com/prvenstvo-osnovnih-skola-grada-zagreba-najava/"
   slug: "prvenstvo-osnovnih-skola-grada-zagreba-najava"
+author: "Darko Vidaković"
+imageAlt: "OS FRANA KRSTE FRANKOPANA"
 ---
 ![OS FRANA KRSTE FRANKOPANA](./os-frana-krste-frankopana.jpg)
 
@@ -36,5 +38,3 @@ Termini ovog prvenstva preklapaju se s turnirom za mlade koji će se održati u
 Što se tiče ekipa za **klupsku kadetsku ligu** (dečki s dvije ekipe igraju IV. ligu, a djevojčice I. ligu, predviđeno je da se kadetska liga igra **12\. i 19. ožujka te 9. travnja**), prva ekipa dečkiju bit će istovjetna školskoj, dok su za nastup u drugoj ekipi prijavljeni Luka, Filip, Josip, Antonio, Luka Fran, Petar, Juraj, Stipe, Marko i Toni. Ekipa djevojaka, kao i prva ekipa dečkiju, ostaje neizmijenjena, samo će se ekipi na trećoj ploči pridružiti Ana, kojoj svi želimo da dotad riješi svoje zdravstvene tegobe.![sretan rodendan](./sretan-rodendan.jpg)  
 U povodu današnjeg rođendana jučer je u klubu Josip počastio ekipu pizzama,  
 a mi mu  želimo sretan deveti rođendan!
-
-Darko Vidaković

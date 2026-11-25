@@ -12,6 +12,7 @@ wordpress:
   id: 7971
   url: "http://sahovski-klub.com/sk-odra-ii-sk-hask-42/"
   slug: "sk-odra-ii-sk-hask-42"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 1.kolo
 
@@ -46,5 +47,3 @@ Ukupno, ekipa je ostvarila zasluženu pobjedu, što im daje dodatan motiv za slj
 ![](./img-20250316-101303.jpg)
 ![](./img-20250316-101401.jpg)
 ![](./20250316-090804883-ios.jpg)
-
-IvanV

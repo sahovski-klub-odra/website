@@ -12,6 +12,7 @@ wordpress:
   id: 5613
   url: "http://sahovski-klub.com/ekipno-prvenstvo-os-n-zagreba-do-cetvrtog-razreda-2017-2018-mini-liga-prvi-krug/"
   slug: "ekipno-prvenstvo-os-n-zagreba-do-cetvrtog-razreda-2017-2018-mini-liga-prvi-krug"
+author: "Darko"
 ---
 ![](./mini-liga-2017-2018.jpg)  
 U srijedu, 13. prosinca 2017., u [OŠ Ive Andrića](http://os-iandrica-zg.skole.hr/) u Sopotu, započela je Mini liga 2017./2018., ekipno prvenstvo OŠ Novog Zagreba za učenike do četvrtog razreda. Prvenstvo se odigrava pod pokroviteljstvom ravnateljice osnovne škole Ive Andrića, gospođe Dubravke Miklec. Voditelj prvenstva je Jelenko Mikacinić, voditelj Šahovske škole OŠ Ive Andrića. Na turniru nastupa 12 ekipa iz deset osnovnih škola s područja Novog Zagreba. Tempo igre je 10+0, a mečevi se igraju na četiri ploče.
@@ -47,5 +48,3 @@ Tie Break2: pojedinačni bodovi
 Tie Break3: međusobni susret
 
 Danas je odigran posljednji krug Mini-lige, a nakon teška tri susreta i krajnje neizvjesnosti do posljednjeg poteza, **ekipa OŠ Odre osvojila je prvo mjesto!** U posljednjem krugu u ekipi je umjesto Roka nastupila Dora i osvojila prevažan bod koji je donio meč pobjedu u desetom kolu. A Filip je nakon teške borbe u posljednjem kolu, u partiji koja se igrala do posljednjih sekundi na satu, uspio pobijediti i također donio meč bod koji je na kraju, uz dodatne kriterije, bio dovoljan za osvajanje prvog mjesta.![](./posljednje-kolo.jpg) Luka i Luka su igrali standardno dobro, ali su svi kiksali u devetom kolu kada su trošili previše vremena i izgubili zbog vremenske oskudice. Borbe su bile izjednačene do samog kraja, a na kraju je o pobjedniku turnira odlučivao treći kriterij tj. međusobni ogled. Čak su četiri ekipe na kraju turnira imale jednak broj meč bodova, a prve dvije i jednak broj pojedinačnih bodova. Tako je završena i ovogodišnja mini-liga koja je uistinu osvježenje među šahovskim turnirima jer pruža svim početnicima mjesto gdje mogu početi svoj šahovski razvoj u ravnopravnoj konkurenciji. Šteta je što nema i više ovakvih turnira. Još jednom velika hvala organizatorima i domaćinu, OŠ Ive Andrića.
-
-darko

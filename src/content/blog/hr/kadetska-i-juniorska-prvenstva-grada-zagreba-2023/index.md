@@ -11,6 +11,7 @@ wordpress:
   id: 7472
   url: "http://sahovski-klub.com/kadetska-i-juniorska-prvenstva-grada-zagreba-2023/"
   slug: "kadetska-i-juniorska-prvenstva-grada-zagreba-2023"
+author: "Darko"
 ---
 ![](./kadetsko-pz-2023.jpg)
 
@@ -21,5 +22,3 @@ Termini kadetskih turnira su se pokazali prilično lošim jer su se preklapali s
 Mnogim našim članovima u mlađim konkurencijama (U9, U11) ovo je bio prvi turnir, prvo zapisivanje partija, bilo je puno treme, igrali su ispod svojih realnih mogućnosti, ali je bitno da su to pregrmili i sljedeći put bit će lakše. Nekolicina se ozbiljno zaintersirala za šah, dolaze redovno petkom i dogodine bi se mogla složiti dobra kadetska ekipa. 🙂 Uskoro će i Prvenstvo Hrvatske, prijavljeno je zasad sedmoro klinaca, a još se nadam da će se taj broj možda i povećati pa da se priključe i Bartol, Vili i Domagoj. Njih trojica pokazuju veliku volju, a problem je samo  organizacijski.
 
 ![](./kadetsko-pz-2023-u9m.jpg) ![](./kadetsko-pz-2023-u9z.jpg)          ![](./medalje-prvzg-2023.jpg)    ![](./2-mjesto-2023.jpg)
-
-darko

@@ -12,6 +12,7 @@ wordpress:
   id: 3284
   url: "http://sahovski-klub.com/mec-za-prvaka-svijeta-magnus-carlsen-vs-vishy-anand-sochi-2014-poslije-6-partije-3525/"
   slug: "mec-za-prvaka-svijeta-magnus-carlsen-vs-vishy-anand-sochi-2014-poslije-6-partije-3525"
+imageAlt: "Carlsen vs. Anand - Sochi 2014 - round 6"
 ---
 ![Carlsen vs. Anand - Sochi 2014 - round 6](./carlsen-vs-anand-sochi-2014-round-6.jpg)
 

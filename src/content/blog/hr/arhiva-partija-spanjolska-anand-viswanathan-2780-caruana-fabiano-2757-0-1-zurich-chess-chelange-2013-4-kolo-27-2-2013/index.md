@@ -12,6 +12,7 @@ wordpress:
   id: 1124
   url: "http://sahovski-klub.com/arhiva-partija-spanjolska-anand-viswanathan-2780-caruana-fabiano-2757-0-1-zurich-chess-chelange-2013-4-kolo-27-2-2013/"
   slug: "arhiva-partija-spanjolska-anand-viswanathan-2780-caruana-fabiano-2757-0-1-zurich-chess-chelange-2013-4-kolo-27-2-2013"
+imageAlt: "ScreenShot001"
 ---
 Igra se šesto kolo *Zurich Chess Chelange 2013*. Rezultati:
 

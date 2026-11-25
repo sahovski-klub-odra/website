@@ -11,6 +11,7 @@ wordpress:
   id: 6778
   url: "http://sahovski-klub.com/drzavno-prvenstvo-ssd-republike-hrvatske-2019-2020-djevojcice/"
   slug: "drzavno-prvenstvo-ssd-republike-hrvatske-2019-2020-djevojcice"
+author: "Darko"
 ---
 ![](./trogir-ph-os-2020.jpg)
 
@@ -42,5 +43,4 @@ wordpress:
 ---
 
 ![](./djevojke-s-peharom.jpg)  
-![](./more-350w.jpg) ![](./7kolo-350x.jpg)  
-darko
+![](./more-350w.jpg) ![](./7kolo-350x.jpg)

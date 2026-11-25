@@ -12,6 +12,8 @@ wordpress:
   id: 4339
   url: "http://sahovski-klub.com/kadetski-turnir-pocetnika-21112015/"
   slug: "kadetski-turnir-pocetnika-21112015"
+author: "Darko"
+imageAlt: "TURNIR-KADETA-POCETNIKA-21112015"
 ---
 ![TURNIR-KADETA-POCETNIKA-21112015](./turnir-kadeta-pocetnika-21112015.jpg)
 
@@ -27,5 +29,3 @@ Rezultati:
 | Petar | 1 | 1 | 0 | \* | 1 | 1 | 4 |
 | Marko | 0 | 0 | 0 | 0 | \* | 1/2 | 1/2 |
 | Toni | 0 | 0 | 0 | 0 | 1/2 | \* | 1/2 |
-
-darko

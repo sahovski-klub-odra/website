@@ -12,6 +12,8 @@ wordpress:
   id: 2254
   url: "http://sahovski-klub.com/najava-mec-za-prvaka-svijeta-anand-carlsen-30-6-2013/"
   slug: "najava-mec-za-prvaka-svijeta-anand-carlsen-30-6-2013"
+imageAlt: "Carlsen - Anand"
+imageCaption: "Carlsen – Anand"
 ---
 Novi izazivač za titulu svjetskog šahovskog prvaka, **[Magnus Carlsen,](http://en.wikipedia.org/wiki/Magnus_Carlsen "Wiki: Magnus Carlsen")** propustio je osvojiti prvo mjesto na posljednja dva turnira, ali 22-godišnji svjetski broj 1 je optimističan o svom nadolazećem meču protiv aktualnog svjetskog prvaka [**Ananda**](http://en.wikipedia.org/wiki/Viswanathan_Anand "Wiki: Viswanathan Anand"). U prilog mu svakako ide mladost i Anandove loše izvedbe u posljednje vrijeme.
 

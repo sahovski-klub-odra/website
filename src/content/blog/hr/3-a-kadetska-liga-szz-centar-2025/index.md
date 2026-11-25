@@ -12,6 +12,7 @@ wordpress:
   id: 8139
   url: "http://sahovski-klub.com/3-a-kadetska-liga-szz-centar-2025/"
   slug: "3-a-kadetska-liga-szz-centar-2025"
+author: "Ivan V"
 ---
 ![](./naslovna.jpg)
 
@@ -28,5 +29,3 @@ Ovo natjecanje bilo je dobra prilika za stjecanje dodatnog iskustva i potvrdu ra
 ![](./2.jpg)![](./3.jpg)
 
 ![](./slika5.jpg)
-
-IvanV

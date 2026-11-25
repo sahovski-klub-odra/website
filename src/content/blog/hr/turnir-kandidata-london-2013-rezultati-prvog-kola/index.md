@@ -12,6 +12,7 @@ wordpress:
   id: 1460
   url: "http://sahovski-klub.com/turnir-kandidata-london-2013-rezultati-prvog-kola/"
   slug: "turnir-kandidata-london-2013-rezultati-prvog-kola"
+imageAlt: "prvokolo"
 ---
 Dosta oprezan početak, četiri remija iz četiri partije, uz ne previše borbe. U nastavku očekujemo više uzbuđenja 🙂
 

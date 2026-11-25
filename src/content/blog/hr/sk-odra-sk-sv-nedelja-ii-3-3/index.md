@@ -12,6 +12,7 @@ wordpress:
   id: 7183
   url: "http://sahovski-klub.com/sk-odra-sk-sv-nedelja-ii-3-3/"
   slug: "sk-odra-sk-sv-nedelja-ii-3-3"
+author: "Darko"
 ---
 **IV A. liga, 10. kolo  
 **![](./odra-vs-sv-nedjelja.jpg)  
@@ -40,5 +41,3 @@ dxe5 26. Rxe5 Rxe5 27. Bxe5+ Kh7 28. Nc2 Rd8 29. Bd5 Bf5 30. Qf3 c6 31. Bg3 Qh5
 32. Qe3 Rd7 33. Bf3 Qh3 34. Bg2 Qg4 35. Ne1 Qd4 36. Kf2 Qd2+ 37. Kf3 Bg4+ 38.
 Kf4 Rf7+ 0-1
 ```
-
-darko

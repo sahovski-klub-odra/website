@@ -12,6 +12,7 @@ wordpress:
   id: 1365
   url: "http://sahovski-klub.com/domaca-zadaca-9-za-14-3-2013/"
   slug: "domaca-zadaca-9-za-14-3-2013"
+imageAlt: "ScreenShot004"
 ---
 1\. Bijeli je odigrao Kd6 (iz partije Xiangzi – Nakamura, 2008). Je li to smio?  
 ![ScreenShot004](./screenshot004.jpg)

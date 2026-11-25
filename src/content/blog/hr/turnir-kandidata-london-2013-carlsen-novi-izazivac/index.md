@@ -12,6 +12,7 @@ wordpress:
   id: 1693
   url: "http://sahovski-klub.com/turnir-kandidata-london-2013-carlsen-novi-izazivac/"
   slug: "turnir-kandidata-london-2013-carlsen-novi-izazivac"
+imageAlt: "ScreenShot001"
 ---
 Iiii…?!
 

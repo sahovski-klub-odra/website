@@ -12,6 +12,8 @@ wordpress:
   id: 4215
   url: "http://sahovski-klub.com/sk-odra-sk-ina-5505/"
   slug: "sk-odra-sk-ina-5505"
+author: "V. D."
+imageAlt: "OS ODRA 08112015"
 ---
 **Seniori, 10. kolo  
 ![OS ODRA 08112015](./os-odra-08112015.jpg)  
@@ -26,5 +28,3 @@ Ovom pobjedom Klub se pomaknuo sa začelja. Sljedeće, posljednje kolo igra se z
 4\. MK Vidaković, Darko – MK Jakovljevski, Radivoje 1:0  
 5\. MK Bačurin, Juraj – I Borota, Igor 1/2  
 6\. MK Cvetković, Ivan – II Glasinović, Juraj 1:0
-
-v.d.

@@ -11,7 +11,7 @@ import {
 } from './schedule';
 
 export interface ScheduleStrings {
-  lang: 'hr' | 'en';
+  lang: 'hr';
   locale: string;
   status: Record<Status, string>;
   none: string;
@@ -42,8 +42,8 @@ const ucFirst = (x: string) => x.charAt(0).toLocaleUpperCase() + x.slice(1);
 const badge = (status: Status, s: ScheduleStrings, dark = false) =>
   `<span class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-1 text-[0.7rem] font-bold uppercase tracking-wider ring-1 ring-inset ${dark ? DARK_BADGE[status] : STATUS_STYLES[status]}">${dark ? '' : `<span class="status-dot status-dot--${status} h-1.5 w-1.5 rounded-full ${STATUS_DOT[status]}"></span>`}${esc(s.status[status])}</span>`;
 
-const groupName = (o: Occurrence, s: ScheduleStrings) => (s.lang === 'en' && o.groupEn ? o.groupEn : o.group);
-const noteOf = (o: Occurrence, s: ScheduleStrings) => (s.lang === 'en' && o.noteEn ? o.noteEn : o.note);
+const groupName = (o: Occurrence, _s: ScheduleStrings) => o.group;
+const noteOf = (o: Occurrence, _s: ScheduleStrings) => o.note;
 
 function changeLine(o: Occurrence, s: ScheduleStrings) {
   if (o.newDate)

@@ -12,6 +12,7 @@ wordpress:
   id: 7599
   url: "http://sahovski-klub.com/ekipno-prvenstvo-os-grada-zagreba-2023-2024/"
   slug: "ekipno-prvenstvo-os-grada-zagreba-2023-2024"
+author: "Ivan M"
 ---
 ![](./prvenstvo-zargeba700.jpg)  
 Djevojke iz OŠ Odra osvojile su ovogodišnje [Prvenstvo OŠ Grada Zagreba](https://chess-results.com/tnr843970.aspx?lan=13&art=0&turdet=YES&flag=30) i plasirale se na finale u Poreču! Uz ekipu djevojaka, nastupila je ekipa dječaka. Voditelj obje ekipe je bio profesor Krešimir Tomaško, a kapetani Vjeka i Slavko. Prvenstvo se igralo na 15 minuta po igraču za cijelu partiju. OŠ Rapska je i ove godine bila domaćin natjecanja. ![](./lekodajemat.jpg)  
@@ -25,5 +26,3 @@ Dečki su nastupili u poprilično mladoj ekipi, jednoj od najmlađih na natjecan
 ##### 12\. OŠ Odra – dječaci (TB1: 10 / TB2: 18)
 
 <table><tbody><tr><td><strong>Pl.</strong></td><td><strong>Ime</strong></td><td><strong>1</strong></td><td><strong>2</strong></td><td><strong>3</strong></td><td><strong>4</strong></td><td><strong>5</strong></td><td><strong>6</strong></td><td><strong>7</strong></td><td><strong>8</strong></td><td><strong>9</strong></td><td><strong>Bod.</strong></td><td><strong>Partije</strong></td></tr><tr><td>1</td><td>Glagolić Bartol</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>½</td><td></td><td>1</td><td>½</td><td>3,0</td><td>8</td></tr><tr><td>2</td><td>Biondić Slavko</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td></td><td>1</td><td></td><td>5,0</td><td>7</td></tr><tr><td>3</td><td>Kovačević Emanuel</td><td>0</td><td>0</td><td></td><td></td><td>1</td><td>0</td><td></td><td></td><td>0</td><td>1,0</td><td>5</td></tr><tr><td>4</td><td>Sesar Vili</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td></td><td>0</td><td>1</td><td>3,0</td><td>8</td></tr><tr><td>5</td><td>Leko Domagoj</td><td></td><td></td><td>0</td><td>0</td><td></td><td></td><td></td><td>1</td><td>1</td><td>2,0</td><td>4</td></tr></tbody></table>
-
-*IvanM*

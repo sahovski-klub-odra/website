@@ -11,6 +11,7 @@ wordpress:
   id: 8066
   url: "http://sahovski-klub.com/sk-odra-sk-velika-gorica-3525/"
   slug: "sk-odra-sk-velika-gorica-3525"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 3.kolo  
 ![](./radoviuodri700.jpg)  
@@ -38,7 +39,4 @@ Nxc5 dxc5 16. Bxc5 Kd7 17. f3 Rc8 18. Be3 Bf8 19. O-O Bc5 20. Kh1 Qb6 21. Bg5 h6
 Bb3 Rf4 29. Qd3 Qd4 30. d6+ Kf8 31. Qh7 Qg7 32. Qc2 Bb6 33. Bc3 Qg6 34. Qd2 Ng3+ 0-1
 ```
 
-  
  *![](./20250406-odra-vs-velika-gorica.jpg) ![](./20250406-odra-vs-velika-gorica-2.jpg)*
-
-*IvanM*

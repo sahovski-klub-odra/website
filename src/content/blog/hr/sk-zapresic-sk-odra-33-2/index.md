@@ -12,6 +12,7 @@ wordpress:
   id: 8613
   url: "http://sahovski-klub.com/sk-zapresic-sk-odra-33-2/"
   slug: "sk-zapresic-sk-odra-33-2"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 2.kolo**  
 ![](./zapresicslika700.jpg)  
@@ -32,5 +33,3 @@ Prošlo kolo smo odigrali čvrsti [meč](https://s2.chess-results.com/tnr1352607
 [BlackElo "1891"]
 1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 d5 6. cxd5 exd5 7. O-O Bd6 8. Nc3 O-O 9. Nb5 Be7 10. Bf4 Na6 11. Rc1 c6 12. Nc3 Bd6 13. Be5 Nc7 14. a3 Ne6 15. b4 a5 16. Qb3 axb4 17. axb4 Qe7 18. Bxd6 Qxd6 19. Ra1 h6 20. e3 Nc7 21. Rfb1 Ba6 22. Bf1 Bxf1 23. Kxf1 1/2-1/2
 ```
-
-*IvanM*

@@ -24,7 +24,7 @@ export function scheduleStrings(lang: Lang): ScheduleStrings {
     movedFrom: t('schedule.movedFrom'),
     prevMonth: t('schedule.prevMonth'),
     nextMonth: t('schedule.nextMonth'),
-    nextHeld: lang === 'hr' ? 'Sljedeći održani trening' : 'Next session held',
+    nextHeld: 'Sljedeći održani trening',
     weekdaysShort,
   };
 }

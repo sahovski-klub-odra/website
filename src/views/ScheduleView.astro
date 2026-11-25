@@ -8,8 +8,7 @@ import Announcements from '../components/Announcements.astro';
 import { training } from '../lib/data';
 import { WEEKDAYS } from '../lib/schemas';
 import { timeRange } from '../lib/schedule';
-import { useTranslations, dayNames, type Lang } from '../i18n/ui';
-import { alternatesFor } from '../i18n/routes';
+import { useTranslations, dayNames, locales, type Lang } from '../i18n/ui';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
@@ -19,7 +18,7 @@ const week = WEEKDAYS.map((day) => ({
   sessions: training.sessions.filter((s) => s.day === day).sort((a, b) => a.startTime.localeCompare(b.startTime)),
 })).filter((d) => d.sessions.length);
 ---
-<BaseLayout lang={lang} title={t('schedule.title')} description={t('schedule.intro')} alternates={alternatesFor('schedule')}>
+<BaseLayout lang={lang} title={t('schedule.title')} description={t('schedule.intro')}>
   <PageHeader title={t('schedule.title')} intro={t('schedule.intro')} />
   <div class="container-site grid gap-12 py-12 lg:grid-cols-[minmax(0,1fr)_380px]">
     <div class="space-y-14">
@@ -51,8 +50,8 @@ const week = WEEKDAYS.map((day) => ({
                   <dd class="mt-2">
                     <div class="flex items-start justify-between gap-3">
                       <div>
-                        <p class="font-semibold">{timeRange(s.startTime, s.endTime, lang === 'en' ? 'en-GB' : 'hr-HR')}</p>
-                        <p class="text-sm text-ink/75">{lang === 'en' ? (s.groupEn ?? s.group) : s.group}</p>
+                        <p class="font-semibold">{timeRange(s.startTime, s.endTime, locales[lang])}</p>
+                        <p class="text-sm text-ink/75">{s.group}</p>
                         {s.coach && <p class="text-sm text-ink/55">{t('schedule.coach')}: {s.coach}</p>}
                         {s.location && <p class="text-sm text-ink/55">{s.location}</p>}
                       </div>

@@ -11,6 +11,8 @@ wordpress:
   id: 3381
   url: "http://sahovski-klub.com/karlovacki-sk-sk-odra-42/"
   slug: "karlovacki-sk-sk-odra-42"
+author: "V. D."
+imageAlt: "karlovac 11 kolo"
 ---
 **Seniori, 11. kolo**
 
@@ -42,5 +44,3 @@ U prošlu nedjelju završena je seniorska liga za 2014. Bez previše zalaganja s
 | 10 | ŠK Jaska | 2½ | 1½ | 3 | 1 | 1½ | 1 | 1½ | 2 | 3 | \* | 3 | 3½ | 5 | 23.5 |
 | 11 | ŠK Ban Jelačić | 1½ | 2 | 2 | 2 | 2 | 1½ | 3 | 1½ | 1½ | 3 | \* | 4½ | 4 | 24.5 |
 | 12 | ŠK Maksimir | 1½ | 2½ | 1½ | 2 | 2 | 1½ | 1½ | 3 | 1½ | 2½ | 1½ | \* | 1 | 21.0 |
-
-v.d.

@@ -12,6 +12,7 @@ wordpress:
   id: 1005
   url: "http://sahovski-klub.com/zurich-chess-chelange/"
   slug: "zurich-chess-chelange"
+imageAlt: "faces"
 ---
 ![faces](./faces1.jpg)  
 Vladimir Kramnik (2). Viswanathan Anand (6). Fabiano Caruana (11). Boris Gelfand (18).

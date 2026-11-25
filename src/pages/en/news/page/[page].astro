@@ -1,6 +1,0 @@
----
-import NewsListView from '../../../../views/NewsListView.astro';
-import { newsPages } from '../../../../lib/static-paths';
-export const getStaticPaths = () => newsPages('en');
----
-<NewsListView {...(Astro.props as any)} />

@@ -12,6 +12,8 @@ wordpress:
   id: 3615
   url: "http://sahovski-klub.com/ekipno-prvenstvo-os-grada-zagreba-2015/"
   slug: "ekipno-prvenstvo-os-grada-zagreba-2015"
+author: "Darko"
+imageAlt: "Zagreb Ivanicgradska 31012015"
 ---
 ![Zagreb Ivanicgradska 31012015](./zagreb-ivanicgradska-31012015.jpg)
 
@@ -21,5 +23,3 @@ Danas je, po lijepom sunčanom danu s dva centimetra snijega u Zagrebu, u OŠ Fr
 **Sutra ujutro u Domu sportova počinje pojedinačno prvenstvo za kadete do 9 i 11 godina.** Potrebno je doći u 8.30 radi prijave. Svi bi trebali ponijeti klupske i/ili zdravstvene iskaznice. Naime, za nekoliko članova još nisu izrađene iskaznice HŠS-a, a dok ne budu, potrebno je imati uza se neki drugi identifikacijski dokument.
 
 Također, imamo novost na našim stranicama. Zasad u eksperimentalnoj fazi, dopušteno je komentiranje! 🙂
-
-darko

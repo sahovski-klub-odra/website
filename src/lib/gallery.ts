@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { ImageMetadata } from 'astro';
+import { readFileSync } from 'node:fs';
 import type { Lang } from '../i18n/ui';
 
 export type AlbumEntry = CollectionEntry<'albums'>;
@@ -9,6 +10,8 @@ export interface Album {
   title: string;
   description?: string;
   date: Date;
+  /** year or season shown with the album, e.g. "2024." or "2023./2024." */
+  season?: string;
   category?: string;
   cover: ImageMetadata | undefined;
   photos: Photo[];
@@ -32,17 +35,50 @@ function folderImages(folder: string): { name: string; image: ImageMetadata }[] 
     .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
 }
 
-export async function getAlbums(lang: Lang): Promise<Album[]> {
+/** Photos inside article folders – used for articles linked to an album (article field "Album u galeriji"). */
+const articleFiles = import.meta.glob<ImageMetadata>('/src/content/blog/hr/*/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', {
+  eager: true,
+  import: 'default',
+});
+const MD_IMAGE = /!\[([^\]]*)\]\(\.\/([^)\s]+)(?:\s+"([^"]*)")?\)/g;
+
+/** Featured photo + photos in the text of every published article that names this album. */
+async function linkedArticlePhotos(folder: string): Promise<Photo[]> {
+  const posts = await getCollection('blog', (p) => p.data.album === folder && !p.data.draft);
+  return posts
+    .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+    .flatMap((p) => {
+      const dir = p.filePath ? p.filePath.replace(/\/index\.mdx?$/, '') : '';
+      const fromText: Photo[] = [...(p.body ?? '').matchAll(MD_IMAGE)].flatMap((m) => {
+        const image = articleFiles[`/${dir}/${decodeURI(m[2])}`];
+        return image ? [{ image, caption: m[3] || undefined }] : [];
+      });
+      // the featured photo is usually also in the text: list it once, first
+      const featuredFile = p.filePath ? readFileSync(p.filePath, 'utf8').match(/^image:\s*["']?\.\/([^"'\n]+?)["']?\s*$/m)?.[1] : undefined;
+      const featured = featuredFile ? articleFiles[`/${dir}/${featuredFile}`] : undefined;
+      const seen = new Set<ImageMetadata>();
+      return [...(featured ? [{ image: featured, caption: p.data.imageCaption }] : []), ...fromText].filter(
+        (x) => !seen.has(x.image) && !!seen.add(x.image),
+      );
+    });
+}
+
+export async function getAlbums(_lang?: Lang): Promise<Album[]> {
   const entries = await getCollection('albums', (a) => !a.data.draft);
+  const linked = new Map(await Promise.all(entries.map(async (e) => {
+    const folder = e.filePath ? e.filePath.split('/').at(-2)! : e.id;
+    return [folder, await linkedArticlePhotos(folder)] as const;
+  })));
   return entries
     .map((e) => {
       const folder = e.filePath ? e.filePath.split('/').at(-2)! : e.id;
       const listed: Photo[] = [
         ...e.data.photos.map((p) => ({
           image: p.image,
-          caption: lang === 'en' ? (p.captionEn ?? p.caption) : p.caption,
+          caption: p.caption,
         })),
         ...e.data.images.map((image) => ({ image })),
+        ...(linked.get(folder) ?? []),
       ];
       // the same file listed twice (e.g. in both lists) is shown once
       // compare the image objects themselves: reading `.src` would make Astro copy every original file into the build
@@ -51,9 +87,10 @@ export async function getAlbums(lang: Lang): Promise<Album[]> {
       const photos = unique.length ? unique : folderImages(folder).map((f) => ({ image: f.image }));
       return {
         id: e.id,
-        title: lang === 'en' ? (e.data.titleEn ?? e.data.title) : e.data.title,
-        description: lang === 'en' ? (e.data.descriptionEn ?? e.data.description) : e.data.description,
+        title: e.data.title,
+        description: e.data.description,
         date: e.data.date,
+        season: e.data.season,
         category: e.data.category,
         cover: e.data.cover ?? photos[0]?.image,
         photos,

@@ -12,6 +12,7 @@ wordpress:
   id: 7862
   url: "http://sahovski-klub.com/sk-stjepan-bosak-sk-odra-4515/"
   slug: "sk-stjepan-bosak-sk-odra-4515"
+author: "Ivan M"
 ---
 **Seniori, 9.kolo  
 ![](./stjepanbosakodra700.jpg)  
@@ -36,6 +37,3 @@ Iduće kolo igramo u Velikoj Gorici 20. listopada.
 
 1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Bg5 c6 5. Bxf6 exf6 6. cxd5 cxd5 7. Qb3 Nc6 8. e3 Bb4 9. Bb5 Qa5 10. Bxc6+ bxc6 11. Ne2 Ba6 12. a3 Bxe2 13. Kxe2 Qa6+ 14. Kf3 Bd6 15. Rhc1 h5 16. Qa4 Qc8 17. Ke2 O-O 18. Kf1 a5 19. Kg1 Qe6 20. Rc2 h4 21. h3 Rfb8 22. Rac1 g5 23. Nd1 g4 24. hxg4 Qxg4 25. Qxc6 Rc8 26. Qxc8+ Rxc8 27. Rxc8+ Kg7 28. Kf1 Qe4 29. R8c3 f5 30. f4 Be7 31. Nf2 Qe6 32. Ke2 Qg6 33. Kf1 Qe6 34. Rc6 Qxe3 35. Re1 Qb3 36. Rxe7 Qb5+ 37. Kg1 Qxc6 38. Nd3 Qb6 39. Ne5 Qxd4+ 40. Kh1 Qxf4 41. Rxf7+ Kh6 42. Rf6+ Kg5 43. Re6 Qc1+ 44. Kh2 Qxb2 45. a4 f4 46. Nd3 Qc2 47. Re5+ Kf6 48. Rxd5 Qxa4 49. Rd6+ Ke7 50. Re6+ Kf7 51. Re2 Qa3 52. Ne5+ Kf6 53. Nd7+ Kg7 54. Ne5 a4 55. Nf3 Qb3 56. Nd4 Qd3 57. Re7+ Kf6 58. Rd7 a3 59. Ra7 h3 60. gxh3 Qg3+ 61. Kh1 Qxh3+ 62. Kg1 Qe3+ 63. Kg2 Qxd4 0-1
 ```
-
-  
-*IvanM*

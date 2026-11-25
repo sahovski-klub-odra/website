@@ -12,11 +12,11 @@ wordpress:
   id: 2466
   url: "http://sahovski-klub.com/sahovska-skola/"
   slug: "sahovska-skola"
+author: "Darko"
+imageAlt: "catchess"
 ---
 **U petak** 13. rujna 2013. u 19 sati, za sve dobne skupine, **nastavlja se šahovska škola** u prostorijama Kluba.
 
 Veselim se ponovnom okupljanju.
-
-Darko
 
 ![catchess](./catchess.jpg)

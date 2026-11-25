@@ -11,6 +11,7 @@ wordpress:
   id: 8536
   url: "http://sahovski-klub.com/turnir-sahovska-liga-hrvatski-branitelj-2025/"
   slug: "turnir-sahovska-liga-hrvatski-branitelj-2025"
+author: "Ivan V"
 ---
 ![](./ekipa.jpg)
 
@@ -23,5 +24,3 @@ Ekipa **ŠK Odre** natjecanje je završila na **7\. mjestu od ukupno 15 ekipa**,
 Turnir je protekao u prijateljskom ozračju, a sve je zaokruženo zajedničkim druženjem i klopom na kraju, **kojom je organizator počastio sve sudionike**. Kako kažu — slika govori više od tisuću riječi, a mi ćemo dodati: i dobra partija se pamti dugo nakon zadnjeg poteza.
 
 ![](./poredak-1.png)
-
-Ivan V

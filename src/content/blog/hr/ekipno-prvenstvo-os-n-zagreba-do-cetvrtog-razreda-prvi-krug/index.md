@@ -12,6 +12,8 @@ wordpress:
   id: 5038
   url: "http://sahovski-klub.com/ekipno-prvenstvo-os-n-zagreba-do-cetvrtog-razreda-prvi-krug/"
   slug: "ekipno-prvenstvo-os-n-zagreba-do-cetvrtog-razreda-prvi-krug"
+author: "Darko"
+imageAlt: "prvenstvo-os-novog-zagreba-2016_17"
 ---
 ![prvenstvo-os-novog-zagreba-2016_17](./prvenstvo-os-novog-zagreba-2016-17.jpg)
 
@@ -23,5 +25,3 @@ TABLICA
 ![prva-ekipa](./prva-ekipa.jpg) ![druga-ekipa](./druga-ekipa.jpg) ![ekipe-u-medjusobnom-susretu](./ekipe-u-medjusobnom-susretu.jpg) ![kibiceri](./kibiceri.jpg)  
 [rezultati-prva-cetiri-kola](/files/wp/2016/12/rezultati-prva-cetiri-kola.xlsx)  
 [pojedinacni-rezultati-prva-cetiri-kola](/files/wp/2016/12/pojedinacni-rezultati-prva-cetiri-kola.docx)
-
-darko

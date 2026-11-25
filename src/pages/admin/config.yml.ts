@@ -17,7 +17,7 @@ export function GET({ site: siteUrl }: APIContext) {
   const url = new URL(base, siteUrl).href;
 
   const trainingCollection = trainingCollectionYaml();
-  const blog = (lang: 'hr' | 'en', label: string) => `
+  const blog = (lang: 'hr', label: string) => `
   - name: blog-${lang}
     label: "${label}"
     label_singular: "Objava"
@@ -41,11 +41,13 @@ export function GET({ site: siteUrl }: APIContext) {
       - { label: "Datum objave", name: pubDate, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ", default: "{{now}}", hint: "Budući datum = zakazana objava: članak se pojavi tog dana (stranica se osvježava svako jutro)." }
       - { label: "Naslovna fotografija", name: image, widget: image, accept: "image/jpeg,image/png,image/webp,image/gif", required: false }
       - { label: "Opis naslovne fotografije (za slabovidne)", name: imageAlt, widget: string, required: false }
+      - { label: "Potpis ispod naslovne fotografije (neobavezno)", name: imageCaption, widget: string, required: false }
+      - { label: "Autor članka (neobavezno)", name: author, widget: string, required: false, hint: "Ime ili inicijali kako se autor potpisuje, npr. Darko ili Ivan M. Prikazuje se ispod članka kao „Članak napisao”." }
+      - { label: "Album u galeriji (neobavezno)", name: album, widget: relation, collection: albums, value_field: "{{slug}}", search_fields: [title], display_fields: [title], required: false, hint: "Fotografije iz ovog članka automatski se prikazuju i u odabranom albumu galerije (datoteke se ne kopiraju)." }
       - { label: "Kategorije", name: categories, widget: list, required: false, default: [] }
       - { label: "Oznake", name: tags, widget: list, required: false, default: [] }
       - { label: "Skica (ne objavljuj)", name: draft, widget: boolean, default: false, required: false, hint: "Uključeno = spremljeno, ali nije vidljivo na stranici. Isključite i spremite za objavu." }
-      - { label: "Ključ prijevoda", name: translationKey, widget: string, required: false, hint: "Ista vrijednost u hrvatskoj i engleskoj verziji povezuje prijevode." }
-      - { label: "Tekst", name: body, widget: markdown, hint: "Fotografije: gumb za sliku. Galerija: nekoliko fotografija jednu ispod druge. YouTube: zalijepite poveznicu u zaseban redak. Tablica, šahovska partija i dijagram: gumbi u alatnoj traci ili izbornik Insert." }`;
+      - { label: "Tekst", name: body, widget: markdown, hint: "Naslovna fotografija prikazuje se iznad teksta – ne umećite je ponovno u tekst (ako je umetnete, na stranici se prikazuje samo jednom). Fotografije: gumb za sliku. Galerija: nekoliko fotografija jednu ispod druge. YouTube: zalijepite poveznicu u zaseban redak. Tablica, šahovska partija i dijagram: gumbi u alatnoj traci ili izbornik Insert." }`;
 
   const yml = `# Generated at build time by src/pages/admin/config.yml.ts – edit that file, not this output.
 backend:
@@ -81,7 +83,7 @@ slug:
   clean_accents: true
   sanitize_replacement: "-"
 
-collections:${blog('hr', 'Novosti (hrvatski)')}${blog('en', 'News (English translations)')}
+collections:${blog('hr', 'Novosti')}
 
   - name: albums
     label: "Galerija – albumi"
@@ -95,10 +97,9 @@ collections:${blog('hr', 'Novosti (hrvatski)')}${blog('en', 'News (English trans
     sortable_fields: [date, title]
     fields:
       - { label: "Naziv albuma", name: title, widget: string }
-      - { label: "Naziv (engleski)", name: titleEn, widget: string, required: false }
       - { label: "Datum", name: date, widget: datetime, format: "YYYY-MM-DD", time_format: false, default: "{{now}}" }
       - { label: "Opis", name: description, widget: text, required: false }
-      - { label: "Opis (engleski)", name: descriptionEn, widget: text, required: false }
+      - { label: "Godina ili sezona (neobavezno)", name: season, widget: string, required: false, hint: "npr. 2024. ili 2023./2024. Prikazuje se uz naziv albuma." }
       - { label: "Kategorija", name: category, widget: string, required: false, hint: "npr. Turniri, Liga, Mladi, Druženja. Na stranici Galerija albumi se mogu filtrirati po kategoriji. Pazite da istu kategoriju pišete uvijek jednako." }
       - { label: "Naslovna fotografija", name: cover, widget: image, accept: "image/jpeg,image/png,image/webp,image/gif", required: false, hint: "Ako je prazno, koristi se prva fotografija." }
       - { label: "Dodaj više fotografija odjednom", name: images, widget: image, accept: "image/jpeg,image/png,image/webp,image/gif", multiple: true, required: false, hint: "Browse → Upload → označite sve fotografije (Ctrl/Shift ili Cmd) → Insert. Za opis pojedine fotografije koristite popis ispod." }
@@ -112,7 +113,6 @@ collections:${blog('hr', 'Novosti (hrvatski)')}${blog('en', 'News (English trans
         fields:
           - { label: "Fotografija", name: image, widget: image, accept: "image/jpeg,image/png,image/webp,image/gif" }
           - { label: "Opis", name: caption, widget: string, required: false }
-          - { label: "Opis (engleski)", name: captionEn, widget: string, required: false }
       - { label: "Skica (ne objavljuj)", name: draft, widget: boolean, default: false, required: false }
 
   - name: data
@@ -135,7 +135,6 @@ ${scheduleRepo() ? '' : trainingCollection}
             fields:
               - { label: "Ime i prezime", name: name, widget: string }
               - { label: "Uloga", name: role, widget: string, required: false, hint: "npr. Predsjednik, Trener, Igrač" }
-              - { label: "Uloga (engleski)", name: roleEn, widget: string, required: false }
               - label: "Titula"
                 name: title
                 widget: select
@@ -151,7 +150,6 @@ ${scheduleRepo() ? '' : trainingCollection}
               - { label: "Godište", name: birthYear, widget: number, value_type: int, required: false }
               - { label: "Fotografija", name: image, widget: image, accept: "image/jpeg,image/png,image/webp,image/gif", required: false, media_folder: /public/images/members, public_folder: /images/members }
               - { label: "Kratka biografija", name: bio, widget: text, required: false }
-              - { label: "Biografija (engleski)", name: bioEn, widget: text, required: false }
               - { label: "Prikaži na stranici", name: active, widget: boolean, default: true }
 
       - name: videos
@@ -166,9 +164,7 @@ ${scheduleRepo() ? '' : trainingCollection}
             summary: "{{fields.title}}"
             fields:
               - { label: "Naslov", name: title, widget: string }
-              - { label: "Naslov (engleski)", name: titleEn, widget: string, required: false }
               - { label: "Opis", name: description, widget: text, required: false }
-              - { label: "Opis (engleski)", name: descriptionEn, widget: text, required: false }
               - { label: "YouTube poveznica", name: youtube, widget: string }
               - { label: "Datum (GGGG-MM-DD)", name: date, widget: string, required: false }
 
@@ -178,22 +174,10 @@ ${scheduleRepo() ? '' : trainingCollection}
         fields:
           - { label: "Naziv kluba", name: name, widget: string }
           - { label: "Kratki naziv", name: shortName, widget: string }
-          - { label: "Naziv (engleski)", name: nameEn, widget: string }
           - { label: "Logo – prvi redak", name: logoLine1, widget: string }
           - { label: "Logo – drugi redak", name: logoLine2, widget: string }
-          - label: "Uvodni tekst na naslovnici (ispod naslova)"
-            name: tagline
-            widget: object
-            required: false
-            fields:
-              - { label: "Hrvatski", name: hr, widget: text, required: false }
-              - { label: "Engleski", name: en, widget: text, required: false }
-          - label: "O klubu"
-            name: about
-            widget: object
-            fields:
-              - { label: "Hrvatski", name: hr, widget: text }
-              - { label: "Engleski", name: en, widget: text }
+          - { label: "Uvodni tekst na naslovnici (ispod naslova)", name: tagline, widget: text, required: false }
+          - { label: "O klubu", name: about, widget: text }
           - label: "Adresa"
             name: address
             widget: object
@@ -215,7 +199,6 @@ ${scheduleRepo() ? '' : trainingCollection}
             fields:
               - { label: "Ime i prezime", name: name, widget: string }
               - { label: "Uloga", name: role, widget: string, required: false }
-              - { label: "Uloga (engleski)", name: roleEn, widget: string, required: false }
               - { label: "Telefon", name: phone, widget: string, required: false }
               - { label: "E-pošta", name: email, widget: string, required: false }
           - { label: "OIB", name: oib, widget: string, required: false }

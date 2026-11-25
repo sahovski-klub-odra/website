@@ -12,6 +12,7 @@ wordpress:
   id: 6559
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-trogir-2019/"
   slug: "kadetsko-prvenstvo-hrvatske-trogir-2019"
+author: "Darko"
 ---
 ![](./trogir-2019.jpg)  
 Na jučer završenom Pojedinačnom kadetskom prvenstvu Hrvatske, ostvarili smo sljedeće rezultate; [Ivan Maravić](http://chess-results.com/tnr447620.aspx?lan=13&art=4&fed=CRO) TREĆI, [Monika](http://chess-results.com/tnr447619.aspx?lan=13&art=4&fed=CRO) PETA, [Višeslav](http://chess-results.com/tnr447575.aspx?lan=13&art=4&fed=CRO) DEVETI, [Lucija](http://chess-results.com/tnr447619.aspx?lan=13&art=4&fed=CRO) DVANAESTA, [Botica](http://chess-results.com/tnr447619.aspx?lan=13&art=4&fed=CRO) PETNAESTA, [Flucija](http://chess-results.com/tnr447581.aspx?lan=13&art=4&fed=CRO) i [Samanta](http://chess-results.com/tnr447623.aspx?lan=13&art=4&fed=CRO) SEDAMNAESTE; [Ana](http://chess-results.com/tnr447623.aspx?lan=13&art=4&fed=CRO), [Fivana](http://chess-results.com/tnr447581.aspx?lan=13&art=4&fed=CRO) i [Franka](http://chess-results.com/tnr447619.aspx?lan=13&art=4&fed=CRO) OSAMNAESTE, [Vraneša](http://chess-results.com/tnr447620.aspx?lan=13&art=4&fed=CRO) 29., [Luka](http://chess-results.com/tnr447603.aspx?lan=13&art=4&fed=CRO) 44., nitko nije zadnji! 🙂 I ove godine, prvenstvo se igralo u Segetu Donjem, pokraj Trogira. Na turniru su učestvovala 302 igrača, 228 dječaka i 74 djevojčice. Igralo se u dobnim skupinama do 9, 11, 13 i 15 godina, posebno za dječake, a posebno za djevojčice. HŠS kao organizator, ove je godine napravio veliki pozitivni pomak i osim prijenosa partija na nekoliko prvih stolova u starijim skupinama, osigurao je šahove i satove za sve igrače te time klincima uvelike olakšao dolazak na partiju. Svaki drugi dan igrala se po jedna, odnosno dvije partije, a svi ozbiljniji izbjegavali su kupanje između kola kako bi sačuvali snagu za poslijepodnevnu partiju. Bilo ih je dosta i među našim igračima. Ipak, stigli su se svi i zabaviti i okupati i to je jedan veliki plus ovog prvenstva, jer je nastup na njemu velika motivacija svim klincima tijekom cijele školske godine. Stoga se iskreno nadam da su tračevi o tome da se prvenstvo prebaci na zimski period ipak samo tračevi. Ili možda nerazumne ideje ljudi koji uopće ne rade s djecom.  
@@ -112,5 +113,3 @@ M15
 1\. MK Kokša, Jelena 1757 ŠŠK Konaki, Novo Virje 7,5  
 2\. MK Desnica, Lara 1538 ŠK Krk, Krk 7,0  
 3\. NM Bevanda, Ema 1775 ŠK Picok, Đurđevac 6,0
-
-darko

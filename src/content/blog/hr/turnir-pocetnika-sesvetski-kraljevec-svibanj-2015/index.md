@@ -11,6 +11,8 @@ wordpress:
   id: 4702
   url: "http://sahovski-klub.com/turnir-pocetnika-sesvetski-kraljevec-svibanj-2015/"
   slug: "turnir-pocetnika-sesvetski-kraljevec-svibanj-2015"
+author: "Darko"
+imageAlt: "ekipa 15052016"
 ---
 ![ekipa 15052016](./ekipa-15052016.jpg)
 
@@ -22,5 +24,3 @@ Turnir je ipak prihvatljiviji mlađim kadetima te se nadam da će na sljedećemu
 U petak će šahovsku školu voditi dr. Cvetković jer je Darko spriječen.
 
 ![sesvete 15052016 a](./sesvete-15052016-a.jpg) ![sesvete 15052016 b](./sesvete-15052016-b.jpg) ![sesvete 15052016 c](./sesvete-15052016-c.jpg) ![sesvete 15052016 d](./sesvete-15052016-d.jpg)
-
-darko

@@ -11,6 +11,8 @@ wordpress:
   id: 4914
   url: "http://sahovski-klub.com/sk-odra-sk-silent-2535/"
   slug: "sk-odra-sk-silent-2535"
+author: "Darko"
+imageAlt: "Laskočica 02102016"
 ---
 **Seniori, 9. kolo  
 ![Laskočica 02102016](./laskocica-02102016.jpg)  
@@ -28,7 +30,6 @@ Za tri tjedna ŠK Odra gostuje u Jastrebarskom kod ŠK Jaska.
 6\. IV Ivan Vraneša 1348 – IV Stjepan Špilek 1678 **1:0**
 
 ![sk odra vs sk silent 02102016_a](./sk-odra-vs-sk-silent-02102016-a.jpg) ![mlade nade SK Odra](./mlade-nade-sk-odra.jpg)  
-darko
 
 ---
 

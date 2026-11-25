@@ -12,6 +12,7 @@ wordpress:
   id: 2377
   url: "http://sahovski-klub.com/ljetna-sjednica-predsjednistva/"
   slug: "ljetna-sjednica-predsjednistva"
+imageAlt: "sjednica Sibenik 2013"
 ---
 Iako je ljeto predviđeno za odmor, radna tijela ŠK Odra marljivo i bez predaha rade na rješavanju ključnih problema, a sve za boljitak Kluba. Tako je danas u okolici Šibenika održana važna sjednica Predjsedništva na kojoj je opet bila uočljiva međusobna potpora i razumijevanje među članovima uprave, te su se važne odluke donosile jednoglasno. Sjednicu je vodio potpredsjednik Kluba, prof. Stjepan Maravić.
 

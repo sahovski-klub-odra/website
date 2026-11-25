@@ -12,6 +12,8 @@ wordpress:
   id: 4354
   url: "http://sahovski-klub.com/xiv-ekipno-prvenstvo-osnovnih-skola-novog-zagreba/"
   slug: "xiv-ekipno-prvenstvo-osnovnih-skola-novog-zagreba"
+author: "Darko"
+imageAlt: "Prvenstvo-OS-Novog-zagreba-2015"
 ---
 [  
 ](./prvenstvo-os-novog-zagreba-2015.jpg)![Prvenstvo-OS-Novog-zagreba-2015](./prvenstvo-os-novog-zagreba-2015.jpg)
@@ -31,5 +33,3 @@ Ekipno, dečki su završili na 18. mjestu s tri neriješena meča, dok su cure 
 Kao nastavak ekipnog prvenstva, dan poslije njega, odigrano je i pojedinačno prvenstvo učenika osnovnih škola Novog Zagreba. Mlađa ekipa uglavnom se odmarala, s iznimkom Luke i Samante, a osim njih, od naših članova nastupili su stariji kadeti Ivan, Kljujev, Bruno, Božo, Vraneša i Filip. Voditelj je bio prof. Tomaško. Imali smo pravo prijaviti devet igrača, a kako zbog bolesti neki nisu mogli doći, na kraju smo na turniru imali osam igrača. Nasreću, svi su pokazali da su u dobroj formi. Ivan je završio vrlo visoko, a ni ostali nisu bili daleko. I Samanta je upisala prve dvije pobjede na pojedinačnom natjecanju. Sve ugodnije iznenađenje jest i Luka, koji je u trećem kolu pobijedio Vranešu, koji trenutačno ima zasluženi status drugoga kadeta Kluba. To me podsjetilo na prvo kolo ekipnog prvenstva, kada su Luka i Antonio pobijedili osmaše!  Drago mi je da su Božo i Kljujev remizirali u posljednjem kolu (iako ja tražim igru u svakoj partiji) te tako pokazali školsko i klupsko zajedništvo. Sve u svemu, vrlo lijepo iskustvo za sve koji su nastupili, a ostali će morati potražiti neki drugi turnir da bi se bolje pripremili za nadolazeće Prvenstvo osnovnih škola Zagreba, Pojedinačno kadetsko prvenstvo Zagreba i Klupsku kadetsku ligu.
 
 [Mikronis kup 2015.](/files/wp/2016/01/Mikronis_kup_2015.xls)
-
-darko

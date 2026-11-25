@@ -11,6 +11,7 @@ wordpress:
   id: 3691
   url: "http://sahovski-klub.com/sk-odra-sk-vrbani-51/"
   slug: "sk-odra-sk-vrbani-51"
+imageAlt: "Odra 08032015"
 ---
 **Seniori, 1. kolo**
 

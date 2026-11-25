@@ -12,6 +12,7 @@ wordpress:
   id: 3523
   url: "http://sahovski-klub.com/tata-steel-2015-10-1-2015-25-1-2015/"
   slug: "tata-steel-2015-10-1-2015-25-1-2015"
+imageAlt: "ts2015"
 ---
 ![ts2015](./ts2015.png)
 

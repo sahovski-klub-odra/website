@@ -2,19 +2,16 @@
 import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import KnightMark from './KnightMark.astro';
-import { type Post, postUrl, postLang, describe, formatDate } from '../lib/blog';
-import { useTranslations, type Lang } from '../i18n/ui';
+import { type Post, postUrl, describe, formatDate } from '../lib/blog';
+import type { Lang } from '../i18n/ui';
 import { withBase } from '../i18n/routes';
 
 interface Props { post: Post; lang: Lang; priority?: boolean; headingLevel?: 'h2' | 'h3'; index?: number }
 const { post, lang, priority = false, headingLevel: H = 'h3', index = 0 } = Astro.props;
-const t = useTranslations(lang);
 const { title, image, imageAlt, categories, pubDate } = post.data;
-const pLang = postLang(post);
-const foreign = pLang !== lang;
 const href = withBase(postUrl(post));
 ---
-<article class="card card-lift card-light reveal group relative flex h-full flex-col overflow-hidden" style={`--reveal-delay:${Math.min(index, 8) * 70}ms`} lang={foreign ? pLang : undefined}>
+<article class="card card-lift card-light reveal group relative flex h-full flex-col overflow-hidden" style={`--reveal-delay:${Math.min(index, 8) * 70}ms`}>
   <div class="card-media relative aspect-[16/10] overflow-hidden bg-ink-2">
     {image ? (
       <Image
@@ -34,9 +31,6 @@ const href = withBase(postUrl(post));
     <div class="absolute left-3 top-3 flex flex-wrap gap-1.5">
       {categories[0] && (
         <span class="cat-badge rounded-full border border-white/40 bg-ink/75 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">{categories[0]}</span>
-      )}
-      {foreign && lang === 'en' && (
-        <span class="rounded-full bg-gold px-2.5 py-1 text-xs font-semibold text-ink">{t('news.originalHr')}</span>
       )}
     </div>
   </div>

@@ -12,6 +12,8 @@ wordpress:
   id: 2840
   url: "http://sahovski-klub.com/trece-mjesto-prvenstvo-zagreba-2014-do-11-godina/"
   slug: "trece-mjesto-prvenstvo-zagreba-2014-do-11-godina"
+author: "Darko"
+imageAlt: "zavrseno ucenici pojedinacno zg2014"
 ---
 Završilo je pojedinačno Prvenstvo Zagreba 2014. za učenike i učenice. Velik uspjeh ostvario je [Ivan Maravić](./ivan-3mj-2014.jpg). Pobjedom u posljednjem kolu nad Kristijanom Šagovcem, inače uvjerljivim pobjednikom turnira, Ivan je  zasluženo osvojio  treće mjesto! Čestitamo!
 
@@ -23,5 +25,3 @@ Svi kadeti i kadetkinje, članovi Kluba, nastupili su na ovom prvenstvu, a uskor
 [Djevojčice](/files/wp/2014/02/prvenstvo-zagreba-kadetkinje-do-9-2014.pdf "prvenstvo-zagreba-kadetkinje-do-9-2014.pdf"), rezultati
 
  ![zavrseno ucenici pojedinacno zg2014](./zavrseno-ucenici-pojedinacno-zg2014.jpg)
-
-Darko

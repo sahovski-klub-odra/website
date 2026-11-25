@@ -11,6 +11,8 @@ wordpress:
   id: 3175
   url: "http://sahovski-klub.com/sk-zapresic-sk-odra-33/"
   slug: "sk-zapresic-sk-odra-33"
+author: "V. D."
+imageAlt: "Zapresic26102014"
 ---
 **Seniori, 9. kolo**
 
@@ -24,12 +26,9 @@ Iako je dobro počelo, 9. kolo loše je završilo. Rezultatom 3:3 ne može biti 
 
  **ŠK Zaprešić, Zaprešić – ŠK Odra, Zagreb 3 : 3**
 
-                        
 1 MK Urukalović, Roman 2250 – MK Maravić, Stjepan 2115    ½ – ½  
 2 MK Jakupec, Denis 2104 – MK Brajdić, Danko 2125              ½ – ½  
 3 MK Pavlinić, Darko 2093 – I Golub, Vladimir 2061                   1 – 0  
 4 I Gabelica, Damir 2026 – MK Cvetković, Ivan 1981                  1 – 0  
 5 II Boljat, Igor 1904 – MK Vidaković, Darko 2128                       0 – 1  
 6 II Mihalinec, Predrag 1891 – MK Bačurin, Juraj 2063               0 – 1
-
-v.d.

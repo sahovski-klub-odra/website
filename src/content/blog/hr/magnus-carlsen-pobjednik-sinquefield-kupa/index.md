@@ -12,6 +12,7 @@ wordpress:
   id: 2494
   url: "http://sahovski-klub.com/magnus-carlsen-pobjednik-sinquefield-kupa/"
   slug: "magnus-carlsen-pobjednik-sinquefield-kupa"
+imageAlt: "final_press_300"
 ---
 ![final_press_300](./final-press-300.jpg)Bez izgubljene partije i sa tri odlučene u svoju korist (4,5/6) **Magnus Carlsen** je pobjednik *Sinquefield* kupa. U zadnjem kolu kao bijeli svladao je Aroniana, iako je bio nadigran u otvaranju. Osim Aroniana dvaput je nastradao Kamsky i to je bilo dovoljno za uvjerljivo prvo mjesto. Testiranje forme prije meča za prvaka svijeta protiv Ananda u studenom je prošlo dobro.
 

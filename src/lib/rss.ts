@@ -8,8 +8,8 @@ import { routes, withBase } from '../i18n/routes';
 export async function feed(context: APIContext, lang: Lang) {
   const posts = (await postsForListing(lang)).slice(0, 30);
   return rss({
-    title: lang === 'hr' ? `${site.name} – Novosti` : `${site.nameEn} – News`,
-    description: site.about[lang],
+    title: `${site.name} – Novosti`,
+    description: site.about,
     site: new URL(withBase(routes.home[lang]), context.site).href,
     items: posts.map((p) => ({
       title: p.data.title,
@@ -18,6 +18,6 @@ export async function feed(context: APIContext, lang: Lang) {
       link: new URL(withBase(postUrl(p)), context.site).href,
       categories: p.data.categories,
     })),
-    customData: `<language>${lang === 'hr' ? 'hr-hr' : 'en-gb'}</language>`,
+    customData: '<language>hr-hr</language>',
   });
 }

@@ -11,6 +11,7 @@ wordpress:
   id: 6634
   url: "http://sahovski-klub.com/sk-odra-hask-mladost-ii-4515/"
   slug: "sk-odra-hask-mladost-ii-4515"
+author: "Darko"
 ---
 **Seniori, 8. kolo  
 ![](./odra-vs-hask-mladost-ii.jpg)  
@@ -28,6 +29,3 @@ Zahvaljujući dobrom stanju na [tablici](http://chess-results.com/tnr414083.aspx
 [SetUp "3"]
 [FEN "8/4n2p/p2k1pp1/P1p5/bp2PP2/1N2K3/2P3PP/2N5 b - - 0 29"]29... Nc6 30. Kd3 c4+ 0-1
 ```
-
-  
-darko

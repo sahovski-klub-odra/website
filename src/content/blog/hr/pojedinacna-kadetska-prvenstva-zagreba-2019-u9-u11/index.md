@@ -12,6 +12,7 @@ wordpress:
   id: 6357
   url: "http://sahovski-klub.com/pojedinacna-kadetska-prvenstva-zagreba-2019-u9-u11/"
   slug: "pojedinacna-kadetska-prvenstva-zagreba-2019-u9-u11"
+author: "Darko"
 ---
 ![](./kadetsko-prvenstvo-zg-2019.jpg)  
 Danas su započela pojedinačna kadetska prvenstva Zagreba u kategorijama [U9](http://chess-results.com/tnr409876.aspx?lan=13&art=4) i [U11](http://chess-results.com/tnr409873.aspx?lan=13&art=1). Prvenstva se igraju u Domu sportova u organizaciji Zagrebačkog šahovskog saveza. Tempo igre je 30+30. U kategoriji dječaka U9 nastupa 30 igrača, dok je u kategoriji djevojčica [8 igračica](http://chess-results.com/tnr409877.aspx?lan=13&art=1&fed=CRO). Slično je i starijoj skupini. 29 dječaka igra u skupini U11, dok je [djevojčica 9](http://chess-results.com/tnr409878.aspx?lan=13&art=1&fed=CRO). Iz ŠK Odra nastupa devet članova, Antonio (U11), Dora, Fivana, Flucija (U11), Slavko, Visko, Toma i Ivan Pisačić (U9) i Nola (U9). Nije nam došao samo Luka Matašić koji se malo zasitio šaha. Šteta, jer je u posljednje vrijeme baš dobar. Zasad najbolje ide Visku i Fivani, ali je još daleko do kraja turnira. Turnir se nastavlja sljedeće nedjelje kada se igra četvrto kolo s početkom u 10 sati. Turniri za starije kadete počinju 3. ožujka i također će trajati tri nedjelje za redom.
@@ -31,5 +32,3 @@ Od djevojčica, Fivana i Dora su osvojile po tri boda te [turnir U11](http://che
 Svim klincima i klincezama čestitke na uspješno odrađenom turniru!
 
 ![](./visko-prima-medalju-prv-zg-2019.jpg) ![](./u9-prvenstvo-zg-2019.jpg)![](./u9g-prv-zg-2019.jpg) ![](./u11g-prv-zg-2019.jpg)
-
-darko

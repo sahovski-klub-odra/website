@@ -12,6 +12,7 @@ wordpress:
   id: 2712
   url: "http://sahovski-klub.com/magnus-carlsen-je-novi-svjetski-prvak/"
   slug: "magnus-carlsen-je-novi-svjetski-prvak"
+imageAlt: "Anand - Carlsen: FIDE World Chess Championship 2013, Chennai, India"
 ---
 ![Anand - Carlsen: FIDE World Chess Championship 2013, Chennai, India](./img-8570.jpg)
 

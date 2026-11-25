@@ -11,6 +11,7 @@ wordpress:
   id: 7847
   url: "http://sahovski-klub.com/sk-odra-sk-ivanic-4515/"
   slug: "sk-odra-sk-ivanic-4515"
+author: "Ivan M"
 ---
 **Seniori, 8.kolo  
 ![](./odraivanicgrad700.jpg)  
@@ -33,6 +34,3 @@ Protekli vikend smo ugostili ŠK Ivanić i osvojili oba meč boda. [Meč](https:
 [PlyCount "74"]
 1. Nf3 Nf6 2. g3 d5 3. Bg2 e6 4. O-O Bd6 5. d3 O-O 6. Nbd2 Nbd7 7. c4 c6 8. a3 b6 9. b4 Bb7 10. Bb2 Re8 11. Qc2 Qc7 12. Nd4 Rac8 13. N2f3 h6 14. Nb3 e5 15. c5 bxc5 16. bxc5 Bf8 17. Bh3 Rb8 18. e3 Ba6 19. Nfd2 e4 20. d4 Bxf1 21. Bxf1 Nh7 22. Ba6 Ndf6 23. Bc3 Ng5 24. h4 Ne6 25. Qd1 g5 26. h5 Qd7 27. Be2 Nc7 28. g4 Nh7 29. Nf1 Ne6 30. Ng3 Ng7 31. Na5 Nf6 32. Ra2 Be7 33. Bd2 Bd8 34. f4 exf3 35. Bxf3 Bxa5 36. Bxa5 Rxe3 37. Kf2 Rbb3 0-1
 ```
-
-  
-*IvanM*

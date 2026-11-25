@@ -11,6 +11,7 @@ wordpress:
   id: 5566
   url: "http://sahovski-klub.com/pojedinacno-prvenstvo-hrvatske-u-ubrzanom-sahu-za-kadete-2017-u14/"
   slug: "pojedinacno-prvenstvo-hrvatske-u-ubrzanom-sahu-za-kadete-2017-u14"
+author: "Darko"
 ---
 ![](./dugo-selo-26112017.jpg)  
 Od 24. do 26. studenoga, u ugostiteljskom objektu Klet Bunčić u Dugom selu, a u organizaciji HŠS-a, odigrano je Pojedinačno kadetsko prvenstvo Hrvatske u ubrzanom šahu. Igralo se devet kola s tempom 15+10.  
@@ -21,5 +22,4 @@ U14 **–** POBJEDNICI
 2\. II Lovre Mahečić, 1724 ŠK Brestje, Sesvete  
 3\. II Luka Karlušić, 1679 ŠK Caissa, Zagreb
 
-![](./u14-prvenstvo-hrvatske-u-ubrzanom-sahu-26112017.jpg) ![](./u14-dugo-selo-26112017.jpg) ![](./u14-26112017.jpg) ![](./konacni-poredak-prvenstvo-hrvatske-u-ubrzanom-sahu-2017-u14.jpg)  
-darko
+![](./u14-prvenstvo-hrvatske-u-ubrzanom-sahu-26112017.jpg) ![](./u14-dugo-selo-26112017.jpg) ![](./u14-26112017.jpg) ![](./konacni-poredak-prvenstvo-hrvatske-u-ubrzanom-sahu-2017-u14.jpg)

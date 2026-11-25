@@ -12,6 +12,8 @@ wordpress:
   id: 4724
   url: "http://sahovski-klub.com/memorijalni-turnir-zeljka-matica-2016/"
   slug: "memorijalni-turnir-zeljka-matica-2016"
+author: "Darko"
+imageAlt: "pobjednik turnira Bozo Cvetkovic"
 ---
 ![pobjednik turnira Bozo Cvetkovic](./pobjednik-turnira-bozo-cvetkovic.jpg)
 
@@ -21,5 +23,3 @@ I ove godine, na poziv OŠ Braće Radić, naši su članovi sudjelovali na Memor
 
 [Memorijal Zeljka Matica 2016. poredak](/files/wp/2016/06/Memorijal-Zeljka-Matica-2016.-poredak.txt)  
 [Turnir početnika- Sesvete -12-6-2016](/files/wp/2016/06/Turnir-po-etnika-Sesvete-12-6-2016-.pdf)
-
-darko

@@ -11,6 +11,9 @@ wordpress:
   id: 6898
   url: "http://sahovski-klub.com/pojedinacna-kadetska-prvenstva-zagreba-2020-u13-u15/"
   slug: "pojedinacna-kadetska-prvenstva-zagreba-2020-u13-u15"
+author: "Darko"
+imageAlt: "Ponos ŠK Odra!"
+imageCaption: "Ponos ŠK Odra!"
 ---
 ## **Ana prva, Monika druga, Franka treća!  
 **
@@ -23,5 +26,4 @@ Veliku priliku propustili su Franka, koja je olako poklonila pola boda u predzad
 Turnir je započeo još početkom ožujka u Domu sportova, ali je bio prekinut te je danas završen u novouređenoj dvorani ŠK Sljeme Agroproteinka u Sesvetama. Nažalost, veliki broj natjecatelja se nije pojavio u ovom nastavku, uključujući naše Josipa, Slavka, Doru, Samantu, Filipa… Svi su ovih zadnjih mjeseci prilično popustili s vježbom, a zadnja dva tjedna čak i sestre Fiolić. Starije djevojke se mogu pravdati pubertetom, ali mlađi nemaju baš neki izgovor. Nadamo se da će se ipak svi početi ozbiljnije pripremati za PH u kolovozu.  
 Klinci su ponos ovog Kluba, a ovim rezultatima samo nam potvrđuju da smo na dobrom putu. Imamo već pet kadeta odn. kadetkinja koje možemo stavljati u seniorsku ekipu (Ana, Samanta, Monika, Vraneša i Ivan Maravić), a nadamo se da će se taj broj i povećavati. Još jednom čestitke svima na uloženom trudu, a Ani, Moniki i Franki i velika hvala na osvojenim medaljama!  
 ![](./dom-sportova-01032020.jpg) ![](./luka-vs-viseslav.jpg)  
-![](./djevojke-01032020.jpg) ![](./ekipa-treci-krug.jpg)  
-darko
+![](./djevojke-01032020.jpg) ![](./ekipa-treci-krug.jpg)

@@ -12,6 +12,8 @@ wordpress:
   id: 1854
   url: "http://sahovski-klub.com/sk-jaska-sk-odra-45-15/"
   slug: "sk-jaska-sk-odra-45-15"
+author: "V. D."
+imageAlt: "jaska odra 201_ 1"
 ---
 ## **3\. kolo, seniori**
 
@@ -36,5 +38,3 @@ REZULTATI:
 5\. Jagunić Vladimir – Maravić Ivan  1:0
 
 6\. Cvetko Vjekoslav  – Furčić Tin  1:0
-
-v.d.

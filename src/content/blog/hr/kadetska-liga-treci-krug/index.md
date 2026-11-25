@@ -12,6 +12,8 @@ wordpress:
   id: 1995
   url: "http://sahovski-klub.com/kadetska-liga-treci-krug/"
   slug: "kadetska-liga-treci-krug"
+author: "Darko"
+imageAlt: "kadeti djurdjevac 2"
 ---
 ĐURĐEVAC – KADETSKA LIGA
 
@@ -30,5 +32,3 @@ Kadetima je u ovoj fazi potrebno da što više igraju turnirske partije, a prili
 U svakom slučaju, o tome ćemo se s članovima kadetima i njihovim roditeljima još dogovarati.
 
 Zahvaljujem svima koji su pomogli u organizaciji kvalitetno odigrane lige, a posebno mladim kadetima koji su nastupili, **Ivanu, Vraneši, Boži, Emmi, Bruni i Bruni, Ani, Moniki i Luciji!** Sljedeće godine, nadamo se, i **Franki**.
-
-Darko

@@ -11,6 +11,7 @@ wordpress:
   id: 2972
   url: "http://sahovski-klub.com/nastavak-ligaskih-natjecanja/"
   slug: "nastavak-ligaskih-natjecanja"
+author: "Darko"
 ---
 Ovaj vikend nastavljaju se ligaška natjecanja.  
 Subota, 29. ožujka:
@@ -34,5 +35,3 @@ Kontakt osoba: Franjo Jančikić, 091/ 549 07 13
 Oba su mjesta iznad Čakovca i do jednog i do drugog ima oko 110 km. Potrebno je doći barem 15 minuta prije početka. Početak je u 10:00 sati. Svaka ekipa dužna je donijeti dva šahovska sata i dva kompleta za igru. Kako su knjižice HŠS-a još uvijek u izradi, igrači su dužni nositi neki drugi dokument uz sebe. Sendviči su također dobrodošli, jer se igraju tri kola. 🙂
 
 Seniorska ekipa natjecanje nastavlja u nedjelju 30. ožujka u Domu sportova protiv ŠK Vrbani.
-
-darko

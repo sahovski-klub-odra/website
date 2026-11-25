@@ -12,6 +12,7 @@ wordpress:
   id: 7782
   url: "http://sahovski-klub.com/sk-odra-sk-gaj-3525/"
   slug: "sk-odra-sk-gaj-3525"
+author: "Ivan M"
 ---
 **Seniori, 6.kolo  
 ![](./odramace700.jpg)  
@@ -23,5 +24,3 @@ Proljetni dio sezone smo završili pobjedom protiv prijateljske ekipe iz Mača. 
 ##### 8\. ŠK Odra, Zagreb (TB1:5 / TB2:17,5)
 
 <table><tbody><tr><td><strong>Pl.</strong></td><td></td><td><strong>Ime</strong></td><td><strong>1</strong></td><td><strong>2</strong></td><td><strong>3</strong></td><td><strong>4</strong></td><td><strong>5</strong></td><td><strong>6</strong></td><td><strong>Bod.</strong></td><td><strong>Partije</strong></td></tr><tr><td>1</td><td>MK</td><td>Karlić Zvjezdan</td><td>0</td><td></td><td>0</td><td>0</td><td></td><td>0</td><td>0</td><td>4</td></tr><tr><td>2</td><td>MK</td><td>Maravić Ivan</td><td>½</td><td>½</td><td>1</td><td></td><td>½</td><td>1</td><td>3,5</td><td>5</td></tr><tr><td>3</td><td>MK</td><td>Maravić Stjepan</td><td>½</td><td>½</td><td>½</td><td></td><td>½</td><td>½</td><td>2,5</td><td>5</td></tr><tr><td>4</td><td>MK</td><td>Sliepčević Mladen</td><td></td><td>1</td><td></td><td>½</td><td>1</td><td>0</td><td>2,5</td><td>4</td></tr><tr><td>5</td><td>MK</td><td>Vidaković Darko</td><td>1</td><td>0</td><td>0</td><td>1</td><td></td><td>1</td><td>3</td><td>5</td></tr><tr><td>6</td><td>MK</td><td>Kovač Hrvoje</td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td>2</td></tr><tr><td>7</td><td>MK</td><td>Cvetković Ivan</td><td></td><td></td><td></td><td></td><td>½</td><td></td><td>0,5</td><td>1</td></tr><tr><td>8</td><td>MK</td><td>Bačurin Juraj</td><td></td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td>1</td></tr><tr><td>10</td><td></td><td>Mikić Ivana</td><td></td><td></td><td></td><td>1</td><td>0</td><td></td><td>1</td><td>2</td></tr><tr><td>11</td><td>II</td><td>Pahljina Ivo</td><td></td><td></td><td>½</td><td>1</td><td>0</td><td>1</td><td>2,5</td><td>4</td></tr><tr><td>12</td><td>II</td><td>Vraneša Ivan</td><td>1</td><td></td><td>0</td><td>1</td><td></td><td></td><td>2</td><td>3</td></tr></tbody></table>
-
-*IvanM*

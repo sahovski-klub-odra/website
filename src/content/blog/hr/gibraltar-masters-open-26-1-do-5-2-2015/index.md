@@ -12,6 +12,7 @@ wordpress:
   id: 3595
   url: "http://sahovski-klub.com/gibraltar-masters-open-26-1-do-5-2-2015/"
   slug: "gibraltar-masters-open-26-1-do-5-2-2015"
+imageAlt: "Gibraltar Masters Open 2015 - Zvijezde turnira"
 ---
 Ovo sigurno niste znali o [Gibraltaru](http://hr.wikipedia.org/wiki/Gibraltar "Wiki: Gibraltar"):
 

@@ -12,6 +12,7 @@ wordpress:
   id: 4944
   url: "http://sahovski-klub.com/sk-odra-sk-klaka-2535/"
   slug: "sk-odra-sk-klaka-2535"
+imageAlt: "sk odra vs sk klaka 06112016"
 ---
 **Seniori, 11. kolo  
 ![sk odra vs sk klaka 06112016](./sk-odra-vs-sk-klaka-06112016.jpg)  

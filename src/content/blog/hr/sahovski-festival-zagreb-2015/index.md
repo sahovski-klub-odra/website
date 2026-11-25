@@ -12,6 +12,8 @@ wordpress:
   id: 4376
   url: "http://sahovski-klub.com/sahovski-festival-zagreb-2015/"
   slug: "sahovski-festival-zagreb-2015"
+author: "Darko"
+imageAlt: "ekipa na sahovskom festivalu 27112015"
 ---
 ![ekipa na sahovskom festivalu 27112015](./ekipa-na-sahovskom-festivalu-27112015.jpg)
 
@@ -21,5 +23,3 @@ Ostali rezultati u poveznicama:
 [Rezultati do 10.](http://chess-results.com/tnr200910.aspx?lan=1&art=1&turdet=YES&flag=30&wi=984) [Rezultati do 12.](http://chess-results.com/tnr200909.aspx?lan=1&art=1&turdet=YES&flag=30&wi=984) [Rezultati do 16.](http://chess-results.com/tnr200908.aspx?lan=1&art=1&turdet=YES&flag=30&wi=984) [Rezultati do 20.  
 ](http://chess-results.com/tnr200907.aspx?lan=1&art=1&turdet=YES&flag=30&wi=984)![hotel Westin](./hotel-westin.jpg) ![kristalna dvorana](./kristalna-dvorana.jpg) ![kristalna dvorana 2](./kristalna-dvorana-2.jpg) ![poziranje](./poziranje.jpg)  
 ![zajednicka slika s Kasparovom](./zajednicka-slika-s-kasparovom.jpg)  ![prije pocetka](./prije-pocetka.jpg)
-
-darko

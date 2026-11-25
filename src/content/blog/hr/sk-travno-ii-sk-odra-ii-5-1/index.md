@@ -11,6 +11,7 @@ wordpress:
   id: 8319
   url: "http://sahovski-klub.com/sk-travno-ii-sk-odra-ii-5-1/"
   slug: "sk-travno-ii-sk-odra-ii-5-1"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 7.kolo
 
@@ -61,5 +62,3 @@ Sve u svemu – teška nedjelja za ŠK Odra II, ali glave gore! Idemo dalje i pr
 
 1. d4 c6 2. c4 d5 3. Nc3 Bf5 4. Nf3 e6 5. Bf4 Nd7 6. e3 Ngf6 7. cxd5 cxd5 8. Bd3 Bg4 9. O-O Bb4 10. Rc1 O-O 11. a3 Ba5 12. b4 Bc7 13. Bxc7 Qxc7 14. Nxd5 Qd6 15. Nxf6+ Nxf6 16. Be2 Rac8 17. Ne5 Bf5 18. Qb3 Ne4 19. Nc4 Qe7 20. f3 Nf6 21. e4 Bg6 22. Rfd1 b5 23. Ne5 Nh5 24. Nxg6 hxg6 25. Bxb5 Qg5 26. Rc5 Rxc5 27. dxc5 Nf4 28. Qc2 f5 29. exf5 exf5 30. g3 Re8 31. Bxe8 1-0
 ```
-
-IvanV

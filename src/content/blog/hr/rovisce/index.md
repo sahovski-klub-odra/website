@@ -12,6 +12,7 @@ wordpress:
   id: 1735
   url: "http://sahovski-klub.com/rovisce/"
   slug: "rovisce"
+imageAlt: "ŠK Ivan Dvoržak, Facebook galerija slika"
 ---
 Članica *ŠK Odra* i polaznica šahovske škole **Novak Bruna** nastupila je prošlog vikenda u područnoj školi u Zrinskom Topolovcu, na tradicionalnom 110. izdanju *Gospodara mjeseca*. Igralo se na 7 minuta + 3 sek za potez. Sa 3,5 boda iz 9 partija bila je najbolja šahistica turnira.
 

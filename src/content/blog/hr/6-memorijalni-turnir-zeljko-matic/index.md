@@ -10,6 +10,7 @@ wordpress:
   id: 3047
   url: "http://sahovski-klub.com/6-memorijalni-turnir-zeljko-matic/"
   slug: "6-memorijalni-turnir-zeljko-matic"
+author: "Darko"
 ---
 U petak, 30. svibnja 2014. u OŠ braće Radić, u organizaciji šahovskog voditelja Nenada Froutha i ravnatelja škole Darka Štimca održan je 6. memorijalni turnir “Željko Matić”. Na turniru je uvjerljivo pobijedio Stanić Mario iz OŠ Brezovica, a veliki uspjeh postigli su i članovi našeg kluba osvojivši srebrnu i brončanu medalju! Također, bio je to prvi turnir za Ivana Kljujeva i Luku Fiolića te i njima velike čestitke.  
 Turnir je igran po Švicarskom sustavu u 7 kola s tempom igre od 10 minuta po igraču.
@@ -35,5 +36,3 @@ Memorijal Zeljka Matica 2014.
 | 13 | Fiolić Luka |  |  | OŠ Odra, uskoro 🙂 |  |  |  |  | 3 | 16 | 2 |  |  |  |  |
 | 14 | Solomun Gabrijel |  |  | OŠ braće Radić II |  |  |  |  | 2 | 16,5 | 1 |  |  |  |  |
 | 15 | Keča ivan |  |  | OŠ braće Radić II |  |  |  |  | 1 | 14 | 0 |  |  |  |  |
-
-darko

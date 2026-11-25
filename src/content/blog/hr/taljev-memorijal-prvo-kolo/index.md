@@ -12,6 +12,7 @@ wordpress:
   id: 2104
   url: "http://sahovski-klub.com/taljev-memorijal-prvo-kolo/"
   slug: "taljev-memorijal-prvo-kolo"
+imageAlt: "300round1"
 ---
 ![300round1](./300round1.jpg)Danas je u Moskvi, u Centru digitalnih tehnologija *Красный Октябрь* odigrano prvo kolo Taljevog memorijala. Na ovom vrlo jakom turniru sa nagradnim fondom od 100.000 € sudjeluje 10 igrača: **Magnus Carlsen** (1), **Vladimir Kramnik** (3), **Fabiano Caruana** (4), **Sergey Karjakin** (5), **Viswanathan Anand** (6),  **Hikaru Nakamura** (8), **Shakhriyar Mamedyarov** (11), **Boris Gelfand** (13), **Alexander Morozevich** (17) i **Dmitry Andreikin** (31).
 

@@ -11,6 +11,7 @@ wordpress:
   id: 486
   url: "http://sahovski-klub.com/cestitamo/"
   slug: "cestitamo"
+author: "Darko"
 ---
 Završeno je Kadetsko prvenstvo Zagreba za 2013. godinu. Čestitam svim sudionicima.
 
@@ -32,7 +33,6 @@ U privitku su rezultati za kategorije do 9 godina, ostali još nisu objavljeni.
 
 Slike sa prvenstva možete pogledati u foto galeriji.
 
-Darko
 
 [prvenstvo Zagreba kadeti do 9 godina 2013](/files/wp/2013/01/prvenstvo-zagreba-kadeti-do-9-godina-2013.pdf)
 

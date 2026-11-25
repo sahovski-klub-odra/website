@@ -12,6 +12,7 @@ wordpress:
   id: 8376
   url: "http://sahovski-klub.com/sk-dugo-selo-ii-sk-odra-ii-24/"
   slug: "sk-dugo-selo-ii-sk-odra-ii-24"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 9.kolo
 
@@ -51,5 +52,3 @@ Sve u svemu, još jedan **odličan dan za drugu ekipu ŠK Odre**. Čestitke svim
 
 1. b3 d5 2. Bb2 c5 3. e3 a6 4. Nf3 Nc6 5. d4 Bg4 6. Be2 Bxf3 7. Bxf3 Nf6 8. O-O e6 9. Nd2 cxd4 10. exd4 Bd6 11. c4 O-O 12. cxd5 exd5 13. Be2 Rc8 14. Nf3 Re8 15. Rc1 Bf4 16. Rc2 Nb4 17. Rxc8 Qxc8 18. a3 Nc6 19. Bd3 h6 20. Re1 Ne4 21. g3 Bd6 22. Nd2 f5 23. f3 Rf8 24. fxe4 fxe4 25. Bf1 Qf5 26. Qe2 h5 27. Bg2 Qg5 28. Rf1 Rc8 29. Bh3 Rc7 30. Rf5 Qe7 31. Rxh5 Bxa3 32. Bxa3 Qxa3 33. Be6+ Kf8 34. Qf2+ Ke7 35. Qf7+ Kd6 36. Rxd5# 1-0
 ```
-
-IvanV

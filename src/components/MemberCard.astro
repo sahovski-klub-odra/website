@@ -7,13 +7,12 @@ import { withBase } from '../i18n/routes';
 interface Props { member: Member; lang: Lang; featured?: boolean; index?: number }
 const { member: m, lang, featured = false, index = 0 } = Astro.props;
 const t = useTranslations(lang);
-const role = lang === 'en' ? (m.roleEn ?? m.role) : m.role;
-const bio = lang === 'en' ? (m.bioEn ?? m.bio) : m.bio;
+const role = m.role;
+const bio = m.bio;
 const img = m.image ? withBase(m.image) : null;
 const initials = m.name.split(/\s+/).filter(Boolean).map((p) => p[0]).slice(0, 1).concat(m.name.split(/\s+/).filter(Boolean).slice(-1).map((p) => p[0])).join('').toUpperCase();
 // 'vk' (bez kategorije) is shown only in the details, not as a badge
 const badge = m.title || (m.category && m.category.toLowerCase() !== 'vk' ? m.category : '');
-const best = Math.max(m.rating ?? 0, m.ratingRapid ?? 0, m.ratingBlitz ?? 0);
 const ratings = [
   { key: 'standard', label: t('members.standard'), value: m.rating },
   { key: 'rapid', label: t('members.rapid'), value: m.ratingRapid },
@@ -27,7 +26,7 @@ const fideUrl = m.fideId ? `https://ratings.fide.com/profile/${m.fideId}` : null
   data-member
   data-name={m.name.toLocaleLowerCase('hr')}
   data-order={index}
-  data-rating={best}
+  data-standard={m.rating ?? ''}
 >
   <div class="member-card__top">
     <div class="member-avatar" aria-hidden={img ? undefined : 'true'}>
@@ -42,7 +41,7 @@ const fideUrl = m.fideId ? `https://ratings.fide.com/profile/${m.fideId}` : null
       {role && <p class="member-card__role">{role}</p>}
       <p class="member-card__meta">
         {m.category && <span title={t('members.category')}>{m.category === 'vk' ? 'vk' : `${t('members.category')} ${m.category}`}</span>}
-        {m.birthYear && <span>{lang === 'en' ? `${t('members.born')} ${m.birthYear}` : `${m.birthYear}. ${t('members.born')}`}</span>}
+        {m.birthYear && <span>{`${m.birthYear}. ${t('members.born')}`}</span>}
       </p>
     </div>
     {badge && <span class="member-card__badge" title={m.title ? undefined : t('members.category')}>{badge}</span>}

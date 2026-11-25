@@ -12,6 +12,7 @@ wordpress:
   id: 2140
   url: "http://sahovski-klub.com/taljev-memorijal-2-kolo/"
   slug: "taljev-memorijal-2-kolo"
+imageAlt: "Nakamura, Taljev memorijal 2013"
 ---
 **![Nakamura, Taljev memorijal 2013](./nakamura-taljev-memorijal-2013.jpg)**
 

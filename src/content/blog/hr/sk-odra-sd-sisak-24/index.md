@@ -12,6 +12,7 @@ wordpress:
   id: 8172
   url: "http://sahovski-klub.com/sk-odra-sd-sisak-24/"
   slug: "sk-odra-sd-sisak-24"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 4.kolo  
 ![](./oblacnovrijeme700.jpg)  
@@ -34,6 +35,3 @@ Ove nedjelje smo potpuno zasluženo upisali svoj [prvi](https://chess-results.co
 [PlyCount "99"]
 1. d4 Nf6 2. Nf3 g6 3. g3 Bg7 4. Bg2 c5 5. d5 d6 6. c4 O-O 7. Nc3 e6 8. O-O exd5 9. cxd5 Bg4 10. h3 Bxf3 11. Bxf3 a6 12. a4 Nbd7 13. e4 c4 14. Be3 Rc8 15. Qc2 Nc5 16. Be2 Re8 17. f3 b5 18. axb5 axb5 19. Nxb5 Nxd5 20. exd5 Rxe3 21. Bxc4 Nb3 22. Ra3 Nd4 23. Nxd4 Rxa3 24. bxa3 Qb6 25. Kg2 Qxd4 26. Rc1 Bh6 27. f4 g5 28. Qe2 Kh8 29. fxg5 Bxg5 30. Rc2 Bf6 31. Qd3 Qa1 32. Qf5 Rb8 33. Bd3 Kg7 34. Qxh7+ Kf8 35. Qh6+ Ke7 36. Qe3+ Kf8 37. Rf2 Rb3 38. Qf4 Rxd3 39. Qxf6 Qxf6 40. Rxf6 Ke7 41. Rf3 Rxd5 42. Re3+ Kf6 43. Kf3 Rd2 44. Ke4 d5+ 45. Kf4 Rd4+ 46. Kf3 Ra4 47. g4 d4 48. Rb3 Ke5 49. Rb5+ Ke6 50. Ke4 1/2-1/2
 ```
-
-  
-*IvanM*

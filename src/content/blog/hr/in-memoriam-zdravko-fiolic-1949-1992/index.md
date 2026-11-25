@@ -12,6 +12,7 @@ wordpress:
   id: 4837
   url: "http://sahovski-klub.com/in-memoriam-zdravko-fiolic-1949-1992/"
   slug: "in-memoriam-zdravko-fiolic-1949-1992"
+imageAlt: "spomen ploca Zdravku Fiolicu"
 ---
 ![spomen ploca Zdravku Fiolicu](./spomen-ploca-zdravku-fiolicu.jpg)  
 U spomen na Zdravka Fiolića.  

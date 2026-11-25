@@ -12,6 +12,8 @@ wordpress:
   id: 3937
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-split-2015/"
   slug: "kadetsko-prvenstvo-hrvatske-split-2015"
+author: "Darko"
+imageAlt: "split lipanj 2015 cw"
 ---
 ![split lipanj 2015 cw](./split-lipanj-2015-cw.jpg)
 
@@ -27,5 +29,3 @@ Kljujevu, Luki, pa i Bruni, ovo je prvi nastup na takvom turniru i prema izvješ
 ![analiza Split 2015](./analiza-split-2015.jpg)   ![palacinke Split 2015](./palacinke-split-2015.jpg)
 
 ![ekipa na terasi hotela 1024x768](./ekipa-na-terasi-hotela.jpg)  ![analiza uz sladoled 1024x768](./analiza-uz-sladoled.jpg)
-
-darko

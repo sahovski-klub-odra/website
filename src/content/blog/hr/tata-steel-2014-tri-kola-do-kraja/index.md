@@ -11,6 +11,7 @@ wordpress:
   id: 2786
   url: "http://sahovski-klub.com/tata-steel-2014-tri-kola-do-kraja/"
   slug: "tata-steel-2014-tri-kola-do-kraja"
+imageAlt: "tata_logo blue"
 ---
 ![tata_logo blue](./tata-logo-blue.jpg)Na glavnom turniru nastupa 12 igrača, a za razliku od *[Tata Steel 2013](/novosti/magnus-carlsen-osvojio-tata-steel-2013/ "Tata Steel 2013 - konačni poredak")*, ove godine nema prošlogodišnjeg pobjednika Carslena, kao ni bivšeg svjetskog prvaka Ananda.
 

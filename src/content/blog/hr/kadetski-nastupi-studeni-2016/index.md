@@ -12,6 +12,8 @@ wordpress:
   id: 4965
   url: "http://sahovski-klub.com/kadetski-nastupi-studeni-2016/"
   slug: "kadetski-nastupi-studeni-2016"
+author: "Darko"
+imageAlt: "dom sportova 20112016"
 ---
 ![dom sportova 20112016](./dom-sportova-20112016.jpg)  
 Danas se igra sedma partija meča za prvaka svijeta između trenutačnog prvaka, Norvežanina Magnusa Carlsena (2853), i ruskog velemajstora Sergeja Karjakina (2772). Trenutačni rezultat je 3:3, ostvaren sa šest remija. Meč se igra u New Yorku, a može se pratiti i [uživo](https://chess24.com/en/watch/live-tournaments/carlsen-karjakin-world-chess-championship-2016/1/1/7).  
@@ -27,5 +29,3 @@ U međuvremenu su se pokrenuli i naši kadeti i kadetkinje te napokon počeli oz
 ♦ Danas su naši kadeti i kadetkinje nastupili na dva turnira. Braća Matašić odigrala su u hotelu Antunović u ![Sesvetski Kraljevec 20112016](./sesvetski-kraljevec-20112016.jpg)Sesvetskom Kraljevcu mjesečni kadetski turnir u organizaciji ŠK Brestje. Već nakon nekoliko nastupa i njihovi rezultati postaju sve bolji pa je tako Filip osvojio dva boda, a Luka čak tri! [Rezultati](http://chess-results.com/tnr249533.aspx?lan=13&art=4&fed=CRO&turdet=YES&flag=30&wi=984&group=U09).  
 Većina ostalih uspjela je doći i odigrati drugi krug Caissine čarolije, koji se igrao u Domu sportova. Nastupilo je čak sedam naših kadetkinja i tri kadeta. Dečki su igrali u starijoj skupini, a Bruno i Božo uzeli su i medalje! Bruno je osvojio drugo, a Božo treće mjesto. Kljujev je na turniru izgubio od Bože, a iako mislim da je trenutačno jači igrač, čini mi se da mu Božo “ne leži”. 🙂  [Rezultati dečki](http://chess-results.com/tnr248707.aspx?lan=13&art=4&wi=821). Djevojke su igrale turnir do 12, i vidi se da im je igranje na takvom turniru i više nego dobrodošlo. Solidne su po običaju bile Monika i Katarina, a ugodno je iznenadila i Ana, koja se polako vraća, nakon što neko vrijeme nije baš previše igrala. Mlađe igračice dobro su podnijele i ovaj turnir, iako više vole lakše turnire i osvajanje nagrada. Nadam se samo da će sve djevojke nastaviti s nastupima i stjecanjem iskustva jer bez igre nema ni napretka. [Rezultati do 12](http://chess-results.com/tnr248706.aspx?lan=13&art=4&wi=821).  
 ![caissina carolija II 1](./caissina-carolija-ii-1.jpg) ![caissina carolija II 2](./caissina-carolija-ii-2.jpg) ![caissina carolija II 3](./caissina-carolija-ii-3.jpg) ![caissina carolija II 4](./caissina-carolija-ii-4.jpg) ![caissina carolija II 5](./caissina-carolija-ii-5.jpg) [](./caissina-carolija-ii-6.jpg)  ![caissina carolija II 6](./caissina-carolija-ii-6.jpg)
-
-darko

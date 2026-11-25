@@ -47,7 +47,7 @@ function viewerHtml(pgn, { lang, assets, title }) {
     .map((g) => {
       const h = headers(g);
       const players = known(h.White) || known(h.Black) ? `${esc(h.White ?? '?')} – ${esc(h.Black ?? '?')}` : '';
-      const meta = [h.Event, h.Round && known(h.Round) ? `${lang === 'en' ? 'round' : 'kolo'} ${h.Round}` : '', h.Date]
+      const meta = [h.Event, h.Round && known(h.Round) ? `kolo ${h.Round}` : '', h.Date]
         .filter(known)
         .map(esc)
         .join(', ');
@@ -68,7 +68,7 @@ export function remarkPgn(options = {}) {
 
   return (tree, file) => {
     const filePath = file.path || file.history?.[0] || '';
-    const lang = /[\\/]blog[\\/]en[\\/]/.test(filePath) ? 'en' : 'hr';
+    const lang = 'hr';
 
     const visit = (node) => {
       if (!node.children) return;

@@ -12,6 +12,8 @@ wordpress:
   id: 4866
   url: "http://sahovski-klub.com/sk-odra-sk-spansko-15/"
   slug: "sk-odra-sk-spansko-15"
+author: "Darko"
+imageAlt: "Odra 18092016"
 ---
 **Seniori, 7. kolo  
 ![Odra 18092016](./odra-18092016.jpg)  
@@ -26,6 +28,4 @@ wordpress:
 5\. III Maravić, Ivan 1756 – I Ranogajec, Borislav 1867 **0:1**  
 6\. IV Vraneša, Ivan 1641 – II Poljak, Nikola 1907 **0:1**
 
-![Odra vs Spansko 18092016](./odra-vs-spansko-18092016.jpg) ![analiza u birtiji 18092016](./analiza-u-birtiji-18092016.jpg)  
-
-darko
+![Odra vs Spansko 18092016](./odra-vs-spansko-18092016.jpg) ![analiza u birtiji 18092016](./analiza-u-birtiji-18092016.jpg)

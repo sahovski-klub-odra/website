@@ -11,6 +11,7 @@ wordpress:
   id: 8741
   url: "http://sahovski-klub.com/sk-hask-sk-odra-ii-24/"
   slug: "sk-hask-sk-odra-ii-24"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 6.kolo
 
@@ -65,5 +66,3 @@ Sve u svemu, odličan dan za drugu ekipu ŠK Odre! S ukupnih **4:2** zasluženo 
 
 e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Bc5 5. O-O b5 6. Bb3 d6 7. h3 Na5 8. c3 Nxb3 9. Qxb3 Ba7 10. d4 Qe7 11. Qd5 Rb8 12. dxe5 Bb7 13. exd6 cxd6 14. Qg5 Qxg5 15. Bxg5 f6 16. Bf4 Rd8 17. Nd4 g6 18. Nd2 Kf7 19. a4 b4 20. Nc4 Ke7 21. Rad1 h5 22. Na5 Rd7 23. Nxb7 Rxb7 24. Nc6+ Kf8 25. Bxd6+ Kg7 26. Nxa7 Rxa7 27. Bxb4 Nh6 28. Rd5 Rc8 29. Rfd1 Rcc7 30. Bd6 Rf7 31. b4 Ng8 32. c4 Ne7 33. Bxe7 Rfxe7 34. f3 Rec7 35. R1d4 Kf7 36. Kf2 Ke7 37. Ke3 Rab7 38. c5 Rc6 39. Kd3 g5 40. Kc4 Re6 41. Rd6 Rxd6 42. Rxd6 Ra7 43. Kd5 h4 44. Kc6 Ra8 45. Kb7 Rf8 46. Rd5 Ke6 47. Kxa6 1-0
 ```
-
-IvanV

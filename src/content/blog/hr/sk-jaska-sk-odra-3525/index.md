@@ -12,6 +12,7 @@ wordpress:
   id: 4021
   url: "http://sahovski-klub.com/sk-jaska-sk-odra-3525/"
   slug: "sk-jaska-sk-odra-3525"
+author: "Darko"
 ---
 **Seniori, 7. kolo**
 
@@ -29,5 +30,3 @@ U prostorijama Autokluba Jastrebarsko odigrano je sedmo kolo seniorske lige izme
 6\. VK Kišan, Josip 1601 – III Maravić, Ivan 1777                    1:0
 
 Liga se nastavlja 18. listopada, a u goste dolazi ekipa ŠK Končar.
-
-darko

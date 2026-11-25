@@ -12,6 +12,7 @@ wordpress:
   id: 2363
   url: "http://sahovski-klub.com/fide-chess-world-cup-tromso-2013-stanje-nakon-1-kruga-druge-partije/"
   slug: "fide-chess-world-cup-tromso-2013-stanje-nakon-1-kruga-druge-partije"
+imageAlt: "FIDE World Chess Cup 2013 - Ushenina, Anna"
 ---
 ![FIDE World Chess Cup 2013 - Ushenina, Anna](./fide-world-chess-cup-2013-ushenina-anna.jpg)
 

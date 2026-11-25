@@ -12,6 +12,8 @@ wordpress:
   id: 4200
   url: "http://sahovski-klub.com/najava-kadetskih-turnira/"
   slug: "najava-kadetskih-turnira"
+author: "Darko"
+imageAlt: "uguseni-mat"
 ---
 ![uguseni-mat](./uguseni-mat.gif)               ![mat na bocnom redu](./mat-na-bocnom-redu1.gif)  
 Ozbiljnija natjecanja počinju u veljači sljedeće godine, Pojedinačno prvenstvo Zagreba, Kadetska klupska liga i Prvenstvo osnovnih škola. To su natjecanja koja niti jedan član ne bi smio propustiti. Liga se igra subotom, a ostala natjecanja subotom i nedjeljom. U međuvremenu, potrebno je iskoristiti svaku priliku i igrati turnire koji se pojave, a prikladni su za kadetski uzrast, kako bi napredovali i bili što spremniji za navedena natjecanja.
@@ -24,5 +26,3 @@ U Klubu će se odigrati turnir kadeta početnika, **21\. studenoga**, a na njemu
 
 01 Poziv mikronis kup 2015 *(dokument nije dostupan ni na staroj stranici)*  
 Raspis-pojed-8-god.-2015. *(dokument nije dostupan ni na staroj stranici)*
-
-darko

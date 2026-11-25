@@ -11,6 +11,8 @@ wordpress:
   id: 3767
   url: "http://sahovski-klub.com/kadetska-liga-2015-drugi-krug/"
   slug: "kadetska-liga-2015-drugi-krug"
+author: "Trenić D."
+imageAlt: "KADETSKA LIGA 2015 drugi krug"
 ---
 **Kadetska liga 2015.**
 
@@ -25,5 +27,3 @@ wordpress:
 **S**ljedeći, završni krug kadetskih liga igra se 25. travnja u Novom Zagrebu, Kombolova 2a, u Ugostiteljsko-turističkom učilištu.
 
 U [galeriju slika](/galerija/) dodano je nekoliko novih fotografija s jučerašnjih nastupa.
-
-Trenić D.

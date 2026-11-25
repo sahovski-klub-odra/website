@@ -20,12 +20,10 @@ export interface Occurrence {
   startTime: string;
   endTime?: string;
   group: string;
-  groupEn?: string;
   coach: string;
   location?: string;
   status: Status;
   note?: string;
-  noteEn?: string;
   sessionId?: string;
   /** set on the ORIGINAL slot of a moved training */
   newDate?: string;
@@ -89,12 +87,10 @@ export function expand(data: TrainingData, from: string, to: string): Occurrence
         startTime: s.startTime,
         endTime: s.endTime,
         group: s.group,
-        groupEn: s.groupEn,
         coach: s.coach,
         location: s.location,
         status: s.status,
         note: s.note,
-        noteEn: s.noteEn,
         sessionId: s.id,
       };
 
@@ -109,7 +105,6 @@ export function expand(data: TrainingData, from: string, to: string): Occurrence
         status: ex.status,
         coach: ex.coach ?? base.coach,
         note: ex.note ?? base.note,
-        noteEn: ex.noteEn ?? base.noteEn,
       };
 
       if (ex.status === 'rescheduled' && (ex.newDate || ex.newStartTime)) {
@@ -130,7 +125,6 @@ export function expand(data: TrainingData, from: string, to: string): Occurrence
           status: 'rescheduled',
           coach: ex.coach ?? base.coach,
           note: ex.note ?? base.note,
-          noteEn: ex.noteEn ?? base.noteEn,
           movedFrom: d,
         });
       } else {
@@ -146,12 +140,10 @@ export function expand(data: TrainingData, from: string, to: string): Occurrence
       startTime: x.startTime,
       endTime: x.endTime,
       group: x.group,
-      groupEn: x.groupEn,
       coach: x.coach,
       location: x.location,
       status: x.status,
       note: x.note,
-      noteEn: x.noteEn,
     });
   });
 

@@ -12,6 +12,7 @@ wordpress:
   id: 3449
   url: "http://sahovski-klub.com/mec-za-prvaka-svijeta-magnus-carlsen-vs-vishy-anand-sochi-2014-6545-carlsen-je-obranio-naslov/"
   slug: "mec-za-prvaka-svijeta-magnus-carlsen-vs-vishy-anand-sochi-2014-6545-carlsen-je-obranio-naslov"
+imageAlt: "Carlsen WCC 2014"
 ---
 **![Carlsen WCC 2014](./carlsen-wcc-2014.jpg)Magnus Carlsen** je novi stari prvak. Jedanaesta partija meča završila je u njegovu korist čime je dosegao 6,5 bodova potrebnih za ukupnu pobjedu u meču, a time i izbjegao neizvjesnost dvanaeste partije s crnim figurama. **Anand** je imao svoj trenutak i dobru šansu da se stvari zakompliciraju, ali je donio krivu odluku. Sa remijem, prekosutra bi kao bijeli mogao pokušati igrati na pobjedu i izboriti produžetke, a Carlsenu sigurno ne bi bilo lako. Ovako, to je to za ovaj put. Intervju poslije meča bio je odvojen, prvo je odgovarao Anand, pa Carlsen.
 

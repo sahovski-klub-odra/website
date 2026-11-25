@@ -12,6 +12,7 @@ wordpress:
   id: 4082
   url: "http://sahovski-klub.com/cuger-petkom/"
   slug: "cuger-petkom"
+author: "Darko"
 ---
 Već nas polako zamjenjuju…
 
@@ -28,5 +29,3 @@ U petak su stariji kadeti (i Luka, koji se opasno nameće prvoj ekipi…) odigra
 | 5. | Kolovrat, Bruno | 0 | 1 | 1 | 1 | \* | 1 | 1 | 5 | 1. |
 | 6. | Kovačević, Luka Fran | 1/2 | 1/2 | 0 | 0 | 0 | \* | 1 | 2 | 4. |
 | 7. | Kljujev, Ivan | 0 | 0 | 1 | 1 | 0 | 0 | \* | 2 | 4. |
-
-darko

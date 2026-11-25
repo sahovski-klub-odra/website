@@ -12,6 +12,7 @@ wordpress:
   id: 7092
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-trogir-2021/"
   slug: "kadetsko-prvenstvo-hrvatske-trogir-2021"
+author: "Darko"
 ---
 ![](./trogir-2021.jpg)
 
@@ -81,5 +82,3 @@ M15
 1\. MK Kovač Petar 2067 2129 ŠK Slaven, Vukovar 8,0  
 2\. I Jaković Roko 1736 1940 ŠK Oroslavje, Oroslavje 7,5  
 3\. MK Vučenović Damian 2040 2124 ŠK Sesvete Agroproteinka, Zagreb 7,0
-
-darko

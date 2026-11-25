@@ -12,6 +12,7 @@ wordpress:
   id: 8481
   url: "http://sahovski-klub.com/sk-oroslavje-sk-odra-3525-2/"
   slug: "sk-oroslavje-sk-odra-3525-2"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 11.kolo**  
 ![](./oroslavje700.jpg)  
@@ -36,6 +37,3 @@ wordpress:
 [PlyCount "38"]
 1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. Bg5 dxc4 5. Bxf6 exf6 6. e4 b5 7. a3 Be7 8. g3 O-O 9. Bg2 a5 10. Nge2 Na6 11. e5 Qb6 12. d5 fxe5 13. dxc6 Be6 14. O-O Rad8 15. Qc2 Rd3 16. Be4 Nc5 17. Bxd3 cxd3 18. Qd2 dxe2 19. Nxe2 Nb3 0-1
 ```
-
-  
-*IvanM*

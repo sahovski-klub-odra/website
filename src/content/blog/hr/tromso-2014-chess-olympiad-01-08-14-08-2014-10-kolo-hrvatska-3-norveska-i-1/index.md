@@ -12,6 +12,7 @@ wordpress:
   id: 3091
   url: "http://sahovski-klub.com/tromso-2014-chess-olympiad-01-08-14-08-2014-10-kolo-hrvatska-3-norveska-i-1/"
   slug: "tromso-2014-chess-olympiad-01-08-14-08-2014-10-kolo-hrvatska-3-norveska-i-1"
+imageAlt: "tromso"
 ---
 ![tromso](./tromso.jpg)
 

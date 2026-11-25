@@ -12,6 +12,7 @@ wordpress:
   id: 3108
   url: "http://sahovski-klub.com/2-sinquefield-kup-uoci-sedmog-kola-4-9-2014/"
   slug: "2-sinquefield-kup-uoci-sedmog-kola-4-9-2014"
+imageAlt: "Fabiano Caruana rating 2014"
 ---
 Još lani organizatori su izrazili želju da ovaj kup postane tradicionalan i zasad po tom pitanju idu u dobrom smjeru. Prošlogodišnji pobjednik **Magnus Carslen** tada je obećao da će igrati i dogodine bude li mu raspored dozvolio. Tada uspješno položen, bio je to posljednji test forme pred meč za prvaka svijeta protiv **Ananda.**
 

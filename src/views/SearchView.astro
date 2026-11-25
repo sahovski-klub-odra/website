@@ -4,14 +4,14 @@ import PageHeader from '../components/PageHeader.astro';
 import Icon from '../components/Icon.astro';
 import { categoriesFor } from '../lib/blog';
 import { useTranslations, locales, type Lang } from '../i18n/ui';
-import { withBase, searchIndexPath, categoryPath, alternatesFor } from '../i18n/routes';
+import { withBase, searchIndexPath, categoryPath } from '../i18n/routes';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const cats = await categoriesFor(lang);
 ---
-<BaseLayout lang={lang} title={t('search.title')} alternates={alternatesFor('search')} section="news" noindex>
+<BaseLayout lang={lang} title={t('search.title')} section="news" noindex>
   <PageHeader title={t('search.title')} intro={t('search.hint')}>
     <form class="mt-8 flex max-w-2xl gap-2" role="search" data-search-form>
       <label for="q" class="sr-only">{t('search.label')}</label>
@@ -35,8 +35,7 @@ const cats = await categoriesFor(lang);
     )}
   </div>
   <div hidden data-search-config data-index={withBase(searchIndexPath(lang))} data-locale={locales[lang]}
-       data-none={t('search.none')} data-results={t('search.results')} data-loading={t('search.loading')}
-       data-hr-label={lang === 'en' ? t('news.originalHr') : ''}></div>
+       data-none={t('search.none')} data-results={t('search.results')} data-loading={t('search.loading')}></div>
 </BaseLayout>
 
 <script>
@@ -82,8 +81,8 @@ const cats = await categoriesFor(lang);
     const fmt = new Intl.DateTimeFormat(cfg.locale, { day: 'numeric', month: 'long', year: 'numeric' });
     list.innerHTML = hits
       .map(({ d }) => `<li class="card p-5 transition-shadow hover:shadow-card-hover">
-        <p class="text-sm text-ink/60">${fmt.format(new Date(d.p))}${d.c[0] ? ` · ${esc(d.c[0])}` : ''}${cfg.hrLabel && d.l === 'hr' ? ` · <span class="font-semibold text-gold-deep">${esc(cfg.hrLabel)}</span>` : ''}</p>
-        <h2 class="mt-1 text-lg font-semibold"><a class="hover:text-gold-deep" href="${d.u}"${d.l !== document.documentElement.lang ? ` hreflang="${d.l}"` : ''}>${esc(d.t)}</a></h2>
+        <p class="text-sm text-ink/60">${fmt.format(new Date(d.p))}${d.c[0] ? ` · ${esc(d.c[0])}` : ''}</p>
+        <h2 class="mt-1 text-lg font-semibold"><a class="hover:text-gold-deep" href="${d.u}">${esc(d.t)}</a></h2>
         <p class="mt-1 text-[0.95rem] text-ink/70">${esc(d.d)}</p></li>`)
       .join('');
   }

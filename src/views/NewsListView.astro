@@ -1,5 +1,5 @@
 ---
-/** Blog archive – used for /novosti/, /novosti/stranica/N/ and category pages (both languages). */
+/** Blog archive – used for /novosti/, /novosti/stranica/N/ and category pages */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import BlogCard from '../components/BlogCard.astro';
@@ -7,7 +7,7 @@ import Pagination from '../components/Pagination.astro';
 import Icon from '../components/Icon.astro';
 import type { Post } from '../lib/blog';
 import { useTranslations, type Lang } from '../i18n/ui';
-import { routes, withBase, categoryPath, newsPagePath, type Alternates } from '../i18n/routes';
+import { routes, withBase, categoryPath, newsPagePath } from '../i18n/routes';
 
 interface Props {
   lang: Lang;
@@ -16,9 +16,8 @@ interface Props {
   pages: number;
   categories: { name: string; slug: string; count: number }[];
   category?: { name: string; slug: string };
-  alternates: Alternates;
 }
-const { lang, posts, page, pages, categories, category, alternates } = Astro.props;
+const { lang, posts, page, pages, categories, category } = Astro.props;
 const t = useTranslations(lang);
 const hrefFor = (n: number) => (category ? categoryPath(lang, category.slug, n) : newsPagePath(lang, n));
 const title = category ? category.name : t('news.title');
@@ -28,7 +27,6 @@ const pageSuffix = page > 1 ? ` – ${t('news.page')} ${page}` : '';
   lang={lang}
   title={`${title}${pageSuffix}`}
   description={category ? `${t('news.category')}: ${category.name}. ${t('news.intro')}` : t('news.intro')}
-  alternates={alternates}
   section="news"
 >
   <PageHeader title={title} intro={category ? undefined : t('news.intro')} eyebrow={category ? t('news.category') : undefined}>
@@ -40,8 +38,6 @@ const pageSuffix = page > 1 ? ` – ${t('news.page')} ${page}` : '';
   </PageHeader>
 
   <div class="container-site py-12">
-    {lang === 'en' && <p class="mb-8 rounded-lg border border-gold/40 bg-gold/10 p-4 text-[0.95rem] text-ink/80">{t('news.croatianOnly')}</p>}
-
     {categories.length > 0 && (
       <nav aria-label={t('news.categories')} class="mb-10">
         <ul class="flex flex-wrap gap-2">

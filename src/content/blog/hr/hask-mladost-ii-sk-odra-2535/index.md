@@ -12,6 +12,7 @@ wordpress:
   id: 5280
   url: "http://sahovski-klub.com/hask-mladost-ii-sk-odra-2535/"
   slug: "hask-mladost-ii-sk-odra-2535"
+author: "Darko"
 ---
 **Seniori, 4. kolo  
 ![](./trg-kresimira-cosica.jpg)  
@@ -25,5 +26,3 @@ wordpress:
 6\. IV Andrej Pipalović – IV Ivan Vraneša 0:1
 
 Sljedeće kolo igra se 30. travnja, a ŠK Odra domaćin je u meču s Karlovačkim šahovskim klubom.
-
-darko

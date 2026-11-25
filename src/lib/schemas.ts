@@ -17,12 +17,11 @@ export type Status = (typeof STATUSES)[number];
 export const siteSchema = z.object({
   name: z.string(),
   shortName: z.string(),
-  nameEn: z.string(),
   logoLine1: z.string(),
   logoLine2: z.string(),
-  about: z.object({ hr: z.string(), en: z.string() }),
+  about: z.string(),
   /** homepage intro under the big title; falls back to the built-in tagline */
-  tagline: z.object({ hr: text(), en: text() }).nullish().transform((v) => v ?? undefined),
+  tagline: optionalString,
   address: z.object({
     street: text(),
     postalCode: text(),
@@ -38,7 +37,7 @@ export const siteSchema = z.object({
   oib: text(),
   /** people to contact directly (shown on the contact page) */
   contacts: z
-    .array(z.object({ name: z.string().min(1), role: text(), roleEn: optionalString, phone: text(), email: text() }))
+    .array(z.object({ name: z.string().min(1), role: text(), phone: text(), email: text() }))
     .default([]),
   map: z.object({ lat: z.number().nullable(), lon: z.number().nullable(), zoom: z.number().nullish().transform((v) => v ?? 16) }),
   social: z.record(z.string(), z.string().nullish().transform((v) => v ?? '')).default({}),
@@ -55,7 +54,6 @@ export const siteSchema = z.object({
 export const memberSchema = z.object({
   name: z.string().min(1),
   role: text(),
-  roleEn: optionalString,
   title: z
     .enum(['', 'GM', 'IM', 'FM', 'CM', 'WGM', 'WIM', 'WFM', 'WCM', 'NM', 'MK', 'KM'])
     .default('')
@@ -72,7 +70,6 @@ export const memberSchema = z.object({
   fideId: z.union([z.string(), z.number()]).optional().transform((v) => (v ? String(v) : undefined)),
   image: optionalString,
   bio: optionalString,
-  bioEn: optionalString,
   order: z.number().default(100),
   active: z.boolean().default(true),
 });
@@ -86,9 +83,7 @@ export type Member = z.infer<typeof memberSchema>;
 /* ---------------- Videos ---------------- */
 export const videoSchema = z.object({
   title: z.string().min(1),
-  titleEn: optionalString,
   description: optionalString,
-  descriptionEn: optionalString,
   youtube: z.string().min(1).describe('YouTube URL ili ID'),
   date: optionalIsoDate,
   thumbnail: optionalString,
@@ -105,12 +100,10 @@ export const sessionSchema = z
     /** optional – the club often announces only the start ("od 19 sati") */
     endTime: optionalTime,
     group: z.string().min(1),
-    groupEn: optionalString,
     coach: text(),
     location: optionalString,
     status: z.enum(STATUSES).default('scheduled'),
     note: optionalString,
-    noteEn: optionalString,
     validFrom: optionalIsoDate,
     validUntil: optionalIsoDate,
   })
@@ -125,7 +118,6 @@ export const exceptionSchema = z.object({
   newEndTime: optionalTime,
   coach: optionalString,
   note: optionalString,
-  noteEn: optionalString,
 });
 
 export const extraSchema = z.object({
@@ -134,18 +126,15 @@ export const extraSchema = z.object({
   startTime: time,
   endTime: optionalTime,
   group: z.string().min(1),
-  groupEn: optionalString,
   coach: text(),
   location: optionalString,
   status: z.enum(STATUSES).default('scheduled'),
   note: optionalString,
-  noteEn: optionalString,
 });
 
 /** Short notices shown above the schedule and on the homepage, e.g. "Nema treninga za vrijeme školskih praznika". */
 export const announcementSchema = z.object({
   text: z.string().min(1),
-  textEn: optionalString,
   /** first and last day it is shown (inclusive); empty = from now / until removed */
   from: optionalIsoDate,
   until: optionalIsoDate,

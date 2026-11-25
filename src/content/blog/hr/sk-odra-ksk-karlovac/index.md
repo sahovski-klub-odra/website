@@ -12,6 +12,7 @@ wordpress:
   id: 8269
   url: "http://sahovski-klub.com/sk-odra-ksk-karlovac/"
   slug: "sk-odra-ksk-karlovac"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 6.kolo  
 ![](./karlovacodra700.jpg)  
@@ -34,6 +35,3 @@ Ove nedjelje smo završili proljetnu sezonu [porazom](https://chess-results.com/
 [PlyCount "68"]
 1. d4 d5 2. c4 c6 3. cxd5 cxd5 4. Nc3 Nf6 5. Bf4 Nc6 6. e3 a6 7. a3 e6 8. Nf3 Bd6 9. Bxd6 Qxd6 10. Be2 O-O 11. O-O e5 12. dxe5 Nxe5 13. Nxe5 Qxe5 14. Bf3 Rd8 15. Qd4 Qxd4 16. exd4 Be6 17. Rac1 Rac8 18. Ne2 g5 19. g3 Ne4 20. Rxc8 Rxc8 21. Rc1 Rxc1+ 22. Nxc1 Nd2 23. Bg2 Kf8 24. Nd3 Ke7 25. Nc5 b6 26. Nxa6 Nc4 27. Nb4 Kd6 28. Bf1 Nxb2 29. Bb5 Nc4 30. Bxc4 dxc4 31. Kf1 c3 32. Ke2 Bc4+ 33. Kd1 Bb3+ 34. Ke2 Bc4+ 1/2-1/2
 ```
-
-  
-*IvanM*

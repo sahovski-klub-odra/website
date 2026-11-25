@@ -12,6 +12,7 @@ wordpress:
   id: 6642
   url: "http://sahovski-klub.com/sk-prigorje-markusevec-sk-odra-51/"
   slug: "sk-prigorje-markusevec-sk-odra-51"
+author: "Darko"
 ---
 **Seniori, 9. kolo  
 ![](./prigorje-vs-odra-06102019.jpg)  
@@ -22,5 +23,3 @@ wordpress:
 Stipe je još u otvaranju previdio figuru, Zvjezdan je u završnici s dva piuna više, previdio piuna i našao se u završnici raznobojaca koju više nije mogao dobiti. Ivan je na trećoj ploči odigrao mlako, ali sigurno. Od njega očekujemo više u ovoj ligi. Vranešina pozicija se mijenjala tijekom partije, ali je na kraju presudnu ulogu odigrao cajtnot, kao i u Samantinoj partiji. Samanta se pogrešnim izmjenama našla u malo slabijoj poziciji, ali i u vremenskoj oskudici i to je odlučilo ishod. Ana je uspjela u središnjici nadigrati iskusnijeg protivnika, ali je onda u jednom potezu nepotrebno oslabila rokadni položaj i previdila materijal.  
 Obzirom na solidnu poziciju na tablici, ovim porazom smo se zasad osigurali od plasmana u višu ligu. 🙂 A u ovoj ćemo davati sve više prilika mladim igračima i igračicama. Za ovo gostovanje računali smo i na Moniku, ali je zbog drugih obaveza preskočila ovo kolo. Djevojkama uskoro počinje školsko ekipno prvenstvo Zagreba i ove partije su im dobra priprema.  
 Sljedeće, 10. kolo seniorske lige igra se za dva tjedna, a domaćini smo ŠK UHBDR 99. brigade.
-
-darko

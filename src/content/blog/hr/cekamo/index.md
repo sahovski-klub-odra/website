@@ -12,6 +12,7 @@ wordpress:
   id: 1403
   url: "http://sahovski-klub.com/cekamo/"
   slug: "cekamo"
+imageAlt: "ScreenShot001"
 ---
 Službena stranica turnira je izgleda malo preopterećena, pa je uglavnom nema :-/
 

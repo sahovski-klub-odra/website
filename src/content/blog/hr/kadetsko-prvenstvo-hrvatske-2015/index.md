@@ -12,6 +12,8 @@ wordpress:
   id: 3818
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-2015/"
   slug: "kadetsko-prvenstvo-hrvatske-2015"
+author: "Darko"
+imageAlt: "Splitska riva 11052015"
 ---
 ![Splitska riva 11052015](./splitska-riva-11052015.jpg)  
 Ove će se godine Kadetsko prvenstvo Hrvatske igrati u Splitu od 20. do 26. lipnja u hotelu “Zagreb”, Put Duilova 23, u organizaciji HŠS-a i Šahovskog saveza Splitsko-dalmatinske županije. Raspis turnira je u  
@@ -21,5 +23,3 @@ Prošle godine na turnir su išla četiri kadeta, a ove godine ima i više kade
 Naravno, sve ovisi i o financijskim mogućnostima roditelja, a članovi Kluba pomoći će koliko mogu. Od voditelja, tu su Cvetko i Stipe, koji su i ove godine spremni ići i paziti na podmladak, a vjerojatno i Goran. Bilo bi dobro da i roditelji do petka 22. svibnja razmotre situaciju, želje i mogućnosti te da se taj petak u Klubu počnemo ozbiljnije dogovarati.
 
 Kako je prvenstvo Hrvatske praktički posljednji turnir ove godine, bilo bi poželjno da zainteresirani kadeti odigraju [Kadetsko prvenstvo Varaždinske županije,](/files/wp/2015/05/RASPIS-OPEN-Varazdin-2015.pdf "Varaždin, raspis") koje se igra u petak, subotu i nedjelju. Još je važnije kada bi taj B-turnir odigrali kadeti koji su još u počecima šahovskog razvoja i nemaju iskustva na turnirima, kao Kljujev i Noa. Taj je turnir baš po mjeri za kadete, ali je malo nezgodan jer se prva kola igraju petkom pa nije lako organizirati prijevoz. Zasad znam da je iz Kluba u petak za prijevoz voljan uskočiti Cvetko, a nadam se i netko od roditelja pa neka odmah javi da znamo kakvi su nam kapaciteti.
-
-darko

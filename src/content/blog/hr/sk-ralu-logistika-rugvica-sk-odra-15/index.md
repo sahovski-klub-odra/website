@@ -12,6 +12,7 @@ wordpress:
   id: 8560
   url: "http://sahovski-klub.com/sk-ralu-logistika-rugvica-sk-odra-15/"
   slug: "sk-ralu-logistika-rugvica-sk-odra-15"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 1.kolo**  
 ![](./1koloslika700.jpg)  
@@ -46,6 +47,3 @@ Prošle nedjelje je prva seniorska ekipa [otvorila ligašku sezonu](https://s1.c
 [BlackElo "2098"]
 1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. a3 g6 5. Bc4 Bg7 6. d3 O-O 7. Bg5 h6 8. Be3 d6 9. h3 a6 10. Qd2 Kh7 11. g4 Ng8 12. O-O-O Nge7 13. d4 b5 14. Ba2 exd4 15. Nxd4 b4 16. axb4 Nxb4 17. Bb3 Bb7 18. f3 c5 19. Nde2 Qa5 20. Kb1 Rad8 21. Nf4 Nec6 22. Ncd5 Ne5 23. Rhf1 Bxd5 24. Nxd5 Rb8 25. f4 Nc4 26. Qxb4 Rxb4 27. Bc1 Rfb8 28. Rf3 R4b7 29. e5 Na3+ 30. bxa3 c4 31. Ka2 cxb3+ 32. cxb3 dxe5 33. fxe5 Bxe5 34. Rfd3 Qc5 35. Nb4 Rxb4 36. axb4 Qc2+ 37. Ka3 Bc3 0-1
 ```
-
-  
-*IvanM*

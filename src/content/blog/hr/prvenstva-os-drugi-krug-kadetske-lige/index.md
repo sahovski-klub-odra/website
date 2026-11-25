@@ -12,6 +12,8 @@ wordpress:
   id: 2900
   url: "http://sahovski-klub.com/prvenstva-os-drugi-krug-kadetske-lige/"
   slug: "prvenstva-os-drugi-krug-kadetske-lige"
+author: "Darko"
+imageAlt: "prv os drugi krug 2014"
 ---
 Ovaj tjedan bio je pun zbivanja, posebno za mlađi naraštaj. Tako su u srijedu i četvrtak nastavljeni turniri osnovnih škola grada Zagreba. Dečki su igrali u četvrtak, a nastavljaju sljedeći tjedan, u srijedu 5. ožujka. [Dječaci, raspored](/files/wp/2014/03/3Rasp-ah58M-2r.pdf "Raspored, ekipno OŠ dječaci")  
 Djevojčice su igrale u srijedu, a nastavljaju u četvrtak 6. ožujka. [Djevojčice, raspored](/files/wp/2014/03/Rasp-ah58--2r.pdf)  
@@ -31,5 +33,3 @@ Natjecanja u kadetskim ligama nastavljaju se 29. ožujka.
 ![kadetska liga 01032014m](./kadetska-liga-01032014m.jpg)
 
 ![kadetska liga 01032014](./kadetska-liga-01032014.jpg)
-
-Darko

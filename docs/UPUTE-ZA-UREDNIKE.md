@@ -15,16 +15,21 @@ Ako napravite grešku (npr. upišete vrijeme `25:00`), stranica se **neće pokva
 3. Na tuđem ili zajedničkom računalu uvijek se odjavite: ikona računa gore desno → **Odjava**.
    Token nikad ne šaljite e-poštom ni porukom.
 
-Uređivač je na hrvatskom. Lijevo su odjeljci: *Novosti (hrvatski)*, *News (English translations)*,
-*Galerija – albumi* i *Raspored, članovi, videozapisi, postavke*.
+Uređivač je na hrvatskom. Lijevo su odjeljci: *Novosti*, *Galerija – albumi* i
+*Raspored, članovi, videozapisi, postavke*.
 
 ### Nova objava (kao u WordPressu)
-1. **Novosti (hrvatski)** → **Novo**.
+1. **Novosti** → **Novo**.
 2. Upišite **Naslov**. Adresu ne morate upisivati – nastaje iz naslova
    („Božićni turnir 2026” → `bozicni-turnir-2026`).
 3. **Kratki opis** (1–2 rečenice, vidi se na karticama i u Googleu) i po želji **SEO naslov**.
 4. **Naslovna fotografija** → **Pregledaj** → **Prenesi** → odaberite fotografiju → potvrdite. Upišite i kratki opis
-   fotografije (za slabovidne).
+   fotografije (za slabovidne). Naslovna fotografija prikazuje se iznad teksta – istu fotografiju ne treba
+   umetati i u tekst (ako je ipak umetnete, na stranici se prikaže samo jednom).
+   - **Autor članka** (neobavezno): ime ili inicijali kako se potpisujete, npr. *Darko* ili *Ivan M*.
+     Ispod članka prikazuje se kao „Članak napisao: …”, pa potpis ne pišite na kraj teksta.
+   - **Album u galeriji** (neobavezno): odaberite postojeći album – fotografije iz članka tada se automatski
+     prikazuju i u tom albumu (datoteke se ne kopiraju).
 5. **Kategorije** i **Oznake**: upišite jednu, za sljedeću kliknite **Dodaj**.
 6. **Tekst** – alatna traka iznad teksta:
    - ¶ izbornik: naslovi (Naslov 2, Naslov 3), **B** podebljano, *I* kurziv, 🔗 poveznica, popisi;
@@ -218,3 +223,15 @@ Za **dijagram** (samo pozicija, bez poteza):
 - ako potez u zapisu nije ispravan, ploča prikaže sve do tog poteza i jasnu poruku gdje je greška; `npm run verify:migration` također ispisuje takve greške
 
 Primjer s dvije partije, komentarima, varijantama i dijagramom: članak `src/content/blog/hr/demo-sahovske-partije/`. To je **skica** – ne pojavljuje se na javnoj stranici, vidi se samo uz `npm run dev` i u uređivaču. Slobodno ga obrišite kad vam više ne treba.
+
+
+### Galerija – albumi
+- **Novi album:** *Galerija – albumi* → **Novo**. Upišite naziv, datum, po želji **Godinu ili sezonu**
+  (npr. `2025.` ili `2024./2025.`), kategoriju (*Liga*, *Kadetska liga*, *Školska prvenstva*, *Turniri*,
+  *Klupski život*) i kratki opis.
+- **Dodavanje fotografija:** *Dodaj više fotografija odjednom* ili popis *Fotografije s opisom* (s opisom ispod fotografije).
+- **Uklanjanje fotografije iz albuma:** obrišite stavku s popisa i spremite. Datoteka se ne briše, pa fotografija
+  ostaje u članku u kojem je objavljena.
+- **Naslovna fotografija albuma:** polje *Naslovna fotografija* (prazno = prva fotografija).
+- Albumi sastavljeni iz arhive članaka pokazuju na fotografije u mapama članaka (`../../blog/hr/…`) –
+  te stavke uređujete jednako kao ostale.

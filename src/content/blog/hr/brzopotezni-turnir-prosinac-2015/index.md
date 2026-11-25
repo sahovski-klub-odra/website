@@ -12,6 +12,8 @@ wordpress:
   id: 4369
   url: "http://sahovski-klub.com/brzopotezni-turnir-prosinac-2015/"
   slug: "brzopotezni-turnir-prosinac-2015"
+author: "Darko"
+imageAlt: "cuger 11122015"
 ---
 ![cuger 11122015](./cuger-11122015.jpg)
 
@@ -31,5 +33,3 @@ Molim kadete da sljedeći petak svi vrate školske iskaznice kako se ne bi zagub
 | 8. | Stipe | 0 | 0 | 0 | 0 | 0 | 0 | 0 | \* | 0 | 0 | 0 |
 | 9. | Boris | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | \* | 1 | 8 |
 | 10. | Luka Fran | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | \* | 1 |
-
-darko

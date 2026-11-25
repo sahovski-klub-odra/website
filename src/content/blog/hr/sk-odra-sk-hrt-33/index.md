@@ -11,6 +11,8 @@ wordpress:
   id: 3219
   url: "http://sahovski-klub.com/sk-odra-sk-hrt-33/"
   slug: "sk-odra-sk-hrt-33"
+author: "V. D."
+imageAlt: "ODRA_09112014"
 ---
 **Seniori, 10. kolo**
 
@@ -28,5 +30,3 @@ Danas je odigrano deseto kolo, rezultatski nebitno, prilično izjednačeno, kako
 4\. Cvetković Ivan –  Fiamengo Joško ½ – ½  
 5\. Vidaković Darko – Horvat Tihomir  ½ – ½  
 6\. Maravić Ivan – Fiamengo Andrija   0 – 1
-
-v.d.

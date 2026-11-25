@@ -12,6 +12,7 @@ wordpress:
   id: 2648
   url: "http://sahovski-klub.com/u-petak-nema-sahovske-skole/"
   slug: "u-petak-nema-sahovske-skole"
+imageAlt: "black-to-force-mate-in-two"
 ---
 OBAVIJESTI
 

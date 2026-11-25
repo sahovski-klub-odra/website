@@ -12,6 +12,8 @@ wordpress:
   id: 2084
   url: "http://sahovski-klub.com/najava-turnira-za-kadete/"
   slug: "najava-turnira-za-kadete"
+author: "V. D."
+imageAlt: "Oh_NEEE"
 ---
 U **petak** prijepodne (početak u 9:00, predviđeni završetak između  12:00 i 12:30) u **OŠ** Braće Radić **u Botincu** održat će se turnir za kadete školske i predškolske dobi. Turnir se igra na 10 min. Dobra prilika  za naše cure i dečke da odigraju nekoliko partija!
 
@@ -20,8 +22,6 @@ U **subotu i nedjelju** (8. i 9. lipnja) održat će se turnir **u Sisku**, odvo
 Raspisi turnira u privitku…
 
 ![Oh_NEEE](./oh-neee.jpg)
-
-v.d.
 
 [Turnir u OŠ u Botincu](/files/wp/2013/06/Pravilnik-5-Memorijala-Zeljka-Matica.docx)
 

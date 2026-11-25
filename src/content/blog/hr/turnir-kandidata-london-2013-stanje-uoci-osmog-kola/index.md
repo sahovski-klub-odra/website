@@ -12,6 +12,7 @@ wordpress:
   id: 1476
   url: "http://sahovski-klub.com/turnir-kandidata-london-2013-stanje-uoci-osmog-kola/"
   slug: "turnir-kandidata-london-2013-stanje-uoci-osmog-kola"
+imageAlt: "IMG_2078"
 ---
 ![IMG_2078](./img-2078.jpg)
 

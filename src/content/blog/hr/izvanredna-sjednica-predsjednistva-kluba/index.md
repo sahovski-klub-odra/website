@@ -12,6 +12,7 @@ wordpress:
   id: 2333
   url: "http://sahovski-klub.com/izvanredna-sjednica-predsjednistva-kluba/"
   slug: "izvanredna-sjednica-predsjednistva-kluba"
+imageAlt: "sjednica08082013"
 ---
 8\. kolovoza 2013., SPLIT, okolica…
 

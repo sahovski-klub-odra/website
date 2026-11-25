@@ -12,6 +12,7 @@ wordpress:
   id: 7931
   url: "http://sahovski-klub.com/ekipno-prvenstvo-os-grada-zagreba-2024-2025/"
   slug: "ekipno-prvenstvo-os-grada-zagreba-2024-2025"
+author: "Ivan M"
 ---
 ![](./skolsko700.jpg)  
 Od 9.11. do 16.11 u OŠ Rapska održano je Ekipno prvenstvo osnovnih škola Grada Zagreba. Prvenstvo se igralo na četiri ploče te su igrači imali 15 minuta po partiji. OŠ Odra je nastupila s jednom ekipom u konkurenciji dječaka i s jednom u konkurenciji djevojčica. Kapetan ekipe dječaka je bio Slavko, dok je kapetanica ekipe djevojčica bila Petra.  
@@ -28,5 +29,3 @@ Obje ekipe je vodio prof. Krešimir Tomaško.
 ##### 8\. OŠ Odra – dječaci (TB1: 11 / TB2: 22)
 
 <table><tbody><tr><td><strong>Pl.</strong></td><td><strong>Ime</strong></td><td><strong>1</strong></td><td><strong>2</strong></td><td><strong>3</strong></td><td><strong>4</strong></td><td><strong>5</strong></td><td><strong>6</strong></td><td><strong>7</strong></td><td><strong>8</strong></td><td><strong>9</strong></td><td><strong>Bod.</strong></td><td><strong>Partije</strong></td></tr><tr><td>1</td><td>Glagolić Bartol</td><td></td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td></td><td>3</td><td>7</td></tr><tr><td>2</td><td>Biondić Slavko</td><td></td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td></td><td>4</td><td>7</td></tr><tr><td>3</td><td>Lesničar Luka</td><td></td><td>0</td><td>1</td><td>1</td><td>½</td><td>1</td><td>1</td><td>1</td><td>0</td><td>5,5</td><td>8</td></tr><tr><td>4</td><td>Sesar Vili</td><td></td><td>0</td><td>0</td><td></td><td>0</td><td>1</td><td>1</td><td>½</td><td>1</td><td>3,5</td><td>7</td></tr><tr><td>5</td><td>Leko Domagoj</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>1</td></tr><tr><td>6</td><td>Kovačević Emanuel</td><td></td><td></td><td></td><td>0</td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>1</td></tr><tr><td>8</td><td>Knezović Marul Gabriel</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>1</td></tr></tbody></table>
-
-*IvanM*

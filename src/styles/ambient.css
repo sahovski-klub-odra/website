@@ -184,3 +184,48 @@ html.is-hidden .ambient * { animation-play-state: paused !important; }
 @media (prefers-reduced-motion: reduce) {
   .ambient__p, .ambient__line, .ambient__spot, .ambient__glint { display: none; }
 }
+
+/* ---------- article pages: motion in the empty side areas (desktop) ----------
+ * The rails sit left and right of the article body, outside the widest element in it
+ * (the chess viewer can be 64rem wide), so nothing ever moves behind text, photos,
+ * links or chessboards. The inner view is sticky: it stays on screen while the visitor
+ * reads and scrolls, and leaves together with the article body (then it is paused).
+ * Hidden below 1360 px, where the side areas are too narrow to be worth it. */
+.article-stage { position: relative; isolation: isolate; }
+.article-rail { display: none; }
+@media (min-width: 1360px) {
+  .article-rail {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: max(0px, calc((100% - 64rem) / 2 - 2.5rem));
+    pointer-events: none;
+  }
+  .article-rail--l { left: 0; }
+  .article-rail--r { right: 0; }
+  .article-rail__view {
+    position: sticky;
+    top: 5rem;
+    height: calc(100vh - 5rem);
+    max-height: 100%;
+    isolation: isolate;
+    overflow: hidden;
+    /* soft top and bottom edges, and a fade towards the text column (no visible inner edge) */
+    --rail-fade: to right;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent), linear-gradient(var(--rail-fade), #000 40%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent), linear-gradient(var(--rail-fade), #000 40%, transparent);
+    mask-composite: intersect;
+  }
+  .article-rail--r .article-rail__view { --rail-fade: to left; }
+  /* the right rail is a mirror image of the left one (the board fades towards the text on both sides) */
+  .article-rail--r .ambient { transform: scaleX(-1); }
+  .article-rail .ambient__grid { background-size: 48px 48px; background-position: 0 0, 24px 24px; }
+  .motion .article-rail .ambient__grid { animation: amb-grid-sm 30s steps(48) infinite; }
+  .article-rail .ambient__light--a { left: -30cqw; top: 8cqh; width: 120cqw; height: 120cqw; }
+  .article-rail .ambient__light--b { right: -40cqw; bottom: 4cqh; width: 110cqw; height: 110cqw; }
+  .article-rail .ambient__line { width: 80cqw; }
+}
+@keyframes amb-grid-sm { to { background-position: 48px 48px, 72px 72px; } }

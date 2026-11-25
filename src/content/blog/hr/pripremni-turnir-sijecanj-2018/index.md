@@ -11,6 +11,7 @@ wordpress:
   id: 5687
   url: "http://sahovski-klub.com/pripremni-turnir-sijecanj-2018/"
   slug: "pripremni-turnir-sijecanj-2018"
+author: "Darko"
 ---
 ![](./sijecanj-2018-klub-turnir.jpg)  
 Odigran je još jedan edukativno-pripremni turnir članova Kluba. Nažalost, dosta je klinaca izostalo. Na turnir nisu došli Roko, Filip i Luka Matašić, a zakasnile su Lucija, Franka i Monika. Cure su se djelomično iskupile tako što su došle kasnije i odigrale s Amarom i međusobno nekoliko ozbiljnijih partija. Lucija je pomogla i tako što je zapisivala rezultate i fotografirala učesnike. Nasreću, stariji dečki, Božo i Vraneša, koji su već osmi odnosno sedmi razred, pristali su pomoći i odigrati turnir s mlađom ekipom te im pružili priliku da se okušaju i protiv jačih protivnika. Vjerujem da bi i Ivan pomogao, ali je on trenutačno na turniru u Rapcu.
@@ -20,5 +21,3 @@ Među djevojkama, Katarina i Samanta su zacementirale mjesto u ekipi, zahvaljuju
 Malo su me ljutile Katarina i Samanta jer se nisu držale uputa o razvoju u otvaranju. Katarina i inače teško prihvaća savjete, ali je zadnjih pola godina ipak počela. Samanta je do sada prihvaćala savjete, a sada je krenula Katarininim stopama.  
 ![](./tablica-turnir-sijecanj-2018.jpg) ![](./klub-sijecanj-2018-1.jpg) ![](./klub-sijecanj-2018-2.jpg) ![](./klub-sijecanj-2018-3.jpg)  
 ![](./klub-sijecanj-2018-4.jpg)  ![](./klub-sijecanj-2018-5.jpg)
-
-darko

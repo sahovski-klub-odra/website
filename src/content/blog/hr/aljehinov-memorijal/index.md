@@ -12,6 +12,7 @@ wordpress:
   id: 1934
   url: "http://sahovski-klub.com/aljehinov-memorijal/"
   slug: "aljehinov-memorijal"
+imageAlt: "Alexandre_Alekhine_01"
 ---
 ![Alexandre_Alekhine_01](./alexandre-alekhine-01.jpg)Od 21.4. do 1.5 u *Parizu (Louvre)* i *Petrogradu (Ruski državni muzej)* igra se **[memorijalni turnir](http://www.alekhine-memorial.com/ "Aljehinov memorijal")** u čast četvrtog svjetskog prvaka [**Aleksandra Aleksandrovicha Aljehina (1892-1946)**](http://bs.wikipedia.org/wiki/Aleksandar_Aljehin "Wiki: Aleksandar Aljehin").
 

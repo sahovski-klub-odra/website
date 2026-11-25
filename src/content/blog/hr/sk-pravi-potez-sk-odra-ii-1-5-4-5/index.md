@@ -12,6 +12,7 @@ wordpress:
   id: 8014
   url: "http://sahovski-klub.com/sk-pravi-potez-sk-odra-ii-1-5-4-5/"
   slug: "sk-pravi-potez-sk-odra-ii-1-5-4-5"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 2.kolo
 
@@ -45,5 +46,3 @@ S ovom pobjedom, ŠK Odra II nastavlja s odličnim rezultatima i puni samopouzda
 
 0-1
 ```
-
-IvanV

@@ -11,6 +11,7 @@ wordpress:
   id: 8571
   url: "http://sahovski-klub.com/sk-travno-ii-sk-odra-ii-42/"
   slug: "sk-travno-ii-sk-odra-ii-42"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 1.kolo  
 ![](./sk-travno-ii-sk-odra-ii.jpg)
@@ -47,5 +48,3 @@ Mlade nade ekipe donijele su dva boda, na čemu im čestitamo! Očekujemo buđen
 
 1. d4 d5 2. Nc3 e6 3. Bf4 Bb4 4. Qd3 Bd6 5. e3 Nf6 6. Nf3 O-O 7. Be2 b6 8. O-O Bb7 9. Qd1 c5 10. Nb5 Bxf4 11. exf4 a6 12. Nc3 Nbd7 13. Ne5 Qc7 14. Qd3 c4 15. Qh3 b5 16. Nb1 b4 17. Nd2 a5 18. Ndf3 Ne4 19. Ng5 Nxg5 20. fxg5 Nxe5 21. dxe5 Qxe5 22. f4 Qxe2 23. Rf2 Qe4 0-1
 ```
-
-IvanV

@@ -12,12 +12,12 @@ wordpress:
   id: 4750
   url: "http://sahovski-klub.com/zagreb-open-i-memorijal-krunoslava-hulaka-2016/"
   slug: "zagreb-open-i-memorijal-krunoslava-hulaka-2016"
+author: "Darko"
+imageAlt: "ZG open 2016"
 ---
 ![ZG open 2016](./zg-open-2016.jpg)
 
 U Zagrebu se, u organizaciji Hrvatskoga šahovskog saveza, od 10. do 17. lipnja igra tradicionalni Zagreb Open. Nakon šest kola vodstvo je, pobjedom nad velemajstorom Zdenkom Kožulom, preuzeo velemajstor Mladen Palac. Rezultati se mogu pratiti na ovoj [poveznici.](http://chess-results.com/tnr220440.aspx?lan=1&art=1&rd=6&flag=30&wi=821)  Od naših članova, na turniru nastupaju kadeti Božo, Vraneša, Kljujev i Ivan. Na ovom turniru dečki su već imali priliku suprotstaviti se mnogo iskusnijim šahistima, ![zg open 1 kolo](./zg-open-1-kolo.jpg)polako ulaze u osnove šahovskih otvaranja, pokušavaju i kombinirati, uglavnom bez uspjeha, ali u svakom slučaju mislim da će imati dosta koristi od nastupa na ovom turniru. Dečki su se odrekli mnogih utakmica s Europskoga nogometnog prvenstva i zaslužuju čestitke na uloženom trudu i odricanju. U nastavku donosimo nekoliko partija s turnira.
-
-darko
 
 ---
 

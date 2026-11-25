@@ -12,6 +12,7 @@ wordpress:
   id: 8027
   url: "http://sahovski-klub.com/sk-odra-sk-sveta-nedelja-ii-33/"
   slug: "sk-odra-sk-sveta-nedelja-ii-33"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 1.kolo  
 ![](./odrasvnedelja700.jpg)  
@@ -34,6 +35,3 @@ Danas je i prva ekipa seniora započela svoju [ligu](https://chess-results.com/t
 [PlyCount "86"]
 1. c4 f5 2. d4 d6 3. Nf3 Nf6 4. Nc3 g6 5. g3 Bg7 6. Bg2 O-O 7. O-O Qe8 8. Bg5 c6 9. c5 dxc5 10. Qb3+ Kh8 11. dxc5 Na6 12. Na4 e5 13. Rfd1 h6 14. Bxf6 Bxf6 15. Rd6 e4 16. Nd4 Nc7 17. Rd1 Be5 18. f3 Bxd6 19. cxd6 Nd5 20. fxe4 fxe4 21. Nc5 b6 22. Nxe4 Bf5 23. Nxf5 Rxf5 24. Rxd5 cxd5 25. Qc3+ Qe5 26. Qxe5+ Rxe5 27. Nc3 Rd8 28. Bxd5 Rxd6 29. e4 a6 30. Kf2 b5 31. a3 Kg7 32. Ke3 Re7 33. Bb3 Red7 34. Bd5 Rf6 35. Ke2 Rd8 36. Nd1 Kf8 37. Ne3 Rfd6 38. Kd3 Ke7 39. Kd4 Rf8 40. e5 Rdd8 41. Kc5 Rf2 42. b4 Re2 43. Kd4 Rxe3 0-1
 ```
-
-  
-*IvanM*

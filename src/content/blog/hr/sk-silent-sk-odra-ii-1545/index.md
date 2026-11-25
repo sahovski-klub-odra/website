@@ -11,6 +11,7 @@ wordpress:
   id: 8644
   url: "http://sahovski-klub.com/sk-silent-sk-odra-ii-1545/"
   slug: "sk-silent-sk-odra-ii-1545"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 4.kolo
 
@@ -67,5 +68,3 @@ Nastavak lige slijedi 4. listopada na domaćem terenu, gdje ŠK Odra II dočekuj
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. Nc3 Bb4 6. a3 Bxc3+ 7. bxc3 Nxe4 8. Qd3 O-O 9. Be2 Re8 10. O-O d5 11. Nxc6 bxc6 12. f3 Nd6 13. Re1 Bf5 14. Qd1 Qf6 15. Bd2 Qg6 16. Bd3 Bxd3 17. Rxe8+ Rxe8 18. cxd3 Qxd3 19. Qc1 Re2 20. Qb2 Qxd2 21. Qb8+ Ne8 0-1
 ```
-
-IvanV

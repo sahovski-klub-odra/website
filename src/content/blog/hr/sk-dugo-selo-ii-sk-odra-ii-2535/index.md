@@ -12,6 +12,7 @@ wordpress:
   id: 8605
   url: "http://sahovski-klub.com/sk-dugo-selo-ii-sk-odra-ii-2535/"
   slug: "sk-dugo-selo-ii-sk-odra-ii-2535"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 2.kolo
 
@@ -65,5 +66,3 @@ Ekipa je nastupila u sastavu: Darko Šutić, Božo, Tin, Lucija, Filip Horvat i 
 
 1. e4 e5 2. f4 d5 3. exd5 exf4 4. Nf3 Nf6 5. Bc4 Nxd5 6. O-O Be6 7. d4 Ne3 8. Bb5+ c6 9. Bxe3 fxe3 10. Bd3 f5 11. Nc3 Bd6 12. Ne5 Qg5 13. Ne2 g6 14. Nf4 Bg8 15. Rf3 Bxe5 16. dxe5 Nd7 17. e6 Ne5 18. Rf1 Ng4 19. h3 h5 20. Qf3 Nf6 21. Qxe3 Rh7 22. Rad1 Re7 23. c4 Rxe6 24. Qd4 Re7 25. Rfe1 Kf7 26. Rxe7+ Kxe7 27. Re1+ Kf7 28. Qe5 Re8 29. Qc7+ Kf8 30. Qd6+ Kf7 31. Rxe8 Nxe8 32. Qe6+ Kg7 33. Nxh5+ Qxh5 34. Qxe8 Qd1+ 35. Bf1 Qd4+ 36. Kh1 Bxc4 37. Bxc4 Qxc4 38. Qd7+ Qf7 39. Qd4+ Qf6 40. Qxa7 Qxb2 41. a4 Kf6 42. Qc5 Qa1+ 43. Kh2 Qe5+ 0-1
 ```
-
-IvanV

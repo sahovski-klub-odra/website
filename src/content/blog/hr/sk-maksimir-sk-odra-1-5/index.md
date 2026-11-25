@@ -11,6 +11,7 @@ wordpress:
   id: 2006
   url: "http://sahovski-klub.com/sk-maksimir-sk-odra-1-5/"
   slug: "sk-maksimir-sk-odra-1-5"
+author: "V. D."
 ---
 ## 5\. kolo, seniori
 
@@ -30,5 +31,3 @@ REZULTATI:
 4\. Čubrilo Vlado – Bačurin Juraj               0:1  
 5\. Gradinščak Josip – Novak Vjekoslav    0:1  
 6\. Lukić Velimir – Furčić Tin                     0:1
-
-v.d.

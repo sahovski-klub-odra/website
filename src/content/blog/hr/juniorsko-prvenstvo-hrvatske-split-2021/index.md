@@ -11,6 +11,7 @@ wordpress:
   id: 7114
   url: "http://sahovski-klub.com/juniorsko-prvenstvo-hrvatske-split-2021/"
   slug: "juniorsko-prvenstvo-hrvatske-split-2021"
+author: "Ivan M"
 ---
 ![](./ovatrojica.jpg)  
 Od 25.7. do 31.7. u Splitu igrala su se Juniorska prvenstva Hrvatske. U konkurenciji do [17](https://chess-results.com/tnr569387.aspx?lan=13&art=1&rd=9) i do [19](https://chess-results.com/tnr571196.aspx?lan=13&art=1&rd=9) godina.  
@@ -53,5 +54,3 @@ O19:
 2.Jakrlin Mihael, ŠŠK Konaki, 7
 
 3.Tuković Dario, ŠK Đuro Đaković, 6
-
-*IvanM*

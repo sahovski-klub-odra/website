@@ -11,6 +11,8 @@ wordpress:
   id: 4452
   url: "http://sahovski-klub.com/pojedinacno-kadetsko-prvenstvo-zagreba-2016-do-9-i-11-godina/"
   slug: "pojedinacno-kadetsko-prvenstvo-zagreba-2016-do-9-i-11-godina"
+author: "Darko"
+imageAlt: "treci krug b"
 ---
 ![treci krug b](./treci-krug-b.jpg) ![treci krug](./treci-krug.jpg) ![najduza partija](./najduza-partija.jpg) ![1 kolo KADETSKO ZG 2016](./1-kolo-kadetsko-zg-2016.jpg)  
 Završilo je kadetsko prvenstvo za mlađe natjecatelje, nastupilo je devet naših članova, istina, s dosta poteškoća jer je petero propustilo prvi krug zbog bolesti, dok je drugi krug propustila samo Lucija, iz istog razloga. Ove godine atmosfera je bila dosta ugodnija, ponajprije zbog profesionalnosti sudaca (za razliku od prijašnjih godina) pa ću tako izraziti pohvale za gospodu Damira Obada, Jelenka Mikacinića i Joakima Puškaša. Za ove dobne skupine ipak je bitniji pedagoški pristup, a to je bilo vrlo zadovoljavajuće. Nažalost, ove godine nam se Zagrebački šahovski savez osramotio (inače ga uvijek hvalim…), zbog neprimjerene dodjele odličja (najmlađima su dijelili odličja kada ih više nije bilo…), a posebno zbog naknadnog (!) uvođenja kotizacije samo s objavom na internetskim stranicama Saveza. Dosad je ovaj turnir bio besplatan, točnije, do nekoliko dana prije početka.  Ali, dobro, i na prvašićima se valjda može zaraditi…
@@ -32,5 +34,3 @@ Uvjerljiva pobjednica turnira kadetkinja do 11 godina jest **Lea Stojković** �
 [Rezultati kadetkinja do 11.](http://chess-results.com/tnr205916.aspx?lan=13&art=4&fed=CRO&wi=821&turdet=YES)
 
 ![kadetsko ZG 2016 do 9](./kadetsko-zg-2016-do-9.jpg) ![kadetsko ZG 2016 do 11 djevojke](./kadetsko-zg-2016-do-11-djevojke.jpg) ![kadetsko ZG 2016 do 11](./kadetsko-zg-2016-do-11.jpg)
-
-darko

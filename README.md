@@ -4,7 +4,7 @@ A fully static website for Šahovski klub Odra (Zagreb), built with **Astro 7 + 
 
 | | |
 |---|---|
-| Languages | Croatian (default, at `/`) and English (at `/en/`) |
+| Language | Croatian only |
 | Content | Markdown articles, JSON data files, and images stored in this repository |
 | Editing | Browser CMS at `/admin/`, GitHub's web editor, or any text editor |
 | Deployment | Automatic, via GitHub Actions on every change to `main` |
@@ -105,7 +105,6 @@ The script:
 src/
   content/
     blog/hr/<slug>/index.md        Croatian articles (images in the same folder)
-    blog/en/<slug>/index.md        optional English translations (same translationKey)
     gallery/<album>/index.md       photo albums (+ photos in the same folder)
   data/
     site.json                      club name, address, e-mail, phone, map, social links
@@ -131,16 +130,18 @@ docs/                              guides + example data files
 ```
 
 ### URLs
-| Croatian | English |
-|---|---|
-| `/` | `/en/` |
-| `/novosti/`, `/novosti/stranica/2/` | `/en/news/`, `/en/news/page/2/` |
-| `/novosti/<slug>/` | `/en/news/<slug>/` (translated articles only) |
-| `/novosti/kategorija/<kategorija>/` | `/en/news/category/<category>/` |
-| `/novosti/pretraga/?q=…` | `/en/news/search/?q=…` |
-| `/clanovi/`, `/galerija/`, `/galerija/<album>/`, `/raspored/`, `/kontakt/` | `/en/members/`, `/en/gallery/…`, `/en/schedule/`, `/en/contact/` |
+The website is Croatian only (English pages were removed in November 2026).
 
-Historical WordPress articles are **not** machine-translated. English pages list them with an **"In Croatian"** badge and link to the Croatian original. To add a translation, create `src/content/blog/en/<slug>/index.md` with the same `translationKey` as the Croatian article (migrated posts already have `translationKey: "wp-<id>"`). Both versions then link to each other and get `hreflang` tags.
+| Page | URL |
+|---|---|
+| Home | `/` |
+| News, pages | `/novosti/`, `/novosti/stranica/2/` |
+| Article | `/novosti/<slug>/` |
+| Category | `/novosti/kategorija/<kategorija>/` |
+| Search | `/novosti/pretraga/?q=…` |
+| Members, gallery, album, schedule, contact | `/clanovi/`, `/galerija/`, `/galerija/<album>/`, `/raspored/`, `/kontakt/` |
+
+The former English addresses (`/en/…`) redirect to the Croatian pages (`src/data/redirects-en.json`, plus a fallback in `404.astro`).
 
 ---
 
@@ -206,7 +207,7 @@ The site deliberately contains **no invented club information**. Before launch:
 ## 7. Technical notes
 
 - **Performance:** static HTML, self-hosted fonts (no Google Fonts requests), responsive AVIF/WebP images, lazy loading, and YouTube loaded only after a click (`youtube-nocookie.com`). There are no client frameworks.
-- **SEO:** sitemap (`/sitemap-index.xml`), `robots.txt`, canonical URLs, meta descriptions, Open Graph images (generated per article), `hreflang` (only where a translation exists), JSON-LD `SportsOrganization` + `BlogPosting`, and RSS (`/rss.xml`, `/en/rss.xml`).
+- **SEO:** sitemap (`/sitemap-index.xml`), `robots.txt`, canonical URLs, meta descriptions, Open Graph images (generated per article), JSON-LD `SportsOrganization` + `BlogPosting`, and RSS (`/rss.xml`).
 - **Accessibility:** skip link, landmarks, keyboard-navigable menu, tabs and lightbox, visible focus styles, `aria-current`, colour contrast checked for gold on cream (`gold-deep` is used for text), and `prefers-reduced-motion` support.
 - **Schedule:** rendered at build time (works without JavaScript) and recalculated in the browser for today's date in Europe/Zagreb time. The deploy workflow also rebuilds daily.
 - **Data validation:** every JSON file is validated with Zod at build time (`src/lib/schemas.ts`).

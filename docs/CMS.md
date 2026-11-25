@@ -135,8 +135,7 @@ administrator, which defeats the purpose of quick schedule updates.
 
 | Content | Admin section | File(s) |
 |---|---|---|
-| Articles (HR) | **Novosti (hrvatski)** → *Novo* | `src/content/blog/hr/<address>/index.md` + images next to it |
-| English translations | News (English translations) | `src/content/blog/en/<address>/index.md` |
+| Articles | **Novosti** → *Novo* | `src/content/blog/hr/<address>/index.md` + images next to it |
 | In an article: headings, bold, links, lists, quotes | text editor toolbar | Markdown |
 | … photos / photo gallery | toolbar image button; several photos one below another = gallery | files next to the article |
 | … YouTube video | paste the link on its own line | becomes a privacy-friendly embed |
@@ -196,9 +195,9 @@ test below once.
 ### Manual test after the first deploy (≈15 minutes)
 
 1. Open `https://<your-site>/admin/` → **Prijava pomoću pristupnog tokena** → paste your token. You should see
-   *Novosti (hrvatski)*, *News (English translations)*, *Galerija – albumi* and
+   *Novosti*, *Galerija – albumi* and
    *Raspored, članovi, videozapisi, postavke*. A configuration error → stop and send a screenshot.
-2. *Novosti (hrvatski)* → **Novo**. Title `CMS test – čćžšđ`; leave *Adresa* empty; tick **Skica**.
+2. *Novosti* → **Novo**. Title `CMS test – čćžšđ`; leave *Adresa* empty; tick **Skica**.
    Add a photo (*Naslovna fotografija* → Pregledaj → Prenesi), a sentence, a table and a chess game
    (**Dodaj šahovsku partiju**, paste PGN – a green ✓ appears). **Spremi**.
 3. On GitHub: a new commit with `src/content/blog/hr/cms-test-cczsd/index.md` and the photo next to it.

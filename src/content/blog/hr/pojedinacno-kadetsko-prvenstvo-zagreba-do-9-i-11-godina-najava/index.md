@@ -11,6 +11,8 @@ wordpress:
   id: 4412
   url: "http://sahovski-klub.com/pojedinacno-kadetsko-prvenstvo-zagreba-do-9-i-11-godina-najava/"
   slug: "pojedinacno-kadetsko-prvenstvo-zagreba-do-9-i-11-godina-najava"
+author: "Darko"
+imageAlt: "dom sportova ZAGREB"
 ---
 ![dom sportova ZAGREB](./dom-sportova-zagreb.jpg)
 
@@ -34,5 +36,4 @@ Kadeti do 11:
 1.  Juraj Pisačić
 2.  Antonio Jurkin
 
-darko  
 [Pravilnik-kadeti-2016](/files/wp/2016/01/Pravilnik-kadeti-2016.docx)

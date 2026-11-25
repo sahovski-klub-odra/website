@@ -12,6 +12,7 @@ wordpress:
   id: 1349
   url: "http://sahovski-klub.com/najava-the-world-chess-candidates-tournament-london/"
   slug: "najava-the-world-chess-candidates-tournament-london"
+imageAlt: "wct2013"
 ---
 ![wct2013](./wct2013.gif)
 

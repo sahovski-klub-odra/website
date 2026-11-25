@@ -11,6 +11,7 @@ wordpress:
   id: 1550
   url: "http://sahovski-klub.com/raspored-domaca-zadaca/"
   slug: "raspored-domaca-zadaca"
+author: "Darko"
 ---
 Šahovska škola **nastavlja se nakon uskršnjih praznika, 5. travnja 2013**., u redovitom terminu.
 
@@ -23,5 +24,3 @@ Bruni i Vraneši objasnio sam  koje partije i iz koje knjige. To ćemo **ispiti
 Podsjećam kadete da **kadetska liga počinje 13. travnja** (subota).
 
 Obavijest svim zagriženim ljubiteljima nogometa: prošlog petka, kao i svakog petka kada je na rasporedu važna nogometna utakmica, u klub smo donijeli prijenosni TV! 🙂
-
-Darko

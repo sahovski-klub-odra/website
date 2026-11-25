@@ -12,6 +12,7 @@ wordpress:
   id: 1151
   url: "http://sahovski-klub.com/arhiva-partija-katalonsko-otvaranje-caruana-fabiano-2757-gelfand-boris-2740-1-0-zurich-chess-chelange-2013-6-kolo-1-3-2013/"
   slug: "arhiva-partija-katalonsko-otvaranje-caruana-fabiano-2757-gelfand-boris-2740-1-0-zurich-chess-chelange-2013-6-kolo-1-3-2013"
+imageAlt: "Caruana-Zurich"
 ---
 **![Caruana-Zurich](./caruana-zurich.jpg)Fabiano Caruana** pobjednik je *Zurich Chess Chelange* 2013 ispred **Ananda**, **Kramnika, Gelfanda**.
 

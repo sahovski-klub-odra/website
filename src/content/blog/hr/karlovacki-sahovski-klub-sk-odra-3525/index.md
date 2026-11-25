@@ -12,6 +12,8 @@ wordpress:
   id: 4228
   url: "http://sahovski-klub.com/karlovacki-sahovski-klub-sk-odra-3525/"
   slug: "karlovacki-sahovski-klub-sk-odra-3525"
+author: "V. D."
+imageAlt: "Karlovac 15112015"
 ---
 **Seniori, 11. kolo  
 ![Karlovac 15112015](./karlovac-15112015.jpg)  
@@ -61,6 +63,3 @@ Pojedinačni rezultati, liga 2015.
 | 9 | IV | Maravić Ivan | 1442 | 1683 | 1 | 0 | 0 | ½ | 0 | ½ | 0 | 0 | 0 |  |  | 2 | 9 |
 | 10 |  | Furčić Tin | 0 | 1658 |  |  | 0 |  |  |  |  |  |  |  |  | 0 | 1 |
 | 13 |  | Cvetković Božo | 0 | 1639 |  |  | 0 |  | 0 |  |  |  |  |  |  | 0 | 2 |
-
-  
-v.d.

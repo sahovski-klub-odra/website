@@ -12,6 +12,7 @@ wordpress:
   id: 2441
   url: "http://sahovski-klub.com/fide-chess-world-cup-tromso-2013-pobjednik-je-vladimir-kramnik/"
   slug: "fide-chess-world-cup-tromso-2013-pobjednik-je-vladimir-kramnik"
+imageAlt: "FIDE World Chess Cup 2013 - pobjednik Vladimir Kramnik"
 ---
 ![FIDE World Chess Cup 2013 - pobjednik Vladimir Kramnik](./00.jpg)
 

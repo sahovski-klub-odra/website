@@ -12,6 +12,8 @@ wordpress:
   id: 4169
   url: "http://sahovski-klub.com/sk-odra-sk-koncar-1545/"
   slug: "sk-odra-sk-koncar-1545"
+author: "D. V."
+imageAlt: "Odra 18102015"
 ---
 **Seniori, 8. kolo** **![Odra 18102015](./odra-18102015.jpg)**
 
@@ -26,5 +28,3 @@ U goste je danas stigla ekipa ŠK Končar, predvođena dvojicom naših bivših �
 4\. Cvetković Ivan – Cvitković Filip 1/2  
 5\. Kobali Boris – Starčević Krešimir 0:1  
 6\. Maravić Ivan – Takač Zvonko 0:1
-
-d.v.

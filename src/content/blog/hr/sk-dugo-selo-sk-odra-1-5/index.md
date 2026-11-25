@@ -12,6 +12,8 @@ wordpress:
   id: 2925
   url: "http://sahovski-klub.com/sk-dugo-selo-sk-odra-1-5/"
   slug: "sk-dugo-selo-sk-odra-1-5"
+author: "V. D."
+imageAlt: "dugo selo 2014"
 ---
 **Seniori, 2. kolo**
 
@@ -30,5 +32,3 @@ Sljedeće kolo igra se 16. ožujka u Odri.
 4\. Materni Anton – Cvetković Ivan 1/2  
 5\. Ćelepirović Vinko – Vidaković Darko 0:1  
 6\. Jukić Dario – Bačurin Juraj 0:1
-
-v.d.

@@ -1,6 +1,7 @@
 ---
 title: "Druženje petkom, 16. svibnja 2015"
 date: 2015-05-01
+category: "Klupski život"
 photos:
   - image: ./klub-15052015-1.jpg
     caption: "klub 15052015 1"

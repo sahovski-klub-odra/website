@@ -11,6 +11,8 @@ wordpress:
   id: 3727
   url: "http://sahovski-klub.com/sk-dugo-selo-sk-odra-4515/"
   slug: "sk-dugo-selo-sk-odra-4515"
+author: "Darko"
+imageAlt: "dugo selo 22032015r"
 ---
 **Seniori, 2. kolo**
 
@@ -27,5 +29,3 @@ Domaćin je bio gostoljubiv, uvjeti za igru dobri, a sudac Miroslav Klarić prof
 4\. II Jukić Dario – MK Cvetković Ivan                      1:0  
 5\. II Gavran Marinko – IV Kobali Borislav                1:0  
 6\. VK Matić Danijel – IV Maravić Ivan                     1:0
-
-darko

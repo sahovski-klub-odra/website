@@ -11,6 +11,9 @@ wordpress:
   id: 5794
   url: "http://sahovski-klub.com/pojedinacno-kadetsko-prvenstvo-zagreba-2018/"
   slug: "pojedinacno-kadetsko-prvenstvo-zagreba-2018"
+author: "Darko"
+imageAlt: "Ivan Maravić, kadetski prvak Zagreba 2018. – U15"
+imageCaption: "Ivan Maravić, kadetski prvak Zagreba 2018. – U15"
 ---
 ![Ivan Maravić, kadetski prvak Zagreba 2018. – U15](./prvak-zagreba-do-15.jpg "Ivan Maravić, kadetski prvak Zagreba 2018. – U15")
 
@@ -20,5 +23,4 @@ U konkurenciji [**U13**](http://chess-results.com/tnr329658.aspx?lan=13&art=4&fe
 U konkurenciji kadetkinja [**U13**](http://chess-results.com/tnr334642.aspx?lan=13&art=1&fed=CRO), naše igračice, Ana, Monika, Katarina, Samanta, Franka i Lucija pokazale su ozbiljan pristup i dobru igru. Ana je više nego ugodno iznenadila osvajanjem visokog četvrtog mjesta, a samo joj je pola boda nedostajalo do postolja. Monika je dosta loše počela turnir, ali se do kraja uspjela ispraviti i s osvojenih pet bodova završila je turnir na sedmom mjestu. Među prvih deset upala je i Katarina. Inače, djevojke su podjednake snage, a to su pokazali i rezultati na ovom turniru. Katarina, Samanta, Franka i Lucija osvojile su svaka po četiri boda, a samo je buholz odlučivao o poretku.  
 Prvo mjesto na ovom turniru uvjerljivo je osvojila Lea Stojković iz ŠK Podsused. Drugo mjesto osvojila je Lara Putar iz ŠK Sljeme-Agroproteinka, a treće mjesto Sara Balent, također iz ŠK Podsused. Lea je pokazala najzreliju igru i uprkos nekoliko previda na turniru, turnir je osvojila s čitavim bodom prednosti ispred drugoplasirane Lare.
 
-![](./luka.jpg)  ![](./kadetkinje-prvenstvo-zagreba-2018.jpg)  
-darko
+![](./luka.jpg)  ![](./kadetkinje-prvenstvo-zagreba-2018.jpg)

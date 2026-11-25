@@ -12,6 +12,7 @@ wordpress:
   id: 2622
   url: "http://sahovski-klub.com/prvenstvo-za-ucenice-os-novog-zagreba/"
   slug: "prvenstvo-za-ucenice-os-novog-zagreba"
+imageAlt: "turnir gustav krklec 2013a"
 ---
 U petak je odigrano prvo prvenstvo za  učenice OŠ Novog Zagreba. Prvenstvo je održano u OŠ Gustav Krklec. Nastupile su sve naše igračice: Ana, Emma, Bruna, Monika, Franka i Lucija!  
 Najviše je bilo igračica iz 6. i 7. razreda, a iz prvog samo naše Franka, Monika i Lucija. U prilogu je pdf izvještaj glavnog suca, statistike, slike i ostalo.

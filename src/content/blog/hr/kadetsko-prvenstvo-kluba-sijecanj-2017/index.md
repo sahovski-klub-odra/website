@@ -12,6 +12,7 @@ wordpress:
   id: 5096
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-kluba-sijecanj-2017/"
   slug: "kadetsko-prvenstvo-kluba-sijecanj-2017"
+author: "Darko"
 ---
 ![](./kadetko-prvenstvo-kluba-sijecanj-2017.jpg)
 
@@ -36,6 +37,3 @@ Prvenstvo ćemo završiti u petak u redovitom terminu, ali ovaj put svi natjecat
 | 9 | Samanta | 0.5 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | ![](./x-1.jpg) | 0 | 1 | **5.5** |  |
 | 10 | **Katarina** | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 0 | 1 | ![](./x-1.jpg) | 1 | **8** | **I.** |
 | 11 | Lucija | 1 | 0 | 0.5 | 0 | 0.5 | 0 | 0 | 0.5 | 0 | 0 | ![](./x-1.jpg) | **3.5** |  |
-
-  
-darko

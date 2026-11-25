@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
           <span class="block font-display text-3xl font-bold">{site.logoLine2}</span>
         </span>
       </a>
-      <p class="mt-5 max-w-md text-[0.95rem] leading-relaxed">{site.about[lang]}</p>
+      <p class="mt-5 max-w-md text-[0.95rem] leading-relaxed">{site.about}</p>
       {socials.length > 0 && (
         <ul class="mt-6 flex gap-2" aria-label={t('footer.follow')}>
           {socials.map(([key, url]) => (
@@ -63,9 +63,6 @@ const year = new Date().getFullYear();
   <div class="border-t border-white/10">
     <div class="container-site flex flex-col gap-2 py-5 text-sm text-white/55 sm:flex-row sm:justify-between">
       <p>© {year} {site.name}. {t('footer.rights')}</p>
-      <p lang={lang === 'hr' ? 'en' : 'hr'}>
-        <a href={withBase(routes.home[lang === 'hr' ? 'en' : 'hr'])} class="hover:text-gold">{lang === 'hr' ? 'English version' : 'Hrvatska verzija'}</a>
-      </p>
     </div>
   </div>
 </footer>

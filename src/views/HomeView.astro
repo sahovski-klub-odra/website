@@ -12,7 +12,7 @@ import { postsForListing } from '../lib/blog';
 import { getAlbums } from '../lib/gallery';
 import { site, hasMap, formatAddress, osmLink, wpRedirects } from '../lib/data';
 import { useTranslations, type Lang } from '../i18n/ui';
-import { routes, withBase, albumPath, alternatesFor } from '../i18n/routes';
+import { routes, withBase, albumPath } from '../i18n/routes';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -24,16 +24,9 @@ const latestAlbum = albums[0];
 const previewPhotos = albums.flatMap((a) => a.photos.slice(0, 6).map((p) => ({ ...p, album: a }))).slice(0, 6);
 const address = formatAddress();
 
-const quick = [
-  { icon: 'pencil', title: t('quick.news.title'), text: t('quick.news.text'), href: routes.news[lang] },
-  { icon: 'users', title: t('quick.members.title'), text: t('quick.members.text'), href: routes.members[lang] },
-  { icon: 'image', title: t('quick.gallery.title'), text: t('quick.gallery.text'), href: routes.gallery[lang] },
-  { icon: 'calendar', title: t('quick.schedule.title'), text: t('quick.schedule.text'), href: routes.schedule[lang] },
-] as const;
-
 const hasWpIds = Object.keys(wpRedirects.ids ?? {}).length > 0;
 ---
-<BaseLayout lang={lang} alternates={alternatesFor('home')}>
+<BaseLayout lang={lang}>
   {hasWpIds && (
     <script slot="head" is:inline define:vars={{ ids: wpRedirects.ids, base: import.meta.env.BASE_URL.replace(/\/$/, '') }}>
       // Old WordPress short links such as /?p=123 land on the homepage – forward them to the migrated article.
@@ -89,9 +82,9 @@ const hasWpIds = Object.keys(wpRedirects.ids ?? {}).length > 0;
       <div class="max-w-xl">
         <p class="hero-in hero-eyebrow eyebrow text-white/85" style="--d:80ms">{t('hero.eyebrow')}</p>
         <h1 class="hero-in hero-title mt-4 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-          {lang === 'hr' ? <>Šahovski klub <span class="text-gold">Odra</span></> : <>Chess Club <span class="text-gold">Odra</span></>}
+          Šahovski klub <span class="text-gold">Odra</span>
         </h1>
-        <p class="hero-in mt-6 text-lg leading-relaxed text-white/85 sm:text-xl" style="--d:420ms">{site.tagline?.[lang] || t('site.tagline')}</p>
+        <p class="hero-in mt-6 text-lg leading-relaxed text-white/85 sm:text-xl" style="--d:420ms">{site.tagline || t('site.tagline')}</p>
         <div class="hero-in mt-9 flex flex-wrap gap-4" style="--d:560ms">
           <a href="#novosti" class="btn-gold">{t('hero.cta.news')} <Icon name="arrowRight" size={18} /></a>
           <a href="#o-klubu" class="btn-outline"><Icon name="users" size={18} /> {t('hero.cta.club')}</a>
@@ -100,23 +93,6 @@ const hasWpIds = Object.keys(wpRedirects.ids ?? {}).length > 0;
     </div>
     <span class="hero-seam" aria-hidden="true"></span>
   </section>
-
-  <!-- ============ QUICK LINKS ============ -->
-  <nav class="border-t border-white/10 bg-ink text-white" aria-label={t('nav.menu')}>
-    <ul class="container-site grid grid-cols-2 lg:grid-cols-4">
-      {quick.map((q, i) => (
-        <li style={`--reveal-delay:${i * 70}ms`} class:list={['reveal relative', i > 0 && 'lg:before:absolute lg:before:inset-y-6 lg:before:left-0 lg:before:w-px lg:before:bg-white/10']}>
-          <a href={withBase(q.href)} class="group flex items-center gap-4 px-2 py-6 sm:px-6">
-            <span class="quick-icon text-white/90 transition-colors group-hover:text-gold"><Icon name={q.icon} size={34} /></span>
-            <span>
-              <span class="block text-base font-semibold sm:text-lg group-hover:text-gold">{q.title}</span>
-              <span class="hidden text-sm text-white/65 sm:block">{q.text}</span>
-            </span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </nav>
 
   <!-- ============ NEWS + SIDEBAR ============ -->
   <section id="novosti" class="scroll-mt-24 py-14 sm:py-16">
@@ -153,8 +129,7 @@ const hasWpIds = Object.keys(wpRedirects.ids ?? {}).length > 0;
             <span class="grid h-6 w-6 grid-cols-2 overflow-hidden rounded-sm" aria-hidden="true"><span class="bg-ink"></span><span class="bg-gold"></span><span class="bg-gold"></span><span class="bg-ink"></span></span>
             {t('home.about.title')}
           </h2>
-          <p class="relative mt-3 leading-relaxed text-ink/75">{site.about[lang]}</p>
-          <a href={withBase(routes.members[lang])} class="link-gold relative mt-4 inline-flex items-center gap-1.5">{t('home.about.more')} <Icon name="arrowRight" size={16} /></a>
+          <p class="relative mt-3 leading-relaxed text-ink/75">{site.about}</p>
         </section>
 
         <section class="training-card relative overflow-hidden rounded-xl bg-ink p-6 text-white shadow-card" aria-labelledby="next-training">

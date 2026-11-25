@@ -12,6 +12,7 @@ wordpress:
   id: 294
   url: "http://sahovski-klub.com/vodic-za-najmlade/"
   slug: "vodic-za-najmlade"
+imageAlt: "dz"
 ---
 **Kako na stranici pronaći ono što želiš?** Evo kratkih primjera:
 

@@ -11,6 +11,7 @@ wordpress:
   id: 3570
   url: "http://sahovski-klub.com/raspored-kadetskih-natjecanja-zima-proljece-2015/"
   slug: "raspored-kadetskih-natjecanja-zima-proljece-2015"
+author: "Trenić D."
 ---
 U veljači imamo malo zgusnut raspored obvezatnih natjecanja.
 
@@ -33,5 +34,3 @@ Drugo otvoreno kadetsko prvenstvo zajednice županija centar predviđeno je od 2
 Pojedinačno kadetsko prvenstvo do 8 godina obično se održava u studenome u okolici Zagreba.
 
 Za ostale neobvezatne, a poželjne turnire obavijesti ćemo stavljati na ovim stranicama i/ili slati elektroničkom poštom.
-
-Trenić D.

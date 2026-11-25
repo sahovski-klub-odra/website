@@ -12,6 +12,7 @@ wordpress:
   id: 909
   url: "http://sahovski-klub.com/reykjavik-open-2013-stanje-nakon-sestog-kola/"
   slug: "reykjavik-open-2013-stanje-nakon-sestog-kola"
+imageAlt: "anish"
 ---
 U iščekivanju važnijih vijesti sa jednog među..školskog turnira održanog u O.Š. Sveta Klara donosimo pregled događanja sa Reykjavik Open 2013.  
 Poredak nakon šestog kola je:

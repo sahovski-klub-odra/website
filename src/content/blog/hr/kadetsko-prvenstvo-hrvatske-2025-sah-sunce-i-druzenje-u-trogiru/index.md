@@ -12,6 +12,7 @@ wordpress:
   id: 8286
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-2025-sah-sunce-i-druzenje-u-trogiru/"
   slug: "kadetsko-prvenstvo-hrvatske-2025-sah-sunce-i-druzenje-u-trogiru"
+author: "Ivan V"
 ---
 ![](./naslovna3.jpg)
 
@@ -32,8 +33,6 @@ Slavko je pokazao šahovski napredak – njegove su partije konačno bile zaokru
 
 Najvažnije od svega – svi su se lijepo zabavili, družili, naučili ponešto novo i pokazali lijepo ponašanje, često čak i zrelije nego što su igrali. A to je, dugoročno gledano, najveća pobjeda.
 
-~**![](./whatsapp-image-2025-07-24-at-17-33-26-1.jpg)**~ ![](./whatsapp-image-2025-07-24-at-17-33-27.jpg) ![](./whatsapp-image-2025-07-24-at-17-33-28-1.jpg) ![](./naslovna.jpg)  
+~**![](./whatsapp-image-2025-07-24-at-17-33-26-1.jpg)**~ ![](./whatsapp-image-2025-07-24-at-17-33-27.jpg) ![](./whatsapp-image-2025-07-24-at-17-33-28-1.jpg) 
 ![](./whatsapp-image-2025-07-24-at-17-33-31.jpg) ![](./whatsapp-image-2025-07-24-at-17-33-32-1.jpg) ![](./whatsapp-image-2025-07-24-at-17-33-32.jpg) ![](./whatsapp-image-2025-07-24-at-17-33-33-1.jpg)  
-![](./naslovna-1.jpg) ![](./naslovna3.jpg) ![](./whatsapp-image-2025-07-24-at-17-33-34.jpg) ![](./whatsapp-image-2025-07-24-at-17-33-34-2.jpg)
-
-IvanV
+![](./naslovna3.jpg) ![](./whatsapp-image-2025-07-24-at-17-33-34.jpg) ![](./whatsapp-image-2025-07-24-at-17-33-34-2.jpg)

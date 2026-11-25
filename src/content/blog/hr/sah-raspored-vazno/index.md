@@ -11,9 +11,8 @@ wordpress:
   id: 1859
   url: "http://sahovski-klub.com/sah-raspored-vazno/"
   slug: "sah-raspored-vazno"
+author: "Darko"
 ---
 U sljedeći petak, 19. travnja 2013., **pomiče se satnica** šahovske škole mlađoj dobnoj grupi i **počinje u 19:00** zajedno sa starijom grupom. Zbog spriječenosti “trenića” školu će voditi dr. Ivan Cvetković.
 
 Ivan, Božo, Bruna (i Vraneša, ako uspije dobiti dopuštenje za dulji ostanak) moći će mi pokazati partije iza osam navečer.
-
-Darko

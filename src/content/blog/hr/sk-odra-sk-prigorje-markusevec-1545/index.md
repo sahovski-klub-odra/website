@@ -11,6 +11,8 @@ wordpress:
   id: 3755
   url: "http://sahovski-klub.com/sk-odra-sk-prigorje-markusevec-1545/"
   slug: "sk-odra-sk-prigorje-markusevec-1545"
+author: "Darko"
+imageAlt: "Odra 12 travanj 2015"
 ---
 **Seniori, 3. kolo  
 ![Odra 12 travanj 2015](./odra-12-travanj-2015.jpg)  
@@ -26,5 +28,3 @@ Po lijepu i sunčanu proljetnom  danu, u trećem kolu seniorske lige ekipa Šah
 4\. Maravić, Ivan – Tušek, Milan 0:1  
 5\. Furčić, Tin – Šelendić, Matija 0:1  
 6\. Cvetković, Božo – Putak, Karlo 0:1
-
-darko

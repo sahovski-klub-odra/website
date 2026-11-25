@@ -12,6 +12,7 @@ wordpress:
   id: 2656
   url: "http://sahovski-klub.com/sk-ina-sk-odra-4-2/"
   slug: "sk-ina-sk-odra-4-2"
+imageAlt: "OLYMPUS DIGITAL CAMERA"
 ---
 **10\. kolo, seniori**
 

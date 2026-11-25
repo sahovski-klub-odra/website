@@ -1,6 +1,7 @@
 ---
 title: "Finale ekipnog prvenstva OŠ Grada Zagreba 2018"
 date: 2018-01-01
+category: "Školska prvenstva"
 photos:
   - image: ./monika-preuzima-pehar-za-prvo-mjesto.jpg
   - image: ./decki-na-postolju.jpg
@@ -14,5 +15,8 @@ photos:
   - image: ./dodjela-medalja.jpg
   - image: ./decki-na-postolju-1.jpg
   - image: ./decki-primaju-medalje.jpg
+  - image: ../../blog/hr/ekipno-prvenstvo-osnovnih-skola-grada-zagreba-2018-finale/proslava.jpg
+  - image: ../../blog/hr/ekipno-prvenstvo-osnovnih-skola-grada-zagreba-2018-finale/odra-vs-spansko.jpg
+  - image: ../../blog/hr/ekipno-prvenstvo-osnovnih-skola-grada-zagreba-2018-finale/odra-vs-domjanic.jpg
 # imported from http://sahovski-klub.com/foto-galerija/
 ---

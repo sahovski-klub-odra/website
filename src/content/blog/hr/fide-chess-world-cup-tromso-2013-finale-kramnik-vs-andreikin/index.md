@@ -12,6 +12,7 @@ wordpress:
   id: 2429
   url: "http://sahovski-klub.com/fide-chess-world-cup-tromso-2013-finale-kramnik-vs-andreikin/"
   slug: "fide-chess-world-cup-tromso-2013-finale-kramnik-vs-andreikin"
+imageAlt: "Tromso FIDE World Cup 2013"
 ---
 ![Tromso FIDE World Cup 2013](./img-1040.jpg)
 

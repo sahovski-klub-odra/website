@@ -5,18 +5,28 @@ import MemberCard from '../components/MemberCard.astro';
 import KnightMark from '../components/KnightMark.astro';
 import Icon from '../components/Icon.astro';
 import { members, membersUpdated } from '../lib/data';
-import { useTranslations, type Lang } from '../i18n/ui';
-import { alternatesFor } from '../i18n/routes';
+import { useTranslations, locales, type Lang } from '../i18n/ui';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const board = members.filter((m) => m.role);
-const players = members.filter((m) => !m.role);
+// Players: alphabetical by surname (Croatian rules: č, ć, dž, đ, lj, nj, š, ž), then by first name.
+// This is also the order without JavaScript; the sort buttons below reorder the cards in the browser.
+const collator = new Intl.Collator('hr', { sensitivity: 'base' });
+const nameParts = (name: string) => {
+  const parts = name.trim().split(/\s+/);
+  return { surname: parts.at(-1) ?? '', first: parts.slice(0, -1).join(' ') };
+};
+const byName = (a: string, b: string) => {
+  const x = nameParts(a), y = nameParts(b);
+  return collator.compare(x.surname, y.surname) || collator.compare(x.first, y.first);
+};
+const players = members.filter((m) => !m.role).sort((a, b) => byName(a.name, b.name));
 const updated = membersUpdated
-  ? new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'hr-HR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${membersUpdated}T12:00:00`))
+  ? new Intl.DateTimeFormat(locales[lang], { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${membersUpdated}T12:00:00`))
   : null;
 ---
-<BaseLayout lang={lang} title={t('members.title')} description={t('members.intro')} alternates={alternatesFor('members')}>
+<BaseLayout lang={lang} title={t('members.title')} description={t('members.intro')}>
   <PageHeader title={t('members.title')} intro={t('members.intro')} />
   <div class="container-site py-12">
     {members.length > 0 ? (
@@ -45,9 +55,9 @@ const updated = membersUpdated
                   <Icon name="search" size={16} />
                   <input type="search" placeholder={t('members.search')} data-member-search autocomplete="off" />
                 </label>
-                <div class="seg" role="group" aria-label={t('members.sortOrder')}>
-                  <button type="button" aria-pressed="true" data-sort="order">{t('members.sortOrder')}</button>
-                  <button type="button" aria-pressed="false" data-sort="rating">{t('members.sortRating')}</button>
+                <div class="seg seg--sort" role="group" aria-label={t('members.sort')}>
+                  <button type="button" aria-pressed="true" data-sort="alpha">{t('members.sortAlpha')}</button>
+                  <button type="button" aria-pressed="false" data-sort="standard">{t('members.sortRating')}</button>
                 </div>
               </div>
             </div>
@@ -93,8 +103,13 @@ const updated = membersUpdated
       b.addEventListener('click', () => {
         tools.querySelectorAll('[data-sort]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
         const key = b.dataset.sort;
+        // cards are rendered in alphabetical order (data-order); "standard" uses only the FIDE standard rating:
+        // highest first, players without a standard rating last, equal ratings alphabetically
+        const std = (c: HTMLElement) => Number(c.dataset.standard) || 0;
         const sorted = [...cards].sort((a, z) =>
-          key === 'rating' ? Number(z.dataset.rating) - Number(a.dataset.rating) : Number(a.dataset.order) - Number(z.dataset.order),
+          key === 'standard'
+            ? (std(z) - std(a)) || Number(a.dataset.order) - Number(z.dataset.order)
+            : Number(a.dataset.order) - Number(z.dataset.order),
         );
         const apply = () => sorted.forEach((c) => grid.append(c));
         // View Transitions give the cards a smooth reorder where supported (and are skipped for reduced motion)

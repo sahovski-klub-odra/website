@@ -11,6 +11,7 @@ wordpress:
   id: 8427
   url: "http://sahovski-klub.com/sk-odra-sk-stjepan-bosak-51/"
   slug: "sk-odra-sk-stjepan-bosak-51"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 10.kolo  
 ![](./suncananedjelja700.jpg)  
@@ -33,6 +34,3 @@ Prošli vikend smo [pobijedili](https://chess-results.com/tnr1127780.aspx?lan=13
 [PlyCount "79"]
 1. d4 Nf6 2. Nf3 c5 3. d5 e6 4. c4 d6 5. Nc3 exd5 6. cxd5 g6 7. g3 Bg7 8. Bg2 O-O 9. O-O Re8 10. Bf4 a6 11. a4 Qc7 12. Nd2 Nh5 13. Be3 f5 14. Nc4 Nd7 15. Qd2 Rb8 16. a5 b5 17. axb6 Nxb6 18. Na5 Bd7 19. Rfd1 Bb5 20. Bf3 Nf6 21. Bf4 Nc4 22. Nxb5 axb5 23. Nxc4 bxc4 24. Ra6 Ne4 25. Bxe4 Rxb2 26. Bc2 c3 27. Qc1 Rxe2 28. Bxd6 Qb7 29. Qa1 h6 30. Ra8+ Kh7 31. Ra7 Qb6 32. Bf8 c4 33. Rxg7+ Kh8 34. Rf1 Rexc2 35. Qa7 Qxa7 36. Rxa7 Kg8 37. Bg7 Rb3 38. Re1 Rb8 39. d6 Rd8 40. Bf6 1-0
 ```
-
-  
-*IvanM*

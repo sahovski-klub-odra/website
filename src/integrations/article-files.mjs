@@ -19,7 +19,6 @@ import { fileURLToPath } from 'node:url';
 /** article routes: dist folder → content collection language folder */
 const ROUTES = [
   { dist: 'novosti', lang: 'hr' },
-  { dist: 'en/news', lang: 'en' },
 ];
 
 /**

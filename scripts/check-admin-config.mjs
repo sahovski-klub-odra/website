@@ -6,7 +6,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { parse } from 'yaml';
 
 const checks = [
-  ['dist/admin/config.yml', ['blog-hr', 'blog-en', 'albums', 'data']],
+  ['dist/admin/config.yml', ['blog-hr', 'albums', 'data']],
   ['dist/admin/trener/config.yml', ['data']],
 ];
 let failed = false;

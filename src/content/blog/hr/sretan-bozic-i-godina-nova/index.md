@@ -12,6 +12,7 @@ wordpress:
   id: 4373
   url: "http://sahovski-klub.com/sretan-bozic-i-godina-nova/"
   slug: "sretan-bozic-i-godina-nova"
+imageAlt: "patuljkored"
 ---
 ![patuljkored](./patuljkored.jpg)
 

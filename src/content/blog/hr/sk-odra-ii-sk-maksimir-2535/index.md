@@ -11,6 +11,7 @@ wordpress:
   id: 8620
   url: "http://sahovski-klub.com/sk-odra-ii-sk-maksimir-2535/"
   slug: "sk-odra-ii-sk-maksimir-2535"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 3.kolo
 
@@ -52,5 +53,3 @@ Za ekipu su nastupili: Tin, Boris, Luka Fiolić, Filip Horvat, Filip Cvetković 
 
 1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 c6 5. Nf3 Nf6 6. h3 Bf5 7. Bd3 Bxd3 8. Qxd3 e6 9. O-O Bd6 10. Ne4 Nxe4 11. Qxe4 Nd7 12. Bd2 Qh5 13. Rfe1 Nf6 14. Qd3 O-O-O 15. a4 Nd7 16. Ng5 Rdf8 17. b4 Qg6 18. Qb3 Re8 19. b5 c5 20. Ne4 e5 21. Qd5 Bc7 22. dxc5 f5 23. Nd6+ Bxd6 24. cxd6 Re6 25. Qc4+ Kb8 26. Qc7+ Ka8 27. Bb4 Qe8 28. a5 Qc8 29. b6 a6 30. Ra3 Rd8 31. Rc3 Qxc7 32. dxc7 Rc8 33. Rd3 Nf6 34. Rd8 Re8 35. Red1 Ne4 36. Rxc8+ Rxc8 37. Rd8 *
 ```
-
-IvanV

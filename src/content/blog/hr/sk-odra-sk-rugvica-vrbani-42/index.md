@@ -19,7 +19,7 @@ wordpress:
 Seniorska ekipa ŠK Odra uspješno je odigrala sedmo kolo i pobjedom praktički osigurala ostanak u ligi.
 
 ![](./poredak-nakon-7-kola.jpg)  
-  
+
 U “seniorskoj” ekipi nastupilo je troje kadeta. 🙂 Po prvi put za seniore je zaigrala i Ana i remijem u jako dobroj partiji dala veliki doprinos današnjoj pobjedi. Ivan Maravić je silio poziciju do kraja, ali više od remija nije uspio ostvariti. Vraneša je krivo izračunao kombinaciju, ali uprkos tome, cijelu partiju imao je barem pola boda, kako je partija na kraju i završila. Prevagu su ipak donijeli seniori koji su ostvarili dvije pobjede. Zvjezdan je (ponovo) riješio partiju taktičkim udarom, a Cvetko je uzeo ponuđeni materijal i uspješno se obranio. Jura je na prvoj ploči rano preveo partiju u završnicu i remizirao.  
 Lijepo je vidjeti da među kadetima imamo respektabilnih igrača (i igračica) koji nas mogu dostojno zamijeniti. A koji su svakim danom i sve bolji. Vraneša i Ivan su već zacementirali mjesto u seniorskoj postavi, a Ana je danas samo potvrdila da su tu i tri djevojke (Ana, Monika i Samanta) koje se mogu ravnopravno nositi sa protivnicima u seniorskoj ligi.
 

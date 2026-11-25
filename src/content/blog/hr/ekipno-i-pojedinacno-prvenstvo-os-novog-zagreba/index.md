@@ -12,6 +12,7 @@ wordpress:
   id: 2672
   url: "http://sahovski-klub.com/ekipno-i-pojedinacno-prvenstvo-os-novog-zagreba/"
   slug: "ekipno-i-pojedinacno-prvenstvo-os-novog-zagreba"
+imageAlt: "fromSusanPolgar.BlogSpot"
 ---
 Pribiližava se ekipno prvenstvo OŠ Novog Zagreba,  
 ekipa OŠ Odra prijavljena je u sljedećem sastavu:

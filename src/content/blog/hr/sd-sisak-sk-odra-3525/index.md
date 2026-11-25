@@ -12,6 +12,7 @@ wordpress:
   id: 7825
   url: "http://sahovski-klub.com/sd-sisak-sk-odra-3525/"
   slug: "sd-sisak-sk-odra-3525"
+author: "Ivan M"
 ---
 **Seniori, 7.kolo  
 ![](./ovojedarkoslikaopajezatotakolosaslika700.jpg)  
@@ -34,6 +35,3 @@ Prošlu nedjelju smo proveli u Sisku. Nismo se proslavili igrom niti [rezultatom
 [PlyCount "122"]
 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Nf6 6. Be2 Bb4 7. Nxc6 bxc6 8. Bg5 Qa5 9. Bxf6 gxf6 10. Qd4 Rg8 11. O-O Qg5 12. g3 a5 13. Na4 h5 14. c3 Be7 15. Rad1 d6 16. Qb6 Bd7 17. Qb7 Rd8 18. Nb6 Qc5 19. Rd4 h4 20. Qc7 hxg3 21. hxg3 d5 22. Na4 Qd6 23. Qxd6 Bxd6 24. Rd2 Ke7 25. Nb6 Bc5 26. Nxd7 Rxg3+ 27. Kh2 Rg6 28. Nxf6 Kxf6 29. e5+ Kxe5 30. Rd3 Rdg8 31. Rf3 f5 32. Bd3 Bd6 33. Rh3 Rg2+ 34. Kh1 Bc5 35. Rf3 R2g4 36. Rh3 R8g7 37. b3 Kd6 38. Be2 Rg2 39. Rf3 Ke5 40. Bd3 Kf6 41. Bb1 Bd6 42. Rh3 R7g6 43. Bd3 e5 44. Ba6 Bc5 45. Bb7 Bxf2 46. Bxc6 Rg1+ 47. Rxg1 Rxg1+ 48. Kh2 Ra1 49. a4 d4 50. Bd5 e4 51. cxd4 Bxd4 52. Bc4 Ke5 53. Rg3 Ra2+ 54. Rg2 Rxg2+ 55. Kxg2 Be3 56. Kf1 Bd2 57. Ke2 Bc3 58. Ba6 f4 59. Bb7 f3+ 60. Ke3 Bd4+ 61. Kd2 e3+ 0-1
 ```
-
-  
-*IvanM*

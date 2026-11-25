@@ -11,6 +11,7 @@ wordpress:
   id: 5702
   url: "http://sahovski-klub.com/najava-turnira-sijecanj-veljaca-2018/"
   slug: "najava-turnira-sijecanj-veljaca-2018"
+author: "Darko"
 ---
 …  
 Još nije izašao raspis za Ekipno prvenstvo osnovnih škola, ali je izašao raspis za nekoliko drugih kadetskih turnira, uključujući Pojedinačno kadetsko prvenstvo Zagreba. Nakon prošlogodišnjeg, pomalo neuspješnog eksperimenta da se to prvenstvo igra za vrijeme praznika, vraćeni su termini vikendom.
@@ -29,7 +30,6 @@ Još nije izašao raspis za Ekipno prvenstvo osnovnih škola, ali je izašao ras
 
 U prilogu su raspisi turnira…
 
-darko
 
 [Otvoreno ubrzano prvenstvo ŠD Sisak 27. i 28. siječnja](/files/wp/2018/01/sisak-27_28_sijecnja.pdf)  
 [Caissina čizmica – 27. i 28. siječnja](/files/wp/2018/01/caissina_cizmica.pdf)  

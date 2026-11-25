@@ -12,6 +12,9 @@ wordpress:
   id: 3653
   url: "http://sahovski-klub.com/pojedinacno-prvenstvo-zagreba-do-9-i-11-rezultati/"
   slug: "pojedinacno-prvenstvo-zagreba-do-9-i-11-rezultati"
+author: "Darko"
+imageAlt: "klub 20022015"
+imageCaption: "Klub 20.02.2015."
 ---
 ![klub 20022015](./klub-20022015.jpg "Klub 20.02.2015.")
 
@@ -54,5 +57,3 @@ Za kraj, jedna partija s pojedinačnog prvenstva Zagreba 2015. za kadetkinje do 
 
 1. e4 e5 2. Nf3 Nc6 3. Nc3 Bd6 4. Bc4 Na5 5. Bd3 Nf6 6. O-O O-O 7. Nb5 Bb4 8. h3 Qe7 9. Nxc7 Bc5 10. Nxa8 d5 11. Re1 dxe4 12. Bxe4 Nxe4 13. Rxe4 Bf5 14. Rxe5 Qd6 15. d3 Rxa8 16. Bf4 Qb6 17. d4 Bd6 18. Re1 Bxf4 19. Re2 Rc8 20. Qe1 Nc4 21. Re8+ Rxe8 22. Qxe8# 1-0
 ```
-
-darko

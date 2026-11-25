@@ -12,6 +12,7 @@ wordpress:
   id: 6295
   url: "http://sahovski-klub.com/mini-liga-2017-18/"
   slug: "mini-liga-2017-18"
+author: "Darko"
 ---
 ![](./mini-liga-2018.jpg)  
 U srijedu, 12. prosinca, odigran je prvi krug MINI-LIGE 2017/18. To je ekipno natjecanje učenika osnovnih škola Novog Zagreba, do četvrtog razreda. Prvenstvo se igra pod pokroviteljstvom ravnateljice osnovne škole Ive Andrića, gospođe Dubravke Miklec, a voditelj prvenstva je Jelenko Mikacinić![](./mini-liga-2018-ekipe-os-odra.jpg), voditelj Šahovske škole OŠ Ive Andrića.  Prvenstvo se igra na četiri ploče, tempo igre je 10+0, a dopuštena su dva nemoguća poteza. U prvom krugu odigrana su četiri kola, a sljedeći krug igrat će se 13. veljače 2019., također u OŠ Ive Andrića kada će se odigrati preostalih pet kola. OŠ Odra nastupa s dvije ekipe.  Kapetani ekipa su Dora i Luka, članovi ekipe koja je prošle godine osvojila ovaj [turnir](/novosti/ekipno-prvenstvo-os-n-zagreba-do-cetvrtog-razreda-2017-2018-mini-liga-prvi-krug/). Ostali učesnici su po prvi puta na ovom turniru, dok je za neke ovo bio i prvi službeni nastup. Na prvenstvu nastupa deset ekipa, a u našim ekipama posebno lijep rezultat ostvarili su Slavko i Ivan koji najviše i vježbaju. Veliku volju i hrabrost pokazala je Ivana koja je igrala bolesna te ostvarila i prvu službenu pobjedu!   [REZULTATI](http://chess-results.com/tnr399826.aspx?lan=13)
@@ -27,5 +28,3 @@ Danas je odigrano preostalih pet kola. Imali smo jednu promjenu, u ekipu dečkij
 
 ![](./bronca-mini-liga-2018-19.jpg) ![](./tablica-mini-liga-2018-19.jpg) ![](./mini-liga-2018-19-odra.jpg) ![](./spremni-za-pocetak.jpg)  
 ![](./dora.jpg) ![](./u-pauzi-izmedju-kola.jpg) ![](./prijatelji.jpg) ![](./sestre.jpg)
-
-darko

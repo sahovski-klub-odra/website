@@ -12,6 +12,7 @@ wordpress:
   id: 4091
   url: "http://sahovski-klub.com/prvenstvo-sk-odra-mladi-kadeti-2015/"
   slug: "prvenstvo-sk-odra-mladi-kadeti-2015"
+author: "Darko"
 ---
 ![](./kadetsko-prvenstvo-kluba-malci-26092015.jpg)
 
@@ -37,5 +38,3 @@ Tablica:
 | 8. | Kolovrat, Ana | 0 | 1 | 1 | 1/2 | 1 | 1 | 0 | \* | 1 | 1/2 | 6 | 3. |
 | 9. | Kolovrat, Lucija | 0 | 1/2 | 0 | 0 | 1 | 1 | 1/2 | 0 | \* | 0 | 3 | 4. |
 | 10. | **Kolovrat, Monika** | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1/2 | 1 | \* | 7,5 | **1.** |
-
-darko

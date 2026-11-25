@@ -12,6 +12,7 @@ wordpress:
   id: 8671
   url: "http://sahovski-klub.com/sk-odra-sk-koncar-1545-2/"
   slug: "sk-odra-sk-koncar-1545-2"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 3.kolo**  
 ![](./odrakoncar700.jpg)  
@@ -32,5 +33,3 @@ wordpress:
 [BlackElo "2198"]
 1. d4 Nf6 2. Nf3 e6 3. c4 Bb4+ 4. Bd2 a5 5. a3 Be7 6. Nc3 d5 7. e3 O-O 8. Bd3 dxc4 9. Bxc4 c5 10. O-O Nc6 11. dxc5 Bxc5 12. Qb3 Qe7 13. e4 Ng4 14. Bf4 Qf6 15. Bg3 Nd4 16. Nxd4 Bxd4 17. Rad1 a4 18. Nxa4 h5 19. h3 Nh6 20. Nc3 e5 21. Nb5 h4 22. Bh2 Rd8 23. Nxd4 exd4 24. Bd5 Be6 25. Rfe1 Ra5 26. Qb6 Raxd5 27. exd5 Rxd5 28. Rd3 Qg6 29. Rxd4 Rg5 30. Qxb7 Bxh3 31. Rxh4 Bxg2 32. Qb8+ Kh7 33. Bg3 Bc6 34. Kh2 Qd3 35. Qd6 Qf3 36. Rg1 Rh5 37. Qd1 Ng4+ 38. Kh3 Nxf2+ 0-1
 ```
-
-*IvanM*

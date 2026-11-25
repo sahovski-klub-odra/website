@@ -5,12 +5,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogCard from '../components/BlogCard.astro';
 import Icon from '../components/Icon.astro';
 import Lightbox from '../components/Lightbox.astro';
+import Ambient from '../components/Ambient.astro';
 import { site } from '../lib/data';
 import {
-  type Post, postLang, postUrl, describe, formatDate, readingTime, relatedPosts, translationOf, slugify,
+  type Post, postLang, postUrl, describe, formatDate, readingTime, relatedPosts, slugify,
 } from '../lib/blog';
 import { useTranslations } from '../i18n/ui';
-import { routes, withBase, categoryPath, type Alternates } from '../i18n/routes';
+import { routes, withBase, categoryPath } from '../i18n/routes';
 
 interface Props { post: Post }
 const { post } = Astro.props;
@@ -18,10 +19,6 @@ const lang = postLang(post);
 const t = useTranslations(lang);
 const { Content } = await render(post);
 const d = post.data;
-
-const translation = await translationOf(post);
-const alternates: Alternates = { [lang]: postUrl(post) };
-if (translation) alternates[postLang(translation)] = postUrl(translation);
 
 const related = await relatedPosts(post, 3);
 const description = d.seo?.description ?? describe(post, 160);
@@ -37,12 +34,12 @@ const jsonLd = {
   description,
   datePublished: d.pubDate.toISOString(),
   dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
-  inLanguage: lang === 'hr' ? 'hr-HR' : 'en-GB',
+  inLanguage: 'hr-HR',
   mainEntityOfPage: canonical,
   ...(ldImage && { image: ldImage }),
   articleSection: d.categories[0],
   keywords: d.tags.join(', ') || undefined,
-  author: { '@type': 'Organization', name: site.name },
+  author: d.author ? { '@type': 'Person', name: d.author } : { '@type': 'Organization', name: site.name },
   publisher: { '@id': `${new URL(withBase('/'), Astro.site).href}#organization` },
 };
 
@@ -53,7 +50,6 @@ const shareTitle = encodeURIComponent(d.title);
   lang={lang}
   title={d.seo?.title ?? d.seoTitle ?? d.title}
   description={description}
-  alternates={alternates}
   image={d.image}
   imageAlt={d.imageAlt}
   type="article"
@@ -83,11 +79,6 @@ const shareTitle = encodeURIComponent(d.title);
             <a href={withBase(categoryPath(lang, slugify(c)))} class="rounded-full border border-white/25 px-3 py-0.5 hover:border-gold hover:text-gold">{c}</a>
           ))}
         </div>
-        {translation && (
-          <a href={withBase(postUrl(translation))} hreflang={postLang(translation)} class="mt-6 inline-flex items-center gap-2 rounded-md bg-white/10 px-4 py-2 text-sm font-medium text-gold hover:bg-white/15">
-            <Icon name="globe" size={16} /> {t('news.otherLang')}
-          </a>
-        )}
       </div>
     </header>
 
@@ -95,14 +86,43 @@ const shareTitle = encodeURIComponent(d.title);
       <div class="container-site max-w-5xl">
         <figure class="-mt-0 overflow-hidden rounded-b-xl shadow-card sm:mt-8 sm:rounded-xl">
           <Image src={d.image} alt={d.imageAlt ?? ''} widths={[640, 960, 1280, 1600]} sizes="(min-width: 1024px) 1024px, 100vw" loading="eager" fetchpriority="high" class="max-h-[560px] w-full object-cover" />
+          {d.imageCaption && <figcaption class="bg-white px-5 py-3 text-sm text-ink/70">{d.imageCaption}</figcaption>}
         </figure>
       </div>
     )}
 
+    <div class="article-stage">
+    {/* desktop only: slow chess-themed motion in the empty space beside the text column (never behind it) */}
+    <div class="article-rail article-rail--l" aria-hidden="true">
+      <div class="article-rail__view">
+        <Ambient tone="light" grid light lines particles={9} seed={17} pieces={[
+          { piece: 'knight', x: '28%', y: '16%', size: '72px', motion: 'float', opacity: 0.07 },
+          { piece: 'pawn', x: '58%', y: '62%', size: '46px', motion: 'bob', opacity: 0.06 },
+        ]} />
+      </div>
+    </div>
+    <div class="article-rail article-rail--r" aria-hidden="true">
+      <div class="article-rail__view">
+        <Ambient tone="light" grid light lines particles={9} seed={29} pieces={[
+          { piece: 'bishop', x: '30%', y: '38%', size: '58px', motion: 'sway', opacity: 0.06 },
+          { piece: 'rook', x: '52%', y: '74%', size: '50px', motion: 'float', opacity: 0.06 },
+        ]} />
+      </div>
+    </div>
     <div class="container-site max-w-3xl py-10 sm:py-14">
       <div class="prose prose-lg prose-odra max-w-none" data-lightbox-scope>
         <Content />
       </div>
+
+      {d.author && (
+        <aside class="article-author reveal mt-10 flex items-center gap-4 rounded-xl bg-ink px-5 py-4 text-white shadow-card" aria-label={t('news.author')}>
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-gold/15 text-gold ring-1 ring-gold/40"><Icon name="pencil" size={20} /></span>
+          <p class="leading-tight">
+            <span class="block text-xs font-semibold uppercase tracking-[0.14em] text-gold">{t('news.author')}:</span>
+            <span class="mt-1 block font-display text-xl font-bold">{d.author}</span>
+          </p>
+        </aside>
+      )}
 
       {d.tags.length > 0 && (
         <div class="mt-10 flex flex-wrap items-center gap-2 border-t border-ink/10 pt-6">
@@ -122,6 +142,7 @@ const shareTitle = encodeURIComponent(d.title);
           <a class="grid h-9 w-9 place-items-center rounded-full bg-white ring-1 ring-ink/10 hover:ring-gold" href={`mailto:?subject=${shareTitle}&body=${share}`} aria-label="E-mail"><Icon name="mail" size={16} /></a>
         </div>
       </div>
+    </div>
     </div>
   </article>
 

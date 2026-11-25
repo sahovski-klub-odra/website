@@ -11,6 +11,9 @@ wordpress:
   id: 5550
   url: "http://sahovski-klub.com/vi-otvoreno-kadetsko-prvenstvo-krapinsko-zagorske-zupanije/"
   slug: "vi-otvoreno-kadetsko-prvenstvo-krapinsko-zagorske-zupanije"
+author: "Darko"
+imageAlt: "Muzej krapinskih neandertalaca"
+imageCaption: "Muzej krapinskih neandertalaca"
 ---
 ![Muzej krapinskih neandertalaca](./krapina.jpg "Muzej krapinskih neandertalaca")
 
@@ -32,5 +35,4 @@ Od naših igrača i igračica, u gornjoj polovici tablica završili su Ivan Mara
 Bilo je nekoliko iznenađenja, pa je tako Filip u prvom kolu pobijedio Moniku, Franka je pobijedila Anđelu, a Luka Matašić, Anu. Ana nije imala svoj dan na ovom turniru, ali je možda i bolje zakazati na ovom prvenstvu, nego na nekom važnijem školskom. 🙂  
 Čestitke svim učesnicima, hvala roditeljima na prijevozu i brizi, a posebno gosp. Igoru Matašiću na slikama i brizi o šahovskom inventaru.  
 ![](./krapina-11112017-1.jpg) ![](./krapina-11112017-2.jpg) ![](./krapina-11112017-3.jpg) ![](./krapina-11112017-4.jpg)  
-![](./krapina-11112017-dodjela-medalja.jpg)  ![](./krapina-11112017-sk-odra.jpg)  
-darko
+![](./krapina-11112017-dodjela-medalja.jpg)  ![](./krapina-11112017-sk-odra.jpg)

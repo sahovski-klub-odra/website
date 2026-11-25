@@ -12,6 +12,7 @@ wordpress:
   id: 1567
   url: "http://sahovski-klub.com/turnir-kandidata-london-2013-linkovi/"
   slug: "turnir-kandidata-london-2013-linkovi"
+imageAlt: "glavna"
 ---
 Ta njihova stranica je malo neobično organizirana, pa evo linkovi za lakše snalaženje:
 

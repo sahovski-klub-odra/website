@@ -12,6 +12,7 @@ wordpress:
   id: 1970
   url: "http://sahovski-klub.com/arhiva-partija-slavenska-obrana-ding-liren-2707-aronian-levon-2809-1-0-aljehinov-memorijal-1-kolo-21-4-2013/"
   slug: "arhiva-partija-slavenska-obrana-ding-liren-2707-aronian-levon-2809-1-0-aljehinov-memorijal-1-kolo-21-4-2013"
+imageAlt: "IMG_8041_ps_1000"
 ---
 ![IMG_8041_ps_1000](./img-8041-ps-1000.jpg)
 

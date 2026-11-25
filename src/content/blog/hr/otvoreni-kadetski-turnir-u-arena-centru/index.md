@@ -12,6 +12,8 @@ wordpress:
   id: 3400
   url: "http://sahovski-klub.com/otvoreni-kadetski-turnir-u-arena-centru/"
   slug: "otvoreni-kadetski-turnir-u-arena-centru"
+author: "Darko"
+imageAlt: "arena"
 ---
 ![arena](./arena.jpg)
 
@@ -24,5 +26,3 @@ Knjižice su još kod roditelja odnosno za dečke kod Stjepka. Molim roditelje d
 RASPIS: [kadetski open arena centar 2014](/files/wp/2014/11/kadetski-open-arena-centar-2014.pdf)
 
 [Prijavljeni igrači.](http://chess-results.com/tnr150712.aspx?lan=13 "prijave")
-
-darko

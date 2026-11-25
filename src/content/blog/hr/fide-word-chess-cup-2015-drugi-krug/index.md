@@ -12,6 +12,7 @@ wordpress:
   id: 4037
   url: "http://sahovski-klub.com/fide-word-chess-cup-2015-drugi-krug/"
   slug: "fide-word-chess-cup-2015-drugi-krug"
+imageAlt: "hou yifan"
 ---
 ![hou yifan](./hou-yifan.jpg)  
 Prvi krug je uglavnom završio pobjedama favorita uz dvadeset i četiri tie-breaka, a možda najveće iznenađenje je ispadanje Gelfanda od IM Henriquez Villagra (2511).

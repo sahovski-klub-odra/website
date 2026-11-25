@@ -12,6 +12,7 @@ wordpress:
   id: 5157
   url: "http://sahovski-klub.com/prvenstvo-osnovnih-skola-grada-zagreba-2017-drugi-krug/"
   slug: "prvenstvo-osnovnih-skola-grada-zagreba-2017-drugi-krug"
+author: "Darko"
 ---
 ![](./ekipe-os-odra-11-veljace-2017.jpg)  
 Danas je odigran drugi krug kvalifikacija. Dečke očekuje još jedan krug jer igraju devet kola, a djevojke su završile. Prije posljednjeg kola dijelile su željeno četvrto mjesto koje vodi u finale, ali su protivnice iz OŠ Klara bile bolje. Ženska ekipa OŠ Odra prilično je napredovala od prošle godine i, što je najvažnije, prilično su se sprijateljile. Kako ni konkurencija ne spava, samo o njima samima ovisi koliko će u predstojećoj godini uložiti truda, vježbajući, učeći i igrajući turnire, kako bi za godinu dana ostvarile minimalni pomak na tablici i ponovo ušle u borbu za medalje. Ni jedna od njih nije podbacila rezultatski, čak je i Monika pokazala da može pobjeđivati na prvoj ploči. Ana je danas također zablistala s dvije pobjede, kao i Katarina. Anđela je standardno dobra, a Samanta me svojom snalažljivošću uvijek ugodno iznenadi. Nadam se da će se cure, zajedno s Lucijom, Hanom i Dorom, u sljedećih godinu dana još više posvetiti šahu i na sljedećemu školskom prvenstvu bez većih problema ući u finale.  
@@ -24,5 +25,3 @@ Dečki. Danas su pokazali nešto što nisam znao da imaju. Izgubili su četvrto 
 [rezultati djevojke](http://chess-results.com/tnr261759.aspx?lan=13&art=0&turdet=YES&flag=30&wi=984)
 
 [Rezultati kvalifikacija 2017 – djevojke](/files/wp/2017/02/RezSah_Z_2017-kvalifikacije.pdf)
-
-darko

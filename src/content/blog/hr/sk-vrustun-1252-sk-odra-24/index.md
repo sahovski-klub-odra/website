@@ -12,6 +12,7 @@ wordpress:
   id: 5505
   url: "http://sahovski-klub.com/sk-vrustun-1252-sk-odra-24/"
   slug: "sk-vrustun-1252-sk-odra-24"
+author: "Darko"
 ---
 **Seniori, 8. kolo  
 ![](./vurnovec-15102017.jpg)  
@@ -25,5 +26,3 @@ wordpress:
 4\. MK Kazić, Velid – II Maravić, Ivan 0:1  
 5\. III Bogojević, Ranko – III Vraneša, Ivan 1:0  
 6\. IV Kezerić, Miroslav – VK Kljujev, Ivan 1:0
-
-darko

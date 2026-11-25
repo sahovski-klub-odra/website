@@ -11,6 +11,7 @@ wordpress:
   id: 5214
   url: "http://sahovski-klub.com/ekipno-prvenstvo-os-n-zagreba-do-cetvrtog-razreda-drugi-krug/"
   slug: "ekipno-prvenstvo-os-n-zagreba-do-cetvrtog-razreda-drugi-krug"
+author: "Darko"
 ---
 ![](./ekipno-prvenstvo-os-a-nz-a.jpg)  
 Jučer je u [OŠ Ive Andrića](http://os-iandrica-zg.skole.hr/) u Sopotu odigran drugi krug ekipnog prvenstva OŠ Novog Zagreba do četvrtog razreda. Borbe su bile nepoštedne, a remiji samo patom… Obje ekipe OŠ Odra popravile su položaj na tablici!  
@@ -24,5 +25,3 @@ Turnir se nastavlja 10. svibnja, kada će se igrati posljednja četiri kola.
 ![](./odra-1.jpg) ![](./odra-2.jpg) ![](./odra-1-a.jpg) ![](./odra-2-a.jpg)  
 ![](./turnir.jpg)  ![](./odra-2-b.jpg)  
 [pojedinacni rezultati prvih devet kola](/files/wp/2017/03/pojedinacni-rezultati-prvih-devet-kola.docx)
-
-darko

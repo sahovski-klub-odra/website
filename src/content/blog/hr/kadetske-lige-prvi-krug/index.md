@@ -11,6 +11,7 @@ wordpress:
   id: 5238
   url: "http://sahovski-klub.com/kadetske-lige-prvi-krug/"
   slug: "kadetske-lige-prvi-krug"
+author: "Darko"
 ---
 ![](./hotel-i.jpg)  
 Jučer su se u [Hotelu I](http://www.hotel-i.hr/) u Zagrebu igrala prva tri kola kadetskih liga za 2017. ŠK Odra nastupa u II. A kadetskoj ligi i I. ligi kadetkinja.  U drugoj ligi nastupamo s dvije ekipe, prvom standardnom, u kojoj![](./dvorana-za-igru-hotel-i.jpg) igraju Ivan, Vraneša, Kljujev, Božo i Bruno, te drugom ekipom, u kojoj bi prvu postavu trebali činiti Luka Fiolić, Luka i Filip Matašić te Josip Mahin. Kako dvojica od njih subotom imaju vjeronauk, ekipu su popunjavale djevojke, koje se koriste tom prilikom da odigraju što više partija koje su im nužne za napredak.  
@@ -22,5 +23,3 @@ Jučer su se u [Hotelu I](http://www.hotel-i.hr/) u Zagrebu igrala prva tri kola
 
 [Rezultati kadeti](http://chess-results.com/tnr263254.aspx?lan=13&art=0&wi=821)  
 [Rezultati kadetkinje](http://chess-results.com/tnr263259.aspx?lan=13&art=0&wi=821)
-
-darko

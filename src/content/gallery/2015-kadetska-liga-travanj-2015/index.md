@@ -1,6 +1,7 @@
 ---
 title: "Kadetska liga, travanj 2015"
 date: 2015-04-01
+category: "Kadetska liga"
 photos:
   - image: ./kadeti-i.jpg
     caption: "kadeti I"
@@ -17,5 +18,6 @@ photos:
     caption: "cure su neozbiljne"
   - image: ./prvi-red-drugi-red-i-luka.jpg
     caption: "prvi red drugi red i Luka"
+  - image: ../../blog/hr/kadetska-liga-2015-drugi-krug/kadetska-liga-2015-drugi-krug.jpg
 # imported from http://sahovski-klub.com/foto-galerija/
 ---

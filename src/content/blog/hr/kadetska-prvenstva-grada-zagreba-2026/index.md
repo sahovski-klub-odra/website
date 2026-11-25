@@ -12,6 +12,7 @@ wordpress:
   id: 8714
   url: "http://sahovski-klub.com/kadetska-prvenstva-grada-zagreba-2026/"
   slug: "kadetska-prvenstva-grada-zagreba-2026"
+author: "Ivan V"
 ---
 ![](./whatsapp-image-2026-05-10-at-14-06-52.jpg)
 
@@ -29,6 +30,4 @@ Posebno nas veseli što se ove godine nekolicina naših najmlađih članova ozbi
 
 Ako nastave ovako redovito trenirati i sudjelovati na turnirima, vjerujemo da bi se već dogodine mogla složiti dobra i perspektivna kadetska ekipa.
 
-Čestitamo svim našim kadetima na nastupu! Najvažnije je nastaviti trenirati, igrati, učiti iz vlastitih partija i uživati u šahu. Bolji rezultati sigurno će doći! ♟️ ![](./whatsapp-image-2026-05-10-at-14-06-52-1.jpg)  
-
-IvanV
+Čestitamo svim našim kadetima na nastupu! Najvažnije je nastaviti trenirati, igrati, učiti iz vlastitih partija i uživati u šahu. Bolji rezultati sigurno će doći! ♟️ ![](./whatsapp-image-2026-05-10-at-14-06-52-1.jpg)

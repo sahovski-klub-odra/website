@@ -12,6 +12,8 @@ wordpress:
   id: 4663
   url: "http://sahovski-klub.com/sk-vrbani-sk-odra-33/"
   slug: "sk-vrbani-sk-odra-33"
+author: "Darko"
+imageAlt: "dom sportova 08052016"
 ---
 **Seniori, 6. kolo  
 ![dom sportova 08052016](./dom-sportova-08052016.jpg)  
@@ -28,5 +30,3 @@ wordpress:
 .![ponosni tata](./ponosni-tata.jpg) ![rostilj 08052016b](./rostilj-08052016b.jpg) ![rostilj 08052016a](./rostilj-08052016a.jpg) ![rostilj 08052016](./rostilj-08052016.jpg)
 
 ![tablica nakon 6 kola 08052016m](./tablica-nakon-6-kola-08052016m.jpg)
-
-darko

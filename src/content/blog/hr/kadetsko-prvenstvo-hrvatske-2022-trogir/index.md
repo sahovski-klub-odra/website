@@ -11,6 +11,7 @@ wordpress:
   id: 7307
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-2022-trogir/"
   slug: "kadetsko-prvenstvo-hrvatske-2022-trogir"
+author: "Ivan M"
 ---
 ![](./kadetsko2022.jpg)Pojedinačna kadetska prvenstva u šahu igrana su u Hotelu Medena u Segetu Donjem od 21. do 27. lipnja. Tempo igre bio je 90+30, a učesnici su morali osigurati ispravan šahovski sat, dok je organizator osigurao figure. Igralo se po skupinama, do 7, do 9, do 11, do 13 i do 15 godina starosti u kunkurenciji za djevojčice i otvorenoj konkurenciji. Nastupilo je šest članova ŠK Odra, Lucija Fiolić (17.), Ivana Fiolić (9.), Vjeka Vidra (20.), Iva Periša (24.) i Lucija Medoš (23.) u [konkurenciji djevojčica do 13 godina](http://chess-results.com/tnr644182.aspx?lan=13&art=1&rd=9&turdet=YES). Slavko Biondić (26.) je nastupio u [otvorenoj konkurenciji do 13 godina](http://chess-results.com/tnr644181.aspx?lan=13&art=1&rd=9&turdet=YES). Treba napomenuti da je do zadnjeg kola Ivana bila u borbi za medalju. Ekipa se zabavljala, i prema rječima višestrukih svjedoka “bila glasnija nego ikada :)”. Jedino što je nedostajalo je bilo šahovske ozbiljnosti jer je većina svoje partije završavala u sat vremena iako su na raspolaganju imali sat i pol! Ipak, i ove godine smatram da je prvenstvo uspješno odrađeno, nitko nije bio zadnji, Iva i Lucija Medoš su upisale svoj prvi nastup te čak i pobijedile koju partiju! Posao “stručnog stožera” su ove godine odradili Goran Fiolić i Ivan Cvetković. Nadamo se da će ovo ekipi biti poticaj za više rada na šahu i ozbiljniji pristup, svi imaju dovoljno vremena i interneta da odigraju jednu partiju dnevno, što bi već bilo dovoljno da se značajno podignu u igri do iduće godine.
 
@@ -75,5 +76,3 @@ M15
 1\. Ivor Colev ŠK Stridon 7,0  
 2\. Ivano Sundać ŠK Crikvenica 7,0  
 3\. Marin Grgantov ŠK Petar Sedlar – Pepe 7,0
-
-*IvanM*

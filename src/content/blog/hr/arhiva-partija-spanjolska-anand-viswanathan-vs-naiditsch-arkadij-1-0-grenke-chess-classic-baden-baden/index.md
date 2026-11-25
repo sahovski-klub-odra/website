@@ -12,6 +12,7 @@ wordpress:
   id: 644
   url: "http://sahovski-klub.com/arhiva-partija-spanjolska-anand-viswanathan-vs-naiditsch-arkadij-1-0-grenke-chess-classic-baden-baden/"
   slug: "arhiva-partija-spanjolska-anand-viswanathan-vs-naiditsch-arkadij-1-0-grenke-chess-classic-baden-baden"
+imageAlt: "Baden Baden 2013 Round 5 Vishy Anand Arkadij Naiditsch"
 ---
 ![Baden Baden 2013 Round 5 Vishy Anand Arkadij Naiditsch](./baden-baden-2013-round-5-vishy-anand-arkadij-naiditsch.jpg)
 

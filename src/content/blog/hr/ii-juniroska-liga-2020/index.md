@@ -12,6 +12,7 @@ wordpress:
   id: 6998
   url: "http://sahovski-klub.com/ii-juniroska-liga-2020/"
   slug: "ii-juniroska-liga-2020"
+author: "Ivan M"
 ---
 ![](./juniori-odra.jpg)  
 **O**vogodišnja [II. juniorska liga](https://chess-results.com/tnr514833.aspx?lan=13) odigrana je kroz četiri subote u 10. i 11. mjesecu. Jednom se igralo u Karlovcu i tri puta u Đurđevcu. Natjecalo se 16 ekipa, tempo igre bio je 90’+30″. Mečevi su igrani na četiri ploče. Partije su bile rejtingirane za međunarodni i nacionalni rejting.  
@@ -32,5 +33,3 @@ Sljedeći igrači su nastupali za ŠK Odra: Ivan Maravić(K), Ivan Vraneša, Bo�
 ##### 7\. ŠK Odra, Zagreb (RtgAvg:1544, TB1:9 / TB2:18,0)
 
 <table><tbody><tr><td><strong>Bo.</strong></td><td></td><td><strong>Ime</strong></td><td><strong>1</strong></td><td><strong>2</strong></td><td><strong>3</strong></td><td><strong>4</strong></td><td><strong>5</strong></td><td><strong>6</strong></td><td><strong>7</strong></td><td><strong>8</strong></td><td><strong>Bod.</strong></td><td><strong>Partije</strong></td></tr><tr><td>1</td><td>I</td><td>Maravić Ivan</td><td>1</td><td>0</td><td>1</td><td>1</td><td>½</td><td>1</td><td>1</td><td>½</td><td>6,0</td><td>8</td></tr><tr><td>2</td><td>III</td><td>Vraneša Ivan</td><td>1</td><td>1</td><td>½</td><td>½</td><td>1</td><td>0</td><td>+</td><td>0</td><td>5,0</td><td>8</td></tr><tr><td>3</td><td>III</td><td>Cvetković Božo</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>½</td><td>3,5</td><td>8</td></tr><tr><td>7</td><td>IV</td><td>Fiolić Luka</td><td></td><td></td><td></td><td></td><td>0</td><td>0</td><td></td><td></td><td>0,0</td><td>2</td></tr><tr><td>10</td><td></td><td>Pischiutta Nikola</td><td>1</td><td>0</td><td>1</td><td>0</td><td></td><td></td><td>½</td><td>1</td><td>3,5</td><td>6</td></tr></tbody></table>
-
-*IvanM*

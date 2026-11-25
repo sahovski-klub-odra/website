@@ -12,6 +12,8 @@ wordpress:
   id: 4560
   url: "http://sahovski-klub.com/sk-vladimir-ivetic-sk-odra-3525/"
   slug: "sk-vladimir-ivetic-sk-odra-3525"
+author: "Darko"
+imageAlt: "Zagreb 20032016"
 ---
 **Seniori, 2. kolo****![Zagreb 20032016](./zagreb-20032016.jpg)**
 
@@ -25,5 +27,3 @@ U nedjelju 13. ožujka odigrano je drugo kolo IV. A seniorske lige. ŠK Odra bio
 4\. Fiamengo, Andrija – Cvetković, Ivan 1/2  
 5\. Horvat, Tihomir – Maravić, Ivan 1:0  
 6\. Gverić, Tvrtko – Furčić, Tin 1:0
-
-darko

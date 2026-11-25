@@ -12,6 +12,8 @@ wordpress:
   id: 2720
   url: "http://sahovski-klub.com/ekipno-prvenstvo-os-novog-zagreba/"
   slug: "ekipno-prvenstvo-os-novog-zagreba"
+author: "Darko"
+imageAlt: "prv os novog zagreba 2013_1b"
 ---
 U petak 22. studenoga 2013. u OŠ Dugave odigrano je ekipno prvenstvo OŠ Novog Zagreba.Generalni sponzor bila je izdavačka kuća Školska knjiga. Ekipa OŠ Odre, sastavljena od članova Šahovskoga kluba, nastupila je prvi put i predstavljajući svoju školu i na ovom turniru! Inače, organizator ovog natjecanja veliki je šahovski entuzijast prof. Željko Brdal.
 
@@ -44,7 +46,5 @@ U nastavku nekoliko sličica s turnira, u privitku statistike nastupa.
 [SastaviEkipaSOsvojenimBodovima](/files/wp/2013/11/SastaviEkipaSOsvojenimBodovima.rtf)
 
 OBAVIJEST ZA RODITELJE: Ovo je bilo prvenstvo na nivou Novog Zagreba. Prvenstvo OŠ za Grad Zagreb održat će se u siječnju ili veljači i za to prvenstvo potrebne su iskaznice Hrvatskoga školskoga športskog saveza. Za dobivanje te iskaznice postupak je sljedeći. Treba ispuniti zahtjev na internetskim stranicama Saveza, nakon toga Savez šalje dokument koji trebaju potpisati roditelji i potvrditi škola. Ja mogu poslati zahtjev, ali su mi potrebni podaci označeni na slici ISKAZNICA u prilogu pa molim roditelje da mi ih dostave elektroničkom poštom.
-
-Darko
 
 ![ISKAZNICA](./iskaznica.jpg)

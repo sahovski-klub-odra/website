@@ -12,6 +12,7 @@ wordpress:
   id: 3978
   url: "http://sahovski-klub.com/turnir-u-roviscu/"
   slug: "turnir-u-roviscu"
+author: "Darko"
 ---
 **4\. MEMORIJAL MILENKA VUČKOVIĆA**
 
@@ -24,5 +25,3 @@ Rovišće i nije baš blizu, ali čuo sam samo pohvale za turnir, ne samo što s
 Za kadete je kotizacija 30 kn u pretprijavi, a za seniore 40 kn. Raspis turnira je u privitku.
 
 Raspis-4.-memorijala-Milenka-Vuckovica *(dokument nije dostupan ni na staroj stranici)*
-
-darko

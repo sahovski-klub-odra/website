@@ -12,6 +12,7 @@ wordpress:
   id: 8202
   url: "http://sahovski-klub.com/sk-donja-stubica-sk-odra-2535/"
   slug: "sk-donja-stubica-sk-odra-2535"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 5.kolo  
 ![](./donjastubica700.jpg)  
@@ -40,6 +41,3 @@ Bxd3 29. Qxd3 Kb8 30. a5 Ba7 31. Rb1 c5 32. Ba3 Rg7 33. Bxc5 Bxc5 34. dxc5 Ka7
 35. c6 Qf4 36. Qd6 Qe3+ 37. Kh1 Rxf3 38. c7 Rf8 39. Qb6+ Qxb6 40. axb6+ Ka8 41.
 e6 Rc8 42. Re1 Re7 43. Kg1 a5 44. Re5 Rcxc7 45. bxc7 1-0
 ```
-
-  
-*IvanM*

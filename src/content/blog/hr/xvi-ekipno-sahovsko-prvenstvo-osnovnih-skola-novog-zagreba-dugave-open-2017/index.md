@@ -11,6 +11,7 @@ wordpress:
   id: 5581
   url: "http://sahovski-klub.com/xvi-ekipno-sahovsko-prvenstvo-osnovnih-skola-novog-zagreba-dugave-open-2017/"
   slug: "xvi-ekipno-sahovsko-prvenstvo-osnovnih-skola-novog-zagreba-dugave-open-2017"
+author: "Darko"
 ---
 ![](./dugave-open-2017.jpg)
 
@@ -45,5 +46,3 @@ POREDAK DJEVOJČICE:
 2\. Petra Malbaša, OŠ Gustava Krkleca  
 3\. Franka Kolovrat, OŠ Odra  
 …
-
-darko

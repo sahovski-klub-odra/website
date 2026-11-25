@@ -11,6 +11,8 @@ wordpress:
   id: 3302
   url: "http://sahovski-klub.com/zavrseno-je-12-pojedinacno-prvenstvo-hrvatske-za-djecake-i-djevojcice-do-8-godina/"
   slug: "zavrseno-je-12-pojedinacno-prvenstvo-hrvatske-za-djecake-i-djevojcice-do-8-godina"
+author: "Trenić D."
+imageAlt: "ekipa prv hrv do 8 2014 a"
 ---
 ## ![ekipa prv hrv do 8 2014 a](./ekipa-prv-hrv-do-8-2014-a-e1416694571294.jpg)
 
@@ -106,5 +108,3 @@ Također, slike s ovogodišnjega ekipnog  natjecanja za osnovne škole mogu se 
 | 21 |  | Barić Nola | 14w0 | 20b1 | 18w0 | 8b0 | 22w1 | 16b0 | 17w0 | 13b0 | 19w½ | 2.5 |
 | 22 |  | Zanki Ira | \-1 | 14b0 | 10w0 | 9w0 | 21b0 | 17w0 | 20w0 | 19b0 | 16b0 | 1.0 |
 | 23 |  | Denić Magdalena | 18b0 | 9w0 | 12b0 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 |
-
-Trenić D.

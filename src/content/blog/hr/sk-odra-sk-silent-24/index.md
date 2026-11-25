@@ -11,6 +11,8 @@ wordpress:
   id: 3845
   url: "http://sahovski-klub.com/sk-odra-sk-silent-24/"
   slug: "sk-odra-sk-silent-24"
+author: "Darko"
+imageAlt: "Gornja Lomnica, svibanj 2015"
 ---
 **Seniori, 6. kolo**
 
@@ -34,5 +36,3 @@ Liga se nastavlja 13. rujna gostovanjem u Jastrebarskom, s ekipom koja je izravn
 Djevojke su sada u naprednijoj skupini i pravo je zadovoljstvo vidjeti da prostor postaje premalen za sve mlade šahiste i šahistice. Zato se u početničkoj skupini oslobodilo više mjesta i pozivamo sve zainteresirane da slobodno navrate i pridruže se. Šahovska je škola besplatna i ponajprije namijenjena sadašnjim i budućim učenicima OŠ Odra, ali su i svi ostali dobrodošli. Početnički tečaj održava se svakog petka od 18.30 do 19.30 prema rasporedu na ovim stranicama.
 
 ![starija grupa 15052015](./starija-grupa-15052015.jpg "Kadeti, starija skupina, 15. svibnja 2015.")
-
-darko

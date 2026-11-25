@@ -11,6 +11,7 @@ wordpress:
   id: 8237
   url: "http://sahovski-klub.com/sk-odra-ii-sk-duga-resa-0-55-5/"
   slug: "sk-odra-ii-sk-duga-resa-0-55-5"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 6.kolo
 
@@ -45,5 +46,3 @@ Protivnicima iz ŠK Duga Resa čestitamo na zasluženoj pobjedi. Pokazali su sna
 
 1/2-1/2
 ```
-
-IvanV

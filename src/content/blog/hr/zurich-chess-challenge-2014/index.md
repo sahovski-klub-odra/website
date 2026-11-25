@@ -12,6 +12,7 @@ wordpress:
   id: 2819
   url: "http://sahovski-klub.com/zurich-chess-challenge-2014/"
   slug: "zurich-chess-challenge-2014"
+imageAlt: "Zurich Chess Challenge 2014"
 ---
 ![Zurich Chess Challenge 2014](./zurich-cc-2014.jpg)
 

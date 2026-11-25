@@ -11,6 +11,7 @@ wordpress:
   id: 5196
   url: "http://sahovski-klub.com/prvenstvo-osnovnih-skola-grada-zagreba-2017-finale/"
   slug: "prvenstvo-osnovnih-skola-grada-zagreba-2017-finale"
+author: "Darko"
 ---
 ![](./finale-prvenstav-os-zagreba-2017.jpg)  
 Danas je odigrano finale ekipnog prvenstva OŠ Grada Zagreba u šahu, a naši dečki iz OŠ Odra okitili su se broncom! Tim uspjehom dostigli su djevojke OŠ Odra, koje su broncu osvojile prošle godine. Iskreno se nadam da će dogodine obje naše ekipe igrati u finalu i poboljšati rezultat. 🙂  Zasluženo prvo mjesto i plasman na prvenstvo Hrvatske osvojila je ekipa OŠ Špansko, koja je i u kvalifikacijama nanijela jedini poraz našoj ekipi. Drugo mjesto osvojili su prošlogodišnji prvaci, ekipa OŠ Tituša Brezovačkoga.  
@@ -22,5 +23,3 @@ Dečki su nastupili u ovom sastavu: Ivan Maravić, Ivan Vraneša, Ivan Kljujev, 
 ![](./pehar.jpg)      ![](./finale-prvenstav-os-zagreba-2017-proglasenje.jpg)  
 
 [rezultati](http://chess-results.com/tnr264474.aspx?lan=13&art=0&turdet=YES&flag=30&wi=984)
-
-darko

@@ -12,6 +12,8 @@ wordpress:
   id: 3025
   url: "http://sahovski-klub.com/prvenstvo-hrvatske-za-kadete-i-kadetkinje-2014/"
   slug: "prvenstvo-hrvatske-za-kadete-i-kadetkinje-2014"
+author: "Darko"
+imageAlt: "POGLED NA KASTELE"
 ---
 ![POGLED NA KASTELE](./pogled-na-kastele.jpg)
 
@@ -21,8 +23,6 @@ Ovako, sretna okolnost je  da u blizini natjecanja naš podpredsjednik ima ap
 Svi zainteresirani, osim Vraneše i Ivana koji su se već javili, molim da se što prije jave!
 
 Naravno, bilo bi dobro da kao završnu probu svi zainteresirani odigraju i [kadetsko prv. u Varaždinu](/files/wp/2014/04/RASPIS-OPEN-VARAZDIN-2014.pdf "raspis Varazdin"). Jedan tata je već izrazio spremnost da vozi pa bi bilo dobro u toku tjedna da se prvo djeca, a onda i roditelji dogovore oko toga.
-
-Darko
 
 [  
 ](/files/wp/2014/05/Kadet-prv-Hrv-2014-raspis.pdf)![CIOVO](./ciovo.jpg)

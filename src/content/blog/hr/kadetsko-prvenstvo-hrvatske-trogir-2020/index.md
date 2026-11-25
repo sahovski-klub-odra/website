@@ -12,6 +12,8 @@ wordpress:
   id: 6954
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-trogir-2020/"
   slug: "kadetsko-prvenstvo-hrvatske-trogir-2020"
+imageAlt: "Botica srebrna!"
+imageCaption: "Botica srebrna!"
 ---
 ![Botica srebrna!](./botica-srebro-2020.jpg "Botica srebrna!")
 

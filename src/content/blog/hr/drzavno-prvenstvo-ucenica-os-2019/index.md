@@ -12,6 +12,7 @@ wordpress:
   id: 6417
   url: "http://sahovski-klub.com/drzavno-prvenstvo-ucenica-os-2019/"
   slug: "drzavno-prvenstvo-ucenica-os-2019"
+author: "Darko"
 ---
 ![](./dpuos-2019-os-odra-s.jpg)
 
@@ -19,5 +20,4 @@ U Vinkovcima, u hotelu Slavija, od 12. do 14. ožujka odigrana je završnica Eki
 Iako su djelovale samouvjereno i kao kulerice, tek nakon što su uspješno prošle četvrtfinalni meč, osjetilo se veliko olakšanje u cijeloj ekipi. 🙂  
 Djevojke, čestitamo vam!  
 ![](./prvenstvo.jpg) ![](./prvenstvo2.jpg) ![](./zadnje-upute.jpg) ![](./odra-vs-zupanja-cf.jpg)  
-![](./vinkovci.jpg) ![](./proglasenje.jpg) ![](./medalja.jpg) ![](./ekipa-s-trenerom.jpg)  
-darko
+![](./vinkovci.jpg) ![](./proglasenje.jpg) ![](./medalja.jpg) ![](./ekipa-s-trenerom.jpg)

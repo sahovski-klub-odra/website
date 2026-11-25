@@ -11,6 +11,7 @@ wordpress:
   id: 7058
   url: "http://sahovski-klub.com/plazma-sim-zagreb-2021/"
   slug: "plazma-sim-zagreb-2021"
+author: "Ivan M"
 ---
 ![](./ivan-slavko-i-lukawebb.jpg)  
 **N**akon dugo vremena bez šaha, odigrano je natjecanje “Sportske igre mladih” na sunčanom Jarunu. Lijepo vrijeme i atmosfera su obilježili natjecanje. Okupilo se ukupno 29 igrača i igračica. Igralo se u tri skupine: [dječaci do 15 godina](https://chess-results.com/tnr562333.aspx?lan=13&art=1), [djevojčice do 15 godina](https://chess-results.com/tnr562339.aspx?lan=13&art=4) i [dječaci do 11 godina](https://chess-results.com/tnr562323.aspx?lan=13&art=1). Zbog nedostatka prijavljenih djevojčica do 11, jedina natjecateljica koja je trebala biti u toj konkurenciji je prebačena u skupinu dječaka do 11. A sada idemo redom na naše članove, nastupilo ih je 9, od toga čak tri debitanta!  
@@ -36,5 +37,3 @@ wordpress:
 ## **Konačni poredak djevojčice do 15**
 
 <table><tbody><tr><td><strong>Mjesto</strong></td><td><strong>Ime i prezime</strong></td><td><strong>Bodovi</strong></td><td><strong>TB1</strong></td><td><strong>TB2</strong></td><td><strong>TB3</strong></td></tr><tr><td>1</td><td>Luna Vukoja</td><td>5,0</td><td>0,0</td><td>2,0</td><td>10,0</td></tr><tr><td>2</td><td>Lucija Botica</td><td>3,0</td><td>1,0</td><td>1,0</td><td>5,0</td></tr><tr><td>3</td><td>Petra Mardešić</td><td>3,0</td><td>0,0</td><td>0,0</td><td>4,0</td></tr><tr><td><strong>4</strong></td><td><strong>Lucija Fiolić</strong></td><td><strong>2,0</strong></td><td><strong>1,0</strong></td><td><strong>0,0</strong></td><td><strong>2,0</strong></td></tr><tr><td><strong>5</strong></td><td><strong>Ivana Fiolić</strong></td><td><strong>2,0</strong></td><td><strong>0,0</strong></td><td><strong>1,0</strong></td><td><strong>3,0</strong></td></tr><tr><td><strong>6</strong></td><td><strong>Vjeka Vidra</strong></td><td><strong>0,0</strong></td><td><strong>0,0</strong></td><td><strong>0,0</strong></td><td><strong>0,0</strong></td></tr></tbody></table>
-
-*IvanM*

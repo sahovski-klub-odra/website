@@ -12,6 +12,7 @@ wordpress:
   id: 822
   url: "http://sahovski-klub.com/arhiva-parija-kraljev-gambit-soren-jensen-1909-frode-urkedal-im-2473-reykjavik-open-2013-19-2-2013/"
   slug: "arhiva-parija-kraljev-gambit-soren-jensen-1909-frode-urkedal-im-2473-reykjavik-open-2013-19-2-2013"
+imageAlt: "Muzio"
 ---
 ![Muzio](./muzio.jpg)
 

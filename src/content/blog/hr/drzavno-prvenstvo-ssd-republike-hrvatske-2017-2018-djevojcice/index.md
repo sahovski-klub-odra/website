@@ -12,6 +12,7 @@ wordpress:
   id: 5929
   url: "http://sahovski-klub.com/drzavno-prvenstvo-ssd-republike-hrvatske-2017-2018-djevojcice/"
   slug: "drzavno-prvenstvo-ssd-republike-hrvatske-2017-2018-djevojcice"
+author: "Darko"
 ---
 ![](./porec-22042018.jpg)
 
@@ -26,5 +27,3 @@ Ovo im je velika škola i, uspiju li i nagodinu osvojiti Prvenstvo Zagreba, misl
 Poredak sa partijama
 
 <table><tbody><tr><td>Mj.</td><td>Momčad</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>&nbsp;TB1</td><td>&nbsp;TB2</td><td></td></tr><tr><td><strong>1.</strong></td><td><span>ŠSD VUČKO, VUKOVINA</span></td><td>&nbsp;*</td><td>3</td><td>3½</td><td>2½</td><td>4</td><td>4</td><td>10</td><td>17,0</td><td></td></tr><tr><td><strong>2.</strong></td><td>ŠSD TOMISLAV, NAŠICE</td><td>1</td><td>&nbsp;*</td><td>3½</td><td>3</td><td>4</td><td>3</td><td>8</td><td>14,5</td><td></td></tr><tr><td><strong>3.</strong></td><td>ŠSD MARUŠEVEC, MARUŠEVEC</td><td>½</td><td>½</td><td>&nbsp;*</td><td>4</td><td>2</td><td>2</td><td>4</td><td>9,0</td><td></td></tr><tr><td>4</td><td><strong>ŠSD ODRA, ZAGREB</strong></td><td>1½</td><td>1</td><td>0</td><td>&nbsp;*</td><td>2½</td><td>2</td><td>3</td><td>7,0</td><td></td></tr><tr><td>5</td><td>ŠSD VELI VRH, PULA</td><td>0</td><td>0</td><td>2</td><td>1½</td><td>&nbsp;*</td><td>2½</td><td>3</td><td>6,0</td><td></td></tr><tr><td>6</td><td>ŠSD SOLINE, JELSA</td><td>0</td><td>1</td><td>2</td><td>2</td><td>1½</td><td>&nbsp;*</td><td>2</td><td>6,5</td><td></td></tr></tbody></table>
-
-darko

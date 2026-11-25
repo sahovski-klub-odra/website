@@ -11,6 +11,7 @@ wordpress:
   id: 7668
   url: "http://sahovski-klub.com/sesvete-2023-vi-otvoreni-kadetski-i-juniorski-sahovski-turnir/"
   slug: "sesvete-2023-vi-otvoreni-kadetski-i-juniorski-sahovski-turnir"
+author: "Darko"
 ---
 ![](./sesvete-10122023.jpg)
 
@@ -19,5 +20,3 @@ Isti vikend kada su kadeti igrali turnir u Sesvetama, seniorska ekipa je igrala 
 Prosinac je pun šahovskih zbivanja pa je tako od četvrtka 14.12. do subote 16.12 održano i [Europsko prvenstvo u rapidu](https://chess-results.com/tnr835050.aspx?lan=13&art=4&fedb=CRO&flag=30) i [brzopoteznom šahu](https://chess-results.com/tnr835051.aspx?lan=13&art=4&fedb=CRO&turdet=YES&flag=30) u Zagrebu, na ZG velesajmu. Nekoliko naših članova (sadašnjih i budućih 🙂 ) nastupilo je na ova dva turnira, a velik dio partija prenosio se uživo na [chess.com portalu](https://chess24.com/en/watch/live-tournaments/european-rapid-championship-2023/1/1/11).
 
 ![](./sesvete-10122023-poredak.jpg)  ![](./sv-katarina-kadetski-turnir-03122023.jpg)
-
-darko

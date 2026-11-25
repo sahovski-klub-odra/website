@@ -12,6 +12,7 @@ wordpress:
   id: 8689
   url: "http://sahovski-klub.com/sk-sveta-nedelja-ii-sk-odra-33/"
   slug: "sk-sveta-nedelja-ii-sk-odra-33"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 4.kolo**  
 ![](./zagreb-u-proljece700.jpg)
@@ -33,5 +34,3 @@ Prošlu nedjelju smo [remizirali](https://s1.chess-results.com/tnr1352607.aspx?l
 [BlackElo "2001"]
 1. e4 c5 2. Nc3 d6 3. g3 Nf6 4. Bg2 e6 5. d3 Be7 6. f4 Nc6 7. Nf3 a6 8. O-O O-O 9. h3 b5 10. Be3 Bb7 11. Ne2 e5 12. g4 d5 13. fxe5 Nd7 14. e6 fxe6 15. Nf4 dxe4 16. Nxe6 Qc8 17. dxe4 Rf7 18. Neg5 Bxg5 19. Nxg5 Rxf1+ 20. Qxf1 Nce5 21. Qf5 g6 22. Qe6+ Kh8 23. Qe7 Qg8 24. Bxc5 Re8 25. Qd6 Qc4 26. Bd4 Kg8 27. Rf1 h6 28. Bxe5 Nxe5 29. b3 Qxc2 30. Ne6 Qc8 31. Rf6 Qb8 32. Nc7 Nf7 33. Rxg6+ Kh7 34. Qf6 1-0
 ```
-
-*IvanM*

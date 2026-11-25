@@ -12,6 +12,8 @@ wordpress:
   id: 1925
   url: "http://sahovski-klub.com/sk-odra-sk-stjepan-bosak-35-25/"
   slug: "sk-odra-sk-stjepan-bosak-35-25"
+author: "V. D."
+imageAlt: "odra bosak 2013"
 ---
 ## 4\. kolo, seniori
 
@@ -34,5 +36,3 @@ REZULTATI:
 5\. Vidaković Darko – Matana Zoran         1:0
 
 6\. Novak Vjekoslav – Vrhovec Goran       1:0
-
-v. d.

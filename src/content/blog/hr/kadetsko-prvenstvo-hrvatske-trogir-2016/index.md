@@ -12,6 +12,8 @@ wordpress:
   id: 4762
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-trogir-2016/"
   slug: "kadetsko-prvenstvo-hrvatske-trogir-2016"
+author: "Darko"
+imageAlt: "kadetsko prvenstvo Hrvatske 2016 Trogir"
 ---
 ![kadetsko prvenstvo Hrvatske 2016 Trogir](./kadetsko-prvenstvo-hrvatske-2016-trogir.jpg)  
 Ove godine pojedinačno kadetsko prvenstvo Hrvatske u šahu igralo se od 20. do 26. lipnja u Trogiru, u hotelu Medena. Turnir je podijeljen u skupine do 9, 11, 13 i 15 godina, posebno za dječake, a posebno za djevojčice. Prvoplasirani i drugoplasirani igrači iz svake skupine stekli su pravo nastupa na svjetskome odnosno europskom prvenstvu. Natjecanje je bilo tehnički unaprijeđeno pa su se partije u skupinama do 11 i 13 godina (prvih 10 stolova) mogle pratiti i uživo, tako da se roditelji i treneri mogu živcirati i od kuće. 🙂  
@@ -62,5 +64,3 @@ U nastavku su neke partije s turnira, u pgn formatu, te rezultati za skupine do
 [Trogir 2016. – partije – do 9 i 11 godina](./trogir-2016-partije-do-9-i-11-godina.pgn)
 
 [Trogir 2016. – partije – do 13godina](./trogir-2016-partije-do-13godina.pgn)
-
-darko

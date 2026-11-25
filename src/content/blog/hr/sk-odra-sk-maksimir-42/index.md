@@ -12,6 +12,8 @@ wordpress:
   id: 2886
   url: "http://sahovski-klub.com/sk-odra-sk-maksimir-42/"
   slug: "sk-odra-sk-maksimir-42"
+author: "V. D."
+imageAlt: "odra maksimir 2014"
 ---
 **Seniori, 1. kolo**
 
@@ -28,5 +30,3 @@ U donjem domu Ivan je igrao dobro, u središnjici je propustio napraviti usamlje
 6\. Maravić Ivan – Horina Tomislav      0:1
 
 Drugi krug školskih natjecanja nastavlja se u srijedu za djevojčice te u četvrtak za dječake, a igra se u Domu sportova. Liga za kadete i kadetkinje počinje sljedeće subote u Hotelu Antunović u 9:30. Tempo igre je 30 minuta +30 sekundi po potezu. Seniorska liga nastavlja se u sljedeću nedjelju na gostovanju u Dugom Selu.
-
-v.d.

@@ -8,7 +8,7 @@ import Icon from './Icon.astro';
 import { training } from '../lib/data';
 import type { Lang } from '../i18n/ui';
 interface Props { lang: Lang; class?: string; dark?: boolean }
-const { lang, class: cls, dark = false } = Astro.props;
+const { class: cls, dark = false } = Astro.props;
 const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Zagreb' }).format(new Date());
 // keep notices that have not ended yet; ones that start later are hidden until their day
 const items = training.announcements.filter((a) => !a.until || a.until >= today);
@@ -25,7 +25,7 @@ const active = (a: (typeof items)[number]) => (!a.from || a.from <= today) && (!
         hidden={!active(a)}
       >
         <span class:list={['mt-0.5 flex-none', a.important ? (dark ? 'text-red-300' : 'text-red-700') : dark ? 'text-gold' : 'text-gold-deep']}><Icon name="info" size={18} /></span>
-        <span>{lang === 'en' ? (a.textEn ?? a.text) : a.text}</span>
+        <span>{a.text}</span>
       </p>
     ))}
   </div>

@@ -12,6 +12,7 @@ wordpress:
   id: 1787
   url: "http://sahovski-klub.com/arhiva-partija-spanjolska-partija-caruana-ivanchuk-1-0-ruska-liga-2013-5-kolo-11-4-2013/"
   slug: "arhiva-partija-spanjolska-partija-caruana-ivanchuk-1-0-ruska-liga-2013-5-kolo-11-4-2013"
+imageAlt: "Ruska liga 2013"
 ---
 ![Ruska liga 2013](./logo.png)
 

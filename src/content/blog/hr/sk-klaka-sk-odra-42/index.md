@@ -12,6 +12,8 @@ wordpress:
   id: 4191
   url: "http://sahovski-klub.com/sk-klaka-sk-odra-42/"
   slug: "sk-klaka-sk-odra-42"
+author: "V. D."
+imageAlt: "Dubrava Zgreb 25102015"
 ---
 **Seniori, 9. kolo![Dubrava Zgreb 25102015](./dubrava-zgreb-25102015.jpg)**
 
@@ -28,5 +30,3 @@ Promijenilo se vrijeme, tako da smo prošlu noć vratili sat za jedan unatrag. N
 
 ![SK KLAKA vs SK ODRA 25102015a](./sk-klaka-vs-sk-odra-25102015a.jpg)   ![SK KLAKA vs SK ODRA 25102015b](./sk-klaka-vs-sk-odra-25102015b.jpg)[  
 ](./sk-klaka-vs-sk-odra-25102015b.jpg)Zahvaljujemo sucu meča, gospodinu Josipu Banduru, na fotografijama.
-
-v.d.

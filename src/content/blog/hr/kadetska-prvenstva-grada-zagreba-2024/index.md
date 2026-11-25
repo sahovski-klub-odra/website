@@ -12,6 +12,7 @@ wordpress:
   id: 7710
   url: "http://sahovski-klub.com/kadetska-prvenstva-grada-zagreba-2024/"
   slug: "kadetska-prvenstva-grada-zagreba-2024"
+author: "Ivan V"
 ---
 ![](./prvenstvo-zagreba-naslovna.jpg)
 
@@ -21,5 +22,3 @@ Luka, Emanuel, Domagoj, Bartol, Vili, Slavko, Noa, Petra, Ana i Lucija Fiolić n
 
 [  
 ](./do15.png)![](./do15.png)
-
-IvanV

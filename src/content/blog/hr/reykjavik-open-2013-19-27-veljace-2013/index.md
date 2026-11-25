@@ -12,6 +12,7 @@ wordpress:
   id: 795
   url: "http://sahovski-klub.com/reykjavik-open-2013-19-27-veljace-2013/"
   slug: "reykjavik-open-2013-19-27-veljace-2013"
+imageAlt: "Playing-Hall"
 ---
 ![Playing-Hall](./playing-hall.jpg)Sve je spremno za tradicionalni ***Reykjavik Open turnir*** koji će održavati od 19. do 27. veljače o.g.
 

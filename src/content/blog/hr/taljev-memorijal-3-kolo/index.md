@@ -12,6 +12,7 @@ wordpress:
   id: 2185
   url: "http://sahovski-klub.com/taljev-memorijal-3-kolo/"
   slug: "taljev-memorijal-3-kolo"
+imageAlt: "Caruana, Taljev memorijal 2013"
 ---
 ![Caruana, Taljev memorijal 2013](./img-4791.jpg)
 

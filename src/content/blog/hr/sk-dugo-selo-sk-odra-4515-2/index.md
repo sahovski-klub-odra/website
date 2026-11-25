@@ -12,6 +12,8 @@ wordpress:
   id: 4625
   url: "http://sahovski-klub.com/sk-dugo-selo-sk-odra-4515-2/"
   slug: "sk-dugo-selo-sk-odra-4515-2"
+author: "Darko"
+imageAlt: "Dugo Selo 17042016"
 ---
 **Seniori, 4. kolo  
 ![Dugo Selo 17042016](./dugo-selo-17042016.jpg)  
@@ -27,5 +29,3 @@ Forsirajući remi-poziciju, ostali smo i bez njegovih  pola boda. Zvjezdan je 
 4\. MK Korov, Zvonko 2045 – MK Bačurin, Juraj 2067             1 – 0  
 5\. MK Materni, Anton 1996 – MK Cvetković, Ivan 1969          1 – 0  
 6\. III Matić, Daniel 1834 – III Maravić, Ivan 1439                   ½ – ½
-
-darko

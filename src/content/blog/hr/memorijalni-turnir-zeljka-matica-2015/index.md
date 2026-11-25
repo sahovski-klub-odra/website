@@ -12,6 +12,8 @@ wordpress:
   id: 3889
   url: "http://sahovski-klub.com/memorijalni-turnir-zeljka-matica-2015/"
   slug: "memorijalni-turnir-zeljka-matica-2015"
+author: "Darko"
+imageAlt: "ekipa vrtića Cvrcak"
 ---
 I ove godine, u petak 29. svibnja, održan je već tradicionalni Memorijalni turnir Željka Matića u povodu dana OŠ Braće Radić iz Botinca. Učenici OŠ Odra, zahvaljujući susretljivosti profesora Froutha, i ove su godine dobili pozivnicu na turnir i maksimalno je iskoristili, osvojivši prva dva pojedinačna i ekipna mjesta. Učenike OŠ Odra, kojih je na ovom turniru bilo čak jedanaest, vodio je i nadzirao prof. Tomaško.  
 Nastupilo je nekoliko škola, a prvi put i ekipa vrtića “Cvrčak”, koja je ostavila iza sebe i nekoliko starijih ekipa! Najbolji rezultat iz vrtićke ekipe ostvario je Vibor,  osvojivši čak četiri boda!
@@ -26,5 +28,3 @@ Rezultati, pojedinačni i ekipni u privitku;
 
 [Memorijal Zeljka Matica 2015 poredak](/files/wp/2015/05/Memorijal-Zeljka-Matica-2015-poredak.txt)  
 [Ekipni poredak Memorijalni turnir Zeljka Matica 2015](/files/wp/2015/05/Ekipni-poredak-Memorijalni-turnir-Zeljka-Matica-2015.txt)
-
-darko

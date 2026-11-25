@@ -12,6 +12,7 @@ wordpress:
   id: 1511
   url: "http://sahovski-klub.com/turnir-kandidata-london-2013-uoci-desetog-kola/"
   slug: "turnir-kandidata-london-2013-uoci-desetog-kola"
+imageAlt: "Gelfan vs Aronian, London 2013"
 ---
 ![Gelfan vs Aronian, London 2013](./img-3303.jpg)
 

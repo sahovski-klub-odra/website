@@ -12,6 +12,7 @@ wordpress:
   id: 1259
   url: "http://sahovski-klub.com/domaca-zadaca/"
   slug: "domaca-zadaca"
+imageAlt: "ScreenShot001"
 ---
 Ovaj puta samo jedan zadatak, ali mrvicu teži 😉
 

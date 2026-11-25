@@ -11,6 +11,7 @@ wordpress:
   id: 8445
   url: "http://sahovski-klub.com/sk-spansko-ii-sk-odra-ii-35-25/"
   slug: "sk-spansko-ii-sk-odra-ii-35-25"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 11.kolo
 
@@ -69,5 +70,3 @@ O-O 9. e5 Ne8 10. Bf4 dxe5 11. dxe5 Be6 12. Qc2 Nd4 13. Nxd4 Qxd4 14. Bg3 Qc5
 Bxe6+ Kh8 22. Qg6 Qg5 23. Rf7 Rxf7 24. Qxf7 Nf6 25. Re1 Kh7 26. Bb3 h5 27. Bc2+
 Kh6 28. Bf4 1-0
 ```
-
-IvanV

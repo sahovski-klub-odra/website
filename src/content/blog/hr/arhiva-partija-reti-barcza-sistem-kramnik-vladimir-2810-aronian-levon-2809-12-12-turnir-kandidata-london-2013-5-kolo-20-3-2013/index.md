@@ -12,6 +12,7 @@ wordpress:
   id: 1894
   url: "http://sahovski-klub.com/arhiva-partija-reti-barcza-sistem-kramnik-vladimir-2810-aronian-levon-2809-12-12-turnir-kandidata-london-2013-5-kolo-20-3-2013/"
   slug: "arhiva-partija-reti-barcza-sistem-kramnik-vladimir-2810-aronian-levon-2809-12-12-turnir-kandidata-london-2013-5-kolo-20-3-2013"
+imageAlt: "reti teor"
 ---
 ```pgn
 [Event "Turnir kandidata, London 2013"]

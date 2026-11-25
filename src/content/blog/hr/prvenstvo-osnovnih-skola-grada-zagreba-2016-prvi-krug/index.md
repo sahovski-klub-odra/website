@@ -11,6 +11,8 @@ wordpress:
   id: 4422
   url: "http://sahovski-klub.com/prvenstvo-osnovnih-skola-grada-zagreba-2016-prvi-krug/"
   slug: "prvenstvo-osnovnih-skola-grada-zagreba-2016-prvi-krug"
+author: "Darko"
+imageAlt: "prvenstvo OS Zagreba 2016"
 ---
 ![prvenstvo OS Zagreba 2016](./prvenstvo-os-zagreba-2016.jpg)
 
@@ -19,5 +21,3 @@ Djevojke su odigrale prva dva meča i u oba pobijedile. S obzirom na to da se do
 ](http://chess-results.com/tnr205775.aspx?lan=13&art=0&turdet=YES&flag=30&wi=984)Prvenstvo se nastavlja za sedam dana na istome mjestu.
 
 ![decki prvenstvo OS Zagreba 2016](./decki-prvenstvo-os-zagreba-2016.jpg)  ![djevojke prvenstvo OS Zagreba 2016](./djevojke-prvenstvo-os-zagreba-2016.jpg)   ![POREDAK djevojke prvenstvo OS Zagreba 2016](./poredak-djevojke-prvenstvo-os-zagreba-2016.jpg)
-
-darko

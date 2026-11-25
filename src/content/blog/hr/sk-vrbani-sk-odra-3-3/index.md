@@ -12,6 +12,8 @@ wordpress:
   id: 2526
   url: "http://sahovski-klub.com/sk-vrbani-sk-odra-3-3/"
   slug: "sk-vrbani-sk-odra-3-3"
+author: "V. D."
+imageAlt: "vrbani odra 2"
 ---
 **6\. kolo, seniori**
 
@@ -36,5 +38,3 @@ REZULTATI:
 5. Vukalović Željko I – Bačurin Juraj MK                   1:0
 
 6. Babaja Mladen II  – Novak Vjekoslav II                 1:0
-
-v.d.

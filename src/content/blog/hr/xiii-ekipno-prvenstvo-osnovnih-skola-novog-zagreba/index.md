@@ -12,6 +12,7 @@ wordpress:
   id: 3495
   url: "http://sahovski-klub.com/xiii-ekipno-prvenstvo-osnovnih-skola-novog-zagreba/"
   slug: "xiii-ekipno-prvenstvo-osnovnih-skola-novog-zagreba"
+imageAlt: "prvenstvo OŠ N. Zagreba, 2014., Klara"
 ---
 ![prvenstvo OŠ N. Zagreba, 2014., Klara](./prv-os-n-zagreba-2014-klara.jpg)  
 Danas je odigrano XIII. ekipno prvenstvo osnovnih škola Novog Zagreba. Prvenstvo je odigrano u [OŠ Klara](http://os-sveta-klara.skole.hr/ "OŠ Klara"), pod pokroviteljstvom ravnateljice škole, gospođe Tajane Bedaković-Koren, dok je voditelj i glavni sudac bio prof. Vjekoslav Novak. Iako sam sklon uglavnom kritikama, ovaj put imam samo pohvale za organizaciju i izvedbu natjecanja. Sve je teklo bez zastoja, bez previše birokracije i strogoće, prostor je bio idealan, suci profesionalni (iako su volontirali! 🙂 ), za djecu i voditelje organizirana je i okrepa, kava, sok…

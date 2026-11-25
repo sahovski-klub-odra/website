@@ -11,6 +11,8 @@ wordpress:
   id: 3802
   url: "http://sahovski-klub.com/sk-odra-sk-spansko-33/"
   slug: "sk-odra-sk-spansko-33"
+author: "Darko"
+imageAlt: "OS Odra 10052015"
 ---
 **Seniori, 5. kolo  
 ![OS Odra 10052015](./os-odra-10052015.jpg)  
@@ -28,5 +30,3 @@ Sljedeće, završno kolo proljetnog dijela igra se iduće nedjelje u Odri, a pro
 4\. MK Cvetković, Ivan – II Petan, Dragutin           1:0  
 5\. III Maravić, Ivan – III Belicki, Antonijo               0:1  
 6\. IV Cvetković, Božo – I Vukman, Branko           0:1
-
-darko

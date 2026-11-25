@@ -12,6 +12,7 @@ wordpress:
   id: 3988
   url: "http://sahovski-klub.com/sinquefield-cup-2015-poceo-je-sa-5-odlucenih-partija/"
   slug: "sinquefield-cup-2015-poceo-je-sa-5-odlucenih-partija"
+imageAlt: "sinquefield-cup-2015"
 ---
 Treći *Sinquefield Cup* okupio je šahovsku elitu – **Magnus Carlsen** (Norway), **Levon Aronian** (Armenia), **Fabiano Caruana** (USA), **Hikaru Nakamura** (USA), **Veselin Topalov** (Bulgaria), **Maxime Vachier-Lagrave** (France), **Alexander Grischuk** (Russia), **Anish Giri** (Netherlands), **Viswanathan Anand** (India), **Wesley So** (USA), a počelo je da ne može zanimljivije – prvo kolo bez remija!
 

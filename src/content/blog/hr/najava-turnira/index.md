@@ -10,6 +10,7 @@ wordpress:
   id: 2999
   url: "http://sahovski-klub.com/najava-turnira/"
   slug: "najava-turnira"
+author: "Darko"
 ---
 Nedavno sam obećao objaviti najave turnira za kadete i kadetkinje. Prvi u nizu je [turnir u Buševcu](/files/wp/2014/04/Raspis-turnira-2014_BUSEVEC.pdf "raspis"), već ovaj vikend.  
 Na njemu bi mogle nastupiti naše kadetkinje i odigrati po prvi puta koju partiju sa tempom od pola sata.  
@@ -20,5 +21,3 @@ Za dečke je sljedeći [turnir 17. svibnja u Svetoj Nedelji](/files/wp/2014/04/K
 Iza toga je [otvoreno prvenstvo u Varaždinskim toplicama](/files/wp/2014/04/RASPIS-OPEN-VARAZDIN-2014.pdf "raspis Varaždinske Toplice"), iako je ono malo nezgodno jer počinje u petak pa bi možda trebalo pobjeći iz škole malo ranije, ali ako ima roditelja koji bi se kupali za vikend, bila bi dobra prilika i za kadete i za kadetkinje da stječu nova iskustva.
 
 Naravno, za svaki od tih turnira trebalo bi se i prijaviti na vrijeme, prema uputama u raspisu za svaki trunir.
-
-darko

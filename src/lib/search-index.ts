@@ -2,7 +2,7 @@ import type { Lang } from '../i18n/ui';
 import { withBase } from '../i18n/routes';
 import { describe, plainText, postLang, postsForListing, postUrl } from './blog';
 
-/** Compact static search index: one JSON file per language, loaded only on the search page. */
+/** Compact static search index, loaded only on the search page. */
 export async function buildSearchIndex(lang: Lang) {
   const posts = await postsForListing(lang);
   return posts.map((p) => ({

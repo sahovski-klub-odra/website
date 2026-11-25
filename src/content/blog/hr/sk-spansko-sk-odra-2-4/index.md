@@ -12,6 +12,7 @@ wordpress:
   id: 8702
   url: "http://sahovski-klub.com/sk-spansko-sk-odra-2-4/"
   slug: "sk-spansko-sk-odra-2-4"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 6.kolo**  
 ![](./spansko700.jpg)
@@ -33,5 +34,3 @@ Jesenski dio sezone otvorili smo tijesnom [pobjedom](https://s2.chess-results.co
 [BlackElo "1911"]
 1. d4 d5 2. Nf3 Nf6 3. g3 e6 4. Bg2 Nbd7 5. O-O b6 6. c4 Bb7 7. Nc3 dxc4 8. Qa4 a6 9. Qxc4 b5 10. Qd3 c5 11. Bf4 cxd4 12. Qxd4 Bc5 13. Qd3 Qb6 14. a4 b4 15. a5 Qd8 16. Na4 Be7 17. Rac1 Qxa5 18. b3 O-O 19. Bc7 Qd5 20. Qb1 Qe4 21. Qb2 Qg4 22. Ne5 Nxe5 23. Bxb7 Ra7 24. Bg2 Ned7 25. Rc4 Qh5 26. Bf3 Qb5 27. Bc6 Qf5 28. Bxd7 Nxd7 29. Qd4 Nc5 30. Nxc5 Rxc7 31. Nxe6 Qxe6 32. Rxc7 Rd8 33. Qc4 Qxc4 34. Rxc4 g6 35. Ra1 Rd2 36. Re4 Bc5 37. Rxa6 Rb2 38. Rc6 Bf8 39. Rc8 Kg7 40. Re3 h6 41. Kf1 Rb1+ 42. Kg2 Rb2 43. Kf3 Ra2 44. Rxf8 Kxf8 45. Re4 { Crni predaje. } 1-0
 ```
-
-*IvanM*

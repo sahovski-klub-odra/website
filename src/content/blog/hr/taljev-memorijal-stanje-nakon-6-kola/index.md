@@ -12,6 +12,7 @@ wordpress:
   id: 2199
   url: "http://sahovski-klub.com/taljev-memorijal-stanje-nakon-6-kola/"
   slug: "taljev-memorijal-stanje-nakon-6-kola"
+imageAlt: "Nakamura"
 ---
 **![Nakamura](./nakamura.jpg)Nakamura**, vodeći nakon šestog kola, pokazuje da je u odličnoj formi. Prvo je osvojio brzopotezni turnir sa 7/9 bodova, a do sada je odlučio 4 partije u svoju korist, zaključno s današnjom protiv svjetskog prvaka, uz samo po jedan remi i poraz. U sljedećim kolima još igra protiv **Gelfanda** (2.) i **Carlsena** (3.) koji su mu, kako sada stvari stoje, direktni konkurenti za prvo mjesto, a u zadnjem kolu protiv zadnjeplasiranog **Morozovicha**.
 

@@ -12,6 +12,7 @@ wordpress:
   id: 4006
   url: "http://sahovski-klub.com/fide-word-chess-cup-2015/"
   slug: "fide-word-chess-cup-2015"
+imageAlt: "Baku"
 ---
 ![Baku](./baku.jpg)  
 Svega nas nekoliko sati dijeli od početka Svjetskog šahovskog kupa 2015. koji se ove godine održava u [Bakuu](https://hr.wikipedia.org/wiki/Baku), glavnom gradu Azerbajdžana.

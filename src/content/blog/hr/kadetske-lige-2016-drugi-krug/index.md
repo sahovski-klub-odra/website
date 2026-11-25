@@ -12,6 +12,8 @@ wordpress:
   id: 4567
   url: "http://sahovski-klub.com/kadetske-lige-2016-drugi-krug/"
   slug: "kadetske-lige-2016-drugi-krug"
+author: "Darko"
+imageAlt: "liga kadetkinja 2016 drugi krug"
 ---
 ![liga kadetkinja 2016 drugi krug](./liga-kadetkinja-2016-drugi-krug.jpg)  
 U subotu su nastavljene kadetske lige 2016. Dečki su igrali u Krapini, a djevojke u Sesvetskom Kraljevcu. Bilo je problema u sastavljanju druge kadetske ekipe jer se Josip nažalost razbolio, a ima vrlo malo prilika igrati. Razbolio se i Antonio, koji se još pomalo plaši nastupa. Nasreću, uskočila su braća Pisačići, Juraj i Petar. Juraj je u ovom krugu zabilježio dvije pobjede, a i Petar je na trećoj ploči uspio iščupati pola boda, tako da se može reći da su njih dvojica i prebacila normu! Druga ekipa u ovom je krugu igrala samo dva kola jer su jedno bili slobodni, ali su ubilježili i prvu pobjedu, a u šestom kolu umalo i drugu! Ekipa je igrala u sljedećem sastavu: Luka, Filip, Petar i Juraj.
@@ -24,5 +26,3 @@ Sljedeći krug kadetskih liga igra se 9. travnja. Dečki igraju u Gornjemu Mihal
 
 ![Krapina - prva ekipa](./krapina-prva-ekipa.jpg) ![Krapina - mladja ekipa](./krapina-mladja-ekipa.jpg) ![Krapina drugi krug 2016](./krapina-drugi-krug-2016.jpg) ![Vranesa](./vranesa.jpg)  
 ![sk tomislav goran vs sk odra](./sk-tomislav-goran-vs-sk-odra.jpg) ![sk ericson nikola tesla vs sk odra](./sk-ericson-nikola-tesla-vs-sk-odra.jpg) ![liga kadetkinja 2016 odmor](./liga-kadetkinja-2016-odmor.jpg) ![odra vs sisak](./odra-vs-sisak.jpg)
-
-darko

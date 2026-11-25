@@ -11,6 +11,8 @@ wordpress:
   id: 4646
   url: "http://sahovski-klub.com/sk-odra-sk-caissa-2535/"
   slug: "sk-odra-sk-caissa-2535"
+author: "Darko"
+imageAlt: "Odra 24042016"
 ---
 **Seniori, 5. kolo  
 **![Odra 24042016](./odra-24042016.jpg)  
@@ -27,5 +29,4 @@ Dan poslije Jurjeva, u polukišno prohladno jutro u goste nam je došao ŠK Cai
 
 Danas je stigao i prijedlog **promjene sustava kadetskih liga**. Problem liga za mlade jest da se ekipe godinama moraju mučiti da uđu u višu ligu, pa opet u višu itd. Kada napokon uspiju doći u prvu ligu, obično nastaje smjena generacija pa klubovi u prvoj ligi nastupaju s ekipom koja objektivno nema što tamo tražiti. Prijedlog je da se švicarskim sustavom igraju tri druge lige, umjesto četvrte, treće i druge te bi tako bilo manje nelogičnosti u raspodjeli ekipa po ligama u odnosu na njihovu snagu. Prijedlog je u prilogu. Tako ćemo vjerojatno imati kadetkinje u prvoj, kadete u drugoj ligi,  a seniore tamo gdje i pripadaju, u posljednjoj, petoj ligi. 🙂
 
-darko  
 [Prijedlog kadetskih liga za 2017.pdf](/files/wp/2016/04/Prijedlog-kadetskih-liga.pdf)

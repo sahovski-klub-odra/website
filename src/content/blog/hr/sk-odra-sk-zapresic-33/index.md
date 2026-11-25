@@ -12,6 +12,7 @@ wordpress:
   id: 2689
   url: "http://sahovski-klub.com/sk-odra-sk-zapresic-33/"
   slug: "sk-odra-sk-zapresic-33"
+imageAlt: "odra vs zapresic 2013"
 ---
 **Seniori, 11. kolo**
 

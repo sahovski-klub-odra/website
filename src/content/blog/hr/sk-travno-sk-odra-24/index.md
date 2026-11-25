@@ -12,6 +12,7 @@ wordpress:
   id: 8052
   url: "http://sahovski-klub.com/sk-travno-sk-odra-24/"
   slug: "sk-travno-sk-odra-24"
+author: "Ivan M"
 ---
 **Seniori – I. ekipa, 2.kolo  
 ![](./travno700.jpg)  
@@ -34,6 +35,3 @@ Ove nedjelje smo odigrali dobar [meč](https://chess-results.com/tnr1127780.aspx
 [PlyCount "110"]
 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be2 e6 7. O-O Be7 8. a4 Nbd7 9. a5 Qc7 10. f4 b5 11. axb6 Nxb6 12. Qd3 Bb7 13. Bf3 d5 14. e5 Nfd7 15. Bg4 Qc4 16. Qd1 O-O 17. Kh1 Rfe8 18. Nce2 Bf8 19. Rf3 Qc7 20. Rh3 Nc5 21. b3 Ne4 22. Qe1 Qe7 23. Be3 Nd7 24. Ng1 f5 25. exf6 Qxf6 26. f5 e5 27. Ne6 d4 28. Bc1 Rxe6 29. Nf3 Ree8 30. Nh4 a5 31. Be2 Bb4 32. Bc4+ Kf8 33. Qe2 Nb6 34. Bd3 Nc5 35. Bb5 Ba6 36. Qh5 Bxb5 37. Bg5 Qxg5 38. Qxg5 Ne4 39. Ng6+ Kg8 40. Qh4 Nf6 41. g4 Bc6+ 42. Kg1 Be4 43. Rf1 Bc5 44. Re1 d3+ 45. Kf1 hxg6 46. Rxe4 Nxe4 47. Qh7+ Kf8 48. Rxd3 Ng5 49. Qxg6 e4 50. f6 gxf6 51. Qxf6+ Nf7 52. Rh3 Kg8 53. Qg6+ Kf8 54. Qf6 Kg8 55. Qg6+ Kf8 1/2-1/2
 ```
-
-  
-*IvanM*

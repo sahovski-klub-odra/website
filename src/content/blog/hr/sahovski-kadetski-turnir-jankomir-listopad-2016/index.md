@@ -11,6 +11,8 @@ wordpress:
   id: 4898
   url: "http://sahovski-klub.com/sahovski-kadetski-turnir-jankomir-listopad-2016/"
   slug: "sahovski-kadetski-turnir-jankomir-listopad-2016"
+author: "Darko"
+imageAlt: "kadetski turnir SK Podsused - rujan 2016"
 ---
 ![kadetski turnir SK Podsused - rujan 2016](./kadetski-turnir-sk-podsused-rujan-2016.jpg)
 
@@ -37,5 +39,3 @@ Kadetkinje
 
 Za prijevoz su se pobrinuli Vranešin i Katarinin tata te Hanina mama. Zahvaljujemo Darku Vraneši na fotografijama.  
 ![kadetski turnir SK Podsused - rujan 2016_10](./kadetski-turnir-sk-podsused-rujan-2016-10.jpg) ![kadetski turnir SK Podsused - rujan 2016_9](./kadetski-turnir-sk-podsused-rujan-2016-9.jpg) ![kadetski turnir SK Podsused - rujan 2016_8](./kadetski-turnir-sk-podsused-rujan-2016-8.jpg) ![kadetski turnir SK Podsused - rujan 2016_5](./kadetski-turnir-sk-podsused-rujan-2016-5.jpg)![kadetski turnir SK Podsused - rujan 2016_3](./kadetski-turnir-sk-podsused-rujan-2016-3.jpg) ![kadetski turnir SK Podsused - rujan 2016_2](./kadetski-turnir-sk-podsused-rujan-2016-2.jpg) ![kadetski turnir SK Podsused - rujan 2016_4](./kadetski-turnir-sk-podsused-rujan-2016-4.jpg) ![kadetski turnir SK Podsused - rujan 2016_1](./kadetski-turnir-sk-podsused-rujan-2016-1.jpg)
-
-darko

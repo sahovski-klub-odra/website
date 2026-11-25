@@ -11,6 +11,7 @@ wordpress:
   id: 7402
   url: "http://sahovski-klub.com/sk-odra-sk-velika-gorica-24/"
   slug: "sk-odra-sk-velika-gorica-24"
+author: "Darko"
 ---
 **III A. liga, 1. kolo  
 ![](./odra-vs-velika-gorica-05032023.jpg)**
@@ -19,5 +20,3 @@ wordpress:
 
 Jučer je započela [seniorska liga](http://chess-results.com/tnr730961.aspx?lan=13&art=3&rd=1), a ŠK Odra je bio domaćin protivnicima iz ŠK Velika Gorica. Gosti su po prikazanoj igri zasluženo odnijeli bodove. Na trećoj, četvrtoj i petoj ploči brzo su sklopljeni remiji već nakon otvaranja. Mladen se žalio na zubobolju, Vraneša na neispavanost, a Cvetko nije bio raspoložen za borbu. Na šestoj ploči Boris je zaglavio vlastitog lovca na daminoj strani, što je protivnik iskoristio te žrtvovao figuru i napadom na rokadu upisao pobjedu. Stjepko je na drugoj ploči došao u više nego izglednu poziciju,a tada je njegov protivnik našao jako lijepu taktiku i žrtvom dame osvojio cijeli bod. Najdulje je igrao Zvjezdan. U središnjici je upao u probleme, ostao bez pješaka, upao u cajtnot i tonuo u izgubljenu završnicu. Srećom po njega protivnik je propustio nekoliko prilika za završiti meč i partija je izmjenama završila remijem. Sljedeće nedjelje gosti smo kod ŠK Straža u Humu na Sutli.  
 Od dobrih vijesti je to da su se klinci ŠK Odra ipak malo aktivirali te je isti dan dosta njih (Slavko Biondić, Lucija Fiolić, Ivana Fiolić, Vjeka Vidra, Lucija Medoš, Petra Medoš, Emanuel Kovačević, Emanuel Čurić i Ana Predović) odigralo turnir “[Gospodar Turopolja 2023.](http://chess-results.com/tnr730094.aspx?lan=13&art=0)” u Okuju. Nadam se da će i nastaviti igrati turnire jer jedino vježbom i radom mogu i napredovati.
-
-darko

@@ -12,6 +12,8 @@ wordpress:
   id: 4154
   url: "http://sahovski-klub.com/prvenstvo-sk-odra-stariji-kadeti-2015/"
   slug: "prvenstvo-sk-odra-stariji-kadeti-2015"
+author: "Darko"
+imageAlt: "zajednicka veliki kadeti 17102015"
 ---
 ![zajednicka veliki kadeti 17102015](./zajednicka-veliki-kadeti-17102015.jpg)
 
@@ -37,8 +39,6 @@ Tablicu ćemo popuniti sljedeće subote, nakon završetka turnira.
 | 9. | Mahin, Anđela | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | \* | 0 | 1 | 9. |
 | 10. | Fiolić, Luka | 0 | 0 | 0 | 0 | 1\* | 0 | 1 | 1 | 1 | \* | 4 | 6. |
 
-darko
-
 ——  
 Dana 24. listopada 2015.
 
@@ -60,6 +60,3 @@ Nc6 9. Nxc6 Bxc6 10. Bh3 e6 11. O-O Be7 12. Qd4 O-O 13. Bg5 h6 14. Bxf6 gxf6
 15. Qg4+ Kh7 16. a4 bxa4 17. Nxa4 d5 18. b5 Bxb5 19. Nc3 Bc6 20. Rad1 Qb6+ 21.
 Rd4 e5 22. Qf5+ Kg8 23. Na4 exd4 (23... Qxd4! 24. Kh1 Qxa4 25. Qh5 Bd7) 24. Qg4+ Kh7 25. Nxb6 Rab8 26. Qh4 Rxb6 27. Bf5+ Kg8 28. Qxh6 Bb5 29. Qh7# 1-0
 ```
-
-  
-darko

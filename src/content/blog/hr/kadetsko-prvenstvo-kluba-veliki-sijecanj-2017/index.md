@@ -11,6 +11,7 @@ wordpress:
   id: 5119
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-kluba-veliki-sijecanj-2017/"
   slug: "kadetsko-prvenstvo-kluba-veliki-sijecanj-2017"
+author: "Darko"
 ---
 ![](./kadetsko-prvenstvo-kluba-2017-veliki.jpg)
 
@@ -26,5 +27,3 @@ Danas su veliki dečki, uz Luku Fiolića, odigrali kvalifikacijski turnir za mu�
 | 6 | Katarina | 0 | 0.5 | 0 | 0 | 0 | ![](./x-1.jpg) | 0 | 1 | **1.5** |  |
 | 7 | Kljujev | 0.5 | 1 | 1 | 0 | 0 | 1 | ![](./x-1.jpg) | 1 | **4.5** | 4. |
 | 8 | Luka F. | 0 | 0 | 0 | 0 | 0 | 0 | 0 | ![](./x-1.jpg) | **0** |  |
-
-darko

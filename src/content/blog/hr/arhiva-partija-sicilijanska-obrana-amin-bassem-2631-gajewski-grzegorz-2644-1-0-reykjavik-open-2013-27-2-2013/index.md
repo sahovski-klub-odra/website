@@ -12,6 +12,7 @@ wordpress:
   id: 1079
   url: "http://sahovski-klub.com/arhiva-partija-sicilijanska-obrana-amin-bassem-2631-gajewski-grzegorz-2644-1-0-reykjavik-open-2013-27-2-2013/"
   slug: "arhiva-partija-sicilijanska-obrana-amin-bassem-2631-gajewski-grzegorz-2644-1-0-reykjavik-open-2013-27-2-2013"
+imageAlt: "bassem"
 ---
 ![bassem](./bassem.jpg)
 

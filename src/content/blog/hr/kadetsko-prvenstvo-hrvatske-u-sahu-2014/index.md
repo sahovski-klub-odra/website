@@ -12,6 +12,8 @@ wordpress:
   id: 3066
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-u-sahu-2014/"
   slug: "kadetsko-prvenstvo-hrvatske-u-sahu-2014"
+author: "Darko"
+imageAlt: "ciovo 2014"
 ---
 Prijave na kadetsko prvenstvo Hrvatske poslane su za **Ivana**, **Vranešu**, **Brunu** i **Božu**.
 
@@ -25,7 +27,5 @@ U petak, 13. lipnja neće biti šahovske škole zbog spriječenosti trenera. Ša
 sa početkom školske godine u rujnu.
 
 Druženja za seniore i ostale zaljubljenike u šah nastavlja se svaki petak od 21:00.
-
-darko
 
 ![ciovo 2014](./ciovo-2014.jpg)![ciovo 2014a](./ciovo-2014a.jpg)

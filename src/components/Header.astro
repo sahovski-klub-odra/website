@@ -3,10 +3,10 @@ import Icon from './Icon.astro';
 import KnightMark from './KnightMark.astro';
 import { site } from '../lib/data';
 import { useTranslations, type Lang } from '../i18n/ui';
-import { routes, withBase, stripBase, type Alternates, type RouteKey } from '../i18n/routes';
+import { routes, withBase, stripBase, type RouteKey } from '../i18n/routes';
 
-interface Props { lang: Lang; alternates: Alternates; section?: string }
-const { lang, alternates, section } = Astro.props;
+interface Props { lang: Lang; section?: string }
+const { lang, section } = Astro.props;
 const t = useTranslations(lang);
 const path = stripBase(Astro.url.pathname);
 
@@ -24,8 +24,6 @@ const isActive = (key: RouteKey) => {
   if (key === 'home') return path === target || path === target.replace(/\/$/, '');
   return path.startsWith(target);
 };
-const other: Lang = lang === 'hr' ? 'en' : 'hr';
-const switchHref = withBase(alternates[other] ?? routes.home[other]);
 ---
 <header class="site-header sticky top-0 z-50 border-b border-white/5 bg-ink/95 text-white backdrop-blur supports-[backdrop-filter]:bg-ink/85" data-header>
   <div class="container-site flex h-[72px] items-center gap-2 sm:gap-4 lg:h-20">
@@ -58,22 +56,6 @@ const switchHref = withBase(alternates[other] ?? routes.home[other]);
       <a href={withBase(routes.search[lang])} class="rounded-md p-2 min-[360px]:p-2.5 text-white/85 transition-colors hover:bg-white/5 hover:text-gold" aria-label={t('nav.search')} title={t('nav.search')}>
         <Icon name="search" size={22} />
       </a>
-      <div class="flex items-center rounded-md border border-white/15 p-0.5 text-xs font-semibold" role="group" aria-label={t('nav.language')}>
-        <a
-          href={lang === 'hr' ? undefined : switchHref}
-          hreflang="hr"
-          lang="hr"
-          aria-current={lang === 'hr' ? 'true' : undefined}
-          class:list={['rounded px-2 py-1', lang === 'hr' ? 'bg-white/10 text-gold' : 'text-white/70 hover:text-white']}
-        >HR</a>
-        <a
-          href={lang === 'en' ? undefined : switchHref}
-          hreflang="en"
-          lang="en"
-          aria-current={lang === 'en' ? 'true' : undefined}
-          class:list={['rounded px-2 py-1', lang === 'en' ? 'bg-white/10 text-gold' : 'text-white/70 hover:text-white']}
-        >EN</a>
-      </div>
       <button
         type="button"
         class="ml-0.5 min-[360px]:ml-1 rounded-md p-2 min-[360px]:p-2.5 text-white transition-colors hover:bg-white/5 xl:hidden"

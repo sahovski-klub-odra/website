@@ -12,6 +12,8 @@ wordpress:
   id: 4441
   url: "http://sahovski-klub.com/prvenstvo-osnovnih-skola-grada-zagreba-2016-treci-krug/"
   slug: "prvenstvo-osnovnih-skola-grada-zagreba-2016-treci-krug"
+author: "Darko"
+imageAlt: "DVORANA OS FRANA KRSTE FRANKOPANA"
 ---
 ![DVORANA OS FRANA KRSTE FRANKOPANA](./dvorana-os-frana-krste-frankopana.jpg)
 
@@ -33,5 +35,3 @@ Stariji kadeti imaju prvo kolo već u petak jer je njihov tempo 60 + 30:
 2., 3. i 4. kolo 20. veljače u 09.30, 15 i 18 sati  
 5\. i 6. kolo 21. veljače u 10 i 15 sati.  
 Zasad su prijavljeni Ivan, Vraneša i Luka. Ostale prijave očekujem do utorka. Nadam se da će i neke djevojke iskoristiti priliku te odigrati šest partija kako bi se što bolje pripremile za finale prvenstva osnovnih škola. To vrijedi i za Anu, koja iz objektivnih razloga nije u školskoj ekipi, ali računamo na nju u prvom krugu kadetske lige 12. ožujka. (Preostala dva kruga kadetske lige igraju se najvjerojatnije 19. ožujka i 9. travnja.) Također, očekujem od Luke i Antonija, kao i od većine djevojaka, da nastupe na pojedinačnom prvenstvu Zagreba za starije natjecatelje te iskoriste ova dva mjeseca dok traju kadetski turniri da se što bolje priviknu na turnirske nastupe i time podignu kvalitetu svoje igre na višu razinu. Pojedinačno se igra nedjeljom i vjerujem da mogu prilagoditi i odraditi sve ostale obveze, usprkos nastupu na tom natjecanju.
-
-darko

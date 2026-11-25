@@ -26,7 +26,6 @@ U subotu 4. veljače u OŠ Frana Krste Frankopana počelo je Ekipno prvenstvo os
 1. Qxb4 axb4 2. Kg3 c5 (2... f5 3. Kf4 c5 4. Kxf5 c4 5. Ke4 b3 6. cxb3 cxb3 7.Kd3) 3. Kf4 c4 4. Ke3 b3 5. cxb3 cxb3 6. Kd3 *   *
 ```
 
-  
 Dečki igraju u sljedećem sastavu: Ivan Maravić, Ivan Vraneša (K), Ivan Kljujev, Božo Cvetković i Bruno Kolovrat.  
 Djevojke su u ovom sastavu: Monika Kolovrat (K), Ana Kolovrat, Ana Katarina Hačić, Anđela Mahin i Samanta Halužan.
 

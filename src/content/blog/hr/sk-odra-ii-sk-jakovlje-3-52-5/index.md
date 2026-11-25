@@ -12,6 +12,7 @@ wordpress:
   id: 8216
   url: "http://sahovski-klub.com/sk-odra-ii-sk-jakovlje-3-52-5/"
   slug: "sk-odra-ii-sk-jakovlje-3-52-5"
+author: "Ivan V"
 ---
 ###### Seniori – II. ekipa, 5.kolo
 
@@ -66,5 +67,3 @@ Ovom pobjedom druga ekipa ŠK Odre ostaje u borbi za vrh tablice. U posljednjem 
 
 1-0
 ```
-
-IvanV

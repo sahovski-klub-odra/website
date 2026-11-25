@@ -12,6 +12,7 @@ wordpress:
   id: 7631
   url: "http://sahovski-klub.com/drzavno-skolsko-prvenstvo-porec-20-22-11-2023/"
   slug: "drzavno-skolsko-prvenstvo-porec-20-22-11-2023"
+author: "Ivan M"
 ---
 ![](./prvakinje-2023.jpg)  
 Vjeka Vidra, Ivana Fiolić, Lucija Fiolić, Petra Medoš, Ana Predović.  
@@ -29,5 +30,3 @@ Bravo cure, ponosni smo na vas!
 ##### 1\. OŠ Odra (TB1: 14 / TB2: 24,5)
 
 <table><tbody><tr><td><strong>Pl.</strong></td><td><strong>Ime</strong></td><td><strong>1</strong></td><td><strong>2</strong></td><td><strong>3</strong></td><td><strong>4</strong></td><td><strong>5</strong></td><td><strong>6</strong></td><td><strong>7</strong></td><td><strong>8</strong></td><td><strong>9</strong></td><td><strong>Bod.</strong></td><td><strong>Partije</strong></td></tr><tr><td>1</td><td>Vidra Vjeka</td><td>1</td><td>0</td><td>½</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>3,5</td><td>9</td></tr><tr><td>2</td><td>Fiolić Ivana</td><td>1</td><td>1</td><td>1</td><td>0</td><td>½</td><td>0</td><td>1</td><td>1</td><td>1</td><td>6,5</td><td>9</td></tr><tr><td>3</td><td>Fiolić Lucija</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>½</td><td>1</td><td>7,5</td><td>9</td></tr><tr><td>4</td><td>Medoš Petra</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>7,0</td><td>9</td></tr></tbody></table>
-
-*IvanM*

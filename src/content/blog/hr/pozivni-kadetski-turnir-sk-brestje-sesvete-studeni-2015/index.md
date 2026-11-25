@@ -12,6 +12,8 @@ wordpress:
   id: 4345
   url: "http://sahovski-klub.com/pozivni-kadetski-turnir-sk-brestje-sesvete-studeni-2015/"
   slug: "pozivni-kadetski-turnir-sk-brestje-sesvete-studeni-2015"
+author: "Darko"
+imageAlt: "turnir-BRESTJE-studeni-20151"
 ---
 ![turnir-BRESTJE-studeni-20151](./turnir-brestje-studeni-20151.jpg)
 
@@ -21,5 +23,3 @@ Prvo mjesto na A-turniru osvojio je Sanjin Šeremešić iz ŠK Podsused. Na turn
 Čestitke pobjednicima i svim našim članovima koji su se odvažili nastupiti na ovom turniru, posebno Katarini i Filipu, kojima je ovo prvi turnir izvan Kluba. Nadamo se još kojoj pozivnici jer se igranjem na turnirima povećava snaga svakog igrača, bez obzira na rezultat!  
 ![kljujev vs jazbec](./kljujev-vs-jazbec.jpg)       ![turnir BRESTJE studeni 2015 a](./turnir-brestje-studeni-2015-a.jpg)  
 [A-skupina-studeni-2015](/files/wp/2015/11/A-skupina-studeni-2015.pdf) [U-15-studeni-2015](/files/wp/2015/11/A-skupina-studeni-2015.pdf) [U-10-studeni-2015](/files/wp/2015/11/A-skupina-studeni-2015.pdf)
-
-darko

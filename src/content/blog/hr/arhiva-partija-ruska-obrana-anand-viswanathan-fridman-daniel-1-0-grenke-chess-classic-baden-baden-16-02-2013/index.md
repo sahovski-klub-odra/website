@@ -12,6 +12,7 @@ wordpress:
   id: 723
   url: "http://sahovski-klub.com/arhiva-partija-ruska-obrana-anand-viswanathan-fridman-daniel-1-0-grenke-chess-classic-baden-baden-16-02-2013/"
   slug: "arhiva-partija-ruska-obrana-anand-viswanathan-fridman-daniel-1-0-grenke-chess-classic-baden-baden-16-02-2013"
+imageAlt: "ScreenShot001"
 ---
 Porazom u devetom kolu **Caruana** je dopustio **Anandu** da se izjednače na tablici! Nakon dosta lošeg starta Anand je u finišu turnira ubacio u višu brzinu i u jedinoj odlučenoj partiji devetog kola uzeo bod za izjednačenje na vrhu tablice. Da stvar bude gora po Caruanu, Anand je pobjedio i u 10. kolu, a Caruana (crni) svoju partiju trenutno još igra i ima dva pješaka više (ali izgleda ne zadugo 😉 ) protiv **Fridmana**, trenutno posljednjeg na tablici (direktan prijenos je još kratko vrijeme [ovdje](http://www.grenkechessclassic.de/en/10)).
 

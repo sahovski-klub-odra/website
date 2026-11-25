@@ -12,6 +12,7 @@ wordpress:
   id: 3234
   url: "http://sahovski-klub.com/3234/"
   slug: "3234"
+imageAlt: "Carlsen - Anand 2014sm"
 ---
 ![Carlsen - Anand 2014sm](./carlsen-anand-2014sm.jpg)
 

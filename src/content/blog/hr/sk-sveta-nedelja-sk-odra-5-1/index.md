@@ -12,6 +12,7 @@ wordpress:
   id: 2617
   url: "http://sahovski-klub.com/sk-sveta-nedelja-sk-odra-5-1/"
   slug: "sk-sveta-nedelja-sk-odra-5-1"
+imageAlt: "sv nedjelja vs odra"
 ---
 **8\. kolo, seniori**
 

@@ -12,6 +12,8 @@ wordpress:
   id: 2942
   url: "http://sahovski-klub.com/sk-odra-sk-koncar-2-4/"
   slug: "sk-odra-sk-koncar-2-4"
+author: "V. D."
+imageAlt: "odra koncar 2014 lokacija"
 ---
 ##### Seniori, 3. kolo
 
@@ -35,5 +37,3 @@ Protivnicima treba priznati da su bili bolji i zasluženo pobijedili te se treba
 ![nakon poraza 16032014](./nakon-poraza-16032014.jpg)
 
 Nakon meča ekipa se okupila u sportskom svratištu “Kod Jure”, nadaleko poznatu po vanjskim stolovima iz Ikee. U analizi partija i stilova igre Darko je velikodušno objašnjavao kako treba igrati šah, a suigrači su ga slušali pozorno i sa zadovoljstvom. Otišao je u zadnji čas.
-
-v.d.

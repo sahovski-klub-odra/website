@@ -11,6 +11,7 @@ wordpress:
   id: 3354
   url: "http://sahovski-klub.com/mec-za-prvaka-svijeta-magnus-carlsen-vs-vishy-anand-sochi-2014-poslije-10-partije-5545/"
   slug: "mec-za-prvaka-svijeta-magnus-carlsen-vs-vishy-anand-sochi-2014-poslije-10-partije-5545"
+imageAlt: "Anand - Carlsen, Sochi 2014, 9th and 10th game"
 ---
 ![Anand - Carlsen, Sochi 2014, 9th and 10th game](./1.jpg)
 

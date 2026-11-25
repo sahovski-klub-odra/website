@@ -12,6 +12,7 @@ wordpress:
   id: 991
   url: "http://sahovski-klub.com/sahovski-turnir-o-s-sveta-klara/"
   slug: "sahovski-turnir-o-s-sveta-klara"
+imageAlt: "Pobjednici-turnira"
 ---
 Mladi i perspektivni članovi našeg kluba i polaznici šahovske škole ovog vikenda nastupili su na međuškolskom šahovskom turniru u OŠ Sveta Klara i postigli zapažene rezultate. Ukupno je nastupilo 48 učenika i 20 učenica, iz pet osnovnih škola.
 

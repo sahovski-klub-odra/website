@@ -12,6 +12,7 @@ wordpress:
   id: 2592
   url: "http://sahovski-klub.com/sk-odra-karlovacki-sk-35-25/"
   slug: "sk-odra-karlovacki-sk-35-25"
+imageAlt: "odraVSkarlovac13102013_2"
 ---
 **7\. kolo, seniori**
 

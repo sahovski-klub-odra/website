@@ -12,6 +12,7 @@ wordpress:
   id: 7139
   url: "http://sahovski-klub.com/sk-odra-sk-spansko-4-2/"
   slug: "sk-odra-sk-spansko-4-2"
+author: "Ivan M"
 ---
 **IV A. liga, 3. kolo**  
 ![](./592021.jpg)  
@@ -20,5 +21,3 @@ Tin je sudio meč.
 Iduće kolo igramo iduće nedjelje u Dubravi.
 
 <table><tbody><tr><td>Pl.</td><td></td><td><strong>ŠK Odra</strong></td><td>–</td><td></td><td><strong>ŠK Špansko</strong></td><td><strong>4-2</strong></td></tr><tr><td>1.</td><td>MK</td><td>Karlić Zvjezdan 2096</td><td>–</td><td>MK</td><td>Mravunac Damir 2115</td><td>1-0</td></tr><tr><td>2.</td><td>MK</td><td>Maravić Stjepan 2138</td><td>–</td><td>MK</td><td>Knežević Krešimir 2056</td><td>1-0</td></tr><tr><td>3.</td><td>I</td><td>Maravić Ivan 1925</td><td>–</td><td>MK</td><td>Pauš Veljko 1938</td><td>½–½</td></tr><tr><td>4.</td><td>II</td><td>Vraneša Ivan 1664</td><td>–</td><td>I</td><td>Benamatić Krešimir 2009</td><td>1-0</td></tr><tr><td>5.</td><td>IV</td><td>Kobali Borislav 1653</td><td>–</td><td>II</td><td>Petan Dragutin 1868</td><td>½–½</td></tr><tr><td>6.</td><td>III</td><td>Cvetković Božo 1431</td><td>–</td><td>I</td><td>Vukman Branko 1757</td><td>0-1</td></tr></tbody></table>
-
-*IvanM*

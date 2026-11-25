@@ -12,6 +12,8 @@ wordpress:
   id: 4504
   url: "http://sahovski-klub.com/prvenstvo-osnovnih-skola-grada-zagreba-2016-finale/"
   slug: "prvenstvo-osnovnih-skola-grada-zagreba-2016-finale"
+author: "V. D."
+imageAlt: "bronca kao zlato"
 ---
 ![bronca kao zlato](./bronca-kao-zlato.jpg)
 
@@ -25,5 +27,3 @@ U konkurenciji dječaka prvo mjesto i plasman na prvenstvo Hrvatske osvojila je 
 ](./prije-dodjele-medalja.jpg)  
 [Rezultati djevojke.](http://chess-results.com/tnr207620.aspx?lan=13&art=0&turdet=YES&flag=30&wi=984)  
 [Rezultati dečki.](http://chess-results.com/tnr207619.aspx?lan=13&art=0&turdet=YES&flag=30&wi=984)
-
-v.d.

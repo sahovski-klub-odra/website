@@ -12,6 +12,7 @@ wordpress:
   id: 2637
   url: "http://sahovski-klub.com/sk-odra-sk-ina-45-15/"
   slug: "sk-odra-sk-ina-45-15"
+imageAlt: "ODRAvsINA_2013listopad"
 ---
 **9\. kolo, seniori**
 

@@ -12,6 +12,7 @@ wordpress:
   id: 4801
   url: "http://sahovski-klub.com/ljetna-zanimacija/"
   slug: "ljetna-zanimacija"
+imageAlt: "Mat u dva - Sergej Šedej 1969."
 ---
 ![Mat u dva - Sergej Šedej 1969.](./mat-u-dva-sergej-sedej-1969.jpg) ![Mat u tri - Nenad Petrović 1953.](./mat-u-tri-nenad-petrovic-1953.jpg)          Mat u dva – Sergej Šedej 1969.                                       Mat u tri – Nenad Petrović 1953.  
  ………gg

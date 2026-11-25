@@ -12,6 +12,8 @@ wordpress:
   id: 1471
   url: "http://sahovski-klub.com/sk-vrbovec-ii-sk-odra-2-535/"
   slug: "sk-vrbovec-ii-sk-odra-2-535"
+author: "V. D."
+imageAlt: "opt_3099"
 ---
 ## 1\. kolo, seniori
 
@@ -46,5 +48,3 @@ REZULTATI:
 5\. Lanović Žaljko  III       –  Maravić Ivan VK            1:0
 
 6\. Kolmanić Vladimir  II –  Furčić Tin  VK                0:1
-
-v.d.

@@ -12,6 +12,7 @@ wordpress:
   id: 4138
   url: "http://sahovski-klub.com/kadetski-turnir-sk-odra-sk2015/"
   slug: "kadetski-turnir-sk-odra-sk2015"
+author: "Darko"
 ---
 Kadetski turnir ŠK Odra, STARIJI KADETI ŠK ODRA 2015., odigrat će se 17. i 24. listopada.
 
@@ -23,5 +24,3 @@ Kako imamo osam kandidata za ovo prvenstvo (Ivan, Božo, Vraneša, Bruno, Kljuje
 Molim sve koji će nastupiti ili to žele da se prijave do srijede.
 
 Šahovska škola u petak se nastavlja prema uobičajenom rasporedu, mlađi u pola sedam, stariji u pola osam. Svi kadeti trebaju donijeti olovku sa sobom. Oni koji imaju potvrde za školske iskaznice koje su im potpisali roditelji, neka ih ne zaborave donijeti.  Molim Katarinine roditelje da mi dostave podatke za kontakt.
-
-darko

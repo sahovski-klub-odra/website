@@ -12,6 +12,7 @@ wordpress:
   id: 2318
   url: "http://sahovski-klub.com/najava-fide-world-cup-tromso-2013/"
   slug: "najava-fide-world-cup-tromso-2013"
+imageAlt: "FIDE World Chess Cup 2013"
 ---
 ![FIDE World Chess Cup 2013](./fide-wcc2013.jpg)
 

@@ -12,6 +12,7 @@ wordpress:
   id: 2064
   url: "http://sahovski-klub.com/norway-chess-2013-7-18-5-2013/"
   slug: "norway-chess-2013-7-18-5-2013"
+imageAlt: "ScreenShot002"
 ---
 Jučer je odigran prvi krug [turnira](http://norwaychess.com/en/ "Norway Chess 2013") koji je najavljivao pojavljivanje prvih osam igrača na svijetu po rejtingu. Međutim, Vladimir Kramnik se povukao, a i rejting lista se nešto u međuvremenu promjenila, pa to više nije slučaj. Ipak, to je i dalje vrlo jak turnir – umjesto Kramnika uskočio je **Svidler**, a od top 10 igrača nedostaju, osim Kramnika, još samo Grischuk i Caruana.
 

@@ -12,6 +12,8 @@ wordpress:
   id: 4931
   url: "http://sahovski-klub.com/sk-jaska-sk-odra-33/"
   slug: "sk-jaska-sk-odra-33"
+author: "Darko"
+imageAlt: "Jastrebarsko"
 ---
 **Seniori, 10. kolo  
 ![Jastrebarsko](./jastrebarsko.jpg)  
@@ -27,8 +29,6 @@ Posljednje kolo igra se za dva tjedna, 6. studenoga, a ŠK Odra je domaćin ŠK 
 4\. III Vrabec, Stjepan 1762 – IV Kobali, Borislav 1675       1:0  
 5\. II Zoretić, Zlatko 1816 – III Maravić, Ivan 1433              0:1  
 6\. IV Korak, Milivoj 1779 – IV Vraneša, Ivan 1341              1:0
-
-darko
 
 ---
 

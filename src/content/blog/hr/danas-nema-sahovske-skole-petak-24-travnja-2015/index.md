@@ -10,9 +10,8 @@ wordpress:
   id: 3779
   url: "http://sahovski-klub.com/danas-nema-sahovske-skole-petak-24-travnja-2015/"
   slug: "danas-nema-sahovske-skole-petak-24-travnja-2015"
+author: "Darko"
 ---
 Danas, (petak, 24. travnja 2015.) zbog zauzetosti prostora nema šahovske škole.
 
 Detalje oko sutrašnjeg nastupa  dogovarat ćemo telefonski i mailom pa molim roditelje da se jave.
-
-darko

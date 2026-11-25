@@ -12,6 +12,7 @@ wordpress:
   id: 1491
   url: "http://sahovski-klub.com/arhiva-partija-grunfeldova-obrana-varijanta-izmjene-kramnik-vladimir-svidler-peter-1-0-london-turnir-kandidata-2013-8-kolo-24-3-2013/"
   slug: "arhiva-partija-grunfeldova-obrana-varijanta-izmjene-kramnik-vladimir-svidler-peter-1-0-london-turnir-kandidata-2013-8-kolo-24-3-2013"
+imageAlt: "Kramnik vs Svidler, London 2013"
 ---
 ![Kramnik vs Svidler, London 2013](./img-3132.jpg)
 

@@ -45,7 +45,6 @@ export function trainingCollectionYaml(): string {
             hint: "Kratke obavijesti, npr. „Za vrijeme školskih praznika nema treninga.” Prikazuju se samo između datuma Od i Do."
             fields:
               - { label: "Tekst obavijesti", name: text, widget: text }
-              - { label: "Tekst (engleski)", name: textEn, widget: text, required: false }
               - { label: "Prikaži od", name: from, widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false, hint: "Prazno = odmah" }
               - { label: "Prikaži do", name: until, widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false, hint: "Prazno = dok je ne uklonite" }
               - { label: "Važno (istaknuto crveno)", name: important, widget: boolean, default: false, required: false }
@@ -71,7 +70,6 @@ export function trainingCollectionYaml(): string {
               - { label: "Početak", name: startTime, widget: datetime, format: "HH:mm", date_format: false }
               - { label: "Kraj (neobavezno)", name: endTime, widget: datetime, format: "HH:mm", date_format: false, required: false }
               - { label: "Grupa", name: group, widget: string }
-              - { label: "Grupa (engleski)", name: groupEn, widget: string, required: false }
               - { label: "Trener", name: coach, widget: string, required: false }
               - { label: "Mjesto", name: location, widget: string, required: false }
               - label: "Status"
@@ -80,7 +78,6 @@ export function trainingCollectionYaml(): string {
                 default: scheduled
                 options: ${statusOptions}
               - { label: "Napomena", name: note, widget: string, required: false }
-              - { label: "Napomena (engleski)", name: noteEn, widget: string, required: false }
               - { label: "Vrijedi od", name: validFrom, widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false }
               - { label: "Vrijedi do", name: validUntil, widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false }
           - label: "Iznimke (otkazivanje ili promjena jednog termina)"
@@ -101,7 +98,6 @@ export function trainingCollectionYaml(): string {
               - { label: "Novi kraj", name: newEndTime, widget: datetime, format: "HH:mm", date_format: false, required: false }
               - { label: "Zamjenski trener", name: coach, widget: string, required: false }
               - { label: "Napomena", name: note, widget: string, required: false }
-              - { label: "Napomena (engleski)", name: noteEn, widget: string, required: false }
           - label: "Jednokratni treninzi i događaji"
             name: extra
             widget: list
@@ -113,7 +109,6 @@ export function trainingCollectionYaml(): string {
               - { label: "Početak", name: startTime, widget: datetime, format: "HH:mm", date_format: false }
               - { label: "Kraj (neobavezno)", name: endTime, widget: datetime, format: "HH:mm", date_format: false, required: false }
               - { label: "Grupa / naziv", name: group, widget: string }
-              - { label: "Grupa (engleski)", name: groupEn, widget: string, required: false }
               - { label: "Trener", name: coach, widget: string, required: false }
               - { label: "Mjesto", name: location, widget: string, required: false }
               - label: "Status"

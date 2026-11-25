@@ -12,6 +12,7 @@ wordpress:
   id: 8629
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-2026-bronca-za-sk-odru/"
   slug: "kadetsko-prvenstvo-hrvatske-2026-bronca-za-sk-odru"
+author: "Ivan V"
 ---
 [  
 ](./kad-prv-hrv-2026.jpg)![](./kad-prv-hrv-2026.jpg)
@@ -85,5 +86,3 @@ U prilogu donosimo tri zanimljive partije, odnosno tri pobjede naših predstavni
 
 1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Na5 6.Qe2 Nxc4 7.Qxc4 Nxd5 8.Nc3 c6 9.Nxd5 cxd5 10.Qb5+ Qd7 11.Qe2 f6 12.Nf3 Be7 13.d3 Qc6 14.a3 Bg4 15.h3 Bh5 16.g4 Bg6 17.Nh4 O-O-O 18.Nxg6 hxg6 19.c3 d4 20.Rg1 dxc3 21.Qc2 Rxh3 22.bxc3 Rdxd3 23.g5 Rxc3 24.Qd2 Qe4+ 25.Qe2 Qxe2+ 26.Kxe2 f5 27.Bb2 Rc2+ 28.Kd1 Rxb2 29.Rc1+ Kb8 30.Re1 e4 31.Re2 Rxe2 32.Kxe2 Bxg5 33.Rg1 Bf6 34.Rxg6 Rxa3 0-1
 ```
-
-IvanV

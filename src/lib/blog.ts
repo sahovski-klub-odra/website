@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import type { Lang } from '../i18n/ui';
+import { locales, type Lang } from '../i18n/ui';
 import { newsPostPath } from '../i18n/routes';
 
 export type Post = CollectionEntry<'blog'>;
@@ -23,25 +23,9 @@ export async function postsByLang(lang: Lang) {
   return (await allPosts()).filter((p) => postLang(p) === lang);
 }
 
-/**
- * Posts listed on English pages: every English article, plus every Croatian article
- * that has no English translation (shown with an "In Croatian" badge, linking to the original).
- */
+/** Posts shown in listings (the website is Croatian only). */
 export async function postsForListing(lang: Lang): Promise<Post[]> {
-  const posts = await allPosts();
-  if (lang === 'hr') return posts.filter((p) => postLang(p) === 'hr');
-  const translatedKeys = new Set(
-    posts.filter((p) => postLang(p) === 'en' && p.data.translationKey).map((p) => p.data.translationKey),
-  );
-  return posts.filter(
-    (p) => postLang(p) === 'en' || !p.data.translationKey || !translatedKeys.has(p.data.translationKey),
-  );
-}
-
-export async function translationOf(post: Post): Promise<Post | undefined> {
-  const key = post.data.translationKey;
-  if (!key) return undefined;
-  return (await allPosts()).find((p) => p.data.translationKey === key && postLang(p) !== postLang(post));
+  return postsByLang(lang);
 }
 
 /** Croatian-aware URL slug: "Ekipno prvenstvo Županije" → "ekipno-prvenstvo-zupanije" */
@@ -73,7 +57,7 @@ export async function relatedPosts(post: Post, limit = 3): Promise<Post[]> {
   const cats = new Set(post.data.categories.map(slugify));
   const tags = new Set(post.data.tags.map(slugify));
   return pool
-    .filter((p) => p.id !== post.id && !(post.data.translationKey && p.data.translationKey === post.data.translationKey))
+    .filter((p) => p.id !== post.id)
     .map((p) => {
       let score = 0;
       p.data.categories.forEach((c) => cats.has(slugify(c)) && (score += 2));
@@ -93,7 +77,7 @@ export function readingTime(body = ''): number {
 }
 
 export function formatDate(d: Date, lang: Lang) {
-  return new Intl.DateTimeFormat(lang === 'hr' ? 'hr-HR' : 'en-GB', {
+  return new Intl.DateTimeFormat(locales[lang], {
     day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Zagreb',
   }).format(d);
 }

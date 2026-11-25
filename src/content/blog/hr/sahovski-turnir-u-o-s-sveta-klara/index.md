@@ -11,6 +11,7 @@ wordpress:
   id: 636
   url: "http://sahovski-klub.com/sahovski-turnir-u-o-s-sveta-klara/"
   slug: "sahovski-turnir-u-o-s-sveta-klara"
+author: "Darko"
 ---
 KADA: U subotu, 23.02.2013 u 9:00.
 
@@ -22,5 +23,3 @@ Susretljivošću voditelja šaha u O.Š. Sveta Klara, pravo nastupa imaju svi ko
 POTEZI SE NE ZAPISUJU! 🙂
 
 Puno sreće i zabave svima koji se odluče zabaviti šahom ovu subotu prijepodne!
-
-Darko

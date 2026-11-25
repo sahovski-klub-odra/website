@@ -12,6 +12,7 @@ wordpress:
   id: 3483
   url: "http://sahovski-klub.com/qatar-masters-open-2014-4-kolo/"
   slug: "qatar-masters-open-2014-4-kolo"
+imageAlt: "doha2014"
 ---
 ![doha2014](./doha2014.jpg)
 

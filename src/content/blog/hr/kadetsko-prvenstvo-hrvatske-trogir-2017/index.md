@@ -12,6 +12,9 @@ wordpress:
   id: 5396
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-hrvatske-trogir-2017/"
   slug: "kadetsko-prvenstvo-hrvatske-trogir-2017"
+author: "Darko"
+imageAlt: "Ivan prima čestitke za osvojeno treće mjesto"
+imageCaption: "Ivan prima čestitke za osvojeno treće mjesto"
 ---
 ![Ivan prima čestitke za osvojeno treće mjesto](./cestitke-na-osvojenom-trecem-mjestu.jpg "Ivan prima čestitke za osvojeno treće mjesto")
 
@@ -154,5 +157,3 @@ Qa1+ 18. Kd2 Qxb2 19. gxf5+ Kh8 20. Qg7# 1-0
 ```
 
 ---
-
-darko

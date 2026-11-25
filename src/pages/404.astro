@@ -24,7 +24,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         m = p.match(/^\/tag\/([^/]+)\/$/);
         if (m) target = '/novosti/pretraga/?q=' + encodeURIComponent(m[1].replace(/-/g, ' '));
         if (/^\/(feed|rss)\/$/.test(p)) target = '/rss.xml';
-        if (/^\/en\//.test(p) && !target) target = null;
+        // former English pages (/en/…): open the Croatian page
+        if (/^\/en\//.test(p)) {
+          var en = p.slice(3);
+          target = en.replace(/^\/news\/category\//, '/novosti/kategorija/').replace(/^\/news\/page\//, '/novosti/stranica/')
+            .replace(/^\/news\/search\//, '/novosti/pretraga/').replace(/^\/news\//, '/novosti/').replace(/^\/members\//, '/clanovi/')
+            .replace(/^\/gallery\//, '/galerija/').replace(/^\/schedule\//, '/raspored/').replace(/^\/contact\//, '/kontakt/');
+        }
       }
       if (target) { document.documentElement.dataset.redirecting = '1'; location.replace(base + target); }
     })();
@@ -35,10 +41,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <p class="mt-4 font-display text-7xl font-bold text-ink/15">404</p>
       <h1 class="mt-2 font-display text-3xl font-bold">{ui.hr['404.title']}</h1>
       <p class="mt-3 text-ink/70">{ui.hr['404.text']}</p>
-      <p class="mt-1 text-ink/60" lang="en">{ui.en['404.text']}</p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
         <a href={withBase('/')} class="btn-dark">{ui.hr['404.home']}</a>
-        <a href={withBase('/en/')} class="btn bg-white ring-1 ring-ink/10 hover:ring-gold" lang="en">{ui.en['404.home']}</a>
       </div>
     </div>
   </section>

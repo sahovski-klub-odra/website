@@ -12,6 +12,8 @@ wordpress:
   id: 4546
   url: "http://sahovski-klub.com/sk-odra-sk-ban-jelacic-1545/"
   slug: "sk-odra-sk-ban-jelacic-1545"
+author: "Darko"
+imageAlt: "odra 06032016"
 ---
 **Seniori, 1. kolo  
 ![odra 06032016](./odra-06032016.jpg)  
@@ -28,5 +30,3 @@ Sljedeće nedjelje ŠK Odra igra drugo kolo protiv ŠK Vladimir Ivetić u Sopotu
 4.  Bačurin, Juraj MK – Đođ, Goran II 0:1
 5.  Cvetković, Ivan MK – Trempetić, Mladen I 0:1
 6.  Fiolić, Goran II – Sindik, Dario II 0:1
-
-darko

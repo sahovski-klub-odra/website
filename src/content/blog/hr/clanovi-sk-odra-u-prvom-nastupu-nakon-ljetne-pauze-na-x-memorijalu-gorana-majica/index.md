@@ -12,6 +12,7 @@ wordpress:
   id: 2451
   url: "http://sahovski-klub.com/clanovi-sk-odra-u-prvom-nastupu-nakon-ljetne-pauze-na-x-memorijalu-gorana-majica/"
   slug: "clanovi-sk-odra-u-prvom-nastupu-nakon-ljetne-pauze-na-x-memorijalu-gorana-majica"
+imageAlt: "Kadeti na 10. mem. Gorana Majića"
 ---
 ![Kadeti na 10. mem. Gorana Majića](./1236748-525145560883833-185769360-n.jpg)Cvetković Božo, Maravić Ivan, Novak Bruna i Vraneša Ivan (abecednim redom, bez “dame imaju prednost” 😉 ) nastupili su na ***X. memorijalu Gorana Majića –** kadeti do 11 godina.*
 

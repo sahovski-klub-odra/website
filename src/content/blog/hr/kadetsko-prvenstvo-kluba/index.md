@@ -12,6 +12,7 @@ wordpress:
   id: 2502
   url: "http://sahovski-klub.com/kadetsko-prvenstvo-kluba/"
   slug: "kadetsko-prvenstvo-kluba"
+imageAlt: "Tablica nakon 8 kola"
 ---
 Odigrano je i zadnje kolo.  Nije došao Tilio, ali je došao Božo koji je odigrao partiju protiv Lucije. Izgubio.  
 Isto tako Vraneša je izgubio od Ane. Meni je to  malo čudno… Uglavnom, očekivano prvo mjesto pripalo je  

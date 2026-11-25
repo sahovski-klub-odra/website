@@ -340,16 +340,13 @@
 }
 .motion .hero-title .text-gold::after { animation: glint 7s var(--ease-in-out) 2.4s infinite; }
 @keyframes glint { 0% { opacity: 0; background-position: -60% 0; } 8% { opacity: 1; } 30% { opacity: 1; background-position: 160% 0; } 31%, 100% { opacity: 0; background-position: 160% 0; } }
-/* hero → quick links: a thin gold line with light running along it */
+/* hero → news: a thin gold line with light running along it */
 .hero-seam { position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgb(217 181 109 / 0.35) 20%, rgb(217 181 109 / 0.35) 80%, transparent); overflow: hidden; }
 .hero-seam::after { content: ''; position: absolute; inset: 0; width: 30%; background: linear-gradient(90deg, transparent, rgb(255 236 190 / 0.95), transparent); transform: translate3d(-100%, 0, 0); }
 .motion .hero-seam::after { animation: seam-run 9s var(--ease-in-out) 1.8s infinite; }
 @keyframes seam-run { 0% { transform: translate3d(-100%, 0, 0); } 40%, 100% { transform: translate3d(340%, 0, 0); } }
 html.is-hidden .hero-seam::after, html.is-hidden .hero-title .text-gold::after { animation-play-state: paused; }
 
-/* quick links: icon lifts and gets a gold ring on hover */
-.quick-icon { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; border-radius: 9999px; transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out), color var(--dur); }
-.group:hover .quick-icon, .group:focus-visible .quick-icon { transform: translateY(-3px); box-shadow: 0 0 0 1px rgb(217 181 109 / 0.55), 0 10px 26px -12px rgb(217 181 109 / 0.6); }
 
 /* news cards: light follows the cursor, a gold frame runs around the card on hover */
 @property --frame-a { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
@@ -421,6 +418,9 @@ html.is-navigating .nav-progress { opacity: 1; transform: scaleX(0.85); transiti
   .card-lift:hover, .member-card:hover, .btn-gold:hover, .btn-outline:hover, .btn-dark:hover, .sched-item:hover { transform: none; }
   .group:hover .card-zoom, .member-card:hover .member-avatar, .member-card:hover .member-avatar img { transform: none; }
   .mobile-nav li { opacity: 1; transform: none; }
-  .gallery-tile:hover img, .group:hover .quick-icon, .site-logo:hover svg { transform: none; }
+  .gallery-tile:hover img, .site-logo:hover svg { transform: none; }
   .card-light::before { animation: none !important; }
 }
+/* member sorting: the two labels are long – let the control wrap nicely on phones */
+.seg--sort { flex-wrap: wrap; }
+@media (max-width: 479px) { .seg--sort { width: 100%; } .seg--sort button { flex: 1 1 auto; } }

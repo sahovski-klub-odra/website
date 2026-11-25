@@ -11,6 +11,8 @@ wordpress:
   id: 2977
   url: "http://sahovski-klub.com/sk-vrbani-sk-odra-25-35/"
   slug: "sk-vrbani-sk-odra-25-35"
+author: "V. D."
+imageAlt: "dom sportova 30032014"
 ---
 #### Seniori, 3. kolo
 
@@ -33,5 +35,3 @@ U međuvremenu Zvjezdan previđa taktiku i ulazi u neizvjesnu poluzavršnicu, a 
 Jučer su ligu igrale i kadetske ekipe. Zasad je pristigao izvještaj samo s lige kadeta. (Iako su neki roditelji obećali poslati i slike!) Ekipa kadeta ostvarila je dvije pobjede i jedan poraz. Posebno dobar rezultat ostvarili su Vraneša, koji je upisao tri pobjede iz tri partije, te Bruno, koji je upisao dvije pobjede, usput se počastivši pobjedom nad protivnikom II. kategorije, rejtinga 1913! Valjda zato što mu je jučer bio rođendan? 🙂 Bruno, sretan ti rođendan! Kadetkinje su izgubile sva tri meča, ali su nastavile sa skupljanjem pojedinačnih bodova. U prvom krugu jednu pobjedu ostvarila je Ana, a sada je to pošlo za rukom i Franki. Franka, čestitamo na prvoj ligaškoj pobjedi! Samo neka nastave sa skupljanjem iskustva i vjerujem da će prve ekipne pobjede doći već sljedeće sezone!
 
 Posljednji krug obje kadetske ekipe igraju u Varaždinskim toplicama 12. travnja. Zainteresirani roditelji mogu pogledati i akcijsku ponudu hotela Minerva za subotu/nedjelju, saune, kupke itd., a za kadete preporučujem da se izbore za jedan makar i kratak kupanac u bazenima Toplica nakon napornih mečeva. Naravno, ako ne zaborave kupaće. 🙂
-
-v.d.

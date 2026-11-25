@@ -12,6 +12,7 @@ wordpress:
   id: 5458
   url: "http://sahovski-klub.com/sk-koncar-ii-sk-odra-2535/"
   slug: "sk-koncar-ii-sk-odra-2535"
+author: "Darko"
 ---
 **Seniori, 6. kolo**![](./fallerovo-setaliste.jpg)
 
@@ -24,5 +25,3 @@ Započeo je jesenski dio seniorske lige, a u šestom kolu ekipa ŠK Odra gostova
 4\. II Tadija Dalić 1881 – MK Ivan Cvetković 1968         1:0  
 5\. I Vladimir Ostojić 1928 – II Ivan Maravić 1700          1:0  
 6\. III Marko Sučec 1719 – III Ivan Vraneša 1490          0:1
-
-darko

@@ -6,7 +6,7 @@ import Icon from '../components/Icon.astro';
 import { getAlbums } from '../lib/gallery';
 import { videos, youtubeId } from '../lib/data';
 import { useTranslations, locales, type Lang } from '../i18n/ui';
-import { withBase, albumPath, alternatesFor } from '../i18n/routes';
+import { withBase, albumPath } from '../i18n/routes';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
@@ -16,15 +16,13 @@ const vids = videos
   .filter((v) => v.id)
   .map((v) => ({
     ...v,
-    title: lang === 'en' ? (v.titleEn ?? v.title) : v.title,
-    description: lang === 'en' ? (v.descriptionEn ?? v.description) : v.description,
     thumb: v.thumbnail ? withBase(v.thumbnail) : `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
   }));
 const categories = [...new Set(albums.map((a) => a.category).filter((c): c is string => !!c))].sort((a, b) => a.localeCompare(b, locales[lang]));
 const fmt = new Intl.DateTimeFormat(locales[lang], { month: 'long', year: 'numeric' });
 const tabCls = 'flex items-center gap-2 border-b-2 px-1 pb-3 text-base font-semibold transition-colors';
 ---
-<BaseLayout lang={lang} title={t('gallery.title')} description={t('gallery.intro')} alternates={alternatesFor('gallery')}>
+<BaseLayout lang={lang} title={t('gallery.title')} description={t('gallery.intro')}>
   <PageHeader title={t('gallery.title')} intro={t('gallery.intro')} />
   <div class="container-site py-10">
     <div role="tablist" aria-label={t('gallery.title')} class="tabs-bar relative mb-10 flex gap-4 min-[360px]:gap-5 sm:gap-8 border-b border-ink/10" data-tabs>
@@ -54,7 +52,7 @@ const tabCls = 'flex items-center gap-2 border-b-2 px-1 pb-3 text-base font-semi
                 </div>
                 <div class="p-5">
                   <h2 class="text-lg font-semibold group-hover:text-gold-deep">{a.title}</h2>
-                  <p class="mt-1 text-sm text-ink/60"><span class="capitalize">{fmt.format(a.date)}</span>{a.category && <> · <span>{a.category}</span></>}</p>
+                  <p class="mt-1 text-sm text-ink/60">{a.season ? <span>{a.season}</span> : <span class="capitalize">{fmt.format(a.date)}</span>}{a.category && <> · <span>{a.category}</span></>}</p>
                 </div>
               </a>
             </li>
