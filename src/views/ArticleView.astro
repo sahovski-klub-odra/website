@@ -159,4 +159,12 @@ const shareTitle = encodeURIComponent(d.title);
 <script>
   // Chess games: load the viewer (chess.js + board) only on articles that contain a game.
   if (document.querySelector('[data-pgn-viewer]')) import('../scripts/pgn-viewer').then((m) => m.mountAll());
+
+  // The featured photo's frame light only runs while the photo is on screen (see .featured-photo in global.css).
+  const frame = document.querySelector<HTMLElement>('.featured-photo');
+  if (frame && document.documentElement.classList.contains('motion')) {
+    new IntersectionObserver((entries) => {
+      for (const e of entries) e.target.toggleAttribute('data-onscreen', e.isIntersecting);
+    }).observe(frame);
+  }
 </script>

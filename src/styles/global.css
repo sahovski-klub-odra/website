@@ -159,30 +159,45 @@ dialog.lightbox::backdrop { background: rgb(10 11 13 / 0.9); }
 /* hangs from the dark article header: no top border, gold frame on the left, right and bottom */
 .featured-photo {
   position: relative; margin: 0; border-radius: 0 0 .9rem .9rem; padding: 0 .35rem .35rem; background: var(--color-ink);
-  border: 1px solid rgb(217 181 109 / .3); border-top: 0; box-shadow: var(--shadow-card);
+  border: 1px solid rgb(217 181 109 / .28); border-top: 0;
+  /* depth: a soft drop shadow into the page plus a faint warm halo around the frame */
+  box-shadow:
+    0 2px 6px -2px rgb(12 13 15 / .28),
+    0 22px 40px -22px rgb(12 13 15 / .55),
+    0 10px 28px -14px rgb(217 181 109 / .16);
+  transition: box-shadow .7s var(--ease-out, ease), border-color .7s var(--ease-out, ease);
 }
 @media (min-width: 640px) { .featured-photo { padding: 0 .5rem .5rem; } }
-/* a soft gold light travels slowly along the frame (sides and bottom only) */
+.featured-photo:hover {
+  border-color: rgb(217 181 109 / .4);
+  box-shadow:
+    0 3px 8px -2px rgb(12 13 15 / .3),
+    0 26px 46px -22px rgb(12 13 15 / .6),
+    0 12px 32px -12px rgb(217 181 109 / .26);
+}
+/* a soft gold reflection drifts slowly along the frame (sides and bottom only, never over the photo) */
 .featured-photo::after {
   content: ''; position: absolute; inset: 0 -1px -1px; border-radius: inherit; pointer-events: none;
   padding: 0 1px 1px;
-  background: linear-gradient(100deg, transparent 35%, rgb(232 207 152 / .9) 50%, transparent 65%) 0 0 / 300% 100% no-repeat;
+  background: linear-gradient(100deg, transparent 38%, rgb(232 207 152 / .6) 50%, transparent 62%) 0 0 / 300% 100% no-repeat;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
   opacity: 0;
 }
-.motion .featured-photo::after { animation: frame-light 9s var(--ease-in-out, ease-in-out) 1.2s infinite; }
+/* runs only on larger screens with a mouse, only while the photo is on screen (data-onscreen) and the tab is visible */
+@media (hover: hover) and (min-width: 768px) {
+  .motion .featured-photo[data-onscreen]::after { animation: frame-light 14s cubic-bezier(.45, 0, .55, 1) 1.5s infinite; }
+}
 html.is-hidden .featured-photo::after { animation-play-state: paused; }
 @keyframes frame-light {
   0% { background-position: 100% 0; opacity: 0; }
-  15% { opacity: .75; }
-  55% { background-position: 0% 0; opacity: .75; }
-  70%, 100% { background-position: 0% 0; opacity: 0; }
+  18% { opacity: .55; }
+  58% { background-position: 0% 0; opacity: .55; }
+  75%, 100% { background-position: 0% 0; opacity: 0; }
 }
 .featured-photo__link { position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 0 0 .55rem .55rem; background: var(--color-ink-2); cursor: zoom-in; }
-.featured-photo__img { display: block; width: auto; max-width: 100%; height: auto; max-height: 560px; object-fit: contain; transition: transform .6s var(--ease-out, ease); }
-.featured-photo__link:hover .featured-photo__img { transform: scale(1.015); }
+.featured-photo__img { display: block; width: auto; max-width: 100%; height: auto; max-height: 560px; object-fit: contain; }
 .featured-photo__link:focus-visible { outline: 3px solid var(--color-gold); outline-offset: 2px; }
 .featured-photo__zoom {
   position: absolute; right: .75rem; bottom: .75rem; display: grid; place-items: center; width: 2.4rem; height: 2.4rem;
@@ -191,42 +206,69 @@ html.is-hidden .featured-photo::after { animation-play-state: paused; }
 }
 .featured-photo__link:hover .featured-photo__zoom { opacity: 1; transform: scale(1.06); }
 .featured-photo__caption { padding: .6rem .5rem .15rem; font-size: .88rem; color: rgb(255 255 255 / .75); }
-@media (prefers-reduced-motion: reduce) { .featured-photo::after { animation: none; } .featured-photo__img, .featured-photo__zoom { transition: none; } .featured-photo__link:hover .featured-photo__img { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .featured-photo, .featured-photo__zoom { transition: none; } .featured-photo::after { animation: none; } }
 
 /* ---------- match and result tables in articles (classes from src/lib/rehype-match-tables.mjs) ---------- */
-.prose-odra .table-wrap { margin: 1.75rem 0; border-radius: .75rem; box-shadow: var(--shadow-card); outline: 1px solid rgb(23 25 28 / .08); outline-offset: -1px; background: #fff; }
+/* dark charcoal surface with gold accents, slightly lifted from the page; wide tables still scroll sideways */
+.prose-odra .table-wrap {
+  margin: 1.75rem 0; border-radius: .8rem; color-scheme: dark;
+  background: linear-gradient(180deg, var(--color-ink-2), #1c1f23);
+  border: 1px solid rgb(217 181 109 / .22);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / .04),
+    0 2px 6px -2px rgb(12 13 15 / .22),
+    0 18px 34px -20px rgb(12 13 15 / .5),
+    0 8px 26px -14px rgb(217 181 109 / .14);
+  transition: box-shadow .5s var(--ease-out, ease), border-color .5s var(--ease-out, ease);
+}
+.prose-odra .table-wrap:hover {
+  border-color: rgb(217 181 109 / .34);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / .05),
+    0 3px 8px -2px rgb(12 13 15 / .25),
+    0 22px 40px -20px rgb(12 13 15 / .55),
+    0 10px 30px -12px rgb(217 181 109 / .22);
+}
 .prose-odra table.chess-table {
   width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; font-size: .9rem; line-height: 1.4;
-  font-variant-numeric: tabular-nums; background: #fff; table-layout: auto;
+  font-variant-numeric: tabular-nums; background: transparent; color: rgb(245 240 230 / .88); table-layout: auto;
 }
 /* names wrap between words only – never in the middle of a word */
 .prose-odra table.chess-table :where(th, td, th *, td *) { overflow-wrap: normal; word-break: normal; hyphens: manual; }
 .prose-odra table.chess-table :where(th, td) {
-  padding: .5rem .75rem; vertical-align: middle; border: 0; border-bottom: 1px solid rgb(23 25 28 / .07); text-align: left;
+  padding: .5rem .75rem; vertical-align: middle; border: 0; border-bottom: 1px solid rgb(255 255 255 / .06); text-align: left;
+  background-color: transparent; transition: background-color .25s var(--ease-out, ease);
 }
-.prose-odra table.chess-table :where(th, td) + :where(th, td) { border-left: 1px solid rgb(23 25 28 / .05); }
+.prose-odra table.chess-table :where(th, td) + :where(th, td) { border-left: 1px solid rgb(255 255 255 / .045); }
+/* old WordPress tables sometimes forced black text; keep it readable on the dark surface */
+.prose-odra table.chess-table [style*="color: #000"], .prose-odra table.chess-table [style*="color:#000"] { color: inherit !important; }
+/* …and red highlights (usually the Odra team) are softened so they stay legible on the dark surface */
+.prose-odra table.chess-table [style*="color: #ff0000"], .prose-odra table.chess-table [style*="color:#ff0000"] { color: #ff8a7a !important; }
+.prose-odra table.chess-table :where(strong, b) { color: #fff; }
+.prose-odra table.chess-table a { color: var(--color-gold-light); text-decoration-color: rgb(232 207 152 / .45); }
+.prose-odra table.chess-table a:hover { color: #fff; }
 /* columns: numbers, results and points centred; names and text left, with room to breathe */
 .prose-odra table.chess-table :where(.col-num, .col-title, .cell-score, .cell-rank, .cell-num, .cell-title, .cell-dash) { text-align: center; white-space: nowrap; }
 .prose-odra table.chess-table .col-text { min-width: 9rem; }
 .prose-odra table.chess-table .col-title { width: 1%; }
 .prose-odra table.chess-table :where(.cell-rank, .cell-title, .cell-dash) { width: 1%; }
 .prose-odra table.chess-table thead :where(th, td) {
-  background: var(--color-ink); color: #fff; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  border-bottom: 2px solid var(--color-gold); line-height: 1.3;
+  background-color: rgb(12 13 15 / .55); color: #fff; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid rgb(217 181 109 / .7); line-height: 1.3;
 }
 .prose-odra table.chess-table thead :where(th, td) :where(strong, b, a) { color: inherit; }
 /* team names in a header row stay in normal letters (only short column labels are in capitals) */
 .prose-odra table.chess-table thead .col-text { text-transform: none; letter-spacing: 0; font-size: .88rem; }
 .prose-odra table.chess-table thead .is-odra { color: var(--color-gold); }
-.prose-odra table.chess-table tbody tr:nth-child(even) > :where(td, th) { background: rgb(245 240 230 / .55); }
-.prose-odra table.chess-table tbody tr:hover > :where(td, th) { background: rgb(217 181 109 / .12); }
+.prose-odra table.chess-table tbody tr:nth-child(even) > :where(td, th) { background-color: rgb(255 255 255 / .028); }
+.prose-odra table.chess-table tbody tr:hover > :where(td, th) { background-color: rgb(217 181 109 / .085); }
 .prose-odra table.chess-table tbody tr:last-child > :where(td, th) { border-bottom: 0; }
-.prose-odra table.chess-table .cell-score { font-weight: 700; color: var(--color-ink); background-image: linear-gradient(rgb(217 181 109 / .14), rgb(217 181 109 / .14)); }
-.prose-odra table.chess-table .cell-rank { color: rgb(23 25 28 / .55); }
-.prose-odra table.chess-table .cell-num { color: rgb(23 25 28 / .75); }
-.prose-odra table.chess-table .cell-title { font-size: .75rem; font-weight: 700; color: var(--color-gold-deep); }
-.prose-odra table.chess-table .cell-dash { color: rgb(23 25 28 / .4); }
-.prose-odra table.chess-table tbody .is-odra { font-weight: 600; color: var(--color-ink); box-shadow: inset 3px 0 0 var(--color-gold); }
+.prose-odra table.chess-table .cell-score { font-weight: 700; color: var(--color-gold-light); background-image: linear-gradient(rgb(217 181 109 / .07), rgb(217 181 109 / .07)); }
+.prose-odra table.chess-table .cell-rank { color: rgb(245 240 230 / .5); }
+.prose-odra table.chess-table .cell-num { color: rgb(245 240 230 / .72); }
+.prose-odra table.chess-table .cell-title { font-size: .75rem; font-weight: 700; color: var(--color-gold); }
+.prose-odra table.chess-table .cell-dash { color: rgb(245 240 230 / .35); }
+.prose-odra table.chess-table tbody .is-odra { font-weight: 600; color: #fff; box-shadow: inset 3px 0 0 var(--color-gold); }
 .prose-odra table.chess-table :where(td, th) p { margin: 0; }
 .prose-odra table.chess-table img { display: inline; margin: 0; }
 @media (max-width: 639px) {
@@ -237,6 +279,7 @@ html.is-hidden .featured-photo::after { animation-play-state: paused; }
 /* cross tables and standings with many columns: keep names on one line and let the table scroll sideways */
 .prose-odra table.chess-table.is-wide :where(th, td) { white-space: nowrap; padding-inline: .5rem; }
 .prose-odra table.chess-table.is-wide .col-text { min-width: 0; }
+@media (prefers-reduced-motion: reduce) { .prose-odra .table-wrap, .prose-odra table.chess-table :where(th, td) { transition: none; } }
 
 /* lightbox zoom (components/Lightbox.astro) */
 dialog.lightbox [data-lb-img] { cursor: zoom-in; }
