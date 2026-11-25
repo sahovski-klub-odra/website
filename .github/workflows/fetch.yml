@@ -1,0 +1,32 @@
+name: Fetch WordPress originals (temporary, analysis only)
+# Temporary branch: downloads the original media files that were not mirrored, for resolution analysis.
+# Only reads public files from the old site. This branch is deleted after the analysis.
+on:
+  push:
+    branches: [tmp-image-originals]
+    paths: [fetch-list.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        run: |
+          mkdir -p files
+          while read -r u; do
+            [ -z "$u" ] && continue
+            p="files/${u#*wp-content/uploads/}"
+            mkdir -p "$(dirname "$p")"
+            curl -fsSL --retry 3 -m 60 -o "$p" "$u" || curl -fsSL --retry 2 -m 60 -o "$p" "${u/https:/http:}" || echo "FAIL $u"
+          done < fetch-list.txt
+          du -sh files; find files -type f | wc -l
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add files
+          git commit -qm "Fetched originals for analysis"
+          git push
