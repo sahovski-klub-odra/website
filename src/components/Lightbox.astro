@@ -81,7 +81,8 @@ const t = useTranslations(Astro.props.lang);
   document.querySelectorAll<HTMLElement>('[data-lightbox-scope]').forEach((scope) => {
     const imgs = [...scope.querySelectorAll<HTMLImageElement>('img')].filter((im) => !im.closest('a'));
     const list = () => imgs.map((im) => ({
-      src: im.currentSrc || im.src,
+      // src is the full-size WebP; currentSrc may be a smaller srcset candidate
+      src: im.getAttribute('src') ? im.src : im.currentSrc,
       caption: im.closest('figure')?.querySelector('figcaption')?.textContent ?? im.title ?? '',
       alt: im.alt,
     }));

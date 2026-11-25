@@ -169,3 +169,28 @@ test('a one-row table pasted inside a cell is unwrapped, empty columns are dropp
   assert.ok(html.includes('<thead>') && html.includes('ŠK Sloga, Novoselec-Križ') && html.includes('Vortel, Damir') && html.includes('0-1'));
   assert.equal((html.match(/<t[dh]\b/g) ?? []).length, 10); // the empty second column is gone
 });
+
+// Article photos: responsive widths for local images (srcset is emitted by Astro from these props)
+import { rehypeOdra } from '../src/lib/rehype-odra.mjs';
+import remarkGfm from 'remark-gfm';
+const odraTree = (md: string) => {
+  const p = unified().use(remarkParse).use(remarkGfm).use(remarkRehype).use(rehypeOdra, { base: '/website' });
+  return p.runSync(p.parse(md)) as any;
+};
+const findImgs = (n: any, out: any[] = []): any[] => { if (n.tagName === 'img') out.push(n); (n.children ?? []).forEach((c: any) => findImgs(c, out)); return out; };
+
+test('local article photos get responsive widths; gallery photos get gallery sizes', () => {
+  const [single] = findImgs(odraTree('![a](./a.jpg)'));
+  assert.deepEqual(single.properties.widths, [480, 800, 1200, 1600]);
+  assert.match(single.properties.sizes, /720px/);
+  const gallery = findImgs(odraTree('![a](./a.jpg) ![b](./b.jpg)'));
+  assert.equal(gallery.length, 2);
+  for (const g of gallery) assert.match(g.properties.sizes, /240px/);
+});
+
+test('remote and table images are left alone', () => {
+  const [remote] = findImgs(odraTree('![r](https://example.com/r.jpg)'));
+  assert.equal(remote.properties.widths, undefined);
+  const [icon] = findImgs(odraTree('| a |\n|---|\n| ![k](./k.png) |'));
+  assert.equal(icon?.properties.widths, undefined);
+});

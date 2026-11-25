@@ -7,7 +7,14 @@
  *  4. A single image with a title  ![alt](./a.jpg "Caption")  becomes <figure> with <figcaption>.
  *  5. A paragraph that contains only a YouTube link becomes a privacy-friendly embedded video.
  *  6. Tables are wrapped so they scroll horizontally on phones.
+ *  7. Local article photos get responsive widths + sizes, so Astro emits a WebP srcset and phones
+ *     do not download the full-resolution original (the lightbox still opens the full-size src).
  */
+
+// Widths larger than the original are dropped by Astro, so small photos stay as they are.
+const PHOTO_WIDTHS = [480, 800, 1200, 1600];
+const SIZES_SINGLE = '(min-width: 1024px) 720px, calc(100vw - 2rem)';
+const SIZES_GALLERY = '(min-width: 1024px) 240px, (min-width: 440px) 50vw, calc(100vw - 2rem)';
 
 const isWs = (n) => n.type === 'text' && !n.value.trim();
 const isEl = (n, tag) => n && n.type === 'element' && (!tag || n.tagName === tag);
@@ -31,11 +38,30 @@ export function rehypeOdra(options = {}) {
 
   return (tree) => {
     walk(tree);
+    responsive(tree, false);
 
     function walk(node) {
       if (!node.children) return;
       node.children = node.children.map((child) => transform(child));
       node.children.forEach(walk);
+    }
+
+    function responsive(node, inGallery) {
+      for (const child of node.children ?? []) {
+        if (!isEl(child)) continue;
+        if (child.tagName === 'table') continue; // piece icons etc. inside result tables
+        const gallery = inGallery || (child.properties?.className ?? []).includes('post-gallery');
+        if (child.tagName === 'img') {
+          const src = String(child.properties?.src ?? '');
+          const local = src && !/^(https?:|data:|\/\/|\/)/.test(src);
+          if (local && !child.properties.widths) {
+            child.properties.widths = PHOTO_WIDTHS;
+            child.properties.sizes = gallery ? SIZES_GALLERY : SIZES_SINGLE;
+          }
+          continue;
+        }
+        responsive(child, gallery);
+      }
     }
 
     function transform(node) {
