@@ -145,9 +145,11 @@ const tableHtml = (md: string) => String(unified().use(remarkParse).use(remarkRe
 
 test('a WordPress match table gets a header row and marked result cells, data unchanged', () => {
   const html = tableHtml('<table><tbody><tr><td>Pl.</td><td><strong>ŠK Oroslavje</strong></td><td>–</td><td><strong>ŠK Odra</strong></td><td><strong>3,5-2,5</strong></td></tr><tr><td>1.</td><td>Jaković, Roko 2181</td><td>–</td><td>Karlić, Zvjezdan 2034</td><td>1-0</td></tr></tbody></table>');
-  assert.ok(html.includes('class="chess-table"') && html.includes('<thead>') && html.includes('<th scope="col">Pl.</th>'));
-  assert.ok(html.includes('<td class="cell-score">1-0</td>') && html.includes('<td class="cell-rank">1.</td>'));
-  assert.ok(html.includes('class="is-odra"') && html.includes('Jaković, Roko 2181'));
+  assert.ok(html.includes('chess-table') && html.includes('<thead>'));
+  assert.match(html, /<th scope="col"[^>]*>Pl\.<\/th>/);
+  assert.match(html, /<td class="[^"]*cell-score[^"]*">1-0<\/td>/);
+  assert.match(html, /<td class="[^"]*cell-rank[^"]*">1\.<\/td>/);
+  assert.ok(html.includes('is-odra') && html.includes('Jaković, Roko 2181'));
 });
 
 test('board pairings written as text lines become a table with the same text', () => {
@@ -159,4 +161,11 @@ test('board pairings written as text lines become a table with the same text', (
 test('ordinary paragraphs and lists are not turned into tables', () => {
   const html = tableHtml('1. prvi korak\n2. drugi korak\n3. treći korak\n\nŠK Odra – ŠK Ina 2:4 bio je dobar meč.');
   assert.ok(!html.includes('<table') && html.includes('<ol>'));
+});
+
+test('a one-row table pasted inside a cell is unwrapped, empty columns are dropped, data unchanged', () => {
+  const html = tableHtml('<table><tbody><tr><td>Pl.</td><td></td><td><strong>ŠK Odra II</strong></td><td>–</td><td><table class="CRs1"><tbody><tr><th>ŠK Sloga, Novoselec-Križ</th></tr></tbody></table></td><td><b>2:4</b></td></tr><tr><td>1.</td><td></td><td>Šutić, Darko</td><td>–</td><td><table><tbody><tr><td></td><td>Vortel, Damir</td></tr></tbody></table></td><td>0-1</td></tr></tbody></table>');
+  assert.equal((html.match(/<table/g) ?? []).length, 1);
+  assert.ok(html.includes('<thead>') && html.includes('ŠK Sloga, Novoselec-Križ') && html.includes('Vortel, Damir') && html.includes('0-1'));
+  assert.equal((html.match(/<t[dh]\b/g) ?? []).length, 10); // the empty second column is gone
 });

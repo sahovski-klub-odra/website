@@ -240,3 +240,37 @@ html.is-hidden .ambient * { animation-play-state: paused !important; }
 @media (min-width: 1440px) {
   .article-rail--page { display: block; width: calc((100% - 80rem) / 2 + 1rem); }
 }
+
+/* ---------- chess game viewer: quiet motion around the board ----------
+ * Two pseudo-elements behind the viewer's content: a soft gold light drifting slowly, and a faint
+ * chessboard texture that slides one square at a time. The board, pieces, move list and controls
+ * sit above them and never move. Only on wide screens, only while the viewer is on screen
+ * ([data-onscreen], set by scripts/pgn-viewer.ts), only with <html class="motion">. */
+.pgn-viewer .pgnv { position: relative; isolation: isolate; overflow: hidden; }
+@media (min-width: 900px) {
+  .motion .pgn-viewer[data-onscreen] .pgnv::before,
+  .motion .pgn-viewer[data-onscreen] .pgnv::after { content: ''; position: absolute; pointer-events: none; z-index: -1; }
+  /* gold light: two soft pools that drift across the frame */
+  .motion .pgn-viewer[data-onscreen] .pgnv::before {
+    inset: -30%;
+    background:
+      radial-gradient(28% 32% at 20% 30%, rgb(217 181 109 / .13), transparent 70%),
+      radial-gradient(24% 28% at 82% 78%, rgb(217 181 109 / .09), transparent 70%);
+    animation: pgnv-glow 26s var(--ease-in-out, ease-in-out) infinite alternate;
+    will-change: transform;
+  }
+  /* faint chessboard texture at the edges, sliding slowly (masked away from the centre) */
+  .motion .pgn-viewer[data-onscreen] .pgnv::after {
+    inset: 0;
+    background-image:
+      linear-gradient(45deg, rgb(217 181 109 / .05) 25%, transparent 25%, transparent 75%, rgb(217 181 109 / .05) 75%),
+      linear-gradient(45deg, rgb(217 181 109 / .05) 25%, transparent 25%, transparent 75%, rgb(217 181 109 / .05) 75%);
+    background-size: 48px 48px; background-position: 0 0, 24px 24px;
+    -webkit-mask-image: radial-gradient(75% 85% at 50% 50%, transparent 55%, #000);
+    mask-image: radial-gradient(75% 85% at 50% 50%, transparent 55%, #000);
+    animation: pgnv-slide 40s steps(48) infinite;
+  }
+  html.is-hidden .pgn-viewer .pgnv::before, html.is-hidden .pgn-viewer .pgnv::after { animation-play-state: paused; }
+}
+@keyframes pgnv-glow { from { transform: translate3d(-6%, -4%, 0); } to { transform: translate3d(8%, 6%, 0); } }
+@keyframes pgnv-slide { to { background-position: 48px 48px, 72px 72px; } }

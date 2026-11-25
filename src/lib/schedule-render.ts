@@ -75,20 +75,35 @@ export function renderNext(data: TrainingData, s: ScheduleStrings, now = zagrebN
 }
 
 /* ---------- Upcoming list ---------- */
+/** sessions on the same calendar day share one card (date shown once, one row per group) */
+function groupByDay(list: Occurrence[]): Occurrence[][] {
+  const days: Occurrence[][] = [];
+  for (const o of list) {
+    const last = days.at(-1);
+    if (last && last[0].date === o.date) last.push(o);
+    else days.push([o]);
+  }
+  return days;
+}
+
+const sessionsLabel = (n: number) => `${n} treninga`; // 2, 3, 4… treninga
+
 export function renderUpcoming(data: TrainingData, s: ScheduleStrings, limit = 8, now = zagrebNow()): string {
-  const list = upcoming(data, limit, 60, now);
-  if (!list.length)
+  // take whole days: a day is never cut in half by the limit
+  const all = upcoming(data, limit + 12, 60, now);
+  const days: Occurrence[][] = [];
+  let count = 0;
+  for (const day of groupByDay(all)) {
+    if (count >= limit) break;
+    days.push(day);
+    count += day.length;
+  }
+  if (!days.length)
     return `<p class="rounded-xl bg-white p-6 text-ink/70 shadow-card">${esc(data.sessions.length || data.extra.length ? s.none : s.empty)}</p>`;
-  return `<ol class="divide-y divide-ink/10 overflow-hidden rounded-xl bg-white shadow-card ring-1 ring-ink/5">${list
-    .map((o, i) => {
-      const d = parseDate(o.date);
-      const note = noteOf(o, s);
-      return `<li class="sched-item sched-item--${o.status} flex gap-4 p-4 sm:items-center sm:p-5" style="--i:${i}">
-        <div class="w-14 shrink-0 rounded-lg bg-ink py-2 text-center text-white">
-          <div class="text-[0.65rem] font-semibold uppercase tracking-wider text-gold">${esc(new Intl.DateTimeFormat(s.locale, { weekday: 'short', timeZone: 'UTC' }).format(d))}</div>
-          <div class="font-display text-2xl font-bold leading-none">${d.getUTCDate()}</div>
-          <div class="text-[0.65rem] uppercase text-white/60">${esc(new Intl.DateTimeFormat(s.locale, { month: 'short', timeZone: 'UTC' }).format(d))}</div>
-        </div>
+
+  const session = (o: Occurrence, multi: boolean) => {
+    const note = noteOf(o, s);
+    return `<div class="${multi ? 'sched-session' : ''} flex gap-3 sm:items-center">
         <div class="min-w-0 flex-1">
           <div class="mb-1.5 sm:hidden">${badge(o.status, s)}</div>
           <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -100,6 +115,26 @@ export function renderUpcoming(data: TrainingData, s: ScheduleStrings, limit = 8
           ${note ? `<p class="mt-1 text-sm text-ink/60">${esc(note)}</p>` : ''}
         </div>
         <div class="hidden shrink-0 sm:block">${badge(o.status, s)}</div>
+      </div>`;
+  };
+
+  return `<ol class="divide-y divide-ink/10 overflow-hidden rounded-xl bg-white shadow-card ring-1 ring-ink/5">${days
+    .map((day, i) => {
+      const o = day[0];
+      const d = parseDate(o.date);
+      const multi = day.length > 1;
+      // the card's status colour: shared status, otherwise "scheduled"
+      const status = day.every((x) => x.status === o.status) ? o.status : 'scheduled';
+      return `<li class="sched-item sched-item--${status}${multi ? ' sched-item--multi' : ''} flex gap-4 p-4 sm:items-center sm:p-5" style="--i:${i}">
+        <div class="w-14 shrink-0 self-start rounded-lg bg-ink py-2 text-center text-white sm:self-center">
+          <div class="text-[0.65rem] font-semibold uppercase tracking-wider text-gold">${esc(new Intl.DateTimeFormat(s.locale, { weekday: 'short', timeZone: 'UTC' }).format(d))}</div>
+          <div class="font-display text-2xl font-bold leading-none">${d.getUTCDate()}</div>
+          <div class="text-[0.65rem] uppercase text-white/60">${esc(new Intl.DateTimeFormat(s.locale, { month: 'short', timeZone: 'UTC' }).format(d))}</div>
+        </div>
+        <div class="min-w-0 flex-1">
+          ${multi ? `<p class="mb-2 flex flex-wrap items-center gap-2 text-sm font-semibold text-ink">${esc(ucFirst(new Intl.DateTimeFormat(s.locale, { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }).format(d)))}<span class="rounded-full bg-gold/15 px-2 py-0.5 text-[0.7rem] font-bold uppercase tracking-wider text-gold-deep ring-1 ring-inset ring-gold/40">${esc(sessionsLabel(day.length))}</span></p>` : ''}
+          <div class="${multi ? 'grid gap-2.5' : ''}">${day.map((x) => session(x, multi)).join('')}</div>
+        </div>
       </li>`;
     })
     .join('')}</ol>`;

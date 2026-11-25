@@ -29,7 +29,8 @@ const HALF = /^(?:½|1\/2)$/;
 const RANK = /^\d{1,3}\.$/;
 const NUM = /^\d{3,4}(?:[,.]\d{1,2})?$/;
 const TITLE = /^(?:GM|IM|FM|CM|WGM|WIM|WFM|WCM|MK|KM|VK|vk|I{1,3}|IV|V)$/;
-const HEADER_WORDS = /^(?:pl\.?|mj\.?|bo\.?|br\.?|sno|ime|igrač|ekipa|momčad|klub|rtg\w*|bod\.?|bodovi|partije|tb\d?|rezultat|kolo|\d{1,2}|\+|=|–|-|)$/i;
+// typical column names in Croatian and chess-results tables
+const HEADER_WORDS = /^(?:pl\.?|mj\.?|rk\.?|bo\.?|br\.?|r\.?\s?br\.?|no\.?|s?no\.?|sbr\.?|#|\.|ime|name|igrač|ekipa|momčad|klub|club\/city|fed|fide\s?id|zemlja|rating|rtg\w*|rtg\s?\+\/-|bod\.?|bodovi|bod\.?\s?ukup\.?|meč\s?bod\.?|mečbodovi|poj\.?\s?bod\.?|partije|tb\d?|rp|n|w|sex|typ|rezultat|kolo|\d{1,2}\.?(?:\s?rd)?|\+|=|–|-|domaćin|gost|kod kuće|u gostima|)$/i;
 
 function rowsOf(table) {
   const out = [];
@@ -47,11 +48,79 @@ function looksLikeHeader(tr) {
   if (cells.length < 2) return false;
   const bold = (c) => c.children.filter((k) => !(k.type === 'text' && !clean(k.value))).every((k) => isEl(k, 'strong') || isEl(k, 'b'));
   // every cell is bold or a typical column label; a team line ("Pl. | ŠK Oroslavje – ŠK Odra | 3,5-2,5") counts too
-  return cells.every((c) => bold(c) || HEADER_WORDS.test(clean(text(c))));
+  if (cells.every((c) => bold(c) || HEADER_WORDS.test(clean(text(c))))) return true;
+  // a team line without bold: "ŠK Dugo Selo | – | ŠK Odra | 3 : 3" (a dash, a match score, no board number)
+  const vals = cells.map((c) => clean(text(c)));
+  return vals.includes('–') && vals.some((v) => SCORE.test(v)) && !vals.some((v) => RANK.test(v)) && vals.filter((v) => /[a-zčćžšđ]{3,}/i.test(v)).length >= 2;
+}
+
+const NUMERIC = /^[\d½¼¾,.:;\-–+*=/()%\s]+$/;
+const isEmptyCell = (c) => !clean(text(c)) && !(c.children ?? []).some((k) => isEl(k, 'img') || isEl(k, 'a'));
+
+/**
+ * Old WordPress/chess-results tables: tidy the structure without touching the data.
+ *  - a cell that holds a one-row table (chess-results pasted into WordPress) gets that table's content;
+ *  - rows with fewer cells are padded, so borders and zebra stripes line up;
+ *  - columns that are empty in every row are left out (they only held spacing).
+ */
+function normalise(table) {
+  for (const tr of rowsOf(table)) {
+    for (const cell of cellsOf(tr)) {
+      cell.children = cell.children.flatMap((k) => {
+        if (!isEl(k, 'table')) return [k];
+        const inner = rowsOf(k);
+        if (inner.length !== 1) return [k];
+        const parts = cellsOf(inner[0]).filter((c) => !isEmptyCell(c));
+        return parts.flatMap((c, i) => {
+          const content = c.tagName === 'th' ? [el('strong', {}, c.children)] : c.children;
+          return i ? [txt(' '), ...content] : content;
+        });
+      });
+    }
+  }
+  for (const tr of rowsOf(table)) {
+    for (const cell of cellsOf(tr)) {
+      const first = cell.children[0], last = cell.children.at(-1);
+      if (first?.type === 'text') first.value = first.value.replace(/^[\s\u00a0]+/, '');
+      if (last?.type === 'text') last.value = last.value.replace(/[\s\u00a0]+$/, '');
+    }
+  }
+  const rows = rowsOf(table);
+  const spans = rows.some((r) => cellsOf(r).some((c) => Number(c.properties.colSpan ?? 1) > 1 || Number(c.properties.rowSpan ?? 1) > 1));
+  if (spans || !rows.length) return;
+  const width = Math.max(...rows.map((r) => cellsOf(r).length));
+  for (const r of rows) {
+    const missing = width - cellsOf(r).length;
+    for (let i = 0; i < missing; i++) r.children.push(el(cellsOf(r)[0]?.tagName === 'th' ? 'th' : 'td', {}, []));
+  }
+  const empty = [...Array(width).keys()].filter((i) => rows.every((r) => isEmptyCell(cellsOf(r)[i])));
+  if (empty.length && empty.length < width) {
+    for (const r of rows) {
+      const cells = cellsOf(r);
+      r.children = r.children.filter((c) => !cells.includes(c) || !empty.includes(cells.indexOf(c)));
+    }
+  }
+}
+
+/** numbers, results and points are centred; names and text are left-aligned (decided per column) */
+function typeColumns(rows, bodyRows) {
+  if (rows.some((r) => cellsOf(r).some((c) => Number(c.properties.colSpan ?? 1) > 1))) return;
+  const width = Math.max(...rows.map((r) => cellsOf(r).length));
+  for (let i = 0; i < width; i++) {
+    const vals = bodyRows.map((r) => cellsOf(r)[i]).filter((c) => c && clean(text(c)));
+    if (!vals.length) continue;
+    const share = (re) => vals.filter((c) => re.test(clean(text(c)))).length / vals.length;
+    const kind = share(TITLE) >= 0.6 ? 'col-title' : share(NUMERIC) >= 0.6 ? 'col-num' : 'col-text';
+    for (const r of rows) {
+      const c = cellsOf(r)[i];
+      if (c) addClass(c, kind);
+    }
+  }
 }
 
 function enhanceTable(table) {
   addClass(table, 'chess-table');
+  normalise(table);
   const rows = rowsOf(table);
   if (!rows.length) return;
   const hasHead = table.children.some((c) => isEl(c, 'thead'));
@@ -67,6 +136,7 @@ function enhanceTable(table) {
   }
   const cols = Math.max(...rows.map((r) => cellsOf(r).length));
   if (cols > 8) addClass(table, 'is-wide');
+  typeColumns(rows, bodyRows);
   for (const tr of rows) {
     for (const cell of cellsOf(tr)) {
       const t = clean(text(cell));

@@ -156,12 +156,31 @@ dialog.lightbox::backdrop { background: rgb(10 11 13 / 0.9); }
 .article-badge:first-child { background: var(--color-gold); color: var(--color-ink); border-color: var(--color-gold); }
 
 /* featured photo on article pages: framed, never cropped, opens in the lightbox */
+/* hangs from the dark article header: no top border, gold frame on the left, right and bottom */
 .featured-photo {
-  margin: 0; border-radius: 0 0 .9rem .9rem; padding: .35rem; background: var(--color-ink);
-  box-shadow: var(--shadow-card), 0 0 0 1px rgb(217 181 109 / .3);
+  position: relative; margin: 0; border-radius: 0 0 .9rem .9rem; padding: 0 .35rem .35rem; background: var(--color-ink);
+  border: 1px solid rgb(217 181 109 / .3); border-top: 0; box-shadow: var(--shadow-card);
 }
-@media (min-width: 640px) { .featured-photo { border-radius: .9rem; padding: .5rem; } }
-.featured-photo__link { position: relative; display: grid; place-items: center; overflow: hidden; border-radius: .55rem; background: var(--color-ink-2); cursor: zoom-in; }
+@media (min-width: 640px) { .featured-photo { padding: 0 .5rem .5rem; } }
+/* a soft gold light travels slowly along the frame (sides and bottom only) */
+.featured-photo::after {
+  content: ''; position: absolute; inset: 0 -1px -1px; border-radius: inherit; pointer-events: none;
+  padding: 0 1px 1px;
+  background: linear-gradient(100deg, transparent 35%, rgb(232 207 152 / .9) 50%, transparent 65%) 0 0 / 300% 100% no-repeat;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+}
+.motion .featured-photo::after { animation: frame-light 9s var(--ease-in-out, ease-in-out) 1.2s infinite; }
+html.is-hidden .featured-photo::after { animation-play-state: paused; }
+@keyframes frame-light {
+  0% { background-position: 100% 0; opacity: 0; }
+  15% { opacity: .75; }
+  55% { background-position: 0% 0; opacity: .75; }
+  70%, 100% { background-position: 0% 0; opacity: 0; }
+}
+.featured-photo__link { position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 0 0 .55rem .55rem; background: var(--color-ink-2); cursor: zoom-in; }
 .featured-photo__img { display: block; width: auto; max-width: 100%; height: auto; max-height: 560px; object-fit: contain; transition: transform .6s var(--ease-out, ease); }
 .featured-photo__link:hover .featured-photo__img { transform: scale(1.015); }
 .featured-photo__link:focus-visible { outline: 3px solid var(--color-gold); outline-offset: 2px; }
@@ -172,36 +191,63 @@ dialog.lightbox::backdrop { background: rgb(10 11 13 / 0.9); }
 }
 .featured-photo__link:hover .featured-photo__zoom { opacity: 1; transform: scale(1.06); }
 .featured-photo__caption { padding: .6rem .5rem .15rem; font-size: .88rem; color: rgb(255 255 255 / .75); }
-@media (prefers-reduced-motion: reduce) { .featured-photo__img, .featured-photo__zoom { transition: none; } .featured-photo__link:hover .featured-photo__img { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .featured-photo::after { animation: none; } .featured-photo__img, .featured-photo__zoom { transition: none; } .featured-photo__link:hover .featured-photo__img { transform: none; } }
 
 /* ---------- match and result tables in articles (classes from src/lib/rehype-match-tables.mjs) ---------- */
 .prose-odra .table-wrap { margin: 1.75rem 0; border-radius: .75rem; box-shadow: var(--shadow-card); outline: 1px solid rgb(23 25 28 / .08); outline-offset: -1px; background: #fff; }
 .prose-odra table.chess-table {
-  width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; font-size: .9rem; line-height: 1.35;
-  font-variant-numeric: tabular-nums; background: #fff;
+  width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; font-size: .9rem; line-height: 1.4;
+  font-variant-numeric: tabular-nums; background: #fff; table-layout: auto;
 }
-.prose-odra table.chess-table :where(th, td) { padding: .5rem .7rem; vertical-align: middle; border: 0; border-bottom: 1px solid rgb(23 25 28 / .07); text-align: left; }
+/* names wrap between words only – never in the middle of a word */
+.prose-odra table.chess-table :where(th, td, th *, td *) { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+.prose-odra table.chess-table :where(th, td) {
+  padding: .5rem .75rem; vertical-align: middle; border: 0; border-bottom: 1px solid rgb(23 25 28 / .07); text-align: left;
+}
 .prose-odra table.chess-table :where(th, td) + :where(th, td) { border-left: 1px solid rgb(23 25 28 / .05); }
+/* columns: numbers, results and points centred; names and text left, with room to breathe */
+.prose-odra table.chess-table :where(.col-num, .col-title, .cell-score, .cell-rank, .cell-num, .cell-title, .cell-dash) { text-align: center; white-space: nowrap; }
+.prose-odra table.chess-table .col-text { min-width: 9rem; }
+.prose-odra table.chess-table .col-title { width: 1%; }
+.prose-odra table.chess-table :where(.cell-rank, .cell-title, .cell-dash) { width: 1%; }
 .prose-odra table.chess-table thead :where(th, td) {
   background: var(--color-ink); color: #fff; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  border-bottom: 2px solid var(--color-gold); white-space: nowrap;
+  border-bottom: 2px solid var(--color-gold); line-height: 1.3;
 }
 .prose-odra table.chess-table thead :where(th, td) :where(strong, b, a) { color: inherit; }
+/* team names in a header row stay in normal letters (only short column labels are in capitals) */
+.prose-odra table.chess-table thead .col-text { text-transform: none; letter-spacing: 0; font-size: .88rem; }
 .prose-odra table.chess-table thead .is-odra { color: var(--color-gold); }
 .prose-odra table.chess-table tbody tr:nth-child(even) > :where(td, th) { background: rgb(245 240 230 / .55); }
 .prose-odra table.chess-table tbody tr:hover > :where(td, th) { background: rgb(217 181 109 / .12); }
 .prose-odra table.chess-table tbody tr:last-child > :where(td, th) { border-bottom: 0; }
-.prose-odra table.chess-table .cell-score { text-align: center; font-weight: 700; color: var(--color-ink); white-space: nowrap; background-image: linear-gradient(rgb(217 181 109 / .14), rgb(217 181 109 / .14)); }
-.prose-odra table.chess-table .cell-rank { width: 1%; text-align: right; color: rgb(23 25 28 / .55); white-space: nowrap; }
-.prose-odra table.chess-table .cell-num { text-align: right; color: rgb(23 25 28 / .7); white-space: nowrap; }
-.prose-odra table.chess-table .cell-title { width: 1%; text-align: center; font-size: .75rem; font-weight: 700; color: var(--color-gold-deep); white-space: nowrap; }
-.prose-odra table.chess-table .cell-dash { width: 1%; text-align: center; color: rgb(23 25 28 / .4); }
+.prose-odra table.chess-table .cell-score { font-weight: 700; color: var(--color-ink); background-image: linear-gradient(rgb(217 181 109 / .14), rgb(217 181 109 / .14)); }
+.prose-odra table.chess-table .cell-rank { color: rgb(23 25 28 / .55); }
+.prose-odra table.chess-table .cell-num { color: rgb(23 25 28 / .75); }
+.prose-odra table.chess-table .cell-title { font-size: .75rem; font-weight: 700; color: var(--color-gold-deep); }
+.prose-odra table.chess-table .cell-dash { color: rgb(23 25 28 / .4); }
 .prose-odra table.chess-table tbody .is-odra { font-weight: 600; color: var(--color-ink); box-shadow: inset 3px 0 0 var(--color-gold); }
 .prose-odra table.chess-table :where(td, th) p { margin: 0; }
 .prose-odra table.chess-table img { display: inline; margin: 0; }
 @media (max-width: 639px) {
   .prose-odra table.chess-table { font-size: .82rem; }
-  .prose-odra table.chess-table :where(th, td) { padding: .4rem .5rem; }
+  .prose-odra table.chess-table :where(th, td) { padding: .4rem .55rem; }
+  .prose-odra table.chess-table .col-text { min-width: 7.5rem; }
 }
 /* cross tables and standings with many columns: keep names on one line and let the table scroll sideways */
 .prose-odra table.chess-table.is-wide :where(th, td) { white-space: nowrap; padding-inline: .5rem; }
+.prose-odra table.chess-table.is-wide .col-text { min-width: 0; }
+
+/* lightbox zoom (components/Lightbox.astro) */
+dialog.lightbox [data-lb-img] { cursor: zoom-in; }
+dialog.lightbox.is-zoomed [data-lb-img] { cursor: grab; }
+dialog.lightbox.is-zoomed [data-lb-img]:active { cursor: grabbing; }
+dialog.lightbox .lb-zoom { will-change: transform; transform-origin: 50% 50%; }
+dialog.lightbox .lb-zoom.is-animating { transition: transform .28s cubic-bezier(.2, .7, .2, 1); }
+dialog.lightbox .lb-zoom-out { display: none; }
+dialog.lightbox [aria-pressed='true'] .lb-zoom-in { display: none; }
+dialog.lightbox [aria-pressed='true'] .lb-zoom-out { display: block; }
+dialog.lightbox [aria-pressed='true'] { color: var(--color-gold); }
+/* while a photo is zoomed, the caption and the arrows step aside */
+dialog.lightbox.is-zoomed [data-lb-caption] { opacity: 0; }
+dialog.lightbox.is-zoomed :where([data-lb-prev], [data-lb-next]) { opacity: .35; }

@@ -93,7 +93,7 @@ const shareTitle = encodeURIComponent(d.title);
 
     {d.image && (
       <div class="container-site max-w-5xl">
-        <figure class="featured-photo sm:mt-8">
+        <figure class="featured-photo">
           <a href={featuredFull} data-lightbox="featured" data-caption={d.imageCaption ?? d.imageAlt ?? ''} class="featured-photo__link group" aria-label={`Povećaj fotografiju${d.imageAlt ? `: ${d.imageAlt}` : ''}`}>
             <Image src={d.image} alt={d.imageAlt ?? ''} widths={[640, 960, 1280, 1600]} sizes="(min-width: 1024px) 1024px, 100vw" loading="eager" fetchpriority="high" class="featured-photo__img" />
             <span class="featured-photo__zoom" aria-hidden="true"><Icon name="search" size={18} /></span>

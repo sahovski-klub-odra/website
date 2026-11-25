@@ -424,3 +424,5 @@ html.is-navigating .nav-progress { opacity: 1; transform: scaleX(0.85); transiti
 /* member sorting: the two labels are long – let the control wrap nicely on phones */
 .seg--sort { flex-wrap: wrap; }
 @media (max-width: 479px) { .seg--sort { width: 100%; } .seg--sort button { flex: 1 1 auto; } }
+/* upcoming trainings: several groups on the same day share one card */
+.sched-session { border-left: 3px solid rgb(217 181 109 / .55); padding-left: .75rem; }

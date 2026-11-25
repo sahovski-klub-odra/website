@@ -468,4 +468,10 @@ export function mountAll() {
     { rootMargin: '400px 0px' },
   );
   viewers.forEach((_, el) => io.observe(el));
+
+  // background motion around the board (styles/ambient.css) runs only while the viewer is on screen
+  const motion = new IntersectionObserver((entries) => {
+    for (const e of entries) e.target.toggleAttribute('data-onscreen', e.isIntersecting);
+  });
+  viewers.forEach((_, el) => motion.observe(el));
 }
