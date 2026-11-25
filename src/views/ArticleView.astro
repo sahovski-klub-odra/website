@@ -17,7 +17,9 @@ interface Props { post: Post }
 const { post } = Astro.props;
 const lang = postLang(post);
 const t = useTranslations(lang);
-const { Content } = await render(post);
+const { Content, remarkPluginFrontmatter } = await render(post);
+// team / round labels taken from the first line of the article (src/lib/remark-article-badges.mjs)
+const badges: string[] = Array.isArray(remarkPluginFrontmatter?.badges) ? remarkPluginFrontmatter.badges : [];
 const d = post.data;
 
 const related = await relatedPosts(post, 3);
@@ -25,6 +27,8 @@ const description = d.seo?.description ?? describe(post, 160);
 const canonical = new URL(withBase(postUrl(post)), Astro.site).href;
 // structured data: the same 1200 px JPEG as the social-media preview (BaseLayout), not the original upload –
 // otherwise every original photo would be copied into the build just for this link
+// large version for the lightbox (max 2000 px wide, WebP – never AVIF)
+const featuredFull = d.image ? (await getImage({ src: d.image, width: Math.min(2000, d.image.width), format: 'webp', quality: 85 })).src : undefined;
 const ldImage = d.image ? new URL((await getImage({ src: d.image, width: 1200, format: 'jpg', quality: 80 })).src, Astro.site).href : undefined;
 
 const jsonLd = {
@@ -71,6 +75,11 @@ const shareTitle = encodeURIComponent(d.title);
           </ol>
         </nav>
         <h1 class="mt-5 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">{d.title}</h1>
+        {badges.length > 0 && (
+          <ul class="article-badges mt-4 flex flex-wrap gap-2" aria-label="Ekipa i kolo">
+            {badges.map((b) => <li class="article-badge">{b}</li>)}
+          </ul>
+        )}
         <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/70">
           <span class="inline-flex items-center gap-2"><Icon name="calendar" size={16} /><time datetime={d.pubDate.toISOString()}>{formatDate(d.pubDate, lang)}</time></span>
           {d.updatedDate && <span>{t('news.updated')}: <time datetime={d.updatedDate.toISOString()}>{formatDate(d.updatedDate, lang)}</time></span>}
@@ -84,9 +93,12 @@ const shareTitle = encodeURIComponent(d.title);
 
     {d.image && (
       <div class="container-site max-w-5xl">
-        <figure class="-mt-0 overflow-hidden rounded-b-xl shadow-card sm:mt-8 sm:rounded-xl">
-          <Image src={d.image} alt={d.imageAlt ?? ''} widths={[640, 960, 1280, 1600]} sizes="(min-width: 1024px) 1024px, 100vw" loading="eager" fetchpriority="high" class="max-h-[560px] w-full object-cover" />
-          {d.imageCaption && <figcaption class="bg-white px-5 py-3 text-sm text-ink/70">{d.imageCaption}</figcaption>}
+        <figure class="featured-photo sm:mt-8">
+          <a href={featuredFull} data-lightbox="featured" data-caption={d.imageCaption ?? d.imageAlt ?? ''} class="featured-photo__link group" aria-label={`Povećaj fotografiju${d.imageAlt ? `: ${d.imageAlt}` : ''}`}>
+            <Image src={d.image} alt={d.imageAlt ?? ''} widths={[640, 960, 1280, 1600]} sizes="(min-width: 1024px) 1024px, 100vw" loading="eager" fetchpriority="high" class="featured-photo__img" />
+            <span class="featured-photo__zoom" aria-hidden="true"><Icon name="search" size={18} /></span>
+          </a>
+          {d.imageCaption && <figcaption class="featured-photo__caption">{d.imageCaption}</figcaption>}
         </figure>
       </div>
     )}

@@ -242,4 +242,4 @@ Primjer s dvije partije, komentarima, varijantama i dijagramom: članak `src/con
 ### Karta, zadatak dana i rang-liste na naslovnici
 - **Karta:** *Postavke kluba i kontakt* → *Karta (Google Maps)*. Adresu ugrađene karte dobijete na google.com/maps:
   potražite adresu → **Podijeli** → **Ugradi kartu** → kopirajte adresu iz atributa `src`. API ključ nije potreban.
-- **Zadatak dana** (Lichess) i **Top 10** (2700chess.com) učitavaju se sami svaki dan – ne treba ih uređivati.
+- **Problem dana** (Lichess) učitava se sam svaki dan – ne treba ga uređivati. Oznake ekipe i kola (npr. SENIORI · PRVA EKIPA · 6. KOLO) nastaju same iz prvog retka članka, npr. „Seniori – I. ekipa, 6. kolo”.

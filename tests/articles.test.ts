@@ -104,3 +104,38 @@ test('daily puzzle: right, wrong and alternative mating moves', () => {
   // back-rank mate: Ra8# is not the listed move, but any mate counts
   assert.equal(checkMove('6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1', 'a1a8', 'a1a7'), 'mate');
 });
+
+import { parseBadges, remarkArticleBadges } from '../src/lib/remark-article-badges.mjs';
+
+test('team and round labels are recognised, ordinary sentences are not', () => {
+  assert.deepEqual(parseBadges('Seniori – II. ekipa, 6.kolo'), ['Seniori', 'Druga ekipa', '6. kolo']);
+  assert.deepEqual(parseBadges('Seniori, 2. kolo'), ['Seniori', '2. kolo']);
+  assert.deepEqual(parseBadges('5. kolo, seniori'), ['5. kolo', 'Seniori']);
+  assert.deepEqual(parseBadges('III A. liga, 1.-4. kolo'), ['III. A liga', '1.–4. kolo']);
+  assert.equal(parseBadges('Seniorska ekipa izgubila je meč'), null);
+  assert.equal(parseBadges('Ekipa OŠ Odra osvojila je treće mjesto!'), null);
+});
+
+test('the label line leaves the text and becomes badges', () => {
+  const file = new VFile({ path: '/tmp/x/index.md', value: '**Seniori – I. ekipa, 11.kolo**  \n[Porazom](https://x.hr) smo završili sezonu.' });
+  file.data = { astro: { frontmatter: {} } };
+  const html = String(unified().use(remarkParse).use(remarkArticleBadges).use(remarkRehype).use(rehypeStringify).processSync(file));
+  assert.deepEqual((file.data as any).astro.frontmatter.badges, ['Seniori', 'Prva ekipa', '11. kolo']);
+  assert.ok(!html.includes('Seniori'));
+  assert.ok(html.includes('Porazom') && !html.includes('<strong></strong>'));
+});
+
+test('a heading that is only a label is removed', () => {
+  const file = new VFile({ path: '/tmp/x/index.md', value: '###### Seniori – II. ekipa, 6.kolo\n\nTekst članka.' });
+  file.data = { astro: { frontmatter: {} } };
+  const html = String(unified().use(remarkParse).use(remarkArticleBadges).use(remarkRehype).use(rehypeStringify).processSync(file));
+  assert.equal(html.trim(), '<p>Tekst članka.</p>');
+});
+
+test('unpaired WordPress bold markers around the label are removed too', () => {
+  const file = new VFile({ path: '/tmp/x/index.md', value: '**Seniori, 11. kolo  \n![](./a.jpg)**Posljednje kolo.' });
+  file.data = { astro: { frontmatter: {} } };
+  const html = String(unified().use(remarkParse).use(remarkArticleBadges).use(remarkRehype).use(rehypeStringify).processSync(file));
+  assert.deepEqual((file.data as any).astro.frontmatter.badges, ['Seniori', '11. kolo']);
+  assert.ok(!html.includes('**') && html.includes('Posljednje kolo.') && html.includes('a.jpg'));
+});

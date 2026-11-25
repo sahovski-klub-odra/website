@@ -17,16 +17,14 @@ const assets = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/vendor/cm-chessbo
     </div>
     <div class="dp-info">
       <p class="dp-turn" data-dp="turn"></p>
-      <p class="dp-meta" data-dp="meta"></p>
       <p class="dp-status" data-dp="status" role="status" aria-live="polite">Učitavanje današnjeg zadatka…</p>
       <div class="dp-actions">
-        <button type="button" class="btn-gold" data-dp="retry"><Icon name="arrowLeft" size={16} /> Ponovno</button>
-        <button type="button" class="btn-outline" data-dp="solution">Rješenje</button>
+        <button type="button" class="btn-gold" data-dp="retry"><Icon name="arrowLeft" size={16} /> Pokušaj ponovno</button>
+        <button type="button" class="btn-outline" data-dp="solution">Prikaži rješenje</button>
       </div>
       <a class="dp-open link-gold" data-dp="open" href="https://lichess.org/training/daily" target="_blank" rel="noopener noreferrer">
         Otvori zadatak na Lichessu <Icon name="external" size={14} />
       </a>
-      <p class="dp-credit">Zadatak dana: <a href="https://lichess.org/training/daily" target="_blank" rel="noopener noreferrer">lichess.org</a> (slobodna licenca CC0). Mijenja se svaki dan.</p>
     </div>
   </div>
   <div class="dp-fallback" data-dp="fallback">

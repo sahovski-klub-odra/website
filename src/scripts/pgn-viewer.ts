@@ -21,7 +21,7 @@ const T = {
     last: 'Zadnji potez', play: 'Automatska reprodukcija', pause: 'Zaustavi reprodukciju', flip: 'Okreni ploču',
     speed: 'Brzina reprodukcije', game: 'Odaberite partiju', moves: 'Popis poteza', download: 'Preuzmi PGN',
     start: 'Početna pozicija', round: 'kolo', white: 'Bijeli', black: 'Crni', illegal: 'Greška u zapisu partije',
-    hint: '← → potezi · razmaknica reprodukcija · F okreni', hintTouch: 'Povucite ploču ulijevo ili udesno za sljedeći ili prethodni potez', noMoves: 'Pozicija', seconds: 's', credit: 'Figure: Cburnett, CC BY-SA 3.0',
+    hint: '← → potezi · razmaknica reprodukcija · F okreni', hintTouch: 'Povucite ploču ulijevo ili udesno za sljedeći ili prethodni potez', noMoves: 'Pozicija', seconds: 's', info: 'Podaci o partiji', event: 'Natjecanje', roundLabel: 'Kolo', site: 'Lokacija', date: 'Datum', opening: 'Otvaranje',
   },
 } as const;
 
@@ -90,7 +90,6 @@ export class GameViewer {
           ${multi ? `<label class="pgnv-select-wrap"><span class="sr-only">${t.game}</span><select class="pgnv-select" data-el="select">${this.games
             .map((g, i) => `<option value="${i}">${i + 1}. ${esc(this.playerName(g, 'White'))} – ${esc(this.playerName(g, 'Black'))}${!isUnknown(g.headers.Result) ? ` (${esc(g.headers.Result.replace('1/2-1/2', '½–½'))})` : ''}</option>`)
             .join('')}</select></label>` : ''}
-          <p class="pgnv-meta" data-el="meta"></p>
         </div>
         <div class="pgnv-body">
           <div class="pgnv-main">
@@ -115,10 +114,10 @@ export class GameViewer {
             </div>
             <p class="pgnv-note" data-el="note" aria-live="polite"></p>
             <p class="pgnv-hint" id="${this.uid('hint')}"><span class="pgnv-hint-keys">${t.hint}</span><span class="pgnv-hint-touch">${t.hintTouch}</span></p>
-            <p class="pgnv-credit"><a href="https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces/Standard" target="_blank" rel="noopener">${t.credit}</a></p>
           </div>
           <div class="pgnv-side">
             <div class="pgnv-moves" data-el="moves" role="group" aria-label="${t.moves}"></div>
+            <dl class="pgnv-info" data-el="meta" aria-label="${t.info}"></dl>
           </div>
         </div>
         <p class="pgnv-error" data-el="error" role="alert" hidden></p>
@@ -162,14 +161,22 @@ export class GameViewer {
     this.game = this.games[i];
     this.byId = new Map(this.game.nodes.map((n) => [n.id, n]));
     const h = this.game.headers;
-    const meta = [
-      h.Event,
-      !isUnknown(h.Round) ? `${this.t.round} ${h.Round}` : '',
-      h.Site,
-      formatPgnDate(h.Date),
-      h.Opening ? (h.ECO ? `${h.ECO} ${h.Opening}` : h.Opening) : h.ECO,
-    ].filter((v) => v && !isUnknown(v));
-    this.el.meta.textContent = meta.join(' · ');
+    // match information card under the move list: only the fields the PGN actually contains
+    const known = (v?: string) => (v && !isUnknown(v) ? v.trim() : '');
+    // "Site" often holds the club's web address instead of a place – that is not a location
+    const site = known(h.Site);
+    const place = /^(https?:\/\/)?(www[.,])?[\w-]+\.(com|hr|org|net)\b/i.test(site) ? '' : site;
+    const round = known(h.Round);
+    const meta: [string, string, string][] = [
+      ['event', this.t.event, known(h.Event)],
+      ['round', this.t.roundLabel, round ? (/^\d+$/.test(round) ? `${round}.` : round) : ''],
+      ['site', this.t.site, place],
+      ['date', this.t.date, formatPgnDate(h.Date)],
+      ['opening', this.t.opening, h.Opening ? (h.ECO ? `${h.ECO} ${h.Opening}` : h.Opening) : known(h.ECO)],
+    ].filter((r): r is [string, string, string] => !!r[2]) as [string, string, string][];
+    this.el.meta.innerHTML = meta
+      .map(([k, label, v]) => `<div class="pgnv-info-row" data-k="${k}"><dt>${label}</dt><dd>${esc(v)}</dd></div>`)
+      .join('');
     this.el.meta.hidden = meta.length === 0;
     this.el.error.hidden = !this.game.error;
     if (this.game.error)

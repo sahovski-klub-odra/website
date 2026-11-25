@@ -146,3 +146,30 @@ dialog.lightbox::backdrop { background: rgb(10 11 13 / 0.9); }
     margin-left: calc(50% - min(32rem, 50vw - 2rem));
   }
 }
+
+/* team / round labels under the article title (Seniori · Druga ekipa · 6. kolo) */
+.article-badge {
+  display: inline-flex; align-items: center; border-radius: .35rem; padding: .28rem .6rem;
+  font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; line-height: 1.2;
+  color: var(--color-gold); background: rgb(217 181 109 / .1); border: 1px solid rgb(217 181 109 / .45);
+}
+.article-badge:first-child { background: var(--color-gold); color: var(--color-ink); border-color: var(--color-gold); }
+
+/* featured photo on article pages: framed, never cropped, opens in the lightbox */
+.featured-photo {
+  margin: 0; border-radius: 0 0 .9rem .9rem; padding: .35rem; background: var(--color-ink);
+  box-shadow: var(--shadow-card), 0 0 0 1px rgb(217 181 109 / .3);
+}
+@media (min-width: 640px) { .featured-photo { border-radius: .9rem; padding: .5rem; } }
+.featured-photo__link { position: relative; display: grid; place-items: center; overflow: hidden; border-radius: .55rem; background: var(--color-ink-2); cursor: zoom-in; }
+.featured-photo__img { display: block; width: auto; max-width: 100%; height: auto; max-height: 560px; object-fit: contain; transition: transform .6s var(--ease-out, ease); }
+.featured-photo__link:hover .featured-photo__img { transform: scale(1.015); }
+.featured-photo__link:focus-visible { outline: 3px solid var(--color-gold); outline-offset: 2px; }
+.featured-photo__zoom {
+  position: absolute; right: .75rem; bottom: .75rem; display: grid; place-items: center; width: 2.4rem; height: 2.4rem;
+  border-radius: 9999px; background: rgb(23 25 28 / .75); color: var(--color-gold); border: 1px solid rgb(217 181 109 / .5);
+  opacity: .85; transition: opacity .2s, transform .2s;
+}
+.featured-photo__link:hover .featured-photo__zoom { opacity: 1; transform: scale(1.06); }
+.featured-photo__caption { padding: .6rem .5rem .15rem; font-size: .88rem; color: rgb(255 255 255 / .75); }
+@media (prefers-reduced-motion: reduce) { .featured-photo__img, .featured-photo__zoom { transition: none; } .featured-photo__link:hover .featured-photo__img { transform: none; } }

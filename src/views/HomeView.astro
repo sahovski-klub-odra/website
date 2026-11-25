@@ -11,7 +11,7 @@ import { postsForListing, postUrl, describe, formatDate } from '../lib/blog';
 import { homepagePhotos } from '../lib/gallery';
 import { site, formatAddress, wpRedirects } from '../lib/data';
 import DailyPuzzle from '../components/DailyPuzzle.astro';
-import WorldTopTen from '../components/WorldTopTen.astro';
+import ChessPiece from '../components/ChessPiece.astro';
 import PhotoCarousel from '../components/PhotoCarousel.astro';
 import GoogleMap from '../components/GoogleMap.astro';
 import { useTranslations, type Lang } from '../i18n/ui';
@@ -23,6 +23,11 @@ const t = useTranslations(lang);
 
 const posts = (await postsForListing(lang)).slice(0, 11);
 const [lead, ...rest] = posts;
+const practice = [
+  { title: 'Igraj šah online', desc: 'Partija s prijateljem ili računalom', href: 'https://lichess.org/', piece: 'knight' },
+  { title: 'Nauči igrati šah', desc: 'Pravila i osnove, korak po korak', href: 'https://lichess.org/learn', piece: 'pawn' },
+  { title: 'Rješavaj šahovske zadatke', desc: 'Taktika za svaki dan', href: 'https://lichess.org/training', piece: 'rook' },
+] as const;
 const slides = await homepagePhotos(10);
 const address = formatAddress();
 
@@ -182,11 +187,26 @@ const hasWpIds = Object.keys(wpRedirects.ids ?? {}).length > 0;
 
         <section class="side-card side-card--dark" aria-labelledby="puzzle-h">
           <h2 id="puzzle-h" class="side-card__title"><Icon name="crown" size={18} class="text-gold" /> Problem dana</h2>
-          <p class="side-card__sub">Riješi današnji šahovski problem s Lichessa.</p>
           <div class="mt-3"><DailyPuzzle compact /></div>
         </section>
 
-        <WorldTopTen />
+        <section class="side-card" aria-labelledby="practice-h">
+          <h2 id="practice-h" class="side-card__title"><Icon name="play" size={18} class="text-gold-deep" /> Vježbaj šah online</h2>
+          <p class="side-card__sub">Besplatno na Lichessu – i za djecu i za početnike.</p>
+          <ul class="practice-links">
+            {practice.map((l) => (
+              <li>
+                <a href={l.href} target="_blank" rel="noopener noreferrer" class="practice-link">
+                  <span class="practice-link__icon"><ChessPiece piece={l.piece} /></span>
+                  <span class="practice-link__text"><span class="practice-link__title">{l.title}</span><span class="practice-link__desc">{l.desc}</span></span>
+                  <Icon name="external" size={15} class="practice-link__arrow" />
+                  <span class="sr-only">(otvara se u novoj kartici)</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a href="https://lichess.org/login" target="_blank" rel="noopener noreferrer" class="practice-login link-gold"><Icon name="users" size={15} /> Prijava na Lichess<span class="sr-only"> (otvara se u novoj kartici)</span></a>
+        </section>
       </aside>
     </div>
   </section>

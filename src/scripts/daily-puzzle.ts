@@ -41,16 +41,6 @@ async function loadPuzzle(): Promise<DailyPuzzle> {
   }
 }
 
-const THEMES: Record<string, string> = {
-  mateIn1: 'mat u 1', mateIn2: 'mat u 2', mateIn3: 'mat u 3', mateIn4: 'mat u 4', mate: 'mat', fork: 'račva',
-  pin: 'vezanje', skewer: 'ražanj', sacrifice: 'žrtva', endgame: 'završnica', middlegame: 'središnjica', opening: 'otvaranje',
-  advantage: 'prednost', crushing: 'odlučujuća prednost', short: 'kratki zadatak', long: 'dugi zadatak', oneMove: 'jedan potez',
-  discoveredAttack: 'otkriveni napad', doubleCheck: 'dvostruki šah', hangingPiece: 'nebranjena figura', deflection: 'odvlačenje',
-  attraction: 'privlačenje', promotion: 'promocija', backRankMate: 'mat na zadnjem redu', kingsideAttack: 'napad na kraljevu stranu',
-  queensideAttack: 'napad na daminu stranu', defensiveMove: 'obrambeni potez', quietMove: 'tihi potez', trappedPiece: 'zarobljena figura',
-  zugzwang: 'iznuđeni potez', equality: 'izjednačenje', master: 'majstorska partija',
-};
-
 class PuzzleBoard {
   private puzzle!: DailyPuzzle;
   private chess!: Chess;
@@ -63,7 +53,7 @@ class PuzzleBoard {
 
   async start() {
     const q = (n: string) => this.root.querySelector<HTMLElement>(`[data-dp="${n}"]`)!;
-    for (const n of ['board', 'status', 'turn', 'meta', 'retry', 'solution', 'open', 'live', 'fallback']) this.el[n] = q(n);
+    for (const n of ['board', 'status', 'turn', 'retry', 'solution', 'open', 'live', 'fallback']) this.el[n] = q(n);
     try {
       this.puzzle = await loadPuzzle();
     } catch {
@@ -74,8 +64,6 @@ class PuzzleBoard {
     const color = p.fen.split(' ')[1] === 'b' ? 'b' : 'w';
     (this.el.open as HTMLAnchorElement).href = `https://lichess.org/training/${encodeURIComponent(p.id)}`;
     this.el.turn.textContent = color === 'w' ? 'Bijeli na potezu' : 'Crni na potezu';
-    const themes = p.themes.map((t) => THEMES[t]).filter(Boolean).slice(0, 3);
-    this.el.meta.textContent = [p.rating ? `Težina ${p.rating}` : '', ...themes].filter(Boolean).join(' · ');
     this.board = new Chessboard(this.el.board, {
       position: p.fen,
       orientation: color === 'w' ? COLOR.white : COLOR.black,
@@ -190,7 +178,7 @@ class PuzzleBoard {
       this.mark(uci);
     }
     this.root.dataset.result = 'shown';
-    this.say('Ovo je rješenje. Kliknite „Ponovno” i odigrajte ga sami.', 'info');
+    this.say('Ovo je rješenje. Kliknite „Pokušaj ponovno” i odigrajte ga sami.', 'info');
   }
 }
 

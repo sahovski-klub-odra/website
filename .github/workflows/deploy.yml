@@ -60,11 +60,13 @@ jobs:
       - name: TypeScript and Astro checks
         run: npm run check
 
-      # Optimised images are cached between runs, so a CMS edit doesn't re-process all 1,200+ photos
+      # Optimised images are cached between runs, so a CMS edit doesn't re-process all 1,200+ photos.
+      # Only the images: the content store (data-store.json) is rebuilt every time, so changes to the
+      # Markdown plugins always reach every article.
       - name: Restore image cache
         uses: actions/cache@v4
         with:
-          path: node_modules/.astro
+          path: node_modules/.astro/assets
           key: astro-assets-${{ hashFiles('src/content/**/*.jpg', 'src/content/**/*.jpeg', 'src/content/**/*.png', 'src/content/**/*.webp', 'src/content/**/*.gif', 'src/assets/**', 'package-lock.json') }}
           restore-keys: astro-assets-
 
