@@ -27,13 +27,15 @@ const html =
 <script>
   import trainingData from '../data/training.json';
   import { renderMonth, renderNext, renderUpcoming, type ScheduleStrings } from '../lib/schedule-render';
-  import { zagrebNow } from '../lib/schedule';
+  import { lastCalendarMonth, zagrebNow } from '../lib/schedule';
   import type { TrainingData } from '../lib/schemas';
 
   // training.json was validated at build time; fill defaults the schema would add.
   const data = {
     sessions: (trainingData.sessions ?? []).map((s: any) => ({ status: 'scheduled', coach: '', ...s })),
     exceptions: trainingData.exceptions ?? [],
+    cancelledDays: (trainingData as any).cancelledDays ?? [],
+    calendarMonthsAhead: (trainingData as any).calendarMonthsAhead ?? 2,
     extra: (trainingData.extra ?? []).map((s: any) => ({ status: 'scheduled', coach: '', ...s })),
   } as unknown as TrainingData;
 
@@ -49,13 +51,16 @@ const html =
       draw();
       el.addEventListener('click', (e) => {
         const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-cal-nav]');
-        if (!btn) return;
+        if (!btn || btn.disabled) return;
+        const last = lastCalendarMonth(now.date, data.calendarMonthsAhead ?? 2);
+        if (Number(btn.dataset.calNav) > 0 && y * 12 + m >= last.year * 12 + last.month) return;
         m += Number(btn.dataset.calNav);
         el.dataset.dir = Number(btn.dataset.calNav) > 0 ? 'next' : 'prev';
         if (m < 1) { m = 12; y--; }
         if (m > 12) { m = 1; y++; }
         draw();
-        el.querySelector<HTMLButtonElement>(`[data-cal-nav="${btn.dataset.calNav}"]`)?.focus();
+        const again = el.querySelector<HTMLButtonElement>(`[data-cal-nav="${btn.dataset.calNav}"]`);
+        (again && !again.disabled ? again : el.querySelector<HTMLButtonElement>('[data-cal-nav="-1"]'))?.focus();
       });
     }
   });

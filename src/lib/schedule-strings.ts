@@ -25,6 +25,7 @@ export function scheduleStrings(lang: Lang): ScheduleStrings {
     prevMonth: t('schedule.prevMonth'),
     nextMonth: t('schedule.nextMonth'),
     nextHeld: 'Sljedeći održani trening',
+    offNote: 'Trening se ne održava',
     weekdaysShort,
   };
 }

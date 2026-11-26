@@ -138,6 +138,12 @@ export const extraSchema = z.object({
   note: optionalString,
 });
 
+/** A whole day without training (holiday, hall not available …): every regular training that day is cancelled. */
+export const cancelledDaySchema = z.object({
+  date: isoDate,
+  note: optionalString,
+});
+
 /** Short notices shown above the schedule and on the homepage, e.g. "Nema treninga za vrijeme školskih praznika". */
 export const announcementSchema = z.object({
   text: z.string().min(1),
@@ -150,6 +156,9 @@ export const announcementSchema = z.object({
 export const trainingFileSchema = z
   .object({
     announcements: z.array(announcementSchema).default([]),
+    /** how many months after the current one the monthly calendar can show */
+    calendarMonthsAhead: z.number().int().min(0).max(12).default(2),
+    cancelledDays: z.array(cancelledDaySchema).default([]),
     sessions: z.array(sessionSchema).default([]),
     exceptions: z.array(exceptionSchema).default([]),
     extra: z.array(extraSchema).default([]),

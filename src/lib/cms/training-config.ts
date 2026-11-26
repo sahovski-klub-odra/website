@@ -48,6 +48,17 @@ export function trainingCollectionYaml(): string {
               - { label: "Prikaži od", name: from, widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false, hint: "Prazno = odmah" }
               - { label: "Prikaži do", name: until, widget: datetime, format: "YYYY-MM-DD", time_format: false, required: false, hint: "Prazno = dok je ne uklonite" }
               - { label: "Važno (istaknuto crveno)", name: important, widget: boolean, default: false, required: false }
+          - label: "Dani bez treninga"
+            name: cancelledDays
+            widget: list
+            collapsed: true
+            required: false
+            summary: "{{fields.date}} {{fields.note}}"
+            hint: "Dodajte datum kad nema šaha (praznik, dvorana zauzeta …). Svi redoviti treninzi tog dana prikazuju se crveno kao otkazani – u kalendaru, u popisu nadolazećih treninga i na naslovnici."
+            fields:
+              - { label: "Datum", name: date, widget: datetime, format: "YYYY-MM-DD", time_format: false }
+              - { label: "Napomena (neobavezno)", name: note, widget: string, required: false, hint: "npr. Božić, praznik" }
+          - { label: "Kalendar: koliko mjeseci unaprijed", name: calendarMonthsAhead, widget: number, value_type: int, min: 0, max: 12, default: 2, required: false, hint: "Mjesečni kalendar prikazuje tekući mjesec i ovoliko sljedećih mjeseci (2 = npr. studeni, prosinac i siječanj)." }
           - label: "Redoviti tjedni treninzi"
             name: sessions
             widget: list

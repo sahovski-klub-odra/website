@@ -4,6 +4,7 @@
  *  sessions   – recurring weekly trainings (e.g. every Tuesday 17:00–19:00)
  *  exceptions – changes to ONE date of a recurring training (cancel / move / announce)
  *  extra      – one-off trainings on a specific date
+ *  cancelledDays – whole days without training (every regular training that day is cancelled)
  *
  * All dates are plain 'YYYY-MM-DD' strings interpreted in Europe/Zagreb time.
  */
@@ -68,6 +69,7 @@ export function zagrebNow(now: Date = new Date()): { date: string; time: string 
 export function expand(data: TrainingData, from: string, to: string): Occurrence[] {
   const out: Occurrence[] = [];
   const exceptions = new Map(data.exceptions.map((e) => [`${e.date}|${e.sessionId}`, e]));
+  const offDays = new Map((data.cancelledDays ?? []).map((c) => [c.date, c]));
 
   // Moved trainings may land inside the window even if the original date is outside it,
   // so scan a wider range for originals and filter at the end.
@@ -96,7 +98,8 @@ export function expand(data: TrainingData, from: string, to: string): Occurrence
 
       const ex = exceptions.get(`${d}|${s.id}`);
       if (!ex) {
-        out.push(base);
+        const off = offDays.get(d);
+        out.push(off ? { ...base, status: 'cancelled', note: off.note ?? base.note } : base);
         continue;
       }
 
@@ -165,6 +168,13 @@ export function nextTraining(data: TrainingData, now = zagrebNow()) {
   const next = list[0] ?? null;
   const nextHeld = next && next.status === 'cancelled' ? (list.find((o) => o.status !== 'cancelled') ?? null) : null;
   return { next, nextHeld };
+}
+
+/** Last month (year, month 1–12) the monthly calendar may show: the current month plus `ahead` months. */
+export function lastCalendarMonth(now: string, ahead: number): { year: number; month: number } {
+  const [y, m] = now.split('-').map(Number);
+  const idx = y * 12 + (m - 1) + Math.max(0, ahead);
+  return { year: Math.floor(idx / 12), month: (idx % 12) + 1 };
 }
 
 /* ---------- formatting ---------- */

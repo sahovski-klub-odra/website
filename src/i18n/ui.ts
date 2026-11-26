@@ -5,7 +5,7 @@ export const defaultLang: Lang = 'hr';
 
 export const ui = {
   hr: {
-    'site.tagline': 'Mjesto gdje se susreću strategija, znanje i ljubav prema šahu.',
+    'site.tagline': 'Mjesto gdje se susreću strategija, znanje i ljubav prema ovoj drevnoj igri.',
     'nav.home': 'Početna',
     'nav.news': 'Novosti',
     'nav.members': 'Članovi kluba',

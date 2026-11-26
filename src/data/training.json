@@ -1,4 +1,19 @@
 {
+  "calendarMonthsAhead": 2,
+  "cancelledDays": [
+    {
+      "date": "2026-11-27"
+    },
+    {
+      "date": "2026-12-18"
+    },
+    {
+      "date": "2026-12-25"
+    },
+    {
+      "date": "2026-12-29"
+    }
+  ],
   "sessions": [
     {
       "id": "mladja-utorak",

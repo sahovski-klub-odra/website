@@ -1,0 +1,72 @@
+name: Update FIDE ratings
+
+# Once a month FIDE publishes a new rating list. This downloads the official list, updates the
+# standard, rapid and blitz ratings of every member with a FIDE ID in src/data/members.json,
+# commits the change and redeploys the site. Nothing else in the member list is touched.
+#
+# Runs on the 1st of every month (and again on the 3rd, in case FIDE published late – a run with
+# no changes does nothing). Can also be started by hand: Actions → "Update FIDE ratings" → Run workflow.
+# A push that changes this workflow or the script only does a test run (nothing is saved).
+
+on:
+  schedule:
+    - cron: '37 11 1 * *'
+    - cron: '37 11 3 * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only show what would change (do not save)'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fide-ratings.yml
+      - scripts/update-fide-ratings.ts
+      - scripts/lib/fide-ratings.ts
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: fide-ratings
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Download the FIDE rating list
+        run: |
+          curl -fsSL --retry 3 --retry-delay 20 -m 600 -o "$RUNNER_TEMP/fide.zip" https://ratings.fide.com/download/players_list_xml.zip
+          unzip -o -q "$RUNNER_TEMP/fide.zip" -d "$RUNNER_TEMP/fide"
+          ls -la "$RUNNER_TEMP/fide"
+          echo "FIDE_LIST=$(ls "$RUNNER_TEMP"/fide/*.xml | head -1)" >> "$GITHUB_ENV"
+
+      - name: Update ratings
+        run: npx tsx scripts/update-fide-ratings.ts "$FIDE_LIST" ${{ (github.event_name == 'push' || inputs.dry_run) && '--dry-run' || '' }}
+
+      - name: Commit and redeploy
+        if: ${{ github.event_name != 'push' && !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- src/data/members.json; then echo "No rating changes."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add src/data/members.json
+          git commit -m "FIDE ratings: $(date -u +%Y-%m) list"
+          git push
+          # a push made with the workflow token does not start other workflows, so start the deploy explicitly
+          gh workflow run deploy.yml --ref main
