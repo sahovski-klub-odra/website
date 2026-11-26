@@ -131,11 +131,10 @@ ${scheduleRepo() ? '' : trainingCollection}
             widget: list
             collapsed: true
             required: false
-            summary: "{{fields.name}} {{fields.role}}"
-            hint: "Redoslijed na stranici = redoslijed u ovom popisu (povucite ručicu ⋮⋮ za premještanje). Članovi s ulogom prikazuju se u odjeljku Vodstvo kluba."
+            summary: "{{fields.name}}"
+            hint: "Svi članovi prikazuju se zajedno u odjeljku Igrači, abecedno po prezimenu (posjetitelji mogu sortirati i po rejtingu)."
             fields:
               - { label: "Ime i prezime", name: name, widget: string }
-              - { label: "Uloga", name: role, widget: string, required: false, hint: "npr. Predsjednik, Trener, Igrač" }
               - label: "Titula"
                 name: title
                 widget: select

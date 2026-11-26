@@ -4,7 +4,6 @@
   "members": [
     {
       "name": "Ivan Cvetković",
-      "role": "predsjednik",
       "category": "MK",
       "registrationNumber": "262",
       "fideId": "14515024",
@@ -14,7 +13,6 @@
     },
     {
       "name": "Stjepan Maravić",
-      "role": "dopredsjednik",
       "category": "MK",
       "registrationNumber": "372",
       "fideId": "14504316",
@@ -25,7 +23,6 @@
     },
     {
       "name": "Ivan Maravić",
-      "role": "član predsjedništva",
       "category": "MK",
       "registrationNumber": "9613",
       "fideId": "14539411",
@@ -36,7 +33,6 @@
     },
     {
       "name": "Ivan Vraneša",
-      "role": "član predsjedništva",
       "category": "II",
       "registrationNumber": "10979",
       "fideId": "14552523",
@@ -47,7 +43,6 @@
     },
     {
       "name": "Božo Cvetković",
-      "role": "član predsjedništva",
       "category": "III",
       "registrationNumber": "10976",
       "fideId": "14552493",
@@ -63,8 +58,7 @@
       "fideId": "14503409",
       "rating": 2120,
       "ratingRapid": 2099,
-      "birthYear": 1969,
-      "role": ""
+      "birthYear": 1969
     },
     {
       "name": "Juraj Bačurin",
@@ -73,8 +67,7 @@
       "fideId": "14506246",
       "rating": 1976,
       "ratingBlitz": 1960,
-      "birthYear": 1969,
-      "role": ""
+      "birthYear": 1969
     },
     {
       "name": "Tin Furčić",
@@ -82,16 +75,14 @@
       "registrationNumber": "10984",
       "fideId": "14544172",
       "rating": 1883,
-      "birthYear": 1995,
-      "role": ""
+      "birthYear": 1995
     },
     {
       "name": "Goran Fiolić",
       "category": "II",
       "registrationNumber": "925",
       "fideId": "14563355",
-      "birthYear": 1975,
-      "role": ""
+      "birthYear": 1975
     },
     {
       "name": "Zvjezdan Karlić",
@@ -100,8 +91,7 @@
       "fideId": "14503328",
       "rating": 2008,
       "ratingBlitz": 1970,
-      "birthYear": 1974,
-      "role": ""
+      "birthYear": 1974
     },
     {
       "name": "Fran Šoš",
@@ -111,8 +101,7 @@
       "rating": 2073,
       "ratingRapid": 2039,
       "ratingBlitz": 2080,
-      "birthYear": 2002,
-      "role": ""
+      "birthYear": 2002
     },
     {
       "name": "Mladen Sliepčević",
@@ -122,8 +111,7 @@
       "rating": 2043,
       "ratingRapid": 2037,
       "ratingBlitz": 2047,
-      "birthYear": 1974,
-      "role": ""
+      "birthYear": 1974
     },
     {
       "name": "Lucijan Hadviger",
@@ -133,8 +121,7 @@
       "rating": 1927,
       "ratingRapid": 1992,
       "ratingBlitz": 2043,
-      "birthYear": 2004,
-      "role": ""
+      "birthYear": 2004
     },
     {
       "name": "Mario Ljubičić",
@@ -144,8 +131,7 @@
       "rating": 2132,
       "ratingRapid": 1996,
       "ratingBlitz": 2214,
-      "birthYear": 2004,
-      "role": ""
+      "birthYear": 2004
     },
     {
       "name": "Darko Šutić",
@@ -155,8 +141,7 @@
       "rating": 1899,
       "ratingRapid": 1984,
       "ratingBlitz": 1917,
-      "birthYear": 1964,
-      "role": ""
+      "birthYear": 1964
     },
     {
       "name": "Ivo Pahljina",
@@ -166,8 +151,7 @@
       "rating": 1857,
       "ratingRapid": 1816,
       "ratingBlitz": 1895,
-      "birthYear": 2004,
-      "role": ""
+      "birthYear": 2004
     },
     {
       "name": "Borislav Kobali",
@@ -176,8 +160,7 @@
       "fideId": "14540398",
       "rating": 1742,
       "ratingBlitz": 1764,
-      "birthYear": 1970,
-      "role": ""
+      "birthYear": 1970
     },
     {
       "name": "Nikola Pischiutta",
@@ -186,8 +169,7 @@
       "fideId": "14592380",
       "rating": 1648,
       "ratingBlitz": 1722,
-      "birthYear": 2000,
-      "role": ""
+      "birthYear": 2000
     },
     {
       "name": "Ivo Knezović",
@@ -197,32 +179,28 @@
       "rating": 1949,
       "ratingRapid": 1947,
       "ratingBlitz": 1943,
-      "birthYear": 1974,
-      "role": ""
+      "birthYear": 1974
     },
     {
       "name": "Krešimir Biškupić",
       "category": "vk",
       "registrationNumber": "874",
       "fideId": "79341004",
-      "birthYear": 1972,
-      "role": ""
+      "birthYear": 1972
     },
     {
       "name": "Dominik Dalić",
       "category": "vk",
       "registrationNumber": "15226",
       "fideId": "79324185",
-      "birthYear": 1997,
-      "role": ""
+      "birthYear": 1997
     },
     {
       "name": "Filip Cvetković",
       "category": "vk",
       "registrationNumber": "19066",
       "fideId": "79331270",
-      "birthYear": 1988,
-      "role": ""
+      "birthYear": 1988
     },
     {
       "name": "Silvije Horvat",
@@ -230,16 +208,14 @@
       "registrationNumber": "19067",
       "fideId": "79331289",
       "ratingBlitz": 1425,
-      "birthYear": 1975,
-      "role": ""
+      "birthYear": 1975
     },
     {
       "name": "Darko Vraneša",
       "category": "vk",
       "registrationNumber": "20021",
       "fideId": "79340997",
-      "birthYear": 1957,
-      "role": ""
+      "birthYear": 1957
     },
     {
       "name": "Luka Fiolić",
@@ -248,48 +224,42 @@
       "fideId": "14556510",
       "rating": 1673,
       "ratingBlitz": 1606,
-      "birthYear": 2007,
-      "role": ""
+      "birthYear": 2007
     },
     {
       "name": "Miljenko Jurašić",
       "category": "vk",
       "registrationNumber": "18551",
       "fideId": "79325971",
-      "birthYear": 2016,
-      "role": ""
+      "birthYear": 2016
     },
     {
       "name": "Jakov Kovačević",
       "category": "vk",
       "registrationNumber": "17981",
       "fideId": "79320163",
-      "birthYear": 2016,
-      "role": ""
+      "birthYear": 2016
     },
     {
       "name": "Leonard Avgustinović",
       "category": "vk",
       "registrationNumber": "20176",
       "fideId": "79342604",
-      "birthYear": 2016,
-      "role": ""
+      "birthYear": 2016
     },
     {
       "name": "Marul Gabriel Knezović",
       "category": "vk",
       "registrationNumber": "18533",
       "fideId": "79325785",
-      "birthYear": 2016,
-      "role": ""
+      "birthYear": 2016
     },
     {
       "name": "Ivan Lukas Knezović",
       "category": "vk",
       "registrationNumber": "18532",
       "fideId": "79325777",
-      "birthYear": 2015,
-      "role": ""
+      "birthYear": 2015
     },
     {
       "name": "Luka Lesničar",
@@ -299,16 +269,14 @@
       "rating": 1644,
       "ratingRapid": 1607,
       "ratingBlitz": 1609,
-      "birthYear": 2015,
-      "role": ""
+      "birthYear": 2015
     },
     {
       "name": "Mislav Sopić",
       "category": "vk",
       "registrationNumber": "20019",
       "fideId": "79340970",
-      "birthYear": 2015,
-      "role": ""
+      "birthYear": 2015
     },
     {
       "name": "Slavko Biondić",
@@ -317,48 +285,42 @@
       "fideId": "14582104",
       "rating": 1577,
       "ratingBlitz": 1482,
-      "birthYear": 2010,
-      "role": ""
+      "birthYear": 2010
     },
     {
       "name": "Alan Vitaljić",
       "category": "vk",
       "registrationNumber": "20020",
       "fideId": "79340989",
-      "birthYear": 2018,
-      "role": ""
+      "birthYear": 2018
     },
     {
       "name": "Milan Verić",
       "category": "vk",
       "registrationNumber": "20313",
       "fideId": "79343970",
-      "birthYear": 2018,
-      "role": ""
+      "birthYear": 2018
     },
     {
       "name": "Bartol Glagolić",
       "category": "vk",
       "registrationNumber": "17346",
       "fideId": "79313710",
-      "birthYear": 2013,
-      "role": ""
+      "birthYear": 2013
     },
     {
       "name": "Tomas Milovanović",
       "category": "vk",
       "registrationNumber": "20018",
       "fideId": "79340962",
-      "birthYear": 2016,
-      "role": ""
+      "birthYear": 2016
     },
     {
       "name": "Emanuel Kovačević",
       "category": "vk",
       "registrationNumber": "15709",
       "fideId": "14597322",
-      "birthYear": 2013,
-      "role": ""
+      "birthYear": 2013
     },
     {
       "name": "Filip Horvat",
@@ -368,32 +330,28 @@
       "rating": 1417,
       "ratingRapid": 1526,
       "ratingBlitz": 1506,
-      "birthYear": 2012,
-      "role": ""
+      "birthYear": 2012
     },
     {
       "name": "Leon Lesničar",
       "category": "vk",
       "registrationNumber": "19069",
       "fideId": "79331300",
-      "birthYear": 2021,
-      "role": ""
+      "birthYear": 2021
     },
     {
       "name": "Karlo Mikić",
       "category": "vk",
       "registrationNumber": "19414",
       "fideId": "79334849",
-      "birthYear": 2015,
-      "role": ""
+      "birthYear": 2015
     },
     {
       "name": "Lukas Carek",
       "category": "vk",
       "registrationNumber": "20177",
       "fideId": "79342612",
-      "birthYear": 2018,
-      "role": ""
+      "birthYear": 2018
     },
     {
       "name": "Ivana Mikić",
@@ -403,8 +361,7 @@
       "rating": 1909,
       "ratingRapid": 1907,
       "ratingBlitz": 2003,
-      "birthYear": 2003,
-      "role": ""
+      "birthYear": 2003
     },
     {
       "name": "Lucija Fiolić",
@@ -413,8 +370,7 @@
       "fideId": "14582139",
       "rating": 1560,
       "ratingBlitz": 1498,
-      "birthYear": 2009,
-      "role": ""
+      "birthYear": 2009
     },
     {
       "name": "Ivana Fiolić",
@@ -424,8 +380,7 @@
       "rating": 1451,
       "ratingRapid": 1429,
       "ratingBlitz": 1435,
-      "birthYear": 2009,
-      "role": ""
+      "birthYear": 2009
     },
     {
       "name": "Lucia Lesničar",
@@ -434,16 +389,14 @@
       "fideId": "79327885",
       "rating": 1579,
       "ratingRapid": 1538,
-      "birthYear": 2011,
-      "role": ""
+      "birthYear": 2011
     },
     {
       "name": "Lucija Medoš",
       "category": "vk",
       "registrationNumber": "15711",
       "fideId": "14597349",
-      "birthYear": 2009,
-      "role": ""
+      "birthYear": 2009
     },
     {
       "name": "Petra Medoš",
@@ -451,8 +404,7 @@
       "registrationNumber": "15712",
       "fideId": "14597357",
       "rating": 1431,
-      "birthYear": 2012,
-      "role": ""
+      "birthYear": 2012
     },
     {
       "name": "Ana Predović",
@@ -460,8 +412,7 @@
       "registrationNumber": "16757",
       "fideId": "79307698",
       "ratingBlitz": 1434,
-      "birthYear": 2014,
-      "role": ""
+      "birthYear": 2014
     }
   ]
 }

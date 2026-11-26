@@ -51,7 +51,7 @@ test('merge updates page fields, keeps CMS-only fields, never deletes', () => {
   assert.equal(juraj.image, '/images/members/juraj.jpg');
   assert.equal(juraj.roleEn, 'Captain');
   assert.equal(juraj.fideId, '14500001');
-  // an empty role cell on the page clears the role (the page is the source for roles)
+  // club roles are no longer kept (the website shows all members together as players)
   assert.equal(juraj.role, undefined);
 });
 

@@ -9,8 +9,7 @@ import { useTranslations, locales, type Lang } from '../i18n/ui';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const board = members.filter((m) => m.role);
-// Players: alphabetical by surname (Croatian rules: č, ć, dž, đ, lj, nj, š, ž), then by first name.
+// All members are listed together under "Igrači": alphabetical by surname (Croatian rules: č, ć, dž, đ, lj, nj, š, ž), then by first name.
 // This is also the order without JavaScript; the sort buttons below reorder the cards in the browser.
 const collator = new Intl.Collator('hr', { sensitivity: 'base' });
 const nameParts = (name: string) => {
@@ -21,7 +20,7 @@ const byName = (a: string, b: string) => {
   const x = nameParts(a), y = nameParts(b);
   return collator.compare(x.surname, y.surname) || collator.compare(x.first, y.first);
 };
-const players = members.filter((m) => !m.role).sort((a, b) => byName(a.name, b.name));
+const players = [...members].sort((a, b) => byName(a.name, b.name));
 const updated = membersUpdated
   ? new Intl.DateTimeFormat(locales[lang], { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(`${membersUpdated}T12:00:00`))
   : null;
@@ -36,14 +35,6 @@ const updated = membersUpdated
           {updated && <span>{t('members.updated')}: {updated}</span>}
         </p>
 
-        {board.length > 0 && (
-          <section aria-labelledby="board-h" class="mb-14">
-            <h2 id="board-h" class="section-title reveal mb-6">{t('members.board')}</h2>
-            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {board.map((m, i) => <MemberCard member={m} lang={lang} featured index={i} />)}
-            </div>
-          </section>
-        )}
 
         {players.length > 0 && (
           <section aria-labelledby="players-h" data-member-list>

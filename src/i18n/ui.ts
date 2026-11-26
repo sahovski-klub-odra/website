@@ -62,12 +62,11 @@ export const ui = {
     'search.noscript': 'Za pretraživanje je potreban JavaScript. Objave možete pregledavati po kategorijama.',
 
     'members.title': 'Članovi kluba',
-    'members.intro': 'Igrači, treneri i ljudi koji vode naš klub – s kategorijama i FIDE rejtinzima.',
+    'members.intro': 'Svi igrači našeg kluba – s kategorijama i FIDE rejtinzima.',
     'members.empty': 'Popis članova uskoro će biti objavljen.',
     'members.rating': 'FIDE rejting',
     'members.unrated': 'Bez rejtinga',
     'members.fideProfile': 'FIDE profil',
-    'members.board': 'Vodstvo kluba',
     'members.players': 'Igrači',
     'members.count': 'članova',
     'members.updated': 'Popis ažuriran',

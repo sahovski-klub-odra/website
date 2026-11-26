@@ -7,7 +7,6 @@ import { withBase } from '../i18n/routes';
 interface Props { member: Member; lang: Lang; featured?: boolean; index?: number }
 const { member: m, lang, featured = false, index = 0 } = Astro.props;
 const t = useTranslations(lang);
-const role = m.role;
 const bio = m.bio;
 const img = m.image ? withBase(m.image) : null;
 const initials = m.name.split(/\s+/).filter(Boolean).map((p) => p[0]).slice(0, 1).concat(m.name.split(/\s+/).filter(Boolean).slice(-1).map((p) => p[0])).join('').toUpperCase();
@@ -38,7 +37,6 @@ const fideUrl = m.fideId ? `https://ratings.fide.com/profile/${m.fideId}` : null
     </div>
     <div class="min-w-0 flex-1">
       <h3 class="member-card__name">{m.name}</h3>
-      {role && <p class="member-card__role">{role}</p>}
       <p class="member-card__meta">
         {m.category && <span title={t('members.category')}>{m.category === 'vk' ? 'vk' : `${t('members.category')} ${m.category}`}</span>}
         {m.birthYear && <span>{`${m.birthYear}. ${t('members.born')}`}</span>}

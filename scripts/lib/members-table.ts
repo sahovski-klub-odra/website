@@ -8,7 +8,8 @@
  *
  * Merging rules (existing members.json is the base):
  *  - a member is matched by registration number (MB), otherwise by name (case/diacritics-insensitive)
- *  - values from the page replace: category, ratings, birth year, club role, MB, FIDE ID
+ *  - values from the page replace: category, ratings, birth year, MB, FIDE ID
+ *  - club (board) roles are not used on the website any more and are removed
  *  - values that only exist in the CMS are kept: photo, biography, English role, title, "active"
  *  - order follows the page; members missing from the page are kept at the end and reported,
  *    never deleted (removing someone is an editor's decision)
@@ -121,7 +122,7 @@ export function parseMembersTable(html: string): ParseResult {
 export interface Member extends Record<string, unknown> { name: string }
 export interface MergeResult { members: Member[]; added: string[]; updated: string[]; missing: string[] }
 
-const PAGE_FIELDS = ['registrationNumber', 'category', 'rating', 'ratingRapid', 'ratingBlitz', 'birthYear', 'role', 'fideId'] as const;
+const PAGE_FIELDS = ['registrationNumber', 'category', 'rating', 'ratingRapid', 'ratingBlitz', 'birthYear', 'fideId'] as const;
 
 export function mergeMembers(existing: Member[], rows: MemberRow[], columns: (Field | null)[]): MergeResult {
   const has = (f: Field) => columns.includes(f) || (f === 'fideId');
@@ -144,6 +145,7 @@ export function mergeMembers(existing: Member[], rows: MemberRow[], columns: (Fi
       if (m[f] !== next && !(m[f] == null && next == null)) { changed = true; }
       if (next === undefined) delete m[f]; else m[f] = next;
     }
+    delete m.role; // old club roles are dropped quietly (not reported as an update)
     if (old) { used.add(old); if (changed) updated.push(r.name); } else added.push(r.name);
     out.push(m);
   }
