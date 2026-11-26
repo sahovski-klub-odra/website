@@ -29,6 +29,11 @@ const canonical = new URL(withBase(postUrl(post)), Astro.site).href;
 // otherwise every original photo would be copied into the build just for this link
 // large version for the lightbox (max 2000 px wide, WebP – never AVIF)
 const featuredFull = d.image ? (await getImage({ src: d.image, width: Math.min(2000, d.image.width), format: 'webp', quality: 85 })).src : undefined;
+// portrait and 4:3 photos do not fill the wide frame: the space beside them shows a soft, blurred copy
+// of the same photo (a tiny 48 px image, so it costs almost nothing) instead of flat empty bars
+const featuredBackdrop = d.image && d.image.width / d.image.height < 1.75
+  ? (await getImage({ src: d.image, width: 48, format: 'webp', quality: 60 })).src
+  : undefined;
 const ldImage = d.image ? new URL((await getImage({ src: d.image, width: 1200, format: 'jpg', quality: 80 })).src, Astro.site).href : undefined;
 
 const jsonLd = {
@@ -64,7 +69,7 @@ const shareTitle = encodeURIComponent(d.title);
   section="news"
 >
   <article>
-    <header class="chess-texture bg-ink text-white">
+    <header class:list={['chess-texture bg-ink text-white', d.image && 'article-hero--photo']}>
       <div class="container-site max-w-4xl py-10 sm:py-14">
         <nav aria-label="Breadcrumb" class="text-sm text-white/60">
           <ol class="flex flex-wrap items-center gap-1.5">
@@ -92,9 +97,10 @@ const shareTitle = encodeURIComponent(d.title);
     </header>
 
     {d.image && (
-      <div class="container-site max-w-5xl">
+      <div class="featured-photo-wrap container-site max-w-5xl">
         <figure class="featured-photo">
           <a href={featuredFull} data-lightbox="featured" data-caption={d.imageCaption ?? d.imageAlt ?? ''} class="featured-photo__link group" aria-label={`Povećaj fotografiju${d.imageAlt ? `: ${d.imageAlt}` : ''}`}>
+            {featuredBackdrop && <img src={featuredBackdrop} alt="" aria-hidden="true" class="featured-photo__backdrop" width="48" height={Math.round(48 * d.image.height / d.image.width)} decoding="async" />}
             <Image src={d.image} alt={d.imageAlt ?? ''} widths={[640, 960, 1280, 1600]} sizes="(min-width: 1024px) 1024px, 100vw" loading="eager" fetchpriority="high" class="featured-photo__img" />
             <span class="featured-photo__zoom" aria-hidden="true"><Icon name="search" size={18} /></span>
           </a>
